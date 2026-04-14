@@ -660,6 +660,28 @@ footer {
   .journey-grid { grid-template-columns: 1fr; gap: 6rem; }
   .counter-number { font-size: 3rem; }
   .reputation-monolith { padding: 4rem 2rem; }
+
+  /* Mobile Header Cleanup */
+  .header .container div a[href="#journey"] { display: none !important; }
+  .header .logo { width: 60px !important; }
+  .header nav { gap: 1rem !important; }
+
+  /* Ghost Bottle Fix */
+  .hero-visual-block { 
+    display: block !important; 
+    visibility: visible !important; 
+    opacity: 1 !important; 
+    transform: none !important;
+    margin-top: 4rem;
+  }
+  .hero-visual-block img { 
+    width: 100% !important; 
+    max-width: 450px !important; 
+    margin: 0 auto !important; 
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
 }
 
 @media (max-width: 480px) {
