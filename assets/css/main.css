@@ -597,7 +597,14 @@ footer {
   .hero-text-block h1 { font-size: clamp(3rem, 12vw, 4.5rem); }
   .hero-visual-block { margin-top: 4rem; }
   .hero-visual-block img { border-left: none; padding-left: 0; width: 100%; margin: 0; }
-  .product-showcase { grid-template-columns: 1fr; }
+  .product-showcase { 
+    grid-template-columns: 1fr; 
+    gap: 4rem; 
+    padding: 0 1rem;
+  }
+  .perspective-card {
+    padding: 3rem 2rem;
+  }
   .journey-grid { grid-template-columns: 1fr; gap: 6rem; }
   .counter-number { font-size: 3rem; }
   .reputation-monolith { padding: 4rem 2rem; }
