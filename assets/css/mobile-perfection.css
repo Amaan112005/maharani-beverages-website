@@ -42,12 +42,21 @@
   }
 
   /* --- 3. TACTILE GLASS HARDENING --- */
-  .glass-card, .btn-ultimate {
+  .glass-card {
     backdrop-filter: blur(40px) !important;
     -webkit-backdrop-filter: blur(40px) !important;
     background: rgba(255, 255, 255, 0.03) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .btn-ultimate {
+    backdrop-filter: blur(40px) !important;
+    -webkit-backdrop-filter: blur(40px) !important;
+    background: var(--color-accent) !important; /* Preserving Zenith Gold */
+    color: var(--color-primary) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 20px 40px rgba(184, 134, 11, 0.3) !important; /* Golden shadow depth */
   }
 
   /* --- 4. UNIVERSAL LIQUID STACKING --- */
