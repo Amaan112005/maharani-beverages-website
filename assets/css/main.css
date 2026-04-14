@@ -264,6 +264,22 @@ section {
   width: 60px !important;
 }
 
+/* --- THE ELITE GRID ENGINE --- */
+.grid-elite-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .grid-elite-row {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    gap: 3rem !important;
+  }
+}
+
 .hero-grid-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;

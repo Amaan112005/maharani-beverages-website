@@ -1,0 +1,123 @@
+/* ============================================================
+   ZENITH - MOBILE PERFECTION LAYER (THE "SEXY" EDITORIAL)
+   Targeting Portrait Viewports with Precision Aesthetics
+   Author: Zenith Digital Arts
+   ============================================================ */
+
+/* --- 1. GLOBAL MOBILE ARCHITECTURE --- */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 6rem; /* Enhanced luxury breathing room */
+    --mobile-font-hero: clamp(2.8rem, 12vw, 4rem);
+    --mobile-font-h2: clamp(2.2rem, 10vw, 3rem);
+  }
+
+  /* --- 2. SEXY TYPOGRAPHY ENGINE --- */
+  h1 {
+    font-size: var(--mobile-font-hero) !important;
+    line-height: 0.95 !important;
+    letter-spacing: -2px !important;
+    margin-bottom: 2.5rem !important;
+    color: var(--color-platinum) !important;
+  }
+
+  h2 {
+    font-size: var(--mobile-font-h2) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -1px !important;
+    color: var(--color-platinum) !important;
+  }
+
+  p {
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .counter-label {
+    letter-spacing: 5px !important;
+    font-size: 0.6rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* --- 3. TACTILE GLASS HARDENING --- */
+  .glass-card, .btn-ultimate {
+    backdrop-filter: blur(40px) !important;
+    -webkit-backdrop-filter: blur(40px) !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  /* --- 4. UNIVERSAL LIQUID STACKING --- */
+  .container {
+    padding: 0 2rem !important;
+  }
+
+  .grid-elite-row, 
+  .hero-grid-layout, 
+  .hero-elite .container,
+  div[style*="grid"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4rem !important;
+    text-align: center !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-text-block, 
+  .hero-visual-block {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .hero-text-block p {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 90% !important;
+  }
+
+  /* --- 5. ATMOSPHERIC DEPTH (THE MIDNIGHT GLOW) --- */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 48, 143, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* --- 6. HEADER SOPHISTICATION --- */
+  .header .container {
+    padding: 1.5rem 2rem !important;
+  }
+
+  .header .logo {
+    width: 60px !important;
+  }
+
+  .header .btn-ultimate {
+    padding: 0.6rem 1.2rem !important;
+    font-size: 0.55rem !important;
+  }
+
+  /* Fix for the colliding secondary nav */
+  .header nav div > a:not(.btn-ultimate) {
+    display: none !important; /* Hide secondary links on mobile to prevent mess */
+  }
+
+  /* --- 7. BOTTLE PERFECTION --- */
+  .hero-visual-block img {
+    width: 75% !important;
+    max-width: 320px !important;
+    margin: 3rem auto 0 auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
