@@ -130,6 +130,22 @@ function initLiquidParallax() {
 }
 
 /**
+ * 4. STEALTH HEADER TRANSITION (Discovery UX)
+ */
+function initHeaderScroll() {
+  const header = document.querySelector('.header');
+  if (!header) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+}
+
+/**
  * START SUITE
  */
 document.addEventListener('DOMContentLoaded', () => {
@@ -141,6 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initAdvancedPincode();
     initFAQ();
     initLiquidParallax();
+    initHeaderScroll();
 
     // AOS Initialization (Handling the Discovery Fade-ups)
     if (window.AOS) {
