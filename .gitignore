@@ -1,0 +1,18 @@
+# Private Strategy Vault (Confidential)
+strategy/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Documentation / Strategy (Optional to ignore)
+FINAL_SEO_WALKTHROUGH.md
+SEO_DOMINANCE_PLAN.md
+PRD.md
+TRD.md
+TODO.md
+
+# Large/Temporary Files
+*.log
+node_modules/
+建设内容

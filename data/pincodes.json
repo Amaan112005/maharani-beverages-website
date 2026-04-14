@@ -1,0 +1,22 @@
+{
+  "700001": { "area": "Dalhousie, Kolkata", "available": true },
+  "700002": { "area": "Cossipore, Kolkata", "available": true },
+  "700003": { "area": "Baghbazar, Kolkata", "available": true },
+  "700007": { "area": "Burrabazar, Kolkata", "available": true },
+  "700012": { "area": "Bowbazar, Kolkata", "available": true },
+  "700013": { "area": "Esplanade, Kolkata", "available": true },
+  "700016": { "area": "Park Street, Kolkata", "available": true },
+  "700019": { "area": "Ballygunge, Kolkata", "available": true },
+  "700020": { "area": "Bhowanipore, Kolkata", "available": true },
+  "700027": { "area": "Alipore, Kolkata", "available": true },
+  "700033": { "area": "Tollygunge, Kolkata", "available": true },
+  "700053": { "area": "New Alipore, Kolkata", "available": true },
+  "700071": { "area": "Park Street/Kolkata Mall, Kolkata", "available": true },
+  "711101": { "area": "Howrah Station/Kadam Tala, Howrah", "available": true },
+  "711102": { "area": "Salkia, Howrah", "available": true },
+  "711103": { "area": "Shibpur, Howrah", "available": true },
+  "711104": { "area": "Ramrajatala, Howrah", "available": true },
+  "711106": { "area": "Liluah, Howrah", "available": true },
+  "713101": { "area": "Burdwan Central", "available": false },
+  "741235": { "area": "Nadia District", "available": false }
+}

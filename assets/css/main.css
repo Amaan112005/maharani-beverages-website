@@ -1,0 +1,648 @@
+/* ========================================
+   ZENITH - WORLD-CLASS ELITE (HERITAGE)
+   ======================================== */
+
+/* 1. RESET & BASE */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-bg);
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  overflow-x: hidden;
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 0;
+}
+
+/* Atmospheric Ambient Light (Subtle Ambient Life) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(circle at 30% 40%, rgba(181, 158, 109, 0.03), transparent 40%),
+              radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.015), transparent 50%);
+  filter: blur(120px);
+  animation: atmosphericMove 40s ease-in-out infinite alternate;
+}
+
+@keyframes atmosphericMove {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.1); opacity: 1; }
+}
+
+/* Preloader (Luxury Shield) */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s var(--ease-out-expo), visibility 1s;
+}
+
+.preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-content {
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+.pl-logo {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: var(--color-accent);
+  margin-bottom: 2rem;
+}
+
+.pl-progress {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.pl-bar {
+  width: 0%;
+  height: 100%;
+  background: var(--color-accent);
+  transition: width 0.4s ease;
+}
+
+/* 2. ELITE TYPOGRAPHY */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1;
+  letter-spacing: var(--kerning-tight);
+}
+
+.logo {
+  font-family: var(--font-heading);
+  letter-spacing: 4px;
+}
+
+p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+/* Single-Block Fade-Up (Discovery UX) */
+.aos-init[data-aos] {
+  transition-property: transform, opacity;
+}
+
+.aos-init[data-aos="fade-up"] {
+  transform: translateY(40px);
+  opacity: 0;
+  transition: all 1.8s var(--ease-out-expo);
+}
+
+[data-aos="fade-up"].aos-animate {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* 3. UNDERSTATED COMPONENTS */
+.btn-ultimate {
+  position: relative;
+  display: inline-flex;
+  padding: 1.5rem 4rem; /* Increased for 48px+ tap target compliance */
+  background: transparent;
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: all 0.6s var(--ease-out-expo);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  min-height: 48px; /* Strict A11y compliance */
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-ultimate:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.btn-ultimate.secondary {
+  border-color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-ultimate.secondary:hover {
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+/* LUXURY SECTIONING */
+section {
+  padding: var(--section-padding) 0;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  section { padding: 5rem 0; } /* Optimizing vertical rhythm for mobile */
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* 4. HERO ELITE (EDITORIAL) */
+.hero-elite h1 {
+  font-size: var(--font-size-hero);
+  color: var(--color-platinum);
+}
+
+.hero-visual-block img {
+  border-left: 1px solid rgba(181, 158, 109, 0.2);
+  padding-left: 2rem;
+}
+
+/* 5. CINEMATIC ORIGIN SECTION */
+.origin-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.origin-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--color-bg) 0%, transparent 50%, var(--color-bg) 100%);
+}
+
+.origin-overlay {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  max-width: 600px;
+}
+
+/* 6. STATIC REPUTATION */
+.counter-box {
+  flex: 1;
+}
+
+.counter-number {
+  font-family: var(--font-heading);
+  font-size: 4.5rem;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.counter-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* 7. THE JOURNEY (EDITORIAL) */
+.journey-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10rem;
+  align-items: center;
+}
+
+.journey-item {
+  position: relative;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  padding-left: 3rem;
+}
+
+.h-panel-num {
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  color: var(--color-accent);
+  opacity: 0.1;
+  position: absolute;
+  top: -2rem;
+  left: -2rem;
+}
+
+/* 8. PRODUCT SUITE (STATIC) */
+.product-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 3rem;
+}
+
+.perspective-card {
+  padding: 4rem;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.01);
+  transition: all 0.8s var(--ease-out-expo);
+}
+
+.perspective-card:hover {
+  background: rgba(181, 158, 109, 0.02);
+  border-color: var(--color-accent);
+  transform: translateY(-10px);
+}
+
+.perspective-card h3 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.badge {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--color-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+/* 8.5 QUALITY ENGINE (ELITE BLUEPRINT) */
+.filtration-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.filtration-card {
+  padding: 4rem 2rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.filtration-card:last-child {
+  border-right: none;
+}
+
+.card-num {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  opacity: 0.4;
+  letter-spacing: 5px;
+}
+
+.filtration-card h4 {
+  font-size: 1.125rem;
+  letter-spacing: 2px;
+  line-height: 1.4;
+  color: var(--color-platinum);
+}
+
+.filtration-card p {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+.card-detail {
+  margin-top: auto;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  padding-top: 1.5rem;
+}
+
+/* 9.5 REPUTATION SUITE (ELITE MONOLITH) */
+.reputation-monolith {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 8rem 4rem;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.monolith-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.monolith-divider {
+  width: 100px;
+  height: 1px;
+  background: var(--color-accent);
+  opacity: 0.3;
+  margin: 6rem auto;
+}
+
+.quote-mark {
+  font-family: var(--font-heading);
+  font-size: 8rem;
+  color: var(--color-accent);
+  opacity: 0.1;
+  line-height: 0;
+}
+
+.testimony-text {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  color: var(--color-platinum);
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.patron-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.patron-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--color-accent);
+}
+
+.patron-title {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--color-muted);
+}
+
+/* 9. PINCODE PORTAL */
+.portal-box {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 0;
+  display: flex;
+  max-width: 500px;
+  transition: border-color 0.6s;
+}
+
+.portal-box:focus-within {
+  border-color: var(--color-accent);
+}
+
+.portal-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  outline: none;
+}
+
+.portal-box button {
+  background: transparent;
+  color: var(--color-accent);
+  border: none;
+  font-weight: 700;
+  letter-spacing: 3px;
+  cursor: pointer;
+  padding: 0 2rem;
+}
+
+/* 10. ELITE MATERIALS & PLACEHOLDERS */
+.liquid-glass-placeholder {
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.03) 50%, rgba(255,255,255,0.01) 100%);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-glass-placeholder::before {
+  content: "VISUAL ARCHIVE PENDING";
+  font-size: 0.6rem;
+  letter-spacing: 8px;
+  color: var(--color-accent);
+  opacity: 0.3;
+  font-weight: 800;
+}
+
+.liquid-glass-placeholder::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(181, 158, 109, 0.05) 0%, transparent 70%);
+  animation: liquidPulse 15s linear infinite;
+}
+
+@keyframes liquidPulse {
+  0% { transform: translate(-10%, -10%); }
+  50% { transform: translate(10%, 20%); }
+  100% { transform: translate(-10%, -10%); }
+}
+
+/* 10.1 ELITE MARQUEE (GOVERNANCE) */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: eliteMarquee 40s linear infinite;
+}
+
+.marquee-item {
+  flex-shrink: 0;
+}
+
+@keyframes eliteMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* 11. FAQ & FOOTER */
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 3.5rem 0;
+  background: transparent;
+  color: var(--color-white);
+  border: none;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.4s;
+}
+
+.faq-question:hover {
+  color: var(--color-accent);
+}
+
+.faq-question .icon {
+  font-size: 1.5rem;
+  transition: transform 0.6s var(--ease-out-expo);
+  color: var(--color-accent);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.8s var(--ease-out-expo);
+}
+
+.faq-answer p {
+  padding: 0 0 4rem 0;
+  color: var(--color-muted);
+  line-height: 2;
+  font-size: 1.125rem;
+  max-width: 700px;
+}
+
+/* Active State */
+.faq-item.active .faq-answer {
+  max-height: 500px;
+}
+
+.faq-item.active .icon {
+  transform: rotate(45deg);
+}
+
+footer {
+  padding: 10rem 0;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 11. RESPONSIVE */
+@media (max-width: 991px) {
+  .hero-elite { padding-top: 150px; }
+  .hero-elite .container { grid-template-columns: 1fr; text-align: center; }
+  .hero-text-block h1 { font-size: clamp(3rem, 12vw, 4.5rem); }
+  .hero-visual-block { margin-top: 4rem; }
+  .hero-visual-block img { border-left: none; padding-left: 0; width: 100%; margin: 0; }
+  .product-showcase { grid-template-columns: 1fr; }
+  .journey-grid { grid-template-columns: 1fr; gap: 6rem; }
+  .counter-number { font-size: 3rem; }
+  .reputation-monolith { padding: 4rem 2rem; }
+}
+
+@media (max-width: 480px) {
+  .btn-ultimate { width: 100%; padding: 1.5rem 2rem; }
+  .hero-text-block h1 { font-size: 2.8rem; }
+}
+/* 11. LUXURY UTILITIES (WHATSAPP CONCIERGE) */
+.whatsapp-float {
+  position: fixed;
+  bottom: 4rem;
+  right: 4rem; /* Forcing absolute right placement */
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 
+    0 30px 60px rgba(0,0,0,0.6), 
+    inset 0 3px 3px rgba(255,255,255,0.2),
+    inset 0 -3px 3px rgba(0,0,0,0.2);
+  animation: zenithFloat 6s ease-in-out infinite;
+  transition: all 0.6s var(--ease-out-expo);
+}
+
+@keyframes zenithFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1) translateY(-25px);
+  background: rgba(37, 211, 102, 0.1);
+  border-color: rgba(37, 211, 102, 0.5);
+  box-shadow: 
+    0 40px 80px rgba(0,0,0,0.8), 
+    0 0 40px rgba(37, 211, 102, 0.2),
+    inset 0 4px 4px rgba(255,255,255,0.3);
+}
+
+.whatsapp-float svg {
+  width: 32px;
+  height: 32px;
+  fill: white;
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+  transition: transform 0.4s var(--ease-out-expo);
+}
+
+.whatsapp-float:hover svg {
+  transform: scale(1.1) rotate(-10deg);
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+  }
+}

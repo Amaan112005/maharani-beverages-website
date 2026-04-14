@@ -1,0 +1,41 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://maharanibeverages.com/#organization",
+      "name": "Zenith",
+      "legalName": "Maharani Beverages LLP",
+      "url": "https://maharanibeverages.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://maharanibeverages.com/zenith_logo_main.png",
+        "width": 512,
+        "height": 512
+      },
+      "foundingDate": "2024",
+      "description": "Zenith is the architecture of modern water. Molecularly refined and mineral-balanced premium hydration.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ranihati Industrial Park Mallick Bagan Howrah",
+        "addressLocality": "Kolkata, West Bengal",
+        "postalCode": "711322",
+        "addressCountry": "IN"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://maharanibeverages.com/#website",
+      "url": "https://maharanibeverages.com/",
+      "name": "Zenith Water",
+      "publisher": {
+        "@id": "https://maharanibeverages.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://maharanibeverages.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}

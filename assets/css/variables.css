@@ -1,0 +1,35 @@
+:root {
+  /* Colors - World-Class Elite (Voss / High-Fashion) */
+  --color-primary: #010411;    /* Deep Onyx Navy */
+  --color-secondary: #0F172A;  /* Deep Slate */
+  --color-accent: #B59E6D;     /* Champagne Gold - Muted */
+  --color-platinum: #E2E8F0;   /* Liquid Platinum - High Contrast */
+  --color-accent-glow: rgba(181, 158, 109, 0.15);
+  --color-bg: #010411;
+  --color-text: #F8FAFC;
+  --color-muted: #64748B;      /* More desaturated for luxury */
+  --color-white: #FFFFFF;
+
+  /* Spacing - Fine-Dining Layout */
+  --section-padding: 220px;
+  --container-max: 1200px;
+  --gutter: 60px;
+
+  /* Classic Typography (Serif Heritage) */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-size-hero: clamp(3.5rem, 15vw, 10rem);
+  --font-size-h2: clamp(2.5rem, 10vw, 5rem);
+  --kerning-tight: -0.04em;
+  --kerning-wide: 0.15em;
+
+  /* Material System */
+  --glass-bg: rgba(255, 255, 255, 0.02);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --radius-elite: 0px; 
+  
+  /* Luxury Curves */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 1.5s var(--ease-out-expo);
+  --transition-fast: 0.6s var(--ease-out-expo);
+}
