@@ -6,53 +6,6 @@
 'use strict';
 
 /**
- * 0. LUXURY PRELOADER (Minimal Silence)
- */
-function initPreloader() {
-  const preloader = document.getElementById('preloader');
-  const bar = document.querySelector('.pl-bar');
-  
-  if (!preloader) return;
-
-  document.body.style.overflow = 'hidden'; 
-  
-  const finishLoading = () => {
-    if (preloader.classList.contains('hidden')) return; 
-    if (bar) bar.style.width = '100%';
-    
-    setTimeout(() => {
-      preloader.classList.add('hidden');
-      document.body.style.overflow = 'auto'; 
-      // Force AOS refresh if needed
-      if (window.AOS) window.AOS.init();
-    }, 600);
-  };
-
-  let progress = 0;
-  const interval = setInterval(() => {
-    progress += (Math.random() * 15) + 5;
-    if (progress >= 100) {
-      clearInterval(interval);
-      finishLoading();
-    } else if (bar) {
-      bar.style.width = progress + '%';
-    }
-  }, 50);
-
-  // Safety Net 1: Loaded Event
-  window.addEventListener('load', () => {
-    clearInterval(interval);
-    finishLoading();
-  });
-
-  // Safety Net 2: Maximum Wait Time (3 seconds)
-  setTimeout(() => {
-    clearInterval(interval);
-    finishLoading();
-  }, 3000);
-}
-
-/**
  * 1. ADVANCED PINCODE SYSTEM (Discreet Search)
  */
 
@@ -150,8 +103,6 @@ function initHeaderScroll() {
  */
 document.addEventListener('DOMContentLoaded', () => {
   try {
-    // Initiating the preloader immediately
-    initPreloader();
     
     // Logic modules for high-class interaction
     initAdvancedPincode();
@@ -172,9 +123,5 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('🏛️ ZENITH ELITE BRAND ENGINE LOADED');
   } catch (err) {
     console.error('ZENITH CORE ERROR:', err);
-    // Emergency reveal if JS suite fails
-    const preloader = document.getElementById('preloader');
-    if (preloader) preloader.classList.add('hidden');
-    document.body.style.overflow = 'auto';
   }
 });
