@@ -1,5 +1,5 @@
 /* ========================================
-   ZENITH - WORLD-CLASS ELITE (HERITAGE)
+   ZENITH V3 — SYNE + DM SANS ARCHITECTURE
    ======================================== */
 
 /* 1. RESET & BASE */
@@ -23,25 +23,41 @@ body {
   -webkit-font-smoothing: antialiased;
   position: relative;
   z-index: 0;
+  line-height: 1.6;
 }
 
-/* Atmospheric Ambient Light (Subtle Ambient Life) */
+/* Wire Syne to ALL headings globally */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1;
+}
+
+/* Water-Blue Atmospheric Ambient (replaces gold-only glow) */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: -1;
-  background: radial-gradient(circle at 30% 40%, rgba(181, 158, 109, 0.03), transparent 40%),
-              radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.015), transparent 50%);
-  filter: blur(120px);
+  background:
+    radial-gradient(circle at 20% 30%, rgba(10, 61, 107, 0.12), transparent 45%),
+    radial-gradient(circle at 75% 65%, rgba(181, 158, 109, 0.04), transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(10, 40, 80, 0.08), transparent 50%);
+  filter: blur(80px);
   animation: atmosphericMove 40s ease-in-out infinite alternate;
 }
 
 @keyframes atmosphericMove {
-  0% { transform: scale(1); opacity: 0.6; }
+  0%   { transform: scale(1);   opacity: 0.7; }
   100% { transform: scale(1.1); opacity: 1; }
 }
+
+/* Section Background Rhythm Utilities */
+.section-dark    { background: var(--section-dark); }
+.section-mid     { background: var(--section-mid); }
+.section-blue    { background: var(--water-gradient-section); }
+.section-glass   { background: var(--water-gradient-subtle); border-top: 1px solid rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.04); }
+
 
   font-weight: 700;
   letter-spacing: 5px;

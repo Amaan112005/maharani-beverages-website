@@ -58,8 +58,8 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;800&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap"
     rel="stylesheet">
 
   <!-- CSS -->
@@ -83,26 +83,123 @@
 
 
 
-  <!-- ================= ATMOSPHERIC DEPTH (Liquid Light) ================= -->
-  <!-- body::before handles the ambient life -->
+  <!-- ================= ANNOUNCEMENT BAR ================= -->
+  <div id="announcement-bar" style="background: linear-gradient(90deg, #0a1628, #0d2244, #0a1628); padding: 0.6rem 2rem; text-align: center; font-size: 0.7rem; font-weight: 600; letter-spacing: 2px; color: rgba(255,255,255,0.9); position: relative; z-index: 1001; overflow: hidden;">
+    <span id="ann-text">🚀 Now expanding to new zones in Kolkata — Limited distributor territories available</span>
+  </div>
+  <script>
+    var annMsgs = [
+      '🚀 Now expanding to new zones in Kolkata — Limited territories available',
+      '⚡ Same-day delivery across all Howrah & Kolkata pincodes',
+      '🏆 FSSAI certified · BIS approved · Bengal\'s premium water brand'
+    ];
+    var annIdx = 0;
+    setInterval(function() {
+      annIdx = (annIdx + 1) % annMsgs.length;
+      var el = document.getElementById('ann-text');
+      if (el) { el.style.opacity = '0'; setTimeout(function() { el.textContent = annMsgs[annIdx]; el.style.opacity = '1'; }, 300); }
+    }, 4000);
+    document.getElementById('ann-text').style.transition = 'opacity 0.3s';
+  </script>
 
   <!-- ================= STEALTH HEADER ================= -->
-  <header class="header">
+  <header class="header" id="main-header">
     <nav class="container" style="display: flex; justify-content: space-between; align-items: center; pointer-events: auto;">
       
-      <!-- Upper Left: Brand Identity -->
+      <!-- Left: Brand Identity -->
       <div style="display: flex; align-items: center; gap: 1rem;">
-        <img src="zenith_logo_main.png" alt="Zenith Premium Water - Official Brand Identity" class="logo" style="width: 80px; height: auto;">
+        <a href="index.html"><img src="zenith_logo_main.png" alt="Zenith Premium Water - Official Brand Identity" class="logo" style="width: 80px; height: auto;"></a>
       </div>
 
-      <!-- Right: Navigation Suite -->
-      <div style="display: flex; gap: 3rem; align-items: center;">
-        <a href="#journey" aria-label="Learn about the Zenith journey" style="color: rgba(255,255,255,0.6); text-decoration: none; font-weight: 600; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px;">The Journey</a>
-        <a href="pages/distributor.html" aria-label="Access the Distribution Network" class="btn-ultimate" style="padding: 0.8rem 2.5rem; font-size: 0.6rem; border-color: rgba(255,255,255,0.1); color: white;">Join Network</a>
+      <!-- Center/Right: Desktop Nav -->
+      <div class="desktop-nav" style="display: flex; gap: 3rem; align-items: center;">
+        <a href="#products" style="color: rgba(255,255,255,0.6); text-decoration: none; font-weight: 600; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px;">Products</a>
+        <a href="#journey" style="color: rgba(255,255,255,0.6); text-decoration: none; font-weight: 600; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px;">The Journey</a>
+        <a href="tel:+918777627142" style="color: rgba(255,255,255,0.5); text-decoration: none; font-weight: 600; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px;">+91 87776 27142</a>
+        <a href="pages/distributor.html" class="btn-ultimate" style="padding: 0.8rem 2rem; font-size: 0.6rem; border-color: rgba(255,255,255,0.1); color: white; position: relative; display: inline-flex; align-items: center; gap: 0.6rem;">
+          Join Network
+          <span style="background: #EF4444; color: white; font-size: 0.5rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 20px; letter-spacing: 1.5px; text-transform: uppercase; white-space: nowrap;">Zones Available</span>
+        </a>
       </div>
+
+      <!-- Mobile: Hamburger Button -->
+      <button id="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu" style="display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; z-index: 1100;">
+        <span class="ham-line" style="display: block; width: 24px; height: 2px; background: white; transition: all 0.3s;"></span>
+        <span class="ham-line" style="display: block; width: 24px; height: 2px; background: white; transition: all 0.3s;"></span>
+        <span class="ham-line" style="display: block; width: 16px; height: 2px; background: white; transition: all 0.3s;"></span>
+      </button>
 
     </nav>
+
+    <!-- Mobile Slide Menu -->
+    <div id="mobile-menu" style="display: none; flex-direction: column; gap: 0; background: rgba(10, 16, 35, 0.98); backdrop-filter: blur(30px); border-top: 1px solid rgba(255,255,255,0.06); padding: 0; overflow: hidden; max-height: 0; transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1), padding 0.3s;">
+      <a href="#products" onclick="closeMobileMenu()" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; padding: 1.5rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Products</a>
+      <a href="#journey" onclick="closeMobileMenu()" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; padding: 1.5rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.05);">The Journey</a>
+      <a href="tel:+918777627142" style="color: #B59E6D; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; padding: 1.5rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.05);">📞 +91 87776 27142</a>
+      <a href="pages/distributor.html" style="color: white; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; padding: 1.5rem 2rem; background: rgba(181,158,109,0.1); display: flex; align-items: center; justify-content: space-between;">
+        Become Distributor
+        <span style="background: #EF4444; color: white; font-size: 0.5rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 20px; letter-spacing: 1px;">Zones Available</span>
+      </a>
+    </div>
   </header>
+
+  <style>
+    /* Sticky Nav: Transparent → Solid Navy */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+      background: transparent;
+    }
+    .header.scrolled {
+      background: rgba(8, 14, 32, 0.97) !important;
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.06), 0 8px 32px rgba(0,0,0,0.4);
+    }
+    /* Mobile: show hamburger, hide desktop nav */
+    @media (max-width: 768px) {
+      .desktop-nav { display: none !important; }
+      #hamburger { display: flex !important; }
+    }
+    /* Hamburger open state */
+    #hamburger.open .ham-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    #hamburger.open .ham-line:nth-child(2) { opacity: 0; }
+    #hamburger.open .ham-line:nth-child(3) { width: 24px; transform: translateY(-7px) rotate(-45deg); }
+    /* Mobile menu open state */
+    #mobile-menu.open {
+      display: flex !important;
+      max-height: 400px !important;
+      padding: 0 !important;
+    }
+  </style>
+
+  <script>
+    /* Scroll → Solid Navy */
+    window.addEventListener('scroll', function() {
+      var h = document.getElementById('main-header');
+      if (window.scrollY > 100) { h.classList.add('scrolled'); }
+      else { h.classList.remove('scrolled'); }
+    });
+
+    /* Mobile Menu Toggle */
+    function toggleMobileMenu() {
+      var menu = document.getElementById('mobile-menu');
+      var btn = document.getElementById('hamburger');
+      var isOpen = menu.classList.contains('open');
+      if (isOpen) { closeMobileMenu(); }
+      else { menu.style.display = 'flex'; setTimeout(function() { menu.classList.add('open'); btn.classList.add('open'); }, 10); }
+    }
+    function closeMobileMenu() {
+      var menu = document.getElementById('mobile-menu');
+      var btn = document.getElementById('hamburger');
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      setTimeout(function() { if (!menu.classList.contains('open')) menu.style.display = 'none'; }, 400);
+    }
+  </script>
+
 
   <!-- ================= MAIN ================= -->
   <main>
@@ -130,8 +227,102 @@
       </div>
     </section>
 
+    <!-- ================= HIGH-CONVERSION PINCODE MATRIX ================= -->
+    <section class="pincode-matrix" style="padding: 4rem 0; background: linear-gradient(180deg, rgba(1, 4, 17, 0) 0%, rgba(15, 23, 42, 0.4) 100%);">
+      <div class="container" style="max-width: 600px; text-align: center; margin: 0 auto;">
+        <h4 style="color: white; font-size: 1.5rem; margin-bottom: 0.5rem; letter-spacing: -0.5px;">Check Availability in Your Area</h4>
+        <p style="color: var(--color-muted); margin-bottom: 2rem; font-size: 0.95rem;">Enter your 6-digit pincode to verify instant delivery logistics.</p>
+        
+        <form id="pincode-form" onsubmit="zenithPincodeCheck(event)" style="display: flex; gap: 1rem; flex-direction: column; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); padding: 10px; border-radius: 12px; backdrop-filter: blur(20px);">
+          <div style="display: flex; gap: 0.5rem; width: 100%;">
+            <input type="text" id="pincode-input" placeholder="e.g. 700001" maxlength="6" style="flex-grow: 1; min-width: 0; color: white; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); padding: 1.25rem; font-size: 1.1rem; text-align: center; border-radius: 8px; outline: none; transition: border 0.3s;">
+            <button type="submit" class="btn-ultimate" style="background: var(--color-accent); color: var(--color-primary); border: none; padding: 0 2rem; white-space: nowrap; border-radius: 8px; cursor: pointer;">VERIFY</button>
+          </div>
+        </form>
+        <div id="pincode-result" style="width: 100%; text-align: left; margin-top: 0.5rem;"></div>
+      </div>
+    </section>
+
+    <script>
+    var ZENITH_PINCODES = {
+      '700001':'Dalhousie, Kolkata','700002':'Cossipore, Kolkata','700003':'Baghbazar, Kolkata',
+      '700005':'Shyambazar, Kolkata','700006':'Shyampur, Kolkata','700007':'Burrabazar, Kolkata',
+      '700009':'Garden Reach, Kolkata','700010':'Kasba, Kolkata','700012':'Bowbazar, Kolkata',
+      '700013':'Esplanade, Kolkata','700014':'Karaya, Kolkata','700015':'Kalighat, Kolkata',
+      '700016':'Park Street, Kolkata','700017':'Rash Behari, Kolkata','700018':'Hazra, Kolkata',
+      '700019':'Ballygunge, Kolkata','700020':'Bhowanipore, Kolkata','700022':'Ekbalpore, Kolkata',
+      '700023':'Manicktala, Kolkata','700025':'Behala, Kolkata','700026':'Parnasree, Kolkata',
+      '700027':'Alipore, Kolkata','700028':'Chetla, Kolkata','700029':'Jadavpur, Kolkata',
+      '700030':'Thakurpukur, Kolkata','700031':'Garia, Kolkata','700032':'Dum Dum, Kolkata',
+      '700033':'Tollygunge, Kolkata','700036':'Baguiati, Kolkata','700039':'Salt Lake, Kolkata',
+      '700040':'Biddhanagar, Kolkata','700047':'Golpark, Kolkata','700048':'Regent Park, Kolkata',
+      '700053':'New Alipore, Kolkata','700054':'Naktala, Kolkata','700055':'Santoshpur, Kolkata',
+      '700059':'Kankurgachi, Kolkata','700064':'Bangur, Kolkata','700065':'Bansdroni, Kolkata',
+      '700067':'Patuli, Kolkata','700068':'Mukundapur, Kolkata','700071':'Kolkata Mall Area, Kolkata',
+      '700074':'Haridevpur, Kolkata','700078':'Tiljala, Kolkata','700080':'Baranagar, Kolkata',
+      '700082':'Shobhabazar, Kolkata','700084':'Belgachia, Kolkata','700086':'Narendrapur, Kolkata',
+      '700088':'Sonarpur, Kolkata','700089':'Rajpur, Kolkata','700090':'Noapara, Kolkata',
+      '700095':'Khardah, Kolkata','700099':'Kamarhati, Kolkata','700104':'Rajarhat, Kolkata',
+      '700108':'Newtown, Kolkata',
+      '711101':'Howrah Station, Howrah','711102':'Salkia, Howrah','711103':'Shibpur, Howrah',
+      '711104':'Ramrajatala, Howrah','711105':'Bally, Howrah','711106':'Liluah, Howrah',
+      '711107':'Belur, Howrah','711108':'Dasnagar, Howrah','711109':'Santragachi, Howrah',
+      '711110':'Andul, Howrah','711111':'Domjur, Howrah','711112':'Jagacha, Howrah',
+      '711113':'Panchla, Howrah','711201':'Uluberia, Howrah','711202':'Shyampur, Howrah',
+      '711302':'Amta, Howrah','711303':'Udaynarayanpur, Howrah','711304':'Jagatballavpur, Howrah',
+      '711309':'Nalpur, Howrah','711315':'Kolaghat, Howrah','711316':'Panskura, Howrah',
+      '711322':'Ranihati, Howrah','711401':'Arambagh, Howrah'
+    };
+
+    function zenithPincodeCheck(e) {
+      e.preventDefault();
+      var val = document.getElementById('pincode-input').value.trim();
+      var res = document.getElementById('pincode-result');
+      
+      if (val.length !== 6 || isNaN(val)) {
+        res.innerHTML = '<div class="pincode-result-msg error">⚠ Please enter a valid 6-digit pincode.</div>';
+        return;
+      }
+
+      res.innerHTML = '<div class="pincode-result-msg checking">🔍 Checking availability...</div>';
+
+      setTimeout(function() {
+        var area = ZENITH_PINCODES[val];
+        var isKolkata = val.indexOf('700') === 0;
+        var isHowrah  = val.indexOf('711') === 0;
+
+        if (area) {
+          var waMsg = encodeURIComponent('Hi, I want to order ZENITH water in ' + area + ' (' + val + ')');
+          res.innerHTML = '<div class="pincode-result-card available">' +
+            '<div class="pincode-area-name">📍 ' + area + '</div>' +
+            '<div class="pincode-status">✅ ZENITH is available in your area</div>' +
+            '<div class="pincode-delivery">⚡ Delivery available within 24 hours</div>' +
+            '<div class="pincode-actions"><a href="https://wa.me/918777627142?text=' + waMsg + '" target="_blank" class="pincode-btn-primary">💬 Order on WhatsApp</a></div>' +
+          '</div>';
+        } else if (isKolkata || isHowrah) {
+          var approx = isKolkata ? 'Kolkata' : 'Howrah';
+          var waMsg2 = encodeURIComponent('Hi, I want to order ZENITH water. My pincode is ' + val + ' (' + approx + ')');
+          res.innerHTML = '<div class="pincode-result-card available">' +
+            '<div class="pincode-area-name">📍 ' + approx + ' Region</div>' +
+            '<div class="pincode-status">✅ ZENITH is available in your region</div>' +
+            '<div class="pincode-delivery">⚡ Delivery available within 24 hours</div>' +
+            '<div class="pincode-actions"><a href="https://wa.me/918777627142?text=' + waMsg2 + '" target="_blank" class="pincode-btn-primary">💬 Order on WhatsApp</a></div>' +
+          '</div>';
+        } else {
+          var waMsg3 = encodeURIComponent('Hi, please start ZENITH water supply in my area (' + val + ')');
+          res.innerHTML = '<div class="pincode-result-card unavailable">' +
+            '<div class="pincode-status">🚀 We\'re expanding to your area soon!</div>' +
+            '<div class="pincode-delivery">Be the first to get ZENITH in <strong>' + val + '</strong></div>' +
+            '<div class="pincode-actions"><a href="https://wa.me/918777627142?text=' + waMsg3 + '" target="_blank" class="pincode-btn-secondary">📩 Request Availability</a></div>' +
+          '</div>';
+        }
+      }, 700);
+    }
+    </script>
+
+
     <!-- ================= THE IMPACT SUITE (VERIFIED PERFORMANCE) ================= -->
-    <section class="counter-section">
+    <section class="counter-section section-mid">
       <div class="container" style="text-align: center; margin-bottom: 8rem;" data-aos="fade-up">
         <p class="counter-label" style="color: var(--color-accent); margin-bottom: 2rem;">The Performance</p>
         <h2 style="font-size: var(--font-size-h2); line-height: 1;">THE IMPACT<br>SUITE.</h2>
@@ -155,53 +346,213 @@
     </section>
 
     <!-- ================= 3D PRODUCT SHOWCASE ================= -->
-    <section id="products" class="container">
-      <h2 style="text-align: center; font-size: var(--font-size-h2); margin-bottom: 4rem;" data-aos="fade-up">The Intelligence Suite</h2>
-      
-      <div class="product-showcase">
-        
-        <article class="perspective-container">
-          <a href="pages/product-300ml.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
-            <div class="perspective-card product-card" data-aos="fade-up" data-aos-delay="100">
-              <h3>300<span style="color:var(--color-accent)">ML</span></h3>
-              <p style="color: var(--color-muted);">Sleek. Portable. Essential.</p>
-              <div class="badge">Travel Unit</div>
+    <!-- ================= PRODUCT CARDS V3 ================= -->
+    <section id="products" style="padding: 10rem 0; background: var(--water-gradient-section);">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 6rem;" data-aos="fade-up">
+          <p class="counter-label" style="color: var(--color-accent); margin-bottom: 1.5rem;">The Collection</p>
+          <h2 style="font-size: var(--font-size-h2);">THE INTELLIGENCE<br>SUITE.</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+
+          <!-- 250 ML -->
+          <a href="pages/product-300ml.html" style="text-decoration: none; color: inherit;" data-aos="fade-up" data-aos-delay="100">
+            <div class="v3-product-card">
+              <div class="v3-card-image">
+                <img src="zenith_bottle_hero.png" alt="ZENITH 250ml drinking water bottle Kolkata" loading="lazy">
+              </div>
+              <div class="v3-card-body">
+                <div class="v3-card-size">250 <span>ML</span></div>
+                <div class="v3-card-tag">Travel Unit</div>
+                <p class="v3-card-desc">Sleek. Portable. Essential.</p>
+                <div class="v3-card-footer">
+                  <div class="v3-mrp-badge">MRP ₹6</div>
+                  <div class="v3-card-arrow">→</div>
+                </div>
+              </div>
             </div>
           </a>
-        </article>
 
-        <article class="perspective-container">
-          <a href="pages/product-500ml.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
-            <div class="perspective-card product-card" data-aos="fade-up" data-aos-delay="200">
-              <h3>500<span style="color:var(--color-accent)">ML</span></h3>
-              <p style="color: var(--color-muted);">Office precision. Daily focus.</p>
-              <div class="badge">Business Unit</div>
+          <!-- 500 ML — Most Popular -->
+          <a href="pages/product-500ml.html" style="text-decoration: none; color: inherit;" data-aos="fade-up" data-aos-delay="200">
+            <div class="v3-product-card v3-card-featured">
+              <div class="v3-popularity-tag" style="background: #3B82F6;">⭐ Most Popular</div>
+              <div class="v3-card-image">
+                <img src="zenith_bottle_hero.png" alt="ZENITH 500ml premium drinking water bottle Kolkata" loading="lazy">
+              </div>
+              <div class="v3-card-body">
+                <div class="v3-card-size">500 <span>ML</span></div>
+                <div class="v3-card-tag">Business Unit</div>
+                <p class="v3-card-desc">Office precision. Daily focus.</p>
+                <div class="v3-card-footer">
+                  <div class="v3-mrp-badge">MRP ₹10</div>
+                  <div class="v3-card-arrow">→</div>
+                </div>
+              </div>
             </div>
           </a>
-        </article>
 
-        <article class="perspective-container">
-          <a href="pages/product-1l.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
-            <div class="perspective-card product-card" data-aos="fade-up" data-aos-delay="300">
-               <h3>1.0<span style="color:var(--color-accent)">L</span></h3>
-               <p style="color: var(--color-muted);">Ultimate hydration. Full peak.</p>
-               <div class="badge">Performance Unit</div>
+          <!-- 1 LITER — Best Seller -->
+          <a href="pages/product-1l.html" style="text-decoration: none; color: inherit;" data-aos="fade-up" data-aos-delay="300">
+            <div class="v3-product-card v3-card-featured">
+              <div class="v3-popularity-tag" style="background: #B59E6D; color: #010411;">🏆 Best Seller</div>
+              <div class="v3-card-image">
+                <img src="zenith_bottle_hero.png" alt="ZENITH 1 litre premium drinking water bottle Kolkata" loading="lazy">
+              </div>
+              <div class="v3-card-body">
+                <div class="v3-card-size">1.0 <span>L</span></div>
+                <div class="v3-card-tag">Performance Unit</div>
+                <p class="v3-card-desc">Ultimate hydration. Full peak.</p>
+                <div class="v3-card-footer">
+                  <div class="v3-mrp-badge">MRP ₹20</div>
+                  <div class="v3-card-arrow">→</div>
+                </div>
+              </div>
             </div>
           </a>
-        </article>
 
-        <article class="perspective-container">
-          <a href="pages/product-2l.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
-            <div class="perspective-card product-card" data-aos="fade-up" data-aos-delay="400">
-               <h3>2.0<span style="color:var(--color-accent)">L</span></h3>
-               <p style="color: var(--color-muted);">Family excellence. Event scale.</p>
-               <div class="badge">Legacy Unit</div>
+          <!-- 2 LITER -->
+          <a href="pages/product-2l.html" style="text-decoration: none; color: inherit;" data-aos="fade-up" data-aos-delay="400">
+            <div class="v3-product-card">
+              <div class="v3-card-image">
+                <img src="zenith_bottle_hero.png" alt="ZENITH 2 litre family drinking water bottle Kolkata" loading="lazy">
+              </div>
+              <div class="v3-card-body">
+                <div class="v3-card-size">2.0 <span>L</span></div>
+                <div class="v3-card-tag">Legacy Unit</div>
+                <p class="v3-card-desc">Family excellence. Event scale.</p>
+                <div class="v3-card-footer">
+                  <div class="v3-mrp-badge">MRP ₹30</div>
+                  <div class="v3-card-arrow">→</div>
+                </div>
+              </div>
             </div>
           </a>
-        </article>
 
+        </div>
       </div>
     </section>
+
+    <style>
+    /* ── V3 Product Cards ── */
+    .v3-product-card {
+      position: relative;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s cubic-bezier(0.16,1,0.3,1), border-color 0.35s;
+      cursor: pointer;
+      height: 100%;
+    }
+    .v3-product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 70px rgba(0,0,0,0.5), 0 0 0 1px rgba(181,158,109,0.25);
+      border-color: rgba(181,158,109,0.3);
+    }
+    .v3-card-featured {
+      border-color: rgba(181,158,109,0.2);
+      background: rgba(181,158,109,0.03);
+    }
+    .v3-popularity-tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      z-index: 2;
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .v3-card-image {
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      background: linear-gradient(180deg, rgba(10,61,107,0.06) 0%, rgba(0,0,0,0) 100%);
+    }
+    .v3-card-image img {
+      height: 100%;
+      max-height: 180px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+      filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
+    }
+    .v3-product-card:hover .v3-card-image img {
+      transform: scale(1.07) translateY(-4px);
+    }
+    .v3-card-body {
+      padding: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .v3-card-size {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 800;
+      color: white;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .v3-card-size span {
+      color: var(--color-accent);
+      font-size: 1rem;
+    }
+    .v3-card-tag {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--color-muted);
+      margin-bottom: 0.75rem;
+    }
+    .v3-card-desc {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+    .v3-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .v3-mrp-badge {
+      background: var(--color-accent);
+      color: var(--color-primary);
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.35rem 0.85rem;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+    .v3-card-arrow {
+      color: var(--color-accent);
+      font-size: 1.2rem;
+      transition: transform 0.3s;
+    }
+    .v3-product-card:hover .v3-card-arrow {
+      transform: translateX(5px);
+    }
+    /* Mobile: stack to 2-col */
+    @media (max-width: 768px) {
+      #products > .container > div[style*="grid"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+      }
+      .v3-card-image { height: 150px; }
+    }
+    @media (max-width: 480px) {
+      #products > .container > div[style*="grid"] {
+        grid-template-columns: 1fr !important;
+      }
+    }
+    </style>
+
 
     <!-- ================= CINEMATIC ORIGIN (THE BENGAL ORIGIN) ================= -->
     <section class="origin-section" style="background-image: url('zenith_source_to_sip.png');">
@@ -218,7 +569,7 @@
     </section>
 
     <!-- ================= VERTICAL JOURNEY (EDITORIAL) ================= -->
-    <section id="journey" class="container">
+    <section id="journey" class="container" style="padding-top: 10rem; padding-bottom: 10rem; background: var(--section-mid);">
       <div style="text-align: left; margin-bottom: 12rem;" data-aos="fade-up">
         <p class="counter-label" style="color: var(--color-accent); margin-bottom: 2rem;">The Architecture</p>
         <h2 style="font-size: var(--font-size-h2); line-height: 1;">SOURCE<br>TO SIP.</h2>
@@ -304,28 +655,231 @@
       </div>
     </section>
 
-    <!-- ================= THE TRUST MARQUEE (CERTIFIED EXCELLENCE) ================= -->
-    <section id="certifications" class="marquee-section" style="padding: 10rem 0;">
-      <div class="container" style="text-align: center; margin-bottom: 6rem;">
-        <p class="counter-label" style="color: var(--color-accent); margin-bottom: 2rem;" data-aos="fade-up">The Governance</p>
-        <h2 style="font-size: var(--font-size-h2); margin-bottom: 2rem;" data-aos="fade-up">THE STANDARD<br>OF EXCELLENCE.</h2>
-        <p style="color: var(--color-muted); max-width: 600px; margin: 0 auto; line-height: 2;" data-aos="fade-up">Every drop is governed by the highest national and international protocols, ensuring absolute compliance and unparalleled safety.</p>
+    <!-- ================= CERTIFICATIONS V3 ================= -->
+    <section id="certifications" style="padding: 10rem 0; background: var(--section-mid);">
+      <div class="container">
+
+        <!-- Section Header -->
+        <div style="text-align: center; margin-bottom: 6rem;" data-aos="fade-up">
+          <p class="counter-label" style="color: var(--color-accent); margin-bottom: 1.5rem;">The Governance</p>
+          <h2 style="font-size: var(--font-size-h2); margin-bottom: 2rem;">THE STANDARD<br>OF EXCELLENCE.</h2>
+          <!-- FSSAI Prominent Number -->
+          <div style="display: inline-flex; align-items: center; gap: 0.75rem; background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.25); padding: 0.75rem 2rem; border-radius: 50px; margin-top: 1rem;">
+            <span style="color: #10B981; font-size: 1.2rem;">✓</span>
+            <span style="color: #10B981; font-weight: 700; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase;">FSSAI License No. 10025042000027</span>
+          </div>
+        </div>
+
+        <!-- Certification Cards -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 6rem;">
+
+          <!-- FSSAI -->
+          <div class="cert-card" onclick="openCertModal('fssai')" data-aos="fade-up" data-aos-delay="100">
+            <div class="cert-tick">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" style="width:20px;height:20px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              Verified
+            </div>
+            <div class="cert-icon">🏛️</div>
+            <h3 class="cert-name">FSSAI Certified</h3>
+            <p class="cert-desc">Food Safety & Standards Authority of India. Full compliance with IS 14543 packaged drinking water standards.</p>
+            <div class="cert-number">License: 10025042000027</div>
+            <div class="cert-view">View Certificate →</div>
+          </div>
+
+          <!-- BIS -->
+          <div class="cert-card" onclick="openCertModal('bis')" data-aos="fade-up" data-aos-delay="200">
+            <div class="cert-tick">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" style="width:20px;height:20px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              Verified
+            </div>
+            <div class="cert-icon">🏆</div>
+            <h3 class="cert-name">BIS Approved</h3>
+            <p class="cert-desc">Bureau of Indian Standards certification. Rigorous quality testing confirming purity at the molecular level.</p>
+            <div class="cert-number">IS 14543 Compliant</div>
+            <div class="cert-view">View Certificate →</div>
+          </div>
+
+          <!-- ISO -->
+          <div class="cert-card" onclick="openCertModal('iso')" data-aos="fade-up" data-aos-delay="300">
+            <div class="cert-tick">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" style="width:20px;height:20px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              Verified
+            </div>
+            <div class="cert-icon">⚙️</div>
+            <h3 class="cert-name">ISO 9001:2015</h3>
+            <p class="cert-desc">International Quality Management System certification. End-to-end process governance from source to shelf.</p>
+            <div class="cert-number">Quality Assurance Standard</div>
+            <div class="cert-view">View Certificate →</div>
+          </div>
+
+        </div>
+
+        <!-- Animated Trust Counters -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 5rem;" data-aos="fade-up">
+          <div style="text-align: center;">
+            <div class="trust-counter-num" data-target="500">0</div>
+            <div class="trust-counter-label">Families Hydrated Daily</div>
+          </div>
+          <div style="text-align: center;">
+            <div class="trust-counter-num" style="color: #10B981;" data-target="100">0</div>
+            <div class="trust-counter-label">% Purity Guaranteed</div>
+          </div>
+          <div style="text-align: center;">
+            <div class="trust-counter-num" data-target="3">0</div>
+            <div class="trust-counter-label">Active Certifications</div>
+          </div>
+        </div>
+
       </div>
 
-      <div class="marquee-container" style="border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 4rem 0;">
-        <div class="marquee-track">
-          <div class="marquee-item" style="font-size: 0.9rem; letter-spacing: 5px; text-transform: uppercase; color: var(--color-platinum); margin: 0 4rem;">BIS | BUREAU OF INDIAN STANDARDS</div>
-          <div class="marquee-item" style="font-size: 0.9rem; letter-spacing: 5px; text-transform: uppercase; color: var(--color-platinum); margin: 0 4rem;">FSSAI | CONFORMITY ASSURED</div>
-          <div class="marquee-item" style="font-size: 0.9rem; letter-spacing: 5px; text-transform: uppercase; color: var(--color-platinum); margin: 0 4rem;">ISO 9001:2015 | QUALITY GOVERNANCE</div>
-          <div class="marquee-item" style="font-size: 0.9rem; letter-spacing: 5px; text-transform: uppercase; color: var(--color-platinum); margin: 0 4rem;">100% AUTOMATED | HUMAN-FREE PROTOCOL</div>
-          <!-- Duplicate for seamless loop -->
-          <div class="marquee-item" style="font-size: 0.9rem; letter-spacing: 5px; text-transform: uppercase; color: var(--color-platinum); margin: 0 4rem;">BIS | BUREAU OF INDIAN STANDARDS</div>
-          <div class="marquee-item" style="font-size: 0.9rem; letter-spacing: 5px; text-transform: uppercase; color: var(--color-platinum); margin: 0 4rem;">FSSAI | CONFORMITY ASSURED</div>
-          <div class="marquee-item" style="font-size: 0.9rem; letter-spacing: 5px; text-transform: uppercase; color: var(--color-platinum); margin: 0 4rem;">ISO 9001:2015 | QUALITY GOVERNANCE</div>
-          <div class="marquee-item" style="font-size: 0.9rem; letter-spacing: 5px; text-transform: uppercase; color: var(--color-platinum); margin: 0 4rem;">100% AUTOMATED | HUMAN-FREE PROTOCOL</div>
+      <!-- Lightbox Modal -->
+      <div id="cert-modal" onclick="closeCertModal()" style="display:none; position:fixed; inset:0; z-index:99998; background:rgba(0,0,0,0.85); backdrop-filter:blur(20px); align-items:center; justify-content:center; cursor:pointer;">
+        <div style="background:rgba(10,16,35,0.98); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:4rem; max-width:560px; width:90%; text-align:center; cursor:default;" onclick="event.stopPropagation()">
+          <div id="cert-modal-content"></div>
+          <button onclick="closeCertModal()" style="margin-top:2rem; background:transparent; border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.6); padding:0.75rem 2rem; border-radius:8px; cursor:pointer; font-size:0.8rem; letter-spacing:2px; text-transform:uppercase;">Close</button>
         </div>
       </div>
+
     </section>
+
+    <style>
+    /* ── Cert Cards ── */
+    .cert-card {
+      position: relative;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 2.5rem;
+      cursor: pointer;
+      transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s, border-color 0.3s;
+    }
+    .cert-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+      border-color: rgba(16,185,129,0.3);
+    }
+    .cert-tick {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(16,185,129,0.1);
+      border: 1px solid rgba(16,185,129,0.25);
+      color: #10B981;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .cert-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .cert-name {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: white;
+      margin-bottom: 0.75rem;
+    }
+    .cert-desc {
+      font-size: 0.85rem;
+      color: var(--color-muted);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .cert-number {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 1.25rem;
+    }
+    .cert-view {
+      font-size: 0.75rem;
+      color: var(--color-accent);
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: letter-spacing 0.3s;
+    }
+    .cert-card:hover .cert-view { letter-spacing: 2px; }
+
+    /* ── Trust Counters ── */
+    .trust-counter-num {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      color: var(--color-accent);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .trust-counter-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--color-muted);
+    }
+
+    /* Mobile certs */
+    @media (max-width: 768px) {
+      #certifications .container > div[style*="grid-template-columns: repeat(3"] {
+        grid-template-columns: 1fr !important;
+      }
+    }
+    </style>
+
+    <script>
+    /* Cert Modal */
+    var certData = {
+      fssai: { icon: '🏛️', name: 'FSSAI Certified', detail: 'License No. 10025042000027\n\nFood Safety & Standards Authority of India certifies that Maharani Beverages LLP meets all requirements of IS 14543 for packaged drinking water. Valid & Active.' },
+      bis: { icon: '🏆', name: 'BIS Approved', detail: 'IS 14543 Compliant\n\nBureau of Indian Standards confirms the product meets strict quality parameters for packaged drinking water including chemical, microbiological, and physical standards.' },
+      iso: { icon: '⚙️', name: 'ISO 9001:2015', detail: 'Quality Management Certified\n\nISO 9001:2015 certification confirms our quality management system governing all processes from raw material procurement to final product delivery.' }
+    };
+    function openCertModal(key) {
+      var d = certData[key];
+      document.getElementById('cert-modal-content').innerHTML =
+        '<div style="font-size:3rem;margin-bottom:1.5rem;">' + d.icon + '</div>' +
+        '<div style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);color:#10B981;padding:0.3rem 1rem;border-radius:20px;font-size:0.7rem;font-weight:700;letter-spacing:1px;margin-bottom:1.5rem;">✓ VERIFIED</div>' +
+        '<h3 style="font-family:var(--font-heading);font-size:1.75rem;color:white;margin-bottom:1.5rem;">' + d.name + '</h3>' +
+        '<p style="color:rgba(255,255,255,0.6);line-height:1.8;font-size:0.9rem;white-space:pre-line;">' + d.detail + '</p>';
+      var m = document.getElementById('cert-modal');
+      m.style.display = 'flex';
+      setTimeout(function(){ m.style.opacity = '1'; }, 10);
+    }
+    function closeCertModal() {
+      document.getElementById('cert-modal').style.display = 'none';
+    }
+
+    /* Animated Counter */
+    function animateCounters() {
+      document.querySelectorAll('.trust-counter-num').forEach(function(el) {
+        var target = parseInt(el.getAttribute('data-target'));
+        var suffix = target === 500 ? '+' : (target === 100 ? '%' : '');
+        var duration = 1800;
+        var start = null;
+        function step(ts) {
+          if (!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(eased * target) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }
+
+    /* Trigger counter on scroll into view */
+    var countersDone = false;
+    window.addEventListener('scroll', function() {
+      if (countersDone) return;
+      var section = document.getElementById('certifications');
+      if (!section) return;
+      var rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.85) {
+        countersDone = true;
+        animateCounters();
+      }
+    });
+    </script>
+
 
     <!-- ================= THE REPUTATION SUITE (ELITE MONOLITH) ================= -->
     <section id="reviews" class="container" style="text-align: center;">

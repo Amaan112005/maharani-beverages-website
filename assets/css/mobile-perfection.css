@@ -130,3 +130,155 @@
     visibility: visible !important;
   }
 }
+
+/* ============================================================
+   PINCODE RESULT CARDS — High-Conversion UI
+   ============================================================ */
+
+.pincode-result-card {
+  margin-top: 1.5rem;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: left;
+  animation: pincodeReveal 0.4s ease-out;
+}
+
+@keyframes pincodeReveal {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.pincode-result-card.available {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.pincode-result-card.unavailable {
+  background: rgba(251, 146, 60, 0.08);
+  border: 1px solid rgba(251, 146, 60, 0.3);
+}
+
+.pincode-area-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.pincode-status {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 0.4rem;
+}
+
+.pincode-delivery {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 1.25rem;
+}
+
+.pincode-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pincode-btn-primary {
+  display: inline-block;
+  background: #25D366;
+  color: #000;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.3px;
+}
+
+.pincode-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+}
+
+.pincode-btn-secondary {
+  display: inline-block;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: background 0.2s;
+}
+
+.pincode-btn-secondary:hover {
+  background: rgba(255,255,255,0.14);
+}
+
+.pincode-result-msg.checking {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+  padding: 1rem 0;
+}
+
+.pincode-result-msg.error {
+  color: #f87171;
+  font-size: 0.85rem;
+  padding: 0.75rem 0;
+}
+
+/* ============================================================
+   SUBMISSION OVERLAY — Flash Confirmation Before WhatsApp
+   ============================================================ */
+
+#submission-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(1, 4, 17, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(20px);
+  animation: overlayIn 0.3s ease-out;
+}
+
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.submission-flash {
+  text-align: center;
+  padding: 4rem;
+}
+
+.submission-check {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  animation: checkBounce 0.5s ease-out;
+}
+
+@keyframes checkBounce {
+  0%   { transform: scale(0); }
+  70%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.submission-title {
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+}
+
+.submission-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 1px;
+}

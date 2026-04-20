@@ -1,35 +1,44 @@
 :root {
-  /* Colors - World-Class Elite (Voss / High-Fashion) */
-  --color-primary: #010411;    /* Deep Onyx Navy */
-  --color-secondary: #0F172A;  /* Deep Slate */
-  --color-accent: #B59E6D;     /* Champagne Gold - Muted */
-  --color-platinum: #E2E8F0;   /* Liquid Platinum - High Contrast */
+  /* ── Colors ── */
+  --color-primary:    #010411;       /* Deep Onyx Navy */
+  --color-secondary:  #0F172A;       /* Deep Slate */
+  --color-accent:     #B59E6D;       /* Champagne Gold — CTAs & key stats ONLY */
   --color-accent-glow: rgba(181, 158, 109, 0.15);
-  --color-bg: #010411;
-  --color-text: #F8FAFC;
-  --color-muted: #64748B;      /* More desaturated for luxury */
-  --color-white: #FFFFFF;
+  --color-platinum:   #E2E8F0;       /* High-contrast text */
+  --color-bg:         #010411;
+  --color-text:       #F8FAFC;
+  --color-muted:      #64748B;
 
-  /* Spacing - Fine-Dining Layout */
+  /* ── Water-Blue System ── */
+  --color-water-blue:      #0A3D6B;
+  --water-gradient-subtle: linear-gradient(135deg, rgba(10, 61, 107, 0.15) 0%, rgba(1, 4, 17, 0) 100%);
+  --water-gradient-section: linear-gradient(180deg, rgba(10, 61, 107, 0.08) 0%, rgba(15, 23, 42, 0.35) 100%);
+
+  /* ── Section Rhythm (Alternating Dark Navy / Lighter) ── */
+  --section-dark:   #010411;
+  --section-mid:    #070D24;
+  --section-accent: rgba(10, 42, 80, 0.25);
+
+  /* ── Spacing ── */
   --section-padding: 220px;
-  --container-max: 1200px;
-  --gutter: 60px;
+  --container-max:   1200px;
+  --gutter:          60px;
 
-  /* Classic Typography (Serif Heritage) */
-  --font-heading: 'Playfair Display', serif;
-  --font-body: 'Inter', sans-serif;
+  /* ── Typography V3: Syne + DM Sans ── */
+  --font-heading: 'Syne', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
   --font-size-hero: clamp(3.5rem, 15vw, 10rem);
-  --font-size-h2: clamp(2.5rem, 10vw, 5rem);
-  --kerning-tight: -0.04em;
-  --kerning-wide: 0.15em;
+  --font-size-h2:   clamp(2.5rem, 10vw, 5rem);
+  --kerning-tight:  -0.04em;
+  --kerning-wide:   0.15em;
 
-  /* Material System */
-  --glass-bg: rgba(255, 255, 255, 0.02);
+  /* ── Material System ── */
+  --glass-bg:     rgba(255, 255, 255, 0.02);
   --glass-border: rgba(255, 255, 255, 0.05);
-  --radius-elite: 0px; 
-  
-  /* Luxury Curves */
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --radius-elite: 0px;
+
+  /* ── Motion ── */
+  --ease-out-expo:   cubic-bezier(0.16, 1, 0.3, 1);
   --transition-slow: 1.5s var(--ease-out-expo);
   --transition-fast: 0.6s var(--ease-out-expo);
 }
