@@ -55,7 +55,11 @@ function initPreloader() {
 /**
  * 1. ADVANCED PINCODE SYSTEM (Discreet Search)
  */
-async function initAdvancedPincode() {
+
+/**
+ * 1. ADVANCED PINCODE SYSTEM (Instant Regional Approval)
+ */
+function initAdvancedPincode() {
   const form = document.getElementById('pincode-form');
   const input = document.getElementById('pincode-input');
   const result = document.getElementById('pincode-result');
@@ -67,30 +71,26 @@ async function initAdvancedPincode() {
     el.className = `pincode-result-msg ${status}`;
   }
 
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
     const value = input.value.trim();
 
-    result.textContent = 'VERIFYING...';
+    if (value.length < 6) {
+      renderPincode(result, "INVALID CODE ARCHITECTURE", "error");
+      return;
+    }
+
+    result.textContent = 'VERIFYING SECTOR...';
     result.className = 'pincode-result-msg';
 
-    try {
-      const resp = await fetch('data/pincodes.json');
-      const data = await resp.json();
-      const resultData = data[value];
-
-      setTimeout(() => {
-        if (resultData && resultData.available) {
-          renderPincode(result, `AVAILABILITY: ${resultData.area}`, "success");
-        } else if (resultData) {
-          renderPincode(result, `STATUS: COMING SOON TO ${resultData.area}`, "warning");
-        } else {
-          renderPincode(result, `STATUS: OUT OF NETWORK`, "error");
-        }
-      }, 1000);
-    } catch (err) {
-      renderPincode(result, 'SYSTEM ERROR: PLEASE TRY LATER', 'error');
-    }
+    setTimeout(() => {
+      // Instant Approval for Howrah (711) and Kolkata (700)
+      if (value.startsWith('700') || value.startsWith('711')) {
+        renderPincode(result, "AVAILABILITY: CORE REGIONAL NETWORK [ACTIVE]", "success");
+      } else {
+        renderPincode(result, "OUTSIDE SECTOR: CONNECT WITH SUPPORT", "error");
+      }
+    }, 600);
   });
 }
 
