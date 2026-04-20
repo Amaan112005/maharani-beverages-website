@@ -1,284 +1,391 @@
-/* ============================================================
-   ZENITH - MOBILE PERFECTION LAYER (THE "SEXY" EDITORIAL)
-   Targeting Portrait Viewports with Precision Aesthetics
-   Author: Zenith Digital Arts
-   ============================================================ */
+/* ================================================================
+   ZENITH V3 — MOBILE PERFECTION SYSTEM
+   Enterprise Grade | Zero Conflict | Single Authority
+   Breakpoints: 768px (tablet), 480px (phone), 380px (small phone)
+   Rule: This file OWNS all mobile overrides. No exceptions.
+   ================================================================ */
 
-/* --- 1. GLOBAL MOBILE ARCHITECTURE --- */
-@media (max-width: 768px) {
-  :root {
-    --section-padding: 6rem; /* Enhanced luxury breathing room */
-    --mobile-font-hero: clamp(2.8rem, 12vw, 4rem);
-    --mobile-font-h2: clamp(2.2rem, 10vw, 3rem);
-  }
-
-  /* --- 2. SEXY TYPOGRAPHY ENGINE --- */
-  h1 {
-    font-size: var(--mobile-font-hero) !important;
-    line-height: 0.95 !important;
-    letter-spacing: -2px !important;
-    margin-bottom: 2.5rem !important;
-    color: var(--color-platinum) !important;
-  }
-
-  h2 {
-    font-size: var(--mobile-font-h2) !important;
-    line-height: 1.1 !important;
-    letter-spacing: -1px !important;
-    color: var(--color-platinum) !important;
-  }
-
-  p {
-    font-size: 1rem !important;
-    line-height: 1.7 !important;
-    color: rgba(255, 255, 255, 0.7) !important;
-    margin-bottom: 2rem !important;
-  }
-
-  .counter-label {
-    letter-spacing: 5px !important;
-    font-size: 0.6rem !important;
-    margin-bottom: 1.5rem !important;
-  }
-
-  /* --- 3. TACTILE GLASS HARDENING --- */
-  .glass-card {
-    backdrop-filter: blur(40px) !important;
-    -webkit-backdrop-filter: blur(40px) !important;
-    background: rgba(255, 255, 255, 0.03) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5) !important;
-  }
-
-  .btn-ultimate {
-    backdrop-filter: blur(40px) !important;
-    -webkit-backdrop-filter: blur(40px) !important;
-    background: var(--color-accent) !important; /* Preserving Zenith Gold */
-    color: var(--color-primary) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    box-shadow: 0 20px 40px rgba(184, 134, 11, 0.3) !important; /* Golden shadow depth */
-  }
-
-  /* --- 4. UNIVERSAL LIQUID STACKING --- */
-  .container {
-    padding: 0 2rem !important;
-  }
-
-  .grid-elite-row, 
-  .hero-grid-layout, 
-  .hero-elite .container,
-  div[style*="grid"] {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 4rem !important;
-    text-align: center !important;
-    grid-template-columns: 1fr !important;
-  }
-
-  .hero-text-block, 
-  .hero-visual-block {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
-  .hero-text-block p {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    max-width: 90% !important;
-  }
-
-  /* --- 5. ATMOSPHERIC DEPTH (THE MIDNIGHT GLOW) --- */
-  body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, rgba(0, 48, 143, 0.05) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  /* --- 6. HEADER SOPHISTICATION --- */
-  .header .container {
-    padding: 1.5rem 2rem !important;
-  }
-
-  .header .logo {
-    width: 60px !important;
-  }
-
-  .header .btn-ultimate {
-    padding: 0.6rem 1.2rem !important;
-    font-size: 0.55rem !important;
-  }
-
-  /* Fix for the colliding secondary nav */
-  .header nav div > a:not(.btn-ultimate) {
-    display: none !important; /* Hide secondary links on mobile to prevent mess */
-  }
-
-  /* --- 7. BOTTLE PERFECTION --- */
-  .hero-visual-block img {
-    width: 75% !important;
-    max-width: 320px !important;
-    margin: 3rem auto 0 auto !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
+/* ── 0. GLOBAL SAFETY NET ── */
+html, body {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
-/* ============================================================
-   PINCODE RESULT CARDS — High-Conversion UI
-   ============================================================ */
+/* iOS safe-area insets for notch + home indicator */
+@supports (padding: env(safe-area-inset-bottom)) {
+  #mobile-bottom-bar {
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom)) !important;
+  }
+  body { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
+}
 
+/* Force all images to be responsive */
+img { max-width: 100%; height: auto; display: block; }
+
+/* ── 1. PINCODE RESULT CARDS (Global — not in media query) ── */
 .pincode-result-card {
   margin-top: 1.5rem;
-  padding: 2rem;
+  padding: 1.75rem;
   border-radius: 12px;
   text-align: left;
   animation: pincodeReveal 0.4s ease-out;
 }
-
 @keyframes pincodeReveal {
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
-.pincode-result-card.available {
-  background: rgba(16, 185, 129, 0.08);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-}
-
-.pincode-result-card.unavailable {
-  background: rgba(251, 146, 60, 0.08);
-  border: 1px solid rgba(251, 146, 60, 0.3);
-}
-
-.pincode-area-name {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.5px;
-}
-
-.pincode-status {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.85);
-  margin-bottom: 0.4rem;
-}
-
-.pincode-delivery {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.55);
-  margin-bottom: 1.25rem;
-}
-
-.pincode-actions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
+.pincode-result-card.available  { background: rgba(16,185,129,0.08);  border: 1px solid rgba(16,185,129,0.3); }
+.pincode-result-card.unavailable { background: rgba(251,146,60,0.08); border: 1px solid rgba(251,146,60,0.3); }
+.pincode-area-name  { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+.pincode-status     { font-size: 0.9rem; color: rgba(255,255,255,0.85); margin-bottom: 0.4rem; }
+.pincode-delivery   { font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-bottom: 1.25rem; }
+.pincode-actions    { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 .pincode-btn-primary {
-  display: inline-block;
-  background: #25D366;
-  color: #000;
-  font-weight: 700;
-  font-size: 0.85rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-  letter-spacing: 0.3px;
+  display: inline-flex; align-items: center;
+  background: #25D366; color: #000; font-weight: 700; font-size: 0.85rem;
+  padding: 0.85rem 1.5rem; border-radius: 8px; text-decoration: none;
+  min-height: 48px; transition: transform 0.2s, box-shadow 0.2s;
 }
-
-.pincode-btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
-}
-
+.pincode-btn-primary:hover  { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.35); }
 .pincode-btn-secondary {
-  display: inline-block;
-  background: rgba(255,255,255,0.08);
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.85rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  border: 1px solid rgba(255,255,255,0.15);
-  transition: background 0.2s;
+  display: inline-flex; align-items: center;
+  background: rgba(255,255,255,0.08); color: #fff; font-weight: 600; font-size: 0.85rem;
+  padding: 0.85rem 1.5rem; border-radius: 8px; text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.15); min-height: 48px; transition: background 0.2s;
 }
+.pincode-btn-secondary:hover { background: rgba(255,255,255,0.14); }
+.pincode-result-msg.checking { color: rgba(255,255,255,0.6); font-size: 0.85rem; padding: 1rem 0; }
+.pincode-result-msg.error    { color: #f87171; font-size: 0.85rem; padding: 0.75rem 0; }
 
-.pincode-btn-secondary:hover {
-  background: rgba(255,255,255,0.14);
-}
-
-.pincode-result-msg.checking {
-  color: rgba(255,255,255,0.6);
-  font-size: 0.85rem;
-  padding: 1rem 0;
-}
-
-.pincode-result-msg.error {
-  color: #f87171;
-  font-size: 0.85rem;
-  padding: 0.75rem 0;
-}
-
-/* ============================================================
-   SUBMISSION OVERLAY — Flash Confirmation Before WhatsApp
-   ============================================================ */
-
+/* ── 2. SUBMISSION OVERLAY (Global) ── */
 #submission-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  background: rgba(1, 4, 17, 0.92);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(20px);
-  animation: overlayIn 0.3s ease-out;
+  position: fixed; inset: 0; z-index: 99999;
+  background: rgba(1,4,17,0.95);
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(20px); animation: overlayIn 0.3s ease-out;
+}
+@keyframes overlayIn { from { opacity: 0; } to { opacity: 1; } }
+.submission-flash    { text-align: center; padding: 3rem 2rem; }
+.submission-check    { font-size: 3.5rem; margin-bottom: 1.5rem; animation: checkBounce 0.5s ease-out; }
+@keyframes checkBounce { 0% { transform: scale(0); } 70% { transform: scale(1.2); } 100% { transform: scale(1); } }
+.submission-title    { font-family: var(--font-heading); font-size: 1.75rem; color: #fff; margin-bottom: 0.75rem; }
+.submission-sub      { font-size: 0.95rem; color: rgba(255,255,255,0.55); letter-spacing: 1px; }
+
+/* =================================================================
+   BREAKPOINT 1: TABLET + LARGE PHONE (≤768px)
+   ================================================================= */
+@media (max-width: 768px) {
+
+  /* ── Tokens ── */
+  :root {
+    --section-padding: 5rem;
+    --gutter: 1.5rem;
+  }
+
+  /* ── Typography: Fluid scaling ── */
+  h1 {
+    font-size: clamp(2.4rem, 11vw, 3.5rem) !important;
+    line-height: 0.95 !important;
+    letter-spacing: -1.5px !important;
+  }
+  h2 {
+    font-size: clamp(2rem, 9vw, 3rem) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -1px !important;
+  }
+  h3 { font-size: clamp(1.3rem, 5vw, 1.75rem) !important; }
+  p  { font-size: 0.95rem !important; line-height: 1.75 !important; }
+  .counter-label { font-size: 0.6rem !important; letter-spacing: 4px !important; }
+
+  /* ── Global containers ── */
+  .container { padding: 0 1.5rem !important; max-width: 100% !important; }
+
+  /* ── All sections: reset excess desktop padding ── */
+  section[style*="padding"] { padding-left: 0 !important; padding-right: 0 !important; }
+
+  /* ── All grids to single column ── */
+  .hero-grid-layout,
+  .grid-elite-row,
+  .journey-grid,
+  .form-row,
+  .filtration-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2.5rem !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  /* ── HEADER / NAV ── */
+  .header .container {
+    padding: 1rem 1.5rem !important;
+  }
+  .header .logo, .logo { width: 60px !important; height: auto !important; }
+
+  /* ── HERO SECTION ── */
+  .hero-elite {
+    padding: 5rem 0 3rem 0 !important;
+    min-height: auto !important;
+  }
+  .hero-text-block {
+    text-align: center !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  .hero-text-block p {
+    max-width: 90% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .hero-text-block > div[style*="flex"] {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+  .hero-visual-block {
+    width: 100% !important;
+    min-height: auto !important;
+    margin-top: 2rem !important;
+  }
+  .hero-visual-block img {
+    width: 55% !important;
+    max-width: 220px !important;
+    min-width: 140px !important;
+    margin: 0 auto !important;
+    object-fit: contain !important;
+  }
+  /* Shrink the water ripples on mobile so they don't overflow */
+  .ripple-1 { width: 180px !important; height: 180px !important; }
+  .ripple-2 { width: 260px !important; height: 260px !important; }
+  .ripple-3 { width: 340px !important; height: 340px !important; }
+
+  /* ── BUTTONS: 48px+ touch targets ── */
+  .btn-ultimate,
+  a.btn-ultimate,
+  button.btn-ultimate {
+    min-height: 52px !important;
+    padding: 1rem 2rem !important;
+    font-size: 0.65rem !important;
+    width: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    letter-spacing: 2.5px !important;
+  }
+
+  /* ── COUNTER SECTION ── */
+  .counter-section {
+    padding: 4rem 0 !important;
+  }
+  .counter-number { font-size: 2.5rem !important; }
+  .counter-label  { font-size: 0.55rem !important; }
+
+  /* ── PRODUCT CARDS V3 ── */
+  .v3-product-card { border-radius: 10px !important; }
+  .v3-card-image   { height: 160px !important; }
+  .v3-card-size    { font-size: 1.6rem !important; }
+
+  /* ── PINCODE SECTION ── */
+  .pincode-matrix .container { max-width: 100% !important; padding: 0 1.5rem !important; }
+  #pincode-form > div { flex-direction: column !important; gap: 0.75rem !important; }
+  #pincode-input { font-size: 1rem !important; padding: 1rem !important; }
+  #pincode-form .btn-ultimate { width: 100% !important; }
+  .pincode-actions { flex-direction: column !important; }
+  .pincode-btn-primary,
+  .pincode-btn-secondary { width: 100% !important; justify-content: center !important; }
+
+  /* ── ORIGIN SECTION ── */
+  .origin-section { min-height: 60vh !important; }
+  .origin-overlay { padding: 3rem 1.5rem !important; }
+
+  /* ── FILTRATION / JOURNEY ── */
+  .journey-image > div { height: 300px !important; }
+
+  /* ── CERTIFICATIONS ── */
+  .cert-card { padding: 2rem 1.5rem !important; }
+
+  /* ── TERRITORY MAP ── */
+  .zone-card { padding: 1.25rem 1rem !important; }
+
+  /* ── REPUTATION / TESTIMONIALS ── */
+  .reputation-monolith { padding: 3rem 1.5rem !important; }
+  .monolith-divider { display: none !important; }
+
+  /* ── CONTACT SECTION ── */
+  .glass-card { padding: 2rem 1.5rem !important; }
+
+  /* ── FOOTER ── */
+  footer > .container > div[style*="grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  footer .legal-bar,
+  footer > .container > div[style*="space-between"] {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 1rem !important;
+  }
+  footer > .container > div[style*="space-between"] > div[style*="flex"] {
+    gap: 1.25rem !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  /* ── CERT MODAL ── */
+  #cert-modal > div {
+    padding: 2.5rem 1.5rem !important;
+    border-radius: 12px !important;
+  }
+
+  /* ── COMPARISON TABLE ── */
+  .comparison-grid th,
+  .comparison-grid td { padding: 1rem !important; font-size: 0.8rem !important; }
+  .comparison-grid th { font-size: 0.95rem !important; }
+
+  /* ── WHATSAPP WIDGET ── */
+  #wa-widget { bottom: 88px !important; right: 16px !important; }
+  #wa-panel  { width: 240px !important; }
+
+  /* ── ANNOUNCEMENT BAR ── */
+  #announcement-bar { font-size: 0.6rem !important; padding: 0.5rem 1rem !important; }
 }
 
-@keyframes overlayIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+/* =================================================================
+   BREAKPOINT 2: PHONE (≤480px)
+   ================================================================= */
+@media (max-width: 480px) {
+
+  /* ── Typography ── */
+  h1 { font-size: clamp(2rem, 12vw, 2.8rem) !important; letter-spacing: -1px !important; }
+  h2 { font-size: clamp(1.8rem, 10vw, 2.4rem) !important; }
+
+  /* ── Container ── */
+  .container { padding: 0 1.25rem !important; }
+
+  /* ── Hero bottle ── */
+  .hero-visual-block img {
+    width: 50% !important;
+    max-width: 180px !important;
+  }
+
+  /* ── Buttons: full width on small phones ── */
+  .btn-ultimate { width: 100% !important; }
+  .hero-text-block > div[style*="flex"],
+  div.hero-text-block ~ div,
+  div[data-aos] > div[style*="flex"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  /* ── Product cards: 2 col on phone, 1 col on tiny ── */
+  #products > .container > div[style*="grid"] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.75rem !important;
+  }
+  .v3-card-image { height: 130px !important; padding: 1rem !important; }
+  .v3-card-body  { padding: 1rem !important; }
+  .v3-card-size  { font-size: 1.4rem !important; }
+  .v3-mrp-badge  { font-size: 0.65rem !important; }
+
+  /* ── Cert grid: 1 col ── */
+  #certifications .container > div[style*="repeat(3"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Zone map: 1 col ── */
+  #territory-map > .container > div[style*="grid"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Distributor benefits: 1 col ── */
+  [style*="grid-template-columns: repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Trust counters ── */
+  #certifications .container > div[style*="repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .trust-counter-num { font-size: 2.5rem !important; }
+
+  /* ── Footer map: hide on tiny screens ── */
+  footer iframe { display: none !important; }
+
+  /* ── Section padding: tighter on phone ── */
+  section { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+  [style*="padding: 10rem"] { padding-top: 5rem !important; padding-bottom: 5rem !important; }
+  [style*="padding: 8rem"]  { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+
+  /* ── Journey image: shorter ── */
+  .journey-image > div { height: 220px !important; }
+
+  /* ── Origin section ── */
+  .origin-section { min-height: 50vh !important; }
+
+  /* ── Mobile WA panel ── */
+  #wa-panel { width: calc(100vw - 3rem) !important; right: 0 !important; }
+  #wa-widget { right: 12px !important; }
+
+  /* ── Mobile bottom bar text ── */
+  #mobile-bottom-bar span[style*="0.55rem"] { font-size: 0.5rem !important; }
 }
 
-.submission-flash {
-  text-align: center;
-  padding: 4rem;
+/* =================================================================
+   BREAKPOINT 3: SMALL PHONE (≤380px) — Samsung A-series, older iPhones
+   ================================================================= */
+@media (max-width: 380px) {
+
+  h1 { font-size: 1.9rem !important; }
+  h2 { font-size: 1.6rem !important; }
+  .container { padding: 0 1rem !important; }
+
+  /* ── Product cards: force 1 col on truly tiny screens ── */
+  #products > .container > div[style*="grid"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Pincode input ── */
+  #pincode-input { font-size: 0.95rem !important; }
+
+  /* ── Hero bottle ── */
+  .hero-visual-block img { max-width: 160px !important; }
+
+  /* ── Navigation logo ── */
+  .logo { width: 52px !important; }
+
+  /* ── CTA spacing ── */
+  .btn-ultimate { padding: 0.9rem 1.5rem !important; font-size: 0.6rem !important; }
 }
 
-.submission-check {
-  font-size: 4rem;
-  margin-bottom: 1.5rem;
-  animation: checkBounce 0.5s ease-out;
+/* =================================================================
+   TOUCH ENHANCEMENTS (All mobile devices)
+   ================================================================= */
+@media (hover: none) and (pointer: coarse) {
+  /* Larger tap targets for all interactive elements */
+  a, button, input, select {
+    min-height: 44px;
+  }
+  /* Remove hover states that don't work on touch */
+  .v3-product-card:hover      { transform: none; box-shadow: none; }
+  .cert-card:hover            { transform: none; }
+  .footer-link:hover          { padding-left: 0; }
+  /* Add active press state instead */
+  .v3-product-card:active     { transform: scale(0.98); }
+  .cert-card:active           { transform: scale(0.98); opacity: 0.85; }
+  .zone-open:active           { transform: scale(0.97); }
+  .btn-ultimate:active        { transform: scale(0.97) !important; }
+  .pincode-btn-primary:active { transform: scale(0.97); }
 }
 
-@keyframes checkBounce {
-  0%   { transform: scale(0); }
-  70%  { transform: scale(1.2); }
-  100% { transform: scale(1); }
-}
-
-.submission-title {
-  font-family: var(--font-heading, 'Playfair Display', serif);
-  font-size: 2rem;
-  color: #ffffff;
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.5px;
-}
-
-.submission-sub {
-  font-size: 1rem;
-  color: rgba(255,255,255,0.55);
-  letter-spacing: 1px;
+/* =================================================================
+   PERFORMANCE: Reduce animations on battery-save / slow devices
+   ================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
