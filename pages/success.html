@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZENITH | Inquiry Logged</title>
+  
+  <!-- SEO -->
+  <meta name="robots" content="noindex">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Core -->
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/mobile-perfection.css?v=1.1">
+  
+  <style>
+    body {
+      background: var(--color-bg);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      text-align: center;
+    }
+    
+    .success-monolith {
+      padding: 6rem 4rem;
+      max-width: 600px;
+      width: 90%;
+      border-radius: var(--radius-elite);
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(40px);
+      -webkit-backdrop-filter: blur(40px);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+    }
+    
+    .success-monolith h1 {
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      line-height: 0.9;
+      margin-bottom: 2rem;
+      letter-spacing: -2px;
+    }
+    
+    .success-monolith p {
+      color: var(--color-muted);
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+    
+    .redirect-counter {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: var(--color-accent);
+      font-weight: 800;
+    }
+  </style>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let count = 5;
+      const counterEl = document.getElementById('seconds');
+      
+      const timer = setInterval(() => {
+        count--;
+        if (counterEl) counterEl.textContent = count;
+        if (count <= 0) {
+          clearInterval(timer);
+          window.location.href = '../index.html';
+        }
+      }, 1000);
+    });
+  </script>
+</head>
+<body>
+
+  <div class="success-monolith" data-aos="fade-up">
+    <p class="counter-label" style="color: var(--color-accent); margin-bottom: 2rem;">Inquiry Logged</p>
+    <h1>ZENITH<br><span style="color: var(--color-accent);">ARCHIVE.</span></h1>
+    <p>Your data has been architected into our lead registry. Our logistics teams are now reviewing your application for baseline compatibility.</p>
+    <div class="redirect-counter">Returning to Core in <span id="seconds">5</span>s</div>
+  </div>
+
+  <script src="../assets/js/aos.js"></script>
+  <script>AOS.init({ duration: 1000, once: true });</script>
+</body>
+</html>
