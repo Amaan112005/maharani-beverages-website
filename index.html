@@ -1170,15 +1170,220 @@
     }
   </style>
 
-  <!-- ================= WHATSAPP CONCIERGE ================= -->
-  <a href="https://wa.me/918777627142?text=Hello%20Zenith%20Teams%2C%20I%20have%20an%20inquiry%20regarding%20the%20Zenith%20Water%20Flagship." 
-     class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-    <svg viewBox="0 0 448 512" style="width: 28px; height: 28px; fill: white; display: block;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.4 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.3-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.2 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.4-29.9-17-41.2-4.5-10.9-9.1-9.4-12.4-9.6-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-  </a>
+
+  <!-- ================= TERRITORY MAP SECTION (FEATURE 2) ================= -->
+  <section id="territory-map" style="padding: 8rem 0; background: var(--section-mid);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 4rem;" data-aos="fade-up">
+        <p class="counter-label" style="color: var(--color-accent); margin-bottom: 1.5rem;">The Network</p>
+        <h2 style="font-size: var(--font-size-h2);">TERRITORY<br>MAP.</h2>
+        <p style="color: var(--color-muted); margin-top: 1.5rem; max-width: 560px; margin-left: auto; margin-right: auto;">
+          Live zone intelligence. <span style="color:#10B981; font-weight:700;">Green</span> = Territory Active.
+          <span style="color:#EF4444; font-weight:700;">Red</span> = Your Opportunity.
+        </p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:1.5rem;" data-aos="fade-up">
+
+        <!-- TAKEN ZONES -->
+        <div class="zone-card zone-taken">
+          <div class="zone-status-dot" style="background:#10B981;"></div>
+          <div>
+            <div class="zone-name">Howrah Central</div>
+            <div class="zone-sub">711101 – 711106 · Active distributor</div>
+          </div>
+        </div>
+        <div class="zone-card zone-taken">
+          <div class="zone-status-dot" style="background:#10B981;"></div>
+          <div>
+            <div class="zone-name">Dalhousie, Kolkata</div>
+            <div class="zone-sub">700001 · Active distributor</div>
+          </div>
+        </div>
+        <div class="zone-card zone-taken">
+          <div class="zone-status-dot" style="background:#10B981;"></div>
+          <div>
+            <div class="zone-name">Salt Lake (Sector V)</div>
+            <div class="zone-sub">700091 · Active distributor</div>
+          </div>
+        </div>
+
+        <!-- AVAILABLE ZONES — FOMO -->
+        <div class="zone-card zone-open" onclick="claimZone('Shyambazar, Kolkata', '700005')" style="cursor:pointer;" title="Click to claim this zone">
+          <div class="zone-status-dot" style="background:#EF4444; animation: zonePulse 1.5s infinite;"></div>
+          <div>
+            <div class="zone-name">Shyambazar, Kolkata</div>
+            <div class="zone-sub">700005 · <span style="color:#EF4444; font-weight:700;">Available — Claim Now →</span></div>
+          </div>
+        </div>
+        <div class="zone-card zone-open" onclick="claimZone('New Town, Kolkata', '700156')" style="cursor:pointer;" title="Click to claim this zone">
+          <div class="zone-status-dot" style="background:#EF4444; animation: zonePulse 1.5s infinite;"></div>
+          <div>
+            <div class="zone-name">New Town, Kolkata</div>
+            <div class="zone-sub">700156 · <span style="color:#EF4444; font-weight:700;">Available — Claim Now →</span></div>
+          </div>
+        </div>
+        <div class="zone-card zone-open" onclick="claimZone('Santragachi, Howrah', '711104')" style="cursor:pointer;" title="Click to claim this zone">
+          <div class="zone-status-dot" style="background:#EF4444; animation: zonePulse 1.5s infinite;"></div>
+          <div>
+            <div class="zone-name">Santragachi, Howrah</div>
+            <div class="zone-sub">711104 · <span style="color:#EF4444; font-weight:700;">Available — Claim Now →</span></div>
+          </div>
+        </div>
+        <div class="zone-card zone-open" onclick="claimZone('Barrackpore, North 24 PGS', '700120')" style="cursor:pointer;" title="Click to claim this zone">
+          <div class="zone-status-dot" style="background:#EF4444; animation: zonePulse 1.5s infinite;"></div>
+          <div>
+            <div class="zone-name">Barrackpore</div>
+            <div class="zone-sub">700120 · <span style="color:#EF4444; font-weight:700;">Available — Claim Now →</span></div>
+          </div>
+        </div>
+        <div class="zone-card zone-open" onclick="claimZone('Dum Dum, Kolkata', '700028')" style="cursor:pointer;" title="Click to claim this zone">
+          <div class="zone-status-dot" style="background:#EF4444; animation: zonePulse 1.5s infinite;"></div>
+          <div>
+            <div class="zone-name">Dum Dum, Kolkata</div>
+            <div class="zone-sub">700028 · <span style="color:#EF4444; font-weight:700;">Available — Claim Now →</span></div>
+          </div>
+        </div>
+        <div class="zone-card zone-open" onclick="claimZone('Behala, Kolkata', '700034')" style="cursor:pointer;" title="Click to claim this zone">
+          <div class="zone-status-dot" style="background:#EF4444; animation: zonePulse 1.5s infinite;"></div>
+          <div>
+            <div class="zone-name">Behala, Kolkata</div>
+            <div class="zone-sub">700034 · <span style="color:#EF4444; font-weight:700;">Available — Claim Now →</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align:center; margin-top: 4rem;">
+        <a href="pages/distributor.html" class="btn-ultimate" style="background:var(--color-accent); color:var(--color-primary); border:none;">Secure Your Territory</a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* Zone Cards */
+    .zone-card {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 1.5rem 2rem;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.02);
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+    .zone-taken { border-color: rgba(16,185,129,0.15); }
+    .zone-open  { border-color: rgba(239,68,68,0.2); background: rgba(239,68,68,0.03); }
+    .zone-open:hover  { transform: translateY(-4px); border-color: rgba(239,68,68,0.5); box-shadow: 0 12px 30px rgba(239,68,68,0.1); }
+    .zone-status-dot {
+      width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0;
+    }
+    .zone-name { font-family: var(--font-heading); font-size: 1rem; color: white; margin-bottom: 0.25rem; }
+    .zone-sub  { font-size: 0.75rem; color: var(--color-muted); }
+    @keyframes zonePulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68, 0.5); }
+      50% { box-shadow: 0 0 0 6px rgba(239,68,68,0); }
+    }
+    /* Mobile: single col */
+    @media (max-width: 600px) {
+      #territory-map > .container > div[style*="grid"] { grid-template-columns: 1fr !important; }
+    }
+  </style>
 
   <!-- ================= SCRIPTS ================= -->
   <script src="assets/js/aos.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <!-- ================= FEATURE 2: ZONE CLAIM SCRIPT ================= -->
+  <script>
+    function claimZone(zone, pin) {
+      var msg = encodeURIComponent('Hi, I am interested in becoming a ZENITH distributor for ' + zone + ' (' + pin + '). Is this territory still available?');
+      window.open('https://wa.me/918777627142?text=' + msg, '_blank');
+    }
+  </script>
+
+  <!-- ================= FEATURE 3: WHATSAPP SMART WIDGET ================= -->
+  <div id="wa-widget" style="position:fixed; bottom:100px; right:24px; z-index:9999; display:flex; flex-direction:column; align-items:flex-end; gap:0.75rem;">
+
+    <!-- Expandable panel -->
+    <div id="wa-panel" style="display:none; background:rgba(10,16,35,0.97); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:1.5rem; width:260px; box-shadow:0 20px 60px rgba(0,0,0,0.5); backdrop-filter:blur(20px);">
+      <p style="font-family:var(--font-heading); font-size:1.1rem; color:white; margin-bottom:0.5rem;">Chat with us</p>
+      <p style="font-size:0.8rem; color:var(--color-muted); margin-bottom:1.5rem; line-height:1.5;">Choose who you are 👇</p>
+
+      <!-- Consumer -->
+      <a id="wa-consumer" href="https://wa.me/918777627142?text=Hi%2C%20I%20want%20to%20order%20ZENITH%20water%20for%20home%20or%20office.%20Can%20you%20help%3F" target="_blank"
+         style="display:flex; align-items:center; gap:1rem; padding:1rem; border-radius:10px; background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.2); text-decoration:none; margin-bottom:0.75rem; transition:background 0.2s;">
+        <span style="font-size:1.5rem;">🛒</span>
+        <div>
+          <div style="color:white; font-size:0.9rem; font-weight:600;">Order Water</div>
+          <div style="color:var(--color-muted); font-size:0.7rem;">For home or office</div>
+        </div>
+      </a>
+
+      <!-- Distributor -->
+      <a id="wa-distributor" href="https://wa.me/918777627142?text=Hi%2C%20I%20am%20interested%20in%20becoming%20a%20ZENITH%20water%20distributor.%20Please%20share%20details." target="_blank"
+         style="display:flex; align-items:center; gap:1rem; padding:1rem; border-radius:10px; background:rgba(181,158,109,0.08); border:1px solid rgba(181,158,109,0.2); text-decoration:none; transition:background 0.2s;">
+        <span style="font-size:1.5rem;">🤝</span>
+        <div>
+          <div style="color:white; font-size:0.9rem; font-weight:600;">Join Network</div>
+          <div style="color:var(--color-muted); font-size:0.7rem;">Become a distributor</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Floating Trigger Button -->
+    <button id="wa-trigger" onclick="toggleWAWidget()" aria-label="Open WhatsApp chat"
+      style="width:60px; height:60px; border-radius:50%; background:#25D366; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(37,211,102,0.4); transition:transform 0.2s, box-shadow 0.2s; position:relative;">
+      <svg viewBox="0 0 448 512" style="width:28px;height:28px;fill:white;display:block;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.4 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.3-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.2 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.4-29.9-17-41.2-4.5-10.9-9.1-9.4-12.4-9.6-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+      <!-- Unread badge -->
+      <span style="position:absolute;top:-4px;right:-4px;background:#EF4444;color:white;font-size:0.6rem;font-weight:800;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--color-bg);">1</span>
+    </button>
+  </div>
+
+  <script>
+    function toggleWAWidget() {
+      var p = document.getElementById('wa-panel');
+      p.style.display = (p.style.display === 'none' || p.style.display === '') ? 'block' : 'none';
+    }
+    // Close on outside click
+    document.addEventListener('click', function(e) {
+      var w = document.getElementById('wa-widget');
+      if (!w.contains(e.target)) {
+        var p = document.getElementById('wa-panel');
+        if (p) p.style.display = 'none';
+      }
+    });
+  </script>
+
+  <!-- ================= FEATURE 4: MOBILE STICKY BOTTOM BAR ================= -->
+  <div id="mobile-bottom-bar" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9998; background:rgba(8,14,32,0.97); backdrop-filter:blur(20px); border-top:1px solid rgba(255,255,255,0.1); padding:0.75rem 1rem; grid-template-columns:1fr 1fr 1fr; gap:0.5rem;">
+    <a href="tel:+918777627142"
+       style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.25rem; padding:0.5rem; border-radius:8px; background:rgba(255,255,255,0.05); text-decoration:none; transition:background 0.2s;">
+      <span style="font-size:1.25rem;">📞</span>
+      <span style="color:white; font-size:0.55rem; text-transform:uppercase; letter-spacing:1px; font-weight:700;">Call Now</span>
+    </a>
+    <a href="https://wa.me/918777627142?text=Hi%20Zenith%2C%20I%20have%20an%20inquiry." target="_blank"
+       style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.25rem; padding:0.5rem; border-radius:8px; background:#25D366; text-decoration:none;">
+      <span style="font-size:1.25rem;">💬</span>
+      <span style="color:white; font-size:0.55rem; text-transform:uppercase; letter-spacing:1px; font-weight:700;">WhatsApp</span>
+    </a>
+    <a href="#pincode-form"
+       style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.25rem; padding:0.5rem; border-radius:8px; background:rgba(181,158,109,0.15); border:1px solid rgba(181,158,109,0.3); text-decoration:none;">
+      <span style="font-size:1.25rem;">📍</span>
+      <span style="color:var(--color-accent); font-size:0.55rem; text-transform:uppercase; letter-spacing:1px; font-weight:700;">Find Near You</span>
+    </a>
+  </div>
+
+  <style>
+    /* Show mobile bottom bar only on phones */
+    @media (max-width: 768px) {
+      #mobile-bottom-bar { display: grid !important; }
+      /* Nudge WhatsApp widget up above the bottom bar */
+      #wa-widget { bottom: 85px !important; }
+      /* Extra padding so last page content isn't hidden behind bar */
+      body { padding-bottom: 80px; }
+    }
+  </style>
 
 </body>
 </html>
