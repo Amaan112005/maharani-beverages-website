@@ -34,13 +34,13 @@ This flagship is built on a "Steel Wall" architecture, prioritizing speed, secur
 
 - **Core**: Semantic HTML5, Vanilla CSS3, Modern JavaScript ES6.
 - **Schema**: Rich JSON-LD (Organization, LocalBusiness, Product, Article).
-- **Indexing**: 2024-standard `sitemap.xml` and optimized `robots.txt`.
+- **Indexing**: 2026-standard `sitemap.xml` and optimized `robots.txt`.
 
 ---
 
 ## 📜 Legal & Mandate
 
-© 2024 Maharani Beverages LLP. All Rights Reserved.  
+© 2026 Maharani Beverages LLP. All Rights Reserved.  
 Architected by Antigravity AI.
 
 ---
