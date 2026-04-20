@@ -115,7 +115,13 @@
       <div class="desktop-nav" style="display: flex; gap: 3rem; align-items: center;">
         <a href="#products" style="color: rgba(255,255,255,0.6); text-decoration: none; font-weight: 600; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px;">Products</a>
         <a href="#journey" style="color: rgba(255,255,255,0.6); text-decoration: none; font-weight: 600; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px;">The Journey</a>
-        <a href="tel:+918777627142" style="color: rgba(255,255,255,0.5); text-decoration: none; font-weight: 600; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px;">+91 87776 27142</a>
+
+        <!-- CART ICON -->
+        <a href="pages/enquiry-cart.html" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; position: relative;">
+          <svg viewBox="0 0 576 512" style="width: 20px; height: 20px; fill: currentColor;"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41.1 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
+          <span class="cart-badge-count" style="display: none; align-items: center; justify-content: center; position: absolute; top: -8px; right: -8px; background: #EF4444; color: white; font-size: 0.55rem; font-weight: 800; width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--section-dark);">0</span>
+        </a>
+
         <a href="pages/distributor.html" class="btn-ultimate" style="padding: 0.8rem 2rem; font-size: 0.6rem; border-color: rgba(255,255,255,0.1); color: white; position: relative; display: inline-flex; align-items: center; gap: 0.6rem;">
           Join Network
           <span style="background: #EF4444; color: white; font-size: 0.5rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 20px; letter-spacing: 1.5px; text-transform: uppercase; white-space: nowrap;">Zones Available</span>
@@ -428,7 +434,7 @@
         <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
 
           <!-- 250 ML -->
-          <a href="pages/product-300ml.html" style="text-decoration: none; color: inherit;" data-aos="fade-up" data-aos-delay="100">
+          <div data-aos="fade-up" data-aos-delay="100" style="display:flex; flex-direction:column; height:100%;">
             <div class="v3-product-card">
               <div class="v3-card-image">
                 <img src="zenith_bottle_hero.png" alt="ZENITH 250ml drinking water bottle Kolkata" loading="lazy">
@@ -437,16 +443,26 @@
                 <div class="v3-card-size">250 <span>ML</span></div>
                 <div class="v3-card-tag">Travel Unit</div>
                 <p class="v3-card-desc">Sleek. Portable. Essential.</p>
-                <div class="v3-card-footer">
-                  <div class="v3-mrp-badge">MRP ₹6</div>
-                  <div class="v3-card-arrow">→</div>
+                <div class="v3-card-footer" style="flex-direction: column; gap: 1rem; align-items: stretch;">
+                  <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+                    <div class="v3-mrp-badge">MRP ₹6</div>
+                    <a href="pages/product-300ml.html" style="color:var(--color-accent); font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; text-decoration:none; font-weight:800;">View Details</a>
+                  </div>
+                  <div style="display:flex; gap:0.5rem; margin-bottom: -0.25rem;">
+                    <input type="number" id="qty-250ml" value="1" min="1" style="width:60px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px; text-align:center; padding:0.5rem;">
+                    <select id="unit-250ml" style="flex-grow:1; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px; padding:0.5rem; outline:none; text-align:center;">
+                      <option value="cases" style="background:#0a1023;">Cases</option>
+                      <option value="pcs" style="background:#0a1023;">Pieces</option>
+                    </select>
+                  </div>
+                  <button onclick="addCustomToCart('250ml Zenith Premium', 'qty-250ml', 'unit-250ml')" class="btn-ultimate" style="width:100%; border-radius:8px; padding:0.9rem; font-size:0.65rem; background:rgba(255,255,255,0.05); color:white; border:1px solid rgba(255,255,255,0.15);">ADD TO ENQUIRY</button>
                 </div>
               </div>
             </div>
-          </a>
+          </div>
 
           <!-- 500 ML — Most Popular -->
-          <a href="pages/product-500ml.html" style="text-decoration: none; color: inherit;" data-aos="fade-up" data-aos-delay="200">
+          <div data-aos="fade-up" data-aos-delay="200" style="display:flex; flex-direction:column; height:100%;">
             <div class="v3-product-card v3-card-featured">
               <div class="v3-popularity-tag" style="background: #3B82F6;">⭐ Most Popular</div>
               <div class="v3-card-image">
@@ -456,16 +472,26 @@
                 <div class="v3-card-size">500 <span>ML</span></div>
                 <div class="v3-card-tag">Business Unit</div>
                 <p class="v3-card-desc">Office precision. Daily focus.</p>
-                <div class="v3-card-footer">
-                  <div class="v3-mrp-badge">MRP ₹10</div>
-                  <div class="v3-card-arrow">→</div>
+                <div class="v3-card-footer" style="flex-direction: column; gap: 1rem; align-items: stretch;">
+                  <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+                    <div class="v3-mrp-badge">MRP ₹10</div>
+                    <a href="pages/product-500ml.html" style="color:var(--color-accent); font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; text-decoration:none; font-weight:800;">View Details</a>
+                  </div>
+                  <div style="display:flex; gap:0.5rem; margin-bottom: -0.25rem;">
+                    <input type="number" id="qty-500ml" value="1" min="1" style="width:60px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px; text-align:center; padding:0.5rem;">
+                    <select id="unit-500ml" style="flex-grow:1; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px; padding:0.5rem; outline:none; text-align:center;">
+                      <option value="cases" style="background:#0a1023;">Cases</option>
+                      <option value="pcs" style="background:#0a1023;">Pieces</option>
+                    </select>
+                  </div>
+                  <button onclick="addCustomToCart('500ml Zenith Premium', 'qty-500ml', 'unit-500ml')" class="btn-ultimate" style="width:100%; border-radius:8px; padding:0.9rem; font-size:0.65rem; background:rgba(255,255,255,0.05); color:white; border:1px solid rgba(255,255,255,0.15);">ADD TO ENQUIRY</button>
                 </div>
               </div>
             </div>
-          </a>
+          </div>
 
           <!-- 1 LITER — Best Seller -->
-          <a href="pages/product-1l.html" style="text-decoration: none; color: inherit;" data-aos="fade-up" data-aos-delay="300">
+          <div data-aos="fade-up" data-aos-delay="300" style="display:flex; flex-direction:column; height:100%;">
             <div class="v3-product-card v3-card-featured">
               <div class="v3-popularity-tag" style="background: #B59E6D; color: #010411;">🏆 Best Seller</div>
               <div class="v3-card-image">
@@ -475,16 +501,26 @@
                 <div class="v3-card-size">1.0 <span>L</span></div>
                 <div class="v3-card-tag">Performance Unit</div>
                 <p class="v3-card-desc">Ultimate hydration. Full peak.</p>
-                <div class="v3-card-footer">
-                  <div class="v3-mrp-badge">MRP ₹20</div>
-                  <div class="v3-card-arrow">→</div>
+                <div class="v3-card-footer" style="flex-direction: column; gap: 1rem; align-items: stretch;">
+                  <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+                    <div class="v3-mrp-badge">MRP ₹20</div>
+                    <a href="pages/product-1l.html" style="color:var(--color-accent); font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; text-decoration:none; font-weight:800;">View Details</a>
+                  </div>
+                  <div style="display:flex; gap:0.5rem; margin-bottom: -0.25rem;">
+                    <input type="number" id="qty-1l" value="1" min="1" style="width:60px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px; text-align:center; padding:0.5rem;">
+                    <select id="unit-1l" style="flex-grow:1; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px; padding:0.5rem; outline:none; text-align:center;">
+                      <option value="cases" style="background:#0a1023;">Cases</option>
+                      <option value="pcs" style="background:#0a1023;">Pieces</option>
+                    </select>
+                  </div>
+                  <button onclick="addCustomToCart('1L Zenith Premium', 'qty-1l', 'unit-1l')" class="btn-ultimate" style="width:100%; border-radius:8px; padding:0.9rem; font-size:0.65rem; background:rgba(255,255,255,0.05); color:white; border:1px solid rgba(255,255,255,0.15);">ADD TO ENQUIRY</button>
                 </div>
               </div>
             </div>
-          </a>
+          </div>
 
           <!-- 2 LITER -->
-          <a href="pages/product-2l.html" style="text-decoration: none; color: inherit;" data-aos="fade-up" data-aos-delay="400">
+          <div data-aos="fade-up" data-aos-delay="400" style="display:flex; flex-direction:column; height:100%;">
             <div class="v3-product-card">
               <div class="v3-card-image">
                 <img src="zenith_bottle_hero.png" alt="ZENITH 2 litre family drinking water bottle Kolkata" loading="lazy">
@@ -493,13 +529,23 @@
                 <div class="v3-card-size">2.0 <span>L</span></div>
                 <div class="v3-card-tag">Legacy Unit</div>
                 <p class="v3-card-desc">Family excellence. Event scale.</p>
-                <div class="v3-card-footer">
-                  <div class="v3-mrp-badge">MRP ₹30</div>
-                  <div class="v3-card-arrow">→</div>
+                <div class="v3-card-footer" style="flex-direction: column; gap: 1rem; align-items: stretch;">
+                  <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+                    <div class="v3-mrp-badge">MRP ₹30</div>
+                    <a href="pages/product-2l.html" style="color:var(--color-accent); font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; text-decoration:none; font-weight:800;">View Details</a>
+                  </div>
+                  <div style="display:flex; gap:0.5rem; margin-bottom: -0.25rem;">
+                    <input type="number" id="qty-2l" value="1" min="1" style="width:60px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px; text-align:center; padding:0.5rem;">
+                    <select id="unit-2l" style="flex-grow:1; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px; padding:0.5rem; outline:none; text-align:center;">
+                      <option value="cases" style="background:#0a1023;">Cases</option>
+                      <option value="pcs" style="background:#0a1023;">Pieces</option>
+                    </select>
+                  </div>
+                  <button onclick="addCustomToCart('2L Zenith Premium', 'qty-2l', 'unit-2l')" class="btn-ultimate" style="width:100%; border-radius:8px; padding:0.9rem; font-size:0.65rem; background:rgba(255,255,255,0.05); color:white; border:1px solid rgba(255,255,255,0.15);">ADD TO ENQUIRY</button>
                 </div>
               </div>
             </div>
-          </a>
+          </div>
 
         </div>
       </div>
@@ -1174,6 +1220,7 @@
   <!-- ================= SCRIPTS ================= -->
   <script src="assets/js/aos.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/enquiry-cart.js?v=3.0"></script>
 
   <!-- ================= FEATURE 2: ZONE CLAIM SCRIPT ================= -->
   <script>
