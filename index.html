@@ -62,10 +62,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap"
     rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/variables.css?v=1.5">
-  <link rel="stylesheet" href="assets/css/main.css?v=1.5">
-  <link rel="stylesheet" href="assets/css/mobile-perfection.css?v=1.1">
+  <!-- CSS (V3.5 Cache Buster for Fonts and Colors) -->
+  <link rel="stylesheet" href="assets/css/variables.css?v=3.5">
+  <link rel="stylesheet" href="assets/css/main.css?v=3.5">
+  <link rel="stylesheet" href="assets/css/mobile-perfection.css?v=3.5">
   
   <style>
     /* Immediate Layout Hardening for Scrolled State */
@@ -204,9 +204,13 @@
   <!-- ================= MAIN ================= -->
   <main>
 
-    <!-- ================= HERO ELITE (EDITORIAL) ================= -->
-    <section class="hero-elite">
-      <div class="container hero-grid-layout" style="align-items: center;">
+    <!-- ================= HERO ELITE (EDITORIAL V3 + WATER PHYSICS) ================= -->
+    <section class="hero-elite" style="position: relative; overflow: hidden; padding: 6rem 0;">
+      
+      <!-- CSS Particle Physics Background -->
+      <div id="particles-bg" style="position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0.5;"></div>
+
+      <div class="container hero-grid-layout" style="align-items: center; position: relative; z-index: 1;">
         
         <div class="hero-text-block">
           <p class="counter-label" style="color: var(--color-accent); margin-bottom: 2rem; font-size: 0.7rem;" data-aos="fade-up">Architected for Purity</p>
@@ -220,12 +224,79 @@
           </div>
         </div>
 
-        <div class="hero-visual-block" data-aos="fade-left" data-aos-delay="800">
-          <img src="zenith_bottle_hero.png" alt="Zenith Elite 1L Premium Mineral Water Bottle - Sculpted Luxury Design">
+        <div class="hero-visual-block" data-aos="fade-left" data-aos-delay="800" style="position: relative; display: flex; justify-content: center; align-items: center; min-height: 500px;">
+          
+          <!-- Water Ripple Rings -->
+          <div class="water-ripple ripple-1"></div>
+          <div class="water-ripple ripple-2"></div>
+          <div class="water-ripple ripple-3"></div>
+          
+          <img src="zenith_bottle_hero.png" alt="Zenith Elite 1L Premium Mineral Water Bottle" style="position: relative; z-index: 5; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6)); width: 100%; max-width: 500px; min-width: 320px; flex-shrink: 0;">
         </div>
 
       </div>
     </section>
+
+    <style>
+      /* ── Water Ripple Physics ── */
+      .water-ripple {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, rgba(10, 61, 107, 0.1) 40%, transparent 70%);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        z-index: 1;
+        animation: rippleFloat 12s infinite cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .ripple-1 { width: 300px; height: 300px; animation-delay: 0s; }
+      .ripple-2 { width: 450px; height: 450px; animation-delay: -4s; border-color: rgba(181, 158, 109, 0.04); }
+      .ripple-3 { width: 600px; height: 600px; animation-delay: -8s; }
+
+      @keyframes rippleFloat {
+        0%   { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+        50%  { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+        100% { transform: translate(-50%, -50%) scale(1.4); opacity: 0; }
+      }
+
+      /* ── Background Particles ── */
+      .particle {
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+        opacity: 0.2;
+        animation: particleUp linear infinite;
+      }
+      @keyframes particleUp {
+        0%   { transform: translateY(100vh) scale(0.5); opacity: 0; }
+        20%  { opacity: 0.3; }
+        80%  { opacity: 0.1; }
+        100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+      }
+    </style>
+
+    <script>
+      /* Lightweight Particle Engine */
+      function createParticles() {
+        const bg = document.getElementById('particles-bg');
+        if (!bg) return;
+        const particleCount = 20; // Zero performance hit
+        for (let i = 0; i < particleCount; i++) {
+          let p = document.createElement('div');
+          p.className = 'particle';
+          let size = Math.random() * 4 + 1;
+          p.style.width = size + 'px';
+          p.style.height = size + 'px';
+          p.style.left = Math.random() * 100 + 'vw';
+          p.style.animationDuration = (Math.random() * 15 + 10) + 's';
+          p.style.animationDelay = (Math.random() * 5) + 's';
+          bg.appendChild(p);
+        }
+      }
+      document.addEventListener('DOMContentLoaded', createParticles);
+    </script>
+
 
     <!-- ================= HIGH-CONVERSION PINCODE MATRIX ================= -->
     <section class="pincode-matrix" style="padding: 4rem 0; background: linear-gradient(180deg, rgba(1, 4, 17, 0) 0%, rgba(15, 23, 42, 0.4) 100%);">
@@ -666,7 +737,7 @@
           <!-- FSSAI Prominent Number -->
           <div style="display: inline-flex; align-items: center; gap: 0.75rem; background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.25); padding: 0.75rem 2rem; border-radius: 50px; margin-top: 1rem;">
             <span style="color: #10B981; font-size: 1.2rem;">✓</span>
-            <span style="color: #10B981; font-weight: 700; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase;">FSSAI License No. 10025042000027</span>
+            <span style="color: #10B981; font-weight: 700; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase;">FSSAI License No. 12825999000938</span>
           </div>
         </div>
 
@@ -682,7 +753,7 @@
             <div class="cert-icon">🏛️</div>
             <h3 class="cert-name">FSSAI Certified</h3>
             <p class="cert-desc">Food Safety & Standards Authority of India. Full compliance with IS 14543 packaged drinking water standards.</p>
-            <div class="cert-number">License: 10025042000027</div>
+            <div class="cert-number">License: 12825999000938</div>
             <div class="cert-view">View Certificate →</div>
           </div>
 
@@ -829,7 +900,7 @@
     <script>
     /* Cert Modal */
     var certData = {
-      fssai: { icon: '🏛️', name: 'FSSAI Certified', detail: 'License No. 10025042000027\n\nFood Safety & Standards Authority of India certifies that Maharani Beverages LLP meets all requirements of IS 14543 for packaged drinking water. Valid & Active.' },
+      fssai: { icon: '🏛️', name: 'FSSAI Certified', detail: 'License No. 12825999000938\n\nFood Safety & Standards Authority of India certifies that Maharani Beverages LLP meets all requirements of IS 14543 for packaged drinking water. Valid & Active.' },
       bis: { icon: '🏆', name: 'BIS Approved', detail: 'IS 14543 Compliant\n\nBureau of Indian Standards confirms the product meets strict quality parameters for packaged drinking water including chemical, microbiological, and physical standards.' },
       iso: { icon: '⚙️', name: 'ISO 9001:2015', detail: 'Quality Management Certified\n\nISO 9001:2015 certification confirms our quality management system governing all processes from raw material procurement to final product delivery.' }
     };
@@ -982,24 +1053,119 @@
 
   </main>
 
-  <!-- ================= STEALTH FOOTER ================= -->
-  <footer style="padding: 5rem 0; border-top: 1px solid var(--glass-border); text-align: center;">
+  <!-- ================= V3 ARCHITECTURAL FOOTER ================= -->
+  <footer style="background: var(--section-dark); border-top: 1px solid rgba(255,255,255,0.08); padding: 6rem 0 3rem 0; position: relative; z-index: 10;">
     <div class="container">
-      <img src="zenith_logo_main.png" alt="Zenith" class="logo" loading="lazy" style="width: 160px; height: auto; margin-bottom: 2rem;" >
-      <p style="color: var(--color-muted); margin-bottom: 1rem;">Maharani Beverages LLP</p>
-      <p style="color: var(--color-muted); margin-bottom: 3rem;">Kolkata's Elite Hydration Choice.</p>
+      
+      <!-- Footer Grid: 3 Columns -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 4rem; margin-bottom: 5rem;">
+        
+        <!-- Col 1: Brand & Governance -->
+        <div>
+          <a href="index.html">
+            <img src="zenith_logo_main.png" alt="Zenith Water Official Logo" loading="lazy" style="width: 140px; height: auto; margin-bottom: 1.5rem;">
+          </a>
+          <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 2rem;">
+            The gold standard of premium mineral water in Kolkata. Engineered for absolute purity and architectural elegance.
+          </p>
+          <div style="display: inline-flex; align-items: center; gap: 0.6rem; background: rgba(16,185,129,0.05); border: 1px solid rgba(16,185,129,0.2); padding: 0.5rem 1rem; border-radius: 6px;">
+            <span style="color: #10B981; font-weight: 800;">✓</span>
+            <span style="color: rgba(255,255,255,0.8); font-size: 0.7rem; font-weight: 700; letter-spacing: 1px;">FSSAI 12825999000938</span>
+          </div>
+        </div>
 
-      <div style="margin-bottom: 3rem;">
-        <a href="blog/hydration-benefits.html" style="color: var(--color-accent); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px;">The Health Archive</a>
+        <!-- Col 2: Architecture (Links) -->
+        <div>
+          <h4 style="font-family: var(--font-heading); font-size: 1.2rem; color: white; margin-bottom: 1.5rem;">Architecture</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;">
+            <li><a href="index.html#products" class="footer-link">The Collection</a></li>
+            <li><a href="index.html#journey" class="footer-link">Source to Sip</a></li>
+            <li><a href="pages/distributor.html" class="footer-link">Distribution Network</a></li>
+            <li><a href="blog/hydration-benefits.html" class="footer-link">The Health Archive</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact & HQ -->
+        <div>
+          <h4 style="font-family: var(--font-heading); font-size: 1.2rem; color: white; margin-bottom: 1.5rem;">Headquarters</h4>
+          <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.8; margin-bottom: 1.5rem;">
+            Maharani Beverages LLP<br>
+            Kolkata, West Bengal<br>
+            <a href="tel:+918777627142" class="footer-link">📞 +91 87776 27142</a>
+          </p>
+          
+          <!-- Social Icons -->
+          <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
+
+          <!-- SEO Local Map Embed -->
+          <div style="border-radius: 8px; overflow: hidden; height: 120px; border: 1px solid rgba(255,255,255,0.1);">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117925.33439927768!2d88.2649504!3d22.5354273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f882db4908f667%3A0x43e330e68f6c2cbc!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0; filter: grayscale(100%) invert(90%) hue-rotate(180deg) contrast(1.2);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+
       </div>
 
-      <div style="display: flex; gap: 3rem; justify-content: center; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px;">
-        <a href="pages/privacy.html" style="color: rgba(255,255,255,0.4); text-decoration: none;">Privacy</a>
-        <a href="pages/terms.html" style="color: rgba(255,255,255,0.4); text-decoration: none;">Terms</a>
-        <a href="pages/compliance.html" style="color: rgba(255,255,255,0.4); text-decoration: none;">Compliance</a>
+      <!-- Legal Bar -->
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 2rem; gap: 1.5rem;">
+        <p style="color: rgba(255,255,255,0.4); font-size: 0.8rem; margin: 0;">
+          &copy; <script>document.write(new Date().getFullYear())</script> Maharani Beverages LLP. All Rights Reserved.
+        </p>
+        <div style="display: flex; gap: 2rem; font-weight: 600; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1.5px;">
+          <a href="pages/privacy.html" class="legal-link">Privacy Policy</a>
+          <a href="pages/terms.html" class="legal-link">Terms of Service</a>
+          <a href="pages/compliance.html" class="legal-link">Compliance</a>
+        </div>
       </div>
+
     </div>
   </footer>
+
+  <style>
+    /* Footer Interactive Styles */
+    .footer-link {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s, padding-left 0.3s;
+      display: inline-block;
+    }
+    .footer-link:hover {
+      color: var(--color-accent);
+      padding-left: 5px;
+    }
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      color: white;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .social-icon:hover {
+      background: var(--color-accent);
+      color: var(--color-primary);
+      transform: translateY(-3px);
+    }
+    .legal-link {
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .legal-link:hover {
+      color: white;
+    }
+  </style>
 
   <!-- ================= WHATSAPP CONCIERGE ================= -->
   <a href="https://wa.me/918777627142?text=Hello%20Zenith%20Teams%2C%20I%20have%20an%20inquiry%20regarding%20the%20Zenith%20Water%20Flagship." 
