@@ -36,7 +36,7 @@
     .nav-link:hover::after { width: 100%; }
     .mobile-nav-link { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; padding: 1.5rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.2s ease, color 0.2s ease; }
     .mobile-nav-link:hover { background: rgba(255,255,255,0.03); color: white; }
-    #mobile-menu.open { display: flex !important; max-height: 80vh !important; padding: 0 !important; }
+    #mobile-menu.open { max-height: 80vh !important; overflow-y: auto !important; }
     @media (max-width: 992px) { .desktop-nav { display: none !important; } .mobile-nav-group { display: flex !important; } }
     #hamburger.open .ham-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     #hamburger.open .ham-line:nth-child(2) { opacity: 0; }
@@ -105,14 +105,19 @@
     </nav>
 
     <!-- Mobile Slide Menu -->
-    <div id="mobile-menu" style="display: none; flex-direction: column; gap: 0; background: rgba(10, 16, 35, 0.98); backdrop-filter: blur(30px); border-top: 1px solid rgba(255,255,255,0.06); padding: 0; overflow-y: auto; max-height: 0; transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1), padding 0.3s;">
-      <a href="../index.html" onclick="closeMobileMenu()" class="mobile-nav-link">Home</a>
-      <a href="../index.html#products" onclick="closeMobileMenu()" class="mobile-nav-link">Products</a>
-      <a href="vision.html" onclick="closeMobileMenu()" class="mobile-nav-link">About</a>
-      <a href="bulk.html" onclick="closeMobileMenu()" class="mobile-nav-link">Inquiry</a>
-      <a href="../blog/hydration-benefits.html" onclick="closeMobileMenu()" class="mobile-nav-link">Blog</a>
-      <a href="careers.html" onclick="closeMobileMenu()" class="mobile-nav-link">Careers</a>
-      <a href="contact.html" onclick="closeMobileMenu()" class="mobile-nav-link">Contact</a>
+    <div id="mobile-menu" style="pointer-events: auto; position: absolute; top: 100%; left: 0; width: 100%; display: flex; flex-direction: column; gap: 0; background: rgba(10, 16, 35, 0.98); backdrop-filter: blur(30px); border-top: 1px solid rgba(255,255,255,0.06); padding: 0; overflow: hidden; max-height: 0; transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+      <a href="../index.html" class="mobile-nav-link">Home</a>
+      <a href="../index.html#products" class="mobile-nav-link">Products</a>
+      <a href="vision.html" class="mobile-nav-link">About</a>
+      <a href="bulk.html" class="mobile-nav-link">Inquiry</a>
+      <a href="../blog/hydration-benefits.html" class="mobile-nav-link">Blog</a>
+      <a href="careers.html" class="mobile-nav-link">Careers</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <a href="tel:+918777627142" style="color: #B59E6D; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; padding: 1.5rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.05);">📞 +91 87776 27142</a>
+      <a href="distributor.html" style="color: white; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; padding: 1.5rem 2rem; background: rgba(181,158,109,0.1); display: flex; align-items: center; justify-content: space-between;">
+        Become Distributor
+        <span style="background: #EF4444; color: white; font-size: 0.5rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 20px; letter-spacing: 1px;">Zones Available</span>
+      </a>
     </div>
   </header>
 
