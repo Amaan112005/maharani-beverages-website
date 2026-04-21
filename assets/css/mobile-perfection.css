@@ -123,43 +123,6 @@ img { max-width: 100%; height: auto; display: block; }
   }
   .header .logo, .logo { width: 60px !important; height: auto !important; }
 
-  /* ── HERO SECTION ── */
-  .hero-elite {
-    padding: 5rem 0 3rem 0 !important;
-    min-height: auto !important;
-  }
-  .hero-text-block {
-    text-align: center !important;
-    width: 100% !important;
-    padding: 0 !important;
-  }
-  .hero-text-block p {
-    max-width: 90% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-  .hero-text-block > div[style*="flex"] {
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 1rem !important;
-  }
-  .hero-visual-block {
-    width: 100% !important;
-    min-height: auto !important;
-    margin-top: 2rem !important;
-  }
-  .hero-visual-block img {
-    width: 55% !important;
-    max-width: 220px !important;
-    min-width: 140px !important;
-    margin: 0 auto !important;
-    object-fit: contain !important;
-  }
-  /* Shrink the water ripples on mobile so they don't overflow */
-  .ripple-1 { width: 180px !important; height: 180px !important; }
-  .ripple-2 { width: 260px !important; height: 260px !important; }
-  .ripple-3 { width: 340px !important; height: 340px !important; }
-
   /* ── BUTTONS: 48px+ touch targets ── */
   .btn-ultimate,
   a.btn-ultimate,
@@ -183,7 +146,7 @@ img { max-width: 100%; height: auto; display: block; }
 
   /* ── PRODUCT CARDS V3 ── */
   .v3-product-card { border-radius: 10px !important; }
-  .v3-card-image   { height: 160px !important; }
+  .v3-card-image   { height: 240px !important; }
   .v3-card-size    { font-size: 1.6rem !important; }
 
   /* ── PINCODE SECTION ── */
@@ -263,16 +226,8 @@ img { max-width: 100%; height: auto; display: block; }
   /* ── Container ── */
   .container { padding: 0 1.25rem !important; }
 
-  /* ── Hero bottle ── */
-  .hero-visual-block img {
-    width: 50% !important;
-    max-width: 180px !important;
-  }
-
   /* ── Buttons: full width on small phones ── */
   .btn-ultimate { width: 100% !important; }
-  .hero-text-block > div[style*="flex"],
-  div.hero-text-block ~ div,
   div[data-aos] > div[style*="flex"] {
     flex-direction: column !important;
     align-items: stretch !important;
@@ -283,7 +238,7 @@ img { max-width: 100%; height: auto; display: block; }
     grid-template-columns: 1fr 1fr !important;
     gap: 0.75rem !important;
   }
-  .v3-card-image { height: 130px !important; padding: 1rem !important; }
+  .v3-card-image { height: 200px !important; padding: 1rem !important; }
   .v3-card-body  { padding: 1rem !important; }
   .v3-card-size  { font-size: 1.4rem !important; }
   .v3-mrp-badge  { font-size: 0.65rem !important; }
@@ -348,9 +303,6 @@ img { max-width: 100%; height: auto; display: block; }
 
   /* ── Pincode input ── */
   #pincode-input { font-size: 0.95rem !important; }
-
-  /* ── Hero bottle ── */
-  .hero-visual-block img { max-width: 160px !important; }
 
   /* ── Navigation logo ── */
   .logo { width: 52px !important; }

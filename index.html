@@ -269,97 +269,462 @@
   <!-- ================= MAIN ================= -->
   <main>
 
-    <!-- ================= HERO ELITE (EDITORIAL V3 + WATER PHYSICS) ================= -->
-    <section class="hero-elite" style="position: relative; overflow: hidden; padding: 6rem 0;">
-      
-      <!-- CSS Particle Physics Background -->
-      <div id="particles-bg" style="position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0.5;"></div>
+    <!-- ================= HERO SLIDESHOW — CINEMATIC ================= -->
+    <section id="hero-slideshow">
 
-      <div class="container hero-grid-layout" style="align-items: center; position: relative; z-index: 1;">
-        
-        <div class="hero-text-block">
-          <p class="counter-label" style="color: var(--color-accent); margin-bottom: 2rem; font-size: 0.7rem;" data-aos="fade-up">Architected for Purity</p>
-          <h1 data-aos="fade-up" data-aos-delay="200" style="font-size: clamp(3rem, 10vw, 7.5rem); margin-bottom: 3rem; line-height: 0.9;">THE SILENT<br>MASTERPIECE:<br><span style="color:var(--color-accent); font-size: 0.4em; letter-spacing: 5px; vertical-align: middle;">PREMIUM ARTESIAN WATER</span></h1>
-          <p data-aos="fade-up" data-aos-delay="400" style="font-size: 1.125rem; color: var(--color-muted); max-width: 500px; line-height: 1.8; margin-bottom: 4rem;">
-            Born in the heart of Bengal. Purified to perfection. Zenith is the architecture of elite hydration, engineered for the highest standard of living.
-          </p>
-          <div style="display: flex; gap: 2rem;" data-aos="fade-up" data-aos-delay="600">
-            <a href="pages/distributor.html" class="btn-ultimate" style="background: var(--color-accent); color: var(--color-primary); border: none;">The Distribution Suite</a>
-            <a href="#products" class="btn-ultimate secondary">Explore Collection</a>
+      <!-- SLIDE BACKGROUNDS -->
+      <div class="hslide-bg-track">
+        <div class="hslide-bg active" style="background-image: url('hero-slide-1.png');"></div>
+        <div class="hslide-bg"        style="background-image: url('hero-slide-2.png');"></div>
+      </div>
+
+      <!-- OVERLAY GRADIENT (always on) -->
+      <div class="hslide-overlay"></div>
+
+
+      <div class="hslide-content">
+
+        <!-- SLIDE 1 -->
+        <div class="hslide-panel active" data-slide="0">
+          <p class="hslide-eyebrow">Architected for Purity</p>
+          <h1 class="hslide-headline">
+            <span class="hword">PURE.</span>
+            <br>
+            <span class="hword accent">ELEVATED.</span>
+          </h1>
+          <div class="hslide-ctas">
+            <a href="#products" class="btn-ultimate" style="background: var(--color-accent); color: var(--color-primary); border: none; padding: 0.9rem 2.5rem; font-size: 0.7rem;">Explore Collection</a>
+            <a href="pages/distributor.html" class="btn-ultimate" style="padding: 0.9rem 2rem; font-size: 0.7rem;">Become a Distributor</a>
           </div>
         </div>
 
-        <div class="hero-visual-block" data-aos="fade-left" data-aos-delay="800" style="position: relative; display: flex; justify-content: center; align-items: center; min-height: 500px;">
-          
-          <!-- Water Ripple Rings -->
-          <div class="water-ripple ripple-1"></div>
-          <div class="water-ripple ripple-2"></div>
-          <div class="water-ripple ripple-3"></div>
-          
-          <img src="zenith_bottle_hero.png" alt="Zenith Elite 1L Premium Mineral Water Bottle" style="position: relative; z-index: 5; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6)); width: 90%; max-width: 340px; min-width: 200px; flex-shrink: 0; object-fit: contain;">
+        <!-- SLIDE 2 -->
+        <div class="hslide-panel" data-slide="1">
+          <p class="hslide-eyebrow">Certified Excellence</p>
+          <h1 class="hslide-headline">
+            <span class="hword">100% PURE.</span>
+            <br>
+            <span class="hword accent">100% TRUST.</span>
+          </h1>
+          <div class="hslide-ctas">
+            <a href="#certifications" class="btn-ultimate" style="background: var(--color-accent); color: var(--color-primary); border: none; padding: 0.9rem 2.5rem; font-size: 0.7rem;">Our Certifications</a>
+            <a href="pages/contact.html" class="btn-ultimate" style="padding: 0.9rem 2rem; font-size: 0.7rem;">Contact Us</a>
+          </div>
         </div>
 
       </div>
+
+      <!-- SLIDE INDICATORS -->
+      <div class="hslide-dots">
+        <button class="hdot active" onclick="goSlide(0)" aria-label="Slide 1"></button>
+        <button class="hdot"        onclick="goSlide(1)" aria-label="Slide 2"></button>
+      </div>
+
+      <!-- SCROLL HINT -->
+      <div class="hslide-scroll-hint">
+        <span>Scroll</span>
+        <div class="hslide-scroll-line"></div>
+      </div>
+
+      <!-- SLIDE PROGRESS BAR -->
+      <div class="hslide-progress"><div class="hslide-progress-fill" id="hero-progress-fill"></div></div>
+
     </section>
 
+    <!-- ===== HERO SLIDESHOW STYLES ===== -->
     <style>
-      /* ── Water Ripple Physics ── */
-      .water-ripple {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, rgba(10, 61, 107, 0.1) 40%, transparent 70%);
-        border: 1px solid rgba(255, 255, 255, 0.03);
-        z-index: 1;
-        animation: rippleFloat 12s infinite cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      .ripple-1 { width: 300px; height: 300px; animation-delay: 0s; }
-      .ripple-2 { width: 450px; height: 450px; animation-delay: -4s; border-color: rgba(181, 158, 109, 0.04); }
-      .ripple-3 { width: 600px; height: 600px; animation-delay: -8s; }
+    #hero-slideshow {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+      background: #040810;
+    }
 
-      @keyframes rippleFloat {
-        0%   { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
-        50%  { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
-        100% { transform: translate(-50%, -50%) scale(1.4); opacity: 0; }
-      }
+    /* ── Background image track ── */
+    .hslide-bg-track {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hslide-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      /* Gradient fallback if no image provided */
+      background-color: #040916;
+      opacity: 0;
+      transition: opacity 1.2s cubic-bezier(0.16,1,0.3,1);
+      transform: scale(1.04);
+      transition: opacity 1.2s cubic-bezier(0.16,1,0.3,1),
+                  transform 6s cubic-bezier(0.16,1,0.3,1);
+    }
+    .hslide-bg.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+    /* Fallback gradients per slide when no image */
+    .hslide-bg:nth-child(1) { background-image: linear-gradient(135deg,#040916 0%,#0a1f3c 60%,#081428 100%); }
+    .hslide-bg:nth-child(2) { background-image: linear-gradient(135deg,#050c1a 0%,#0b2240 60%,#040c1c 100%); }
 
-      /* ── Background Particles ── */
-      .particle {
-        position: absolute;
-        background: white;
-        border-radius: 50%;
-        opacity: 0.2;
-        animation: particleUp linear infinite;
-      }
-      @keyframes particleUp {
-        0%   { transform: translateY(100vh) scale(0.5); opacity: 0; }
-        20%  { opacity: 0.3; }
-        80%  { opacity: 0.1; }
-        100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
-      }
+    /* ── Overlay ── */
+    .hslide-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(to right, rgba(2,5,14,0.82) 0%, rgba(2,5,14,0.4) 60%, rgba(2,5,14,0.1) 100%),
+        linear-gradient(to top,   rgba(2,5,14,0.7) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* ── Content panels ── */
+    .hslide-content {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      padding: 0 6% 0 8%;
+    }
+    .hslide-panel {
+      position: absolute;
+      left: 8%;
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 600px;
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+    }
+    .hslide-panel.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    @media (max-width: 768px) {
+      .hslide-panel { left: 0; right: 0; padding: 0 1.5rem; text-align: center; }
+      .hslide-ctas { justify-content: center !important; }
+    }
+
+    /* ── Eyebrow ── */
+    .hslide-eyebrow {
+      font-size: clamp(0.55rem, 1.2vw, 0.7rem);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      font-weight: 700;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
+    }
+    .hslide-panel.active .hslide-eyebrow {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Headline ── */
+    .hslide-headline {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -1px;
+      margin-bottom: 3rem;
+      overflow: visible;
+    }
+    .hword {
+      display: inline-block;
+      color: white;
+    }
+    .hword.accent { color: var(--color-accent); }
+
+    /* ── Per-letter animation ── */
+    .hletter {
+      display: inline-block;
+      opacity: 0;
+      will-change: transform, opacity, filter;
+    }
+    .hletter.assembled {
+      opacity: 1 !important;
+      transform: translate(0,0) rotate(0deg) !important;
+      filter: blur(0px) !important;
+      transition:
+        transform var(--letter-dur, 0.7s) cubic-bezier(0.16,1,0.3,1) var(--letter-delay, 0s),
+        opacity   var(--letter-dur, 0.7s) ease                         var(--letter-delay, 0s),
+        filter    var(--letter-dur, 0.7s) ease                         var(--letter-delay, 0s);
+    }
+    .hletter.scattered {
+      opacity: 0 !important;
+      transition:
+        transform var(--letter-dur, 0.5s) cubic-bezier(0.7,0,1,0.6)  var(--letter-delay, 0s),
+        opacity   0.3s ease                                             var(--letter-delay, 0s),
+        filter    0.3s ease                                             var(--letter-delay, 0s);
+    }
+
+    /* ── CTAs ── */
+    .hslide-ctas {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease 0.7s, transform 0.6s cubic-bezier(0.16,1,0.3,1) 0.7s;
+    }
+    .hslide-panel.active .hslide-ctas {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 480px) {
+      .hslide-ctas { flex-direction: column; gap: 0.75rem; width: 100%; }
+      .hslide-ctas .btn-ultimate { width: 100% !important; margin: 0; }
+    }
+
+    /* ── Dots ── */
+    .hslide-dots {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 8%;
+      z-index: 10;
+      display: flex;
+      gap: 0.6rem;
+    }
+    .hdot {
+      width: 28px;
+      height: 2px;
+      background: rgba(255,255,255,0.25);
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s, width 0.3s;
+      padding: 0;
+    }
+    .hdot.active {
+      background: var(--color-accent);
+      width: 48px;
+    }
+    @media(max-width:768px) {
+      .hslide-dots { left: 50%; transform: translateX(-50%); bottom: 4.5rem; }
+    }
+
+    /* ── Scroll hint ── */
+    .hslide-scroll-hint {
+      position: absolute;
+      bottom: 2.2rem;
+      right: 8%;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0.35;
+    }
+    .hslide-scroll-hint span {
+      font-size: 0.55rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: white;
+    }
+    .hslide-scroll-line {
+      width: 1px;
+      height: 36px;
+      background: linear-gradient(to bottom, white, transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%,100%{ opacity:0.3; transform:scaleY(1); }
+      50%     { opacity:1;   transform:scaleY(1.2); transform-origin: top; }
+    }
+    @media(max-width:768px){ .hslide-scroll-hint { display:none; } }
+
+    /* ── Progress bar ── */
+    .hslide-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: rgba(255,255,255,0.06);
+      z-index: 10;
+    }
+    .hslide-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--color-accent), rgba(255,255,255,0.6));
+      width: 0%;
+      transition: width 0.1s linear;
+    }
     </style>
 
+    <!-- ===== HERO SLIDESHOW JS ===== -->
     <script>
-      /* Lightweight Particle Engine */
-      function createParticles() {
-        const bg = document.getElementById('particles-bg');
-        if (!bg) return;
-        const particleCount = 20; // Zero performance hit
-        for (let i = 0; i < particleCount; i++) {
-          let p = document.createElement('div');
-          p.className = 'particle';
-          let size = Math.random() * 4 + 1;
-          p.style.width = size + 'px';
-          p.style.height = size + 'px';
-          p.style.left = Math.random() * 100 + 'vw';
-          p.style.animationDuration = (Math.random() * 15 + 10) + 's';
-          p.style.animationDelay = (Math.random() * 5) + 's';
-          bg.appendChild(p);
-        }
+    (function() {
+      var SLIDES = [
+        { bg: 0, panel: 0 },
+        { bg: 1, panel: 1 }
+      ];
+      var INTERVAL = 5000; // ms per slide
+      var current = 0;
+      var timer = null;
+      var progressTimer = null;
+      var progressStart = null;
+
+      var bgs    = document.querySelectorAll('.hslide-bg');
+      var panels = document.querySelectorAll('.hslide-panel');
+      var dots   = document.querySelectorAll('.hdot');
+      var fill   = document.getElementById('hero-progress-fill');
+
+      /* ── Letter splitting ── */
+      function splitLetters(panel) {
+        panel.querySelectorAll('.hword').forEach(function(word) {
+          var text = word.textContent;
+          word.innerHTML = '';
+          text.split('').forEach(function(ch, i) {
+            var s = document.createElement('span');
+            s.className = 'hletter';
+            s.textContent = ch === ' ' ? '\u00a0' : ch;
+            word.appendChild(s);
+          });
+        });
       }
-      document.addEventListener('DOMContentLoaded', createParticles);
+
+      /* ── Scatter a single letter into random positions ── */
+      function scatterLetter(el, isOut) {
+        var vx = (Math.random() - 0.5) * 600;
+        var vy = (Math.random() - 0.5) * 400;
+        var rot = (Math.random() - 0.5) * 120;
+        var sc = 0.3 + Math.random() * 0.7;
+        el.style.transform = 'translate(' + vx + 'px,' + vy + 'px) rotate(' + rot + 'deg) scale(' + sc + ')';
+        el.style.filter = 'blur(' + (4 + Math.random() * 6) + 'px)';
+      }
+
+      /* ── Animate panel IN ── */
+      function animateIn(panel) {
+        // Clear any inline opacity that might persist from a previous animateOut
+        panel.querySelector('.hslide-eyebrow').style.opacity = '';
+        panel.querySelector('.hslide-ctas').style.opacity = '';
+
+        var letters = panel.querySelectorAll('.hletter');
+        letters.forEach(function(el, i) {
+          // Start from scattered state
+          el.classList.remove('assembled', 'scattered');
+          scatterLetter(el);
+          el.style.setProperty('--letter-delay', (i * 0.028 + 0.12) + 's');
+          el.style.setProperty('--letter-dur', '0.75s');
+          // Removed inline opacity so CSS class takes over fully
+        });
+        // Trigger assembly
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            letters.forEach(function(el) {
+              el.classList.add('assembled');
+            });
+          });
+        });
+      }
+
+      /* ── Animate panel OUT ── */
+      function animateOut(panel, cb) {
+        var letters = panel.querySelectorAll('.hletter');
+        var max = letters.length;
+        letters.forEach(function(el, i) {
+          var delay = i * 0.015;
+          el.style.setProperty('--letter-delay', delay + 's');
+          el.style.setProperty('--letter-dur', '0.45s');
+          scatterLetter(el);
+          el.classList.remove('assembled');
+          el.classList.add('scattered');
+        });
+        setTimeout(cb || function(){}, max * 15 + 500);
+      }
+
+      /* ── Go to slide ── */
+      var isAnimating = false;
+      window.goSlide = function(idx) {
+        if (idx === current || isAnimating) return;
+        isAnimating = true;
+
+        clearInterval(timer);
+        clearTimeout(progressTimer);
+
+        var prev = current;
+        current = idx;
+
+        // BG swap
+        bgs[prev].classList.remove('active');
+        bgs[idx].classList.add('active');
+
+        // Panel swap
+        var prevPanel = panels[prev];
+        var nextPanel = panels[idx];
+
+        prevPanel.querySelector('.hslide-eyebrow').style.opacity = '0';
+        prevPanel.querySelector('.hslide-ctas').style.opacity = '0';
+
+        animateOut(prevPanel, function() {
+          prevPanel.classList.remove('active');
+        });
+
+        nextPanel.classList.add('active');
+        animateIn(nextPanel);
+
+        // Unlock after animations finish
+        setTimeout(function() { isAnimating = false; }, 800);
+
+        // Dots
+        dots.forEach(function(d,i){ d.classList.toggle('active', i===idx); });
+
+        // Restart
+        startProgress();
+        timer = setInterval(nextSlide, INTERVAL);
+      };
+
+      function nextSlide() {
+        goSlide((current + 1) % SLIDES.length);
+      }
+
+      /* ── Progress bar ── */
+      function startProgress() {
+        if (!fill) return;
+        fill.style.transition = 'none';
+        fill.style.width = '0%';
+        clearTimeout(progressTimer);
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            fill.style.transition = 'width ' + INTERVAL + 'ms linear';
+            fill.style.width = '100%';
+          });
+        });
+      }
+
+      /* ── Init ── */
+      document.addEventListener('DOMContentLoaded', function() {
+        panels.forEach(splitLetters);
+        // Delay the first slide in so the user can fully see the scatter load effect
+        setTimeout(function() {
+          panels[0].classList.add('active');
+          animateIn(panels[0]);
+          // Start autoplay
+          startProgress();
+          timer = setInterval(nextSlide, INTERVAL);
+        }, 300);
+      });
+
+      // Pause on hover
+      var section = document.getElementById('hero-slideshow');
+      if (section) {
+        section.addEventListener('mouseenter', function() {
+          clearInterval(timer);
+          if (fill) { fill.style.animationPlayState = 'paused'; }
+        });
+        section.addEventListener('mouseleave', function() {
+          clearInterval(timer); // Prevent timer stacking
+          startProgress();
+          timer = setInterval(nextSlide, INTERVAL);
+        });
+      }
+    })();
     </script>
 
 
@@ -457,29 +822,172 @@
     </script>
 
 
-    <!-- ================= THE IMPACT SUITE (VERIFIED PERFORMANCE) ================= -->
-    <section class="counter-section section-mid">
-      <div class="container" style="text-align: center; margin-bottom: 8rem;" data-aos="fade-up">
-        <p class="counter-label" style="color: var(--color-accent); margin-bottom: 2rem;">The Performance</p>
-        <h2 style="font-size: var(--font-size-h2); line-height: 1;">THE IMPACT<br>SUITE.</h2>
-        <p style="color: var(--color-muted); max-width: 600px; margin: 0 auto; line-height: 2; margin-top: 2rem;">Quantifying our commitment to absolute hydration and distribution excellence across the Indian landscape.</p>
+    <!-- ============ LUXURY MARQUEE TICKER ============ -->
+    <div class="marquee-band" aria-hidden="true">
+      <div class="marquee-track">
+        <span>PURE &nbsp;·&nbsp; ELEVATED &nbsp;·&nbsp; BENGAL BORN &nbsp;·&nbsp; FSSAI CERTIFIED &nbsp;·&nbsp; MOLECULAR PURITY &nbsp;·&nbsp; ARTESIAN SOURCE &nbsp;·&nbsp; ZERO COMPROMISE &nbsp;·&nbsp; HYDRATION REDEFINED &nbsp;·&nbsp;</span>
+        <span>PURE &nbsp;·&nbsp; ELEVATED &nbsp;·&nbsp; BENGAL BORN &nbsp;·&nbsp; FSSAI CERTIFIED &nbsp;·&nbsp; MOLECULAR PURITY &nbsp;·&nbsp; ARTESIAN SOURCE &nbsp;·&nbsp; ZERO COMPROMISE &nbsp;·&nbsp; HYDRATION REDEFINED &nbsp;·&nbsp;</span>
       </div>
+    </div>
+    <style>
+    .marquee-band {
+      overflow: hidden;
+      background: var(--color-accent);
+      padding: 0.9rem 0;
+      white-space: nowrap;
+    }
+    .marquee-track {
+      display: inline-flex;
+      animation: marqueeSlide 28s linear infinite;
+    }
+    .marquee-track span {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      font-weight: 800;
+      padding-right: 2rem;
+    }
+    @keyframes marqueeSlide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-band:hover .marquee-track { animation-play-state: paused; }
+    </style>
 
-      <div class="container" style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; gap: 4rem;">
-        <div class="counter-box" data-aos="fade-up">
-          <div class="counter-number">1,000,000</div>
-          <p class="counter-label">BOTTLES DISTRIBUTED</p>
+    <!-- ============ STATS STRIP — PREMIUM ============ -->
+    <section class="stats-strip">
+      <div class="stats-strip-inner">
+
+        <div class="sstat" data-aos="fade-up" data-aos-delay="0">
+          <div class="sstat-bg-num">1M</div>
+          <div class="sstat-val">1M<sup>+</sup></div>
+          <div class="sstat-divider"></div>
+          <div class="sstat-lbl">Bottles Delivered</div>
         </div>
-        <div class="counter-box" data-aos="fade-up" data-aos-delay="200">
-          <div class="counter-number">100%</div>
-          <p class="counter-label">PURITY GUARANTEED</p>
+
+        <div class="sstat-sep"></div>
+
+        <div class="sstat" data-aos="fade-up" data-aos-delay="100">
+          <div class="sstat-bg-num">100</div>
+          <div class="sstat-val">100<sup>%</sup></div>
+          <div class="sstat-divider"></div>
+          <div class="sstat-lbl">Purity Guaranteed</div>
         </div>
-        <div class="counter-box" data-aos="fade-up" data-aos-delay="400">
-          <div class="counter-number">ALL</div>
-          <p class="counter-label">HOWRAH & KOLKATA</p>
+
+        <div class="sstat-sep"></div>
+
+        <div class="sstat" data-aos="fade-up" data-aos-delay="200">
+          <div class="sstat-bg-num">7</div>
+          <div class="sstat-val">7<sup>×</sup></div>
+          <div class="sstat-divider"></div>
+          <div class="sstat-lbl">Stage Filtration</div>
         </div>
+
+        <div class="sstat-sep"></div>
+
+        <div class="sstat" data-aos="fade-up" data-aos-delay="300">
+          <div class="sstat-bg-num">24</div>
+          <div class="sstat-val">24<sup>h</sup></div>
+          <div class="sstat-divider"></div>
+          <div class="sstat-lbl">Delivery Promise</div>
+        </div>
+
       </div>
     </section>
+
+    <style>
+    .stats-strip {
+      background: #04080f;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      overflow: hidden;
+    }
+    .stats-strip-inner {
+      display: flex;
+      align-items: stretch;
+      width: 100%;
+      min-height: 240px;
+    }
+    .sstat {
+      flex: 1;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+      overflow: hidden;
+      text-align: center;
+      transition: background 0.4s ease;
+    }
+    .sstat:hover { background: rgba(181,158,109,0.03); }
+    /* Ghost number behind */
+    .sstat-bg-num {
+      position: absolute;
+      font-family: var(--font-heading);
+      font-size: clamp(6rem, 14vw, 12rem);
+      font-weight: 900;
+      color: rgba(255,255,255,0.025);
+      line-height: 1;
+      pointer-events: none;
+      white-space: nowrap;
+      user-select: none;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      letter-spacing: -4px;
+    }
+    /* Foreground number */
+    .sstat-val {
+      position: relative;
+      font-family: var(--font-heading);
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 900;
+      color: white;
+      line-height: 1;
+      letter-spacing: -1px;
+      white-space: nowrap;
+      margin-bottom: 1rem;
+    }
+    .sstat-val sup {
+      font-size: 0.4em;
+      color: var(--color-accent);
+      vertical-align: super;
+      letter-spacing: 0;
+      font-weight: 800;
+    }
+    .sstat-divider {
+      width: 2rem;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+      margin: 0 auto 1rem auto;
+    }
+    .sstat-lbl {
+      position: relative;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: rgba(255,255,255,0.4);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .sstat-sep {
+      width: 1px;
+      background: rgba(255,255,255,0.06);
+      flex-shrink: 0;
+    }
+    @media (max-width: 700px) {
+      .stats-strip-inner { flex-wrap: wrap; }
+      .sstat { flex: 1 1 50%; min-width: 50%; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .sstat-sep { display: none; }
+      .sstat-bg-num { font-size: 8rem; }
+    }
+    @media (max-width: 360px) {
+      .sstat { flex: 1 1 100%; }
+    }
+    </style>
 
     <!-- ================= 3D PRODUCT SHOWCASE ================= -->
     <!-- ================= PRODUCT CARDS V3 ================= -->
@@ -645,20 +1153,20 @@
       text-transform: uppercase;
     }
     .v3-card-image {
-      height: 220px;
+      height: 320px;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
-      padding: 2rem;
-      background: linear-gradient(180deg, rgba(10,61,107,0.06) 0%, rgba(0,0,0,0) 100%);
+      padding: 2rem 2rem 0;
+      background: linear-gradient(180deg, rgba(10,40,90,0.12) 0%, rgba(0,0,0,0) 100%);
     }
     .v3-card-image img {
       height: 100%;
-      max-height: 180px;
+      max-height: 300px;
       width: auto;
       object-fit: contain;
-      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
-      filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
+      transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5)) drop-shadow(0 5px 20px rgba(181,158,109,0.08));
     }
     .v3-product-card:hover .v3-card-image img {
       transform: scale(1.07) translateY(-4px);
@@ -744,92 +1252,106 @@
       </div>
     </section>
 
-    <!-- ================= VERTICAL JOURNEY (EDITORIAL) ================= -->
-    <section id="journey" style="padding-top: 10rem; padding-bottom: 10rem; background: var(--section-mid);">
+    <!-- ================= SOURCE TO SIP — HORIZONTAL ICON TIMELINE ================= -->
+    <section id="journey" style="padding: 8rem 0; background: var(--section-mid);">
       <div class="container">
-        <div style="text-align: left; margin-bottom: 12rem;" data-aos="fade-up">
-          <p class="counter-label" style="color: var(--color-accent); margin-bottom: 2rem;">The Architecture</p>
-          <h2 style="font-size: var(--font-size-h2); line-height: 1;">SOURCE<br>TO SIP.</h2>
+        <div style="text-align: center; margin-bottom: 5rem;" data-aos="fade-up">
+          <p class="counter-label" style="color: var(--color-accent); margin-bottom: 1rem;">The Process</p>
+          <h2 style="font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1;">SOURCE TO SIP.</h2>
         </div>
 
-        <div class="journey-grid">
-        
-        <div class="journey-image" data-aos="fade-right">
-             <div style="width: 100%; height: 600px; border: 1px solid var(--glass-border); border-radius: var(--radius-elite); overflow: hidden;">
-                 <img src="assets/img/zenith_source_to_sip.png" alt="Zenith Source to Sip" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-             </div>
+        <!-- Horizontal Timeline -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); position: relative; gap: 0;" data-aos="fade-up" data-aos-delay="100">
+          
+          <!-- Connector line -->
+          <div style="position: absolute; top: 2.75rem; left: calc(16.6% + 1rem); right: calc(16.6% + 1rem); height: 1px; background: linear-gradient(90deg, transparent, rgba(181,158,109,0.3), rgba(181,158,109,0.3), transparent); z-index: 0;"></div>
+
+          <!-- Step 1 -->
+          <div style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 2rem; position: relative; z-index: 1;">
+            <div style="width: 5.5rem; height: 5.5rem; border-radius: 50%; border: 1px solid rgba(181,158,109,0.3); background: rgba(181,158,109,0.05); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 2rem;">💧</div>
+            <h4 style="font-family: var(--font-heading); color: white; font-size: 1.1rem; margin-bottom: 0.75rem; letter-spacing: 1px;">Artesian Source</h4>
+            <p style="color: var(--color-muted); font-size: 0.85rem; line-height: 1.7;">Regional Bengal groundwater, naturally shielded.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 2rem; position: relative; z-index: 1;">
+            <div style="width: 5.5rem; height: 5.5rem; border-radius: 50%; border: 1px solid rgba(181,158,109,0.5); background: rgba(181,158,109,0.08); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 2rem;">⚗️</div>
+            <h4 style="font-family: var(--font-heading); color: white; font-size: 1.1rem; margin-bottom: 0.75rem; letter-spacing: 1px;">7-Stage Filtration</h4>
+            <p style="color: var(--color-muted); font-size: 0.85rem; line-height: 1.7;">RO, UV & Ozone at 0.0001 micron precision.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 2rem; position: relative; z-index: 1;">
+            <div style="width: 5.5rem; height: 5.5rem; border-radius: 50%; border: 1px solid rgba(181,158,109,0.3); background: rgba(181,158,109,0.05); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 2rem;">✨</div>
+            <h4 style="font-family: var(--font-heading); color: white; font-size: 1.1rem; margin-bottom: 0.75rem; letter-spacing: 1px;">Mineral Sealed</h4>
+            <p style="color: var(--color-muted); font-size: 0.85rem; line-height: 1.7;">Essential minerals restored. Crisp, perfect taste.</p>
+          </div>
         </div>
 
-        <div class="journey-details">
-            <div class="journey-item" data-aos="fade-up" style="margin-bottom: 8rem;">
-              <div class="h-panel-num">01</div>
-              <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Artesian Selection</h3>
-              <p style="color: var(--color-muted);">Sourced from regional sectors, shielded from the complexities of the modern world.</p>
-            </div>
-
-            <div class="journey-item" data-aos="fade-up" data-aos-delay="200" style="margin-bottom: 8rem;">
-              <div class="h-panel-num">02</div>
-              <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Molecular Clarity</h3>
-              <p style="color: var(--color-muted);">Intense Reverse Osmosis filtration down to 0.0001 microns. Purity without compromise.</p>
-            </div>
-
-            <div class="journey-item" data-aos="fade-up" data-aos-delay="400">
-              <div class="h-panel-num">03</div>
-              <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem;">The Gold Standard</h3>
-              <p style="color: var(--color-muted);">Final mineralization and Ozone sealing ensure a crisp, high-performance taste profile.</p>
-            </div>
-        </div>
-
-        </div>
+        <!-- Mobile: stack to 1 col -->
+        <style>@media(max-width:640px){ #journey [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; } #journey [style*="top: 2.75rem"] { display:none; } }</style>
       </div>
     </section>
 
 
 
-    <!-- ================= THE QUALITY ENGINE (ELITE BLUEPRINT) ================= -->
-    <section id="filtration" class="container">
-      <div style="text-align: left; margin-bottom: 8rem;" data-aos="fade-up">
-        <p class="counter-label" style="color: var(--color-accent); margin-bottom: 2rem;">The Engineering</p>
-        <h2 style="font-size: var(--font-size-h2); line-height: 1;">THE QUALITY<br>ENGINE.</h2>
-      </div>
-
-      <div class="filtration-grid">
-        
-        <div class="filtration-card" data-aos="fade-up">
-          <div class="card-num">I</div>
-          <h4>MACRO<br>NEUTRALIZATION</h4>
-          <p>The extraction of natural sediment and organic complexities through high-density carbon synthesis.</p>
-          <div class="card-detail">Baseline Preparation</div>
+    <!-- ================= QUALITY ENGINE — ICON + 1 LINE ================= -->
+    <section id="filtration" style="padding: 8rem 0;">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 5rem;" data-aos="fade-up">
+          <p class="counter-label" style="color: var(--color-accent); margin-bottom: 1rem;">The Engineering</p>
+          <h2 style="font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1;">7-STAGE PURITY.</h2>
         </div>
 
-        <div class="filtration-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="card-num">II</div>
-          <h4>MOLECULAR<br>PURITY</h4>
-          <p>A relentless barrier against the microscopic. Technical precision at a threshold of 0.0001 microns.</p>
-          <div class="card-detail">Reverse Osmosis Suite</div>
-        </div>
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem;" data-aos="fade-up" data-aos-delay="100">
+ 
+          <div class="filt-icon-card">
+            <div class="filt-icon">🪨</div>
+            <div class="filt-name">Sediment<br>Filter</div>
+            <div class="filt-line">Removes sand & particulates.</div>
+          </div>
 
-        <div class="filtration-card" data-aos="fade-up" data-aos-delay="400">
-          <div class="card-num">III</div>
-          <h4>PHOTONIC<br>SECURITY</h4>
-          <p>Absolute biological neutralization through targeted high-spectrum ultraviolet energy.</p>
-          <div class="card-detail">Sterilization Core</div>
-        </div>
+          <div class="filt-icon-card">
+            <div class="filt-icon">🌑</div>
+            <div class="filt-name">Carbon<br>Block</div>
+            <div class="filt-line">Eliminates chlorine & odor.</div>
+          </div>
 
-        <div class="filtration-card" data-aos="fade-up" data-aos-delay="600">
-          <div class="card-num">IV</div>
-          <h4>OZONE<br>SUSPENSION</h4>
-          <p>Infusing pure oxygen to suspend time and preserve baseline freshness without synthetic stabilizers.</p>
-          <div class="card-detail">Atmospheric Sealing</div>
-        </div>
+          <div class="filt-icon-card" style="border-color: rgba(181,158,109,0.3); background: rgba(181,158,109,0.04);">
+            <div class="filt-icon">💠</div>
+            <div class="filt-name">Reverse<br>Osmosis</div>
+            <div class="filt-line">0.0001 micron precision filtration.</div>
+          </div>
 
-        <div class="filtration-card" data-aos="fade-up" data-aos-delay="800">
-          <div class="card-num">V</div>
-          <h4>MINERAL<br>ARCHITECTURE</h4>
-          <p>The curated return of essential electrolytes. Engineered for the refined, high-performance palate.</p>
-          <div class="card-detail">Taste Synthesis</div>
-        </div>
+          <div class="filt-icon-card">
+            <div class="filt-icon">☀️</div>
+            <div class="filt-name">UV<br>Sterilization</div>
+            <div class="filt-line">Destroys all biological agents.</div>
+          </div>
 
+          <div class="filt-icon-card">
+            <div class="filt-icon">⚡</div>
+            <div class="filt-name">Ozone<br>Sealing</div>
+            <div class="filt-line">Locks freshness. Zero preservatives.</div>
+          </div>
+
+        </div>
+        <style>
+        .filt-icon-card {
+          background: rgba(255,255,255,0.02);
+          border: 1px solid rgba(255,255,255,0.07);
+          border-radius: 12px;
+          padding: 2rem 1.5rem;
+          text-align: center;
+          transition: transform 0.3s ease, border-color 0.3s;
+        }
+        .filt-icon-card:hover { transform: translateY(-6px); border-color: rgba(181,158,109,0.25); }
+        .filt-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .filt-name { font-family: var(--font-heading); font-size: 0.9rem; color: white; line-height: 1.3; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+        .filt-line { font-size: 0.8rem; color: var(--color-muted); line-height: 1.5; }
+        @media(max-width:900px) { #filtration [style*="grid-template-columns: repeat(5"] { grid-template-columns: repeat(3, 1fr) !important; } }
+        @media(max-width:540px) { #filtration [style*="grid-template-columns: repeat(5"] { grid-template-columns: repeat(2, 1fr) !important; } }
+        </style>
       </div>
     </section>
 
@@ -1370,6 +1892,208 @@
       /* Extra padding so last page content isn't hidden behind bar */
       body { padding-bottom: 80px; }
     }
+  </style>
+
+  <!-- ============================================================
+       ELITE VISUAL SYSTEMS — CURSOR · GRAIN · 3D TILT
+  ============================================================ -->
+
+  <!-- 1. SVG FILM GRAIN OVERLAY (editorial texture) -->
+  <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+    <filter id="grain-filter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </svg>
+  <div id="grain-overlay" aria-hidden="true" style="
+    position: fixed; inset: 0; z-index: 9990; pointer-events: none;
+    opacity: 0.035;
+    filter: url(#grain-filter);
+    background: transparent;
+    mix-blend-mode: overlay;
+    width: 200%; height: 200%; top: -50%; left: -50%;
+    animation: grainAnim 0.8s steps(2) infinite;
+  "></div>
+  <style>
+  @keyframes grainAnim {
+    0%,100% { transform: translate(0,0); }
+    10%      { transform: translate(-2%,-1%); }
+    20%      { transform: translate(3%,2%); }
+    30%      { transform: translate(-1%,3%); }
+    40%      { transform: translate(2%,-2%); }
+    50%      { transform: translate(-3%,1%); }
+    60%      { transform: translate(1%,-3%); }
+    70%      { transform: translate(-2%,2%); }
+    80%      { transform: translate(3%,-1%); }
+    90%      { transform: translate(-1%,2%); }
+  }
+  </style>
+
+  <!-- 2. CUSTOM MAGNETIC CURSOR -->
+  <div id="cursor-outer" aria-hidden="true"></div>
+  <div id="cursor-inner" aria-hidden="true"></div>
+  <style>
+  /* Hide default cursor globally */
+  @media (pointer: fine) {
+    *, *::before, *::after { cursor: none !important; }
+  }
+  #cursor-outer {
+    position: fixed;
+    width: 40px; height: 40px;
+    border: 1px solid rgba(181,158,109,0.6);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transition: transform 0.12s cubic-bezier(0.16,1,0.3,1), opacity 0.3s, width 0.25s, height 0.25s, background 0.25s;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+  }
+  #cursor-inner {
+    position: fixed;
+    width: 6px; height: 6px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.05s linear;
+    box-shadow: 0 0 10px rgba(181,158,109,0.8);
+  }
+  .cursor-hover #cursor-outer {
+    width: 60px; height: 60px;
+    background: rgba(181,158,109,0.08);
+    border-color: var(--color-accent);
+  }
+  .cursor-click #cursor-outer {
+    width: 30px; height: 30px;
+    background: rgba(181,158,109,0.2);
+  }
+  </style>
+  <script>
+  (function() {
+    var outer = document.getElementById('cursor-outer');
+    var inner = document.getElementById('cursor-inner');
+    if (!outer || !inner) return;
+    var mx = window.innerWidth/2, my = window.innerHeight/2;
+    var ox = mx, oy = my;
+    // Smooth outer follows inner with lag
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    function animCursor() {
+      ox = lerp(ox, mx, 0.14);
+      oy = lerp(oy, my, 0.14);
+      outer.style.left = ox + 'px';
+      outer.style.top  = oy + 'px';
+      inner.style.left = mx + 'px';
+      inner.style.top  = my + 'px';
+      requestAnimationFrame(animCursor);
+    }
+    animCursor();
+    document.addEventListener('mousemove', function(e) { mx = e.clientX; my = e.clientY; });
+    // Hover state on interactive elements
+    var hoverEls = document.querySelectorAll('a, button, .v3-product-card, .filt-icon-card, .cert-card');
+    hoverEls.forEach(function(el) {
+      el.addEventListener('mouseenter', function() { document.body.classList.add('cursor-hover'); });
+      el.addEventListener('mouseleave', function() { document.body.classList.remove('cursor-hover'); });
+    });
+    document.addEventListener('mousedown', function() { document.body.classList.add('cursor-click'); });
+    document.addEventListener('mouseup', function() { document.body.classList.remove('cursor-click'); });
+    // Hide on touch
+    document.addEventListener('touchstart', function() { outer.style.display='none'; inner.style.display='none'; }, {once:true});
+  })();
+  </script>
+
+  <!-- 3. 3D PERSPECTIVE TILT on Product Cards -->
+  <style>
+  .v3-product-card { transform-style: preserve-3d; will-change: transform; }
+  </style>
+  <script>
+  (function() {
+    function initTilt() {
+      document.querySelectorAll('.v3-product-card').forEach(function(card) {
+        card.addEventListener('mousemove', function(e) {
+          var rect = card.getBoundingClientRect();
+          var cx = rect.left + rect.width / 2;
+          var cy = rect.top + rect.height / 2;
+          var dx = (e.clientX - cx) / (rect.width / 2);
+          var dy = (e.clientY - cy) / (rect.height / 2);
+          var rotX = dy * -8;
+          var rotY = dx * 10;
+          card.style.transform = 'perspective(800px) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg) translateY(-8px)';
+          // Move inner glow
+          var glowX = 50 + dx * 30;
+          var glowY = 50 + dy * 30;
+          card.style.background = 'radial-gradient(circle at ' + glowX + '% ' + glowY + '%, rgba(181,158,109,0.06) 0%, rgba(255,255,255,0.015) 50%, rgba(255,255,255,0.01) 100%)';
+        });
+        card.addEventListener('mouseleave', function() {
+          card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+          card.style.background = '';
+          card.style.transition = 'transform 0.6s cubic-bezier(0.16,1,0.3,1), background 0.6s';
+        });
+        card.addEventListener('mouseenter', function() {
+          card.style.transition = 'none';
+        });
+      });
+    }
+    document.addEventListener('DOMContentLoaded', initTilt);
+  })();
+  </script>
+
+  <!-- 4. SPLIT-TEXT REVEAL on hero H1 -->
+  <style>
+  .char-reveal {
+    display: inline-block;
+    overflow: hidden;
+  }
+  .char-reveal span {
+    display: inline-block;
+    transform: translateY(110%);
+    animation: charUp 0.7s cubic-bezier(0.16,1,0.3,1) forwards;
+  }
+  @keyframes charUp {
+    to { transform: translateY(0); }
+  }
+  </style>
+
+  <!-- 5. SCROLL PROGRESS BAR -->
+  <div id="scroll-bar" style="position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--color-accent),#fff);z-index:99998;width:0%;transition:width 0.1s linear;pointer-events:none;"></div>
+  <script>
+  window.addEventListener('scroll', function() {
+    var scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    var bar = document.getElementById('scroll-bar');
+    if (bar) bar.style.width = scrolled + '%';
+  });
+  </script>
+
+  <!-- 6. ANIMATED HERO GRADIENT MESH -->
+  <style>
+  .hero-elite::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 80%, rgba(10,40,107,0.4) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 80% 20%, rgba(5,20,60,0.5) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 50% 50%, rgba(181,158,109,0.04) 0%, transparent 70%);
+    animation: meshDrift 12s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+  }
+  @keyframes meshDrift {
+    0%   { opacity: 0.6; transform: scale(1); }
+    50%  { opacity: 1; transform: scale(1.04); }
+    100% { opacity: 0.7; transform: scale(1.02); }
+  }
+
+  /* Shimmer sweep on section headings */
+  h1, h2 {
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+
+  /* Section reveal — slide up + fade */
+  [data-aos="fade-up"] {
+    transition-timing-function: cubic-bezier(0.16,1,0.3,1) !important;
+  }
   </style>
 
 </body>
