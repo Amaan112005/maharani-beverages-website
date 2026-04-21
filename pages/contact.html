@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enterprise Contact Hub | ZENITH Premium Water</title>
+  <meta name="description" content="Access the Zenith Enterprise Communications Hub. Investor relations, B2B procurement, and priority support routing.">
+
+  <link rel="canonical" href="https://maharanibeverages.com/pages/contact.html">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact | ZENITH Modern Purity">
+  <meta property="og:description" content="Connect with the Maharani Beverages LLP Corporate Headquarters.">
+  <meta property="og:image" content="https://maharanibeverages.com/zenith_logo_main.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/mobile-perfection.css?v=1.1">
+
+  <style>
+    /* Navigation Mirrors */
+    .header { position: sticky; top: 0; z-index: 1000; transition: all 0.4s ease; background: transparent; }
+    .header.scrolled { background: rgba(8, 14, 32, 0.97) !important; backdrop-filter: blur(24px); box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
+    .nav-link { color: rgba(255,255,255,0.7); text-decoration: none; font-weight: 600; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; position: relative; transition: color 0.3s ease; }
+    .nav-link:hover { color: white; }
+    .nav-link::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0%; height: 1px; background: var(--color-accent); transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    .nav-link:hover::after { width: 100%; }
+    .mobile-nav-link { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; padding: 1.5rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.2s ease, color 0.2s ease; }
+    .mobile-nav-link:hover { background: rgba(255,255,255,0.03); color: white; }
+    #mobile-menu.open { display: flex !important; max-height: 80vh !important; padding: 0 !important; }
+    
+    @media (max-width: 992px) { .desktop-nav { display: none !important; } .mobile-nav-group { display: flex !important; } }
+    #hamburger.open .ham-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    #hamburger.open .ham-line:nth-child(2) { opacity: 0; }
+    #hamburger.open .ham-line:nth-child(3) { width: 24px; transform: translateY(-7px) rotate(-45deg); }
+
+    /* Map Filter */
+    .map-container { position: relative; width: 100%; padding-bottom: 45%; border-radius: 16px; overflow: hidden; margin-top: 2rem; border: 1px solid rgba(255,255,255,0.05); }
+    @media(max-width:768px){ .map-container { padding-bottom: 100%; } }
+    .map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; filter: grayscale(100%) invert(90%) hue-rotate(180deg) contrast(150%); }
+
+    /* Accordion FAQ */
+    .faq-item {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .faq-question {
+      padding: 1.5rem 2rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      color: white;
+    }
+    .faq-answer {
+      padding: 0 2rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      color: var(--color-muted);
+      line-height: 1.8;
+    }
+    .faq-item.active { border-color: rgba(181,158,109,0.3); background: rgba(181,158,109,0.02); }
+    .faq-item.active .faq-answer { padding: 0 2rem 2rem 2rem; max-height: 300px; }
+    .faq-icon { transition: transform 0.3s ease; color: var(--color-accent); font-weight: 800; }
+    .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+    }
+    @media (max-width: 900px) {
+      .form-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= STEALTH HEADER ================= -->
+  <header class="header" id="main-header">
+    <nav class="container" style="display: flex; justify-content: space-between; align-items: center; pointer-events: auto; padding: 1rem 0;">
+      <!-- Brand Identity -->
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="../index.html"><img src="../zenith_logo_main.png" alt="Zenith Premium" class="logo" style="width: 80px; height: auto;"></a>
+      </div>
+
+      <!-- Desktop Nav -->
+      <div class="desktop-nav" style="display: flex; gap: 1.5rem; align-items: center;">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../index.html#products" class="nav-link">Products</a>
+        <a href="vision.html" class="nav-link">About</a>
+        <a href="bulk.html" class="nav-link">Inquiry</a>
+        <a href="../blog/hydration-benefits.html" class="nav-link">Blog</a>
+        <a href="careers.html" class="nav-link">Careers</a>
+        <a href="contact.html" class="nav-link" style="color:white;">Contact</a>
+
+        <a href="enquiry-cart.html" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; position: relative; margin-left:1rem;">
+          <svg viewBox="0 0 576 512" style="width: 20px; height: 20px; fill: currentColor;"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41.1 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
+          <span class="cart-badge-count" style="display: none; align-items: center; justify-content: center; position: absolute; top: -8px; right: -8px; background: #EF4444; color: white; font-size: 0.55rem; font-weight: 800; width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--section-dark);">0</span>
+        </a>
+      </div>
+
+      <!-- Mobile Nav Group -->
+      <div class="mobile-nav-group" style="display: none; align-items: center; gap: 1.5rem; z-index: 1100;">
+        <a href="enquiry-cart.html" style="color: white; text-decoration: none; display: flex; align-items: center; position: relative;">
+           <svg viewBox="0 0 576 512" style="width: 20px; height: 20px; fill: currentColor;"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41.1 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
+           <span class="cart-badge-count" style="display: none; align-items: center; justify-content: center; position: absolute; top: -8px; right: -8px; background: #EF4444; color: white; font-size: 0.55rem; font-weight: 800; width: 18px; height: 18px; border-radius: 50%; border: 2px solid #080e20;">0</span>
+        </a>
+        <button id="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu" style="display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px;">
+          <span class="ham-line" style="display: block; width: 24px; height: 2px; background: white; transition: all 0.3s;"></span>
+          <span class="ham-line" style="display: block; width: 24px; height: 2px; background: white; transition: all 0.3s;"></span>
+          <span class="ham-line" style="display: block; width: 16px; height: 2px; background: white; transition: all 0.3s;"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Slide Menu -->
+    <div id="mobile-menu" style="display: none; flex-direction: column; gap: 0; background: rgba(10, 16, 35, 0.98); backdrop-filter: blur(30px); border-top: 1px solid rgba(255,255,255,0.06); padding: 0; overflow-y: auto; max-height: 0; transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1), padding 0.3s;">
+      <a href="../index.html" onclick="closeMobileMenu()" class="mobile-nav-link">Home</a>
+      <a href="../index.html#products" onclick="closeMobileMenu()" class="mobile-nav-link">Products</a>
+      <a href="vision.html" onclick="closeMobileMenu()" class="mobile-nav-link">About</a>
+      <a href="bulk.html" onclick="closeMobileMenu()" class="mobile-nav-link">Inquiry</a>
+      <a href="../blog/hydration-benefits.html" onclick="closeMobileMenu()" class="mobile-nav-link">Blog</a>
+      <a href="careers.html" onclick="closeMobileMenu()" class="mobile-nav-link">Careers</a>
+      <a href="contact.html" onclick="closeMobileMenu()" class="mobile-nav-link">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO & SATELLITE MAP ================= -->
+    <section class="hero-elite" style="padding: 8rem 0 4rem 0;">
+      <div class="container text-center">
+        <p class="counter-label" style="color: var(--color-accent); margin-bottom: 2rem; font-size: 0.7rem;" data-aos="fade-up">Enterprise Communications</p>
+        <h1 data-aos="fade-up" data-aos-delay="200" style="font-size: clamp(3rem, 7vw, 6rem); margin-bottom: 2rem; line-height: 1;">ENTERPRISE<br>HUB.</h1>
+        <p style="color:var(--color-muted); max-width:650px; margin:0 auto;" data-aos="fade-up" data-aos-delay="300">
+          Seamlessly connect with the Zenith macro-infrastructure. Our dedicated executive pathways guarantee immediate parsing of investor relations, distribution agreements, and B2B ordering constraints.
+        </p>
+
+        <!-- Premium Embedded Satellite Map -->
+        <div class="map-container" data-aos="zoom-in" data-aos-delay="400">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14741.05443224343!2d88.1691319!3d22.5317926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0282b8dd8dc33b%3A0xcb1b5907cae4b1a4!2sRanihati%2C%20Howrah%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MULTI-LANE DIRECTORY ================= -->
+    <section style="padding: 4rem 0 6rem 0; border-bottom: 1px solid var(--glass-border);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+          
+          <div class="contact-panel" style="padding: 2.5rem;" data-aos="fade-up">
+            <div class="contact-icon" style="font-size: 2.5rem;">📍</div>
+            <h3 style="font-size:1.25rem; margin-bottom:1rem; color:white;">Global Headquarters</h3>
+            <p style="color:var(--color-muted); line-height:1.8; margin-bottom: 2rem; font-size: 0.9rem;">
+              Maharani Beverages LLP<br>
+              Ranihati Industrial Park<br>
+              Mallick Bagan, Howrah 711322<br>
+              West Bengal, India
+            </p>
+            <p style="font-size: 0.8rem; color: var(--color-accent); font-weight: 700; text-transform: uppercase;">Facility Tours By Appointment</p>
+          </div>
+
+          <div class="contact-panel" style="padding: 2.5rem;" data-aos="fade-up" data-aos-delay="100">
+            <div class="contact-icon" style="font-size: 2.5rem;">🤝</div>
+            <h3 style="font-size:1.25rem; margin-bottom:1rem; color:white;">Investor & B2B Expansion</h3>
+            <p style="color:var(--color-muted); line-height:1.8; margin-bottom: 2rem; font-size: 0.9rem;">
+              Expansive corporate procurement integration and regional partnership acquisition. Access dedicated channel onboarding.
+            </p>
+            <a href="https://wa.me/918777627142?text=Hello%20Zenith%20Expansion%20Team%2C%20I%20am%20interested%20in%20a%20B2B%20Partnership." target="_blank" style="color:var(--color-accent); text-transform:uppercase; font-size:0.75rem; font-weight:800; text-decoration:none; letter-spacing:1px; display:inline-block; border-bottom: 1px solid var(--color-accent); padding-bottom: 2px;">Connect with Development Board ↗</a>
+          </div>
+
+          <div class="contact-panel" style="padding: 2.5rem; background: rgba(181,158,109,0.05); border-color: rgba(181,158,109,0.3);" data-aos="fade-up" data-aos-delay="200">
+            <div class="contact-icon" style="font-size: 2.5rem;">🚨</div>
+            <h3 style="font-size:1.25rem; margin-bottom:1rem; color:white;">24/7 Executive Priority</h3>
+            <p style="color:var(--color-muted); line-height:1.8; margin-bottom: 1rem; font-size: 0.9rem;">
+              Zero latency coordination with the Zenith macro priority sales infrastructure. Secure transmission pathway.
+            </p>
+            <p style="font-size: 1.5rem; color:white; font-family:var(--font-heading); margin-bottom: 2rem; font-weight: 800;">+91 87776 27142</p>
+            <a href="https://wa.me/918777627142" target="_blank" class="btn-ultimate" style="display:block; padding:1rem; font-size:0.8rem; text-align:center;">Launch Secure Comm-Link</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMMAND CENTER INQUIRY DESK ================= -->
+    <section style="padding: 8rem 0; background: var(--color-bg);">
+      <div class="container form-grid">
+        
+        <!-- Left: Service Level Agreements -->
+        <div data-aos="fade-right">
+          <h2 style="font-size: 2.5rem; line-height: 1.2; margin-bottom: 2rem; color: white;">SEAMLESS<br>CORPORATE<br><span style="color: var(--color-accent);">ROUTING.</span></h2>
+          <p style="color: var(--color-muted); font-size: 1rem; line-height: 1.8; margin-bottom: 3rem;">
+            To maintain absolute protocol, your submission is algorithmicly filtered via WhatsApp directly to the executive division matching your inquiry type.
+          </p>
+
+          <div style="border-left: 2px solid rgba(255,255,255,0.1); padding-left: 2rem; margin-bottom: 2rem;">
+             <p style="color: var(--color-accent); font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem;">Support SLA</p>
+             <p style="color: white; font-weight: 700; font-size: 1.2rem;">Under 12 Business Hours</p>
+          </div>
+          
+          <div style="border-left: 2px solid rgba(255,255,255,0.1); padding-left: 2rem;">
+             <p style="color: var(--color-accent); font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem;">Corporate Encryption</p>
+             <p style="color: white; font-weight: 700; font-size: 1.2rem;">End-to-End Assured</p>
+          </div>
+        </div>
+
+        <!-- Right: Inquiry Form -->
+        <div style="background: rgba(10, 16, 35, 0.97); padding: 4rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05);" data-aos="fade-left">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+            <div>
+              <label style="display: block; color: var(--color-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Full Name *</label>
+              <input type="text" id="contactName" placeholder="e.g. John Doe" style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 1rem; border-radius: 8px; font-size: 1rem;" required>
+            </div>
+            <div>
+              <label style="display: block; color: var(--color-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Corporate Entity (Optional)</label>
+              <input type="text" id="contactBiz" placeholder="e.g. Acme Logistics" style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 1rem; border-radius: 8px; font-size: 1rem;">
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: block; color: var(--color-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Division Required *</label>
+            <select id="contactTopic" style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 1rem; border-radius: 8px; font-size: 1rem; outline: none; cursor: pointer;" required>
+              <option value="" disabled selected style="background:#0a1023;">Select operational division...</option>
+              <option value="Bulk Water Supply" style="background:#0a1023;">Bulk Operations / Enterprise Volume</option>
+              <option value="Distributor Licensing" style="background:#0a1023;">Distributor Licensing & Networking</option>
+              <option value="Media/Press Relations" style="background:#0a1023;">Global Press & Media Coverage</option>
+              <option value="Quality Compliance" style="background:#0a1023;">Molecular Integrity & Quality Reporting</option>
+              <option value="General Directive" style="background:#0a1023;">General Executive Inquiry</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <label style="display: block; color: var(--color-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Encrypted Briefing *</label>
+            <textarea id="contactMsg" rows="5" placeholder="Transmit your corporate requirements here..." style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 1rem; border-radius: 8px; font-size: 1rem; resize: vertical;" required></textarea>
+          </div>
+
+          <button onclick="submitContactForm()" class="btn-ultimate" style="width: 100%; background: #25D366; color: white; border: none; padding: 1.4rem; font-size: 0.9rem; display: flex; justify-content: center; align-items: center; gap: 0.8rem; border-radius: 8px; font-weight: 800; letter-spacing: 2px;">
+            <svg viewBox="0 0 448 512" style="width:20px;height:20px;fill:white;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.4 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.3-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.2 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.4-29.9-17-41.2-4.5-10.9-9.1-9.4-12.4-9.6-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+            INITIALIZE ENCRYPTED ROUTING
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ENTERPRISE FAQ ================= -->
+    <section style="padding: 6rem 0 10rem 0; border-top: 1px solid var(--glass-border);">
+      <div class="container" style="max-width: 800px;">
+        <h2 style="font-size: 2rem; color: white; text-align: center; margin-bottom: 4rem;" data-aos="fade-up">OPERATIONAL INTELLIGENCE</h2>
+        
+        <div data-aos="fade-up" data-aos-delay="100">
+          <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">What are the minimum volume thresholds for corporate integration? <span class="faq-icon">+</span></div>
+            <div class="faq-answer">While our consumer retail strategy handles single cases, our dedicated B2B enterprise desk specifically structures massive bulk shipments supporting high-footfall campuses and enterprise hospitality grids.</div>
+          </div>
+
+          <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-answer">By leveraging multi-tiered robotics inside the 7-stage filtration grid, we sever human-biological contact from the bottling sequence. We operate definitively above FSSAI baseline standards.</div>
+            <div class="faq-question">How is molecular integrity technically enforced? <span class="faq-icon">+</span></div>
+          </div>
+
+          <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-answer">Immediately. Upon utilizing our Executive Concierge WhatsApp infrastructure, you jump the generic queue to enter direct coordination with our active distributor routing managers.</div>
+            <div class="faq-question">How rapidly can I deploy as a Zenith Distributor? <span class="faq-icon">+</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="padding: 5rem 0; border-top: 1px solid var(--glass-border); text-align: center;">
+    <div class="container">
+      <img src="../zenith_logo_main.png" alt="Zenith" class="logo" loading="lazy" style="width: 160px; height: auto; margin-bottom: 2rem;">
+      <p style="color: white; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: 1px;">Maharani Beverages LLP</p>
+      <p style="color: var(--color-muted); margin-bottom: 3rem;">Ranihati Industrial Park Mallick Bagan Howrah 711322 India.</p>
+      <div style="display: flex; gap: 3rem; justify-content: center; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px;">
+        <a href="privacy.html" style="color: rgba(255,255,255,0.4); text-decoration: none;">Privacy</a>
+        <a href="terms.html" style="color: rgba(255,255,255,0.4); text-decoration: none;">Terms</a>
+        <a href="compliance.html" style="color: rgba(255,255,255,0.4); text-decoration: none;">Compliance</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/enquiry-cart.js?v=3.0"></script>
+  <script src="../assets/js/aos.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    window.addEventListener('scroll', function() {
+      var h = document.getElementById('main-header');
+      if (window.scrollY > 50) h.classList.add('scrolled');
+      else h.classList.remove('scrolled');
+    });
+    function toggleMobileMenu() {
+      var menu = document.getElementById('mobile-menu');
+      var btn = document.getElementById('hamburger');
+      menu.classList.toggle('open');
+      btn.classList.toggle('open');
+    }
+    function closeMobileMenu() {
+      document.getElementById('mobile-menu').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    }
+    
+    // Quick DOM Fix for swapped FAQ answer/question orders
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('.faq-item').forEach(item => {
+        let q = item.querySelector('.faq-question');
+        let a = item.querySelector('.faq-answer');
+        if (q.nextElementSibling !== a) { 
+           item.insertBefore(q, a);
+        }
+      });
+    });
+
+    function submitContactForm() {
+      const name = document.getElementById('contactName').value.trim();
+      const biz = document.getElementById('contactBiz').value.trim();
+      const topic = document.getElementById('contactTopic').value;
+      const msg = document.getElementById('contactMsg').value.trim();
+
+      if (!name || !topic || !msg) {
+        alert("Please complete the required corporate fields (Name, Division, and Briefing).");
+        return;
+      }
+
+      let text = `Hi ZENITH Executive Command,\n\nI am logging a secure transmission.\n\n`;
+      text += `Operative: ${name}\n`;
+      if(biz) text += `Entity: ${biz}\n`;
+      text += `Target Division: ${topic}\n\n`;
+      text += `Encrypted Briefing:\n${msg}`;
+
+      const waUrl = `https://wa.me/918777627142?text=${encodeURIComponent(text)}`;
+      window.open(waUrl, '_blank');
+      
+      setTimeout(() => {
+         window.location.href = "success.html";
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

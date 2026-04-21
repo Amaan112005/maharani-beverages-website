@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Vision | Premium Bengal Hydration Excellence | ZENITH Premium</title>
+  <title>Corporate Authority | ZENITH Premium</title>
   <meta name="description" content="The Zenith founding vision. Discover the molecular journey from Bengal regional sourcing to elite hydration purity. Built on integrity.">
 
   <!-- SEO / Canonical -->
@@ -13,11 +13,8 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="The Vision Suite | ZENITH Modern Purity">
-  <meta property="og:description" content="Architecting the future of molecular integrity. A 2024 founding vision.">
+  <meta property="og:description" content="Architecting the future of molecular integrity. A multi-generational legacy.">
   <meta property="og:image" content="https://maharanibeverages.com/zenith_logo_main.png">
-
-  <!-- Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: *; connect-src 'self' https://formspree.io; frame-src 'none'; object-src 'none';">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,86 +25,206 @@
   <link rel="stylesheet" href="../assets/css/variables.css">
   <link rel="stylesheet" href="../assets/css/main.css">
   <link rel="stylesheet" href="../assets/css/mobile-perfection.css?v=1.1">
+
+  <style>
+    /* Premium Navigation Mirror */
+    .header { position: sticky; top: 0; z-index: 1000; transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease; background: transparent; }
+    .header.scrolled { background: rgba(8, 14, 32, 0.97) !important; backdrop-filter: blur(24px); box-shadow: 0 1px 0 rgba(255,255,255,0.06), 0 8px 32px rgba(0,0,0,0.4); }
+    .nav-link { color: rgba(255,255,255,0.7); text-decoration: none; font-weight: 600; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; position: relative; transition: color 0.3s ease; }
+    .nav-link:hover { color: white; }
+    .nav-link::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0%; height: 1px; background: var(--color-accent); transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    .nav-link:hover::after { width: 100%; }
+    .mobile-nav-link { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; padding: 1.5rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.2s ease, color 0.2s ease; }
+    .mobile-nav-link:hover { background: rgba(255,255,255,0.03); color: white; }
+    #mobile-menu.open { display: flex !important; max-height: 80vh !important; padding: 0 !important; }
+    @media (max-width: 992px) { .desktop-nav { display: none !important; } .mobile-nav-group { display: flex !important; } }
+    #hamburger.open .ham-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    #hamburger.open .ham-line:nth-child(2) { opacity: 0; }
+    #hamburger.open .ham-line:nth-child(3) { width: 24px; transform: translateY(-7px) rotate(-45deg); }
+
+    .stat-block { text-align: center; padding: 3rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; }
+    
+    .timeline-node {
+      border-left: 2px solid var(--color-accent);
+      padding-left: 2.5rem;
+      position: relative;
+      margin-bottom: 3rem;
+    }
+    .timeline-node::before {
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      background: var(--color-bg);
+      border: 3px solid var(--color-accent);
+      border-radius: 50%;
+    }
+  </style>
 </head>
 
 <body>
 
   <!-- ================= STEALTH HEADER ================= -->
-  <header class="header">
-    <nav class="container">
+  <header class="header" id="main-header">
+    <nav class="container" style="display: flex; justify-content: space-between; align-items: center; pointer-events: auto; padding: 1rem 0;">
+      <!-- Brand Identity -->
       <div style="display: flex; align-items: center; gap: 1rem;">
-        <a href="../index.html"><img src="../zenith_logo_main.png" alt="Zenith Logo" class="logo" style="width: 80px; height: auto;"></a>
+        <a href="../index.html"><img src="../zenith_logo_main.png" alt="Zenith Premium Water" class="logo" style="width: 80px; height: auto;"></a>
       </div>
-      <div style="display: flex; gap: 3rem; align-items: center;">
-        <a href="../index.html" aria-label="Return to the Zenith Home" style="color: rgba(255,255,255,0.6); text-decoration: none; font-weight: 600; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px;">Home</a>
-        <a href="distributor.html" aria-label="Access the Distribution Network" style="color: rgba(255,255,255,0.6); text-decoration: none; font-weight: 600; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px;">Network</a>
+
+      <!-- Desktop Nav -->
+      <div class="desktop-nav" style="display: flex; gap: 1.5rem; align-items: center;">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../index.html#products" class="nav-link">Products</a>
+        <a href="vision.html" class="nav-link" style="color:white;">About</a>
+        <a href="bulk.html" class="nav-link">Inquiry</a>
+        <a href="../blog/hydration-benefits.html" class="nav-link">Blog</a>
+        <a href="careers.html" class="nav-link">Careers</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+
+        <a href="enquiry-cart.html" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; position: relative; margin-left:1rem;">
+          <svg viewBox="0 0 576 512" style="width: 20px; height: 20px; fill: currentColor;"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41.1 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
+          <span class="cart-badge-count" style="display: none; align-items: center; justify-content: center; position: absolute; top: -8px; right: -8px; background: #EF4444; color: white; font-size: 0.55rem; font-weight: 800; width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--section-dark);">0</span>
+        </a>
+      </div>
+
+      <!-- Mobile Nav Group -->
+      <div class="mobile-nav-group" style="display: none; align-items: center; gap: 1.5rem; z-index: 1100;">
+        <a href="enquiry-cart.html" style="color: white; text-decoration: none; display: flex; align-items: center; position: relative;">
+          <svg viewBox="0 0 576 512" style="width: 20px; height: 20px; fill: currentColor;"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41.1 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
+          <span class="cart-badge-count" style="display: none; align-items: center; justify-content: center; position: absolute; top: -8px; right: -8px; background: #EF4444; color: white; font-size: 0.55rem; font-weight: 800; width: 18px; height: 18px; border-radius: 50%; border: 2px solid #080e20;">0</span>
+        </a>
+        <button id="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu" style="display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px;">
+          <span class="ham-line" style="display: block; width: 24px; height: 2px; background: white; transition: all 0.3s;"></span>
+          <span class="ham-line" style="display: block; width: 24px; height: 2px; background: white; transition: all 0.3s;"></span>
+          <span class="ham-line" style="display: block; width: 16px; height: 2px; background: white; transition: all 0.3s;"></span>
+        </button>
       </div>
     </nav>
+
+    <!-- Mobile Slide Menu -->
+    <div id="mobile-menu" style="display: none; flex-direction: column; gap: 0; background: rgba(10, 16, 35, 0.98); backdrop-filter: blur(30px); border-top: 1px solid rgba(255,255,255,0.06); padding: 0; overflow-y: auto; max-height: 0; transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1), padding 0.3s;">
+      <a href="../index.html" onclick="closeMobileMenu()" class="mobile-nav-link">Home</a>
+      <a href="../index.html#products" onclick="closeMobileMenu()" class="mobile-nav-link">Products</a>
+      <a href="vision.html" onclick="closeMobileMenu()" class="mobile-nav-link">About</a>
+      <a href="bulk.html" onclick="closeMobileMenu()" class="mobile-nav-link">Inquiry</a>
+      <a href="../blog/hydration-benefits.html" onclick="closeMobileMenu()" class="mobile-nav-link">Blog</a>
+      <a href="careers.html" onclick="closeMobileMenu()" class="mobile-nav-link">Careers</a>
+      <a href="contact.html" onclick="closeMobileMenu()" class="mobile-nav-link">Contact</a>
+    </div>
   </header>
 
   <main>
     <!-- ================= VISION HERO ================= -->
-    <section class="hero-elite">
+    <section class="hero-elite" style="padding: 10rem 0 6rem 0; min-height: 70vh; display: flex; align-items: center;">
       <div class="container grid-elite-row">
         <div class="hero-text-block">
-          <p class="counter-label" style="color: var(--color-accent); margin-bottom: 2rem; font-size: 0.7rem;" data-aos="fade-up">Founding Vision — 2024</p>
-          <h1 data-aos="fade-up" data-aos-delay="200" style="font-size: clamp(3rem, 10vw, 7.5rem); margin-bottom: 3rem; line-height: 0.9;">THE<br>VISION<br>SUITE:<br><span style="color:var(--color-accent); font-size: 0.4em; letter-spacing: 5px; vertical-align: middle;">BENGAL-FIRST ARCHITECTURE</span></h1>
-          <p data-aos="fade-up" data-aos-delay="400" style="font-size: 1.125rem; color: var(--color-muted); max-width: 500px; line-height: 1.8; margin-bottom: 4rem;">
-            Zenith was born in 2024 with a singular architectural mandate: to protect the modern individual from the complexities of 21st-century impurities.
+          <p class="counter-label" style="color: var(--color-accent); margin-bottom: 2rem; font-size: 0.7rem;" data-aos="fade-up">A Maharani Beverages Legacy</p>
+          <h1 data-aos="fade-up" data-aos-delay="200" style="font-size: clamp(3rem, 10vw, 7rem); margin-bottom: 2rem; line-height: 0.9;">ARCHITECTING<br>THE FUTURE<br>OF PURITY.</h1>
+          <p data-aos="fade-up" data-aos-delay="400" style="font-size: 1.125rem; color: var(--color-muted); max-width: 550px; line-height: 1.8; margin-bottom: 4rem;">
+            A multi-generational commitment to redefining hydration. Zenith is not merely bottled water; it is a meticulously engineered standard of biological security and molecular integrity.
           </p>
           <div data-aos="fade-up" data-aos-delay="600">
-            <a href="#mission" class="btn-ultimate" style="background: var(--color-accent); color: var(--color-primary); border: none;">Explore the Mission</a>
+            <a href="#scale" class="btn-ultimate" style="background: var(--color-accent); color: var(--color-primary); border: none;">Explore Our Infrastructure ↓</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= THE SOCIAL MANDATE ================= -->
-    <section id="mission" style="padding: 15rem 0; background: var(--color-bg);">
-      <div class="container" style="max-width: 900px; text-align: center;">
-        <p class="counter-label" style="color: var(--color-accent); margin-bottom: 3rem; letter-spacing: 5px;" data-aos="fade-up">THE MANDATE</p>
-        <h2 style="font-size: var(--font-size-h2); margin-bottom: 4rem; color: white;" data-aos="fade-up">A COMMITMENT TO MODERN HEALTH.</h2>
-        <div data-aos="fade-up" data-aos-delay="200" style="font-size: 1.5rem; color: var(--color-platinum); line-height: 1.6; font-family: var(--font-heading); font-style: italic; margin-bottom: 6rem;">
-          "In an era where purity is often a luxury, Zenith was founded to make absolute molecular integrity a standard for every executive, every family, and every celebratory moment."
-        </div>
-        
-        <div class="grid-elite-row" style="text-align: left;">
-          <div>
-            <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem; color: var(--color-accent);">Future Generations</h3>
-            <p style="color: var(--color-muted); line-height: 1.8;">Our focus is not on the history we inherit, but the legacy we build today. We safeguard the health of the 21st-century citizen through uncompromising science.</p>
-          </div>
-          <div>
-            <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem; color: var(--color-accent);">Molecular Governance</h3>
-            <p style="color: var(--color-muted); line-height: 1.8;">Every 2026-standard Zenith bottle undergoes 7 stages of isolation to ensure zero interaction with external contaminants.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= THE 2026 STANDARD ================= -->
-    <section style="padding: 10rem 0; border-top: 1px solid var(--glass-border);">
+    <!-- ================= THE SCALE GRID ================= -->
+    <section id="scale" style="padding: 8rem 0; background: var(--color-primary); border-top: 1px solid var(--glass-border);">
       <div class="container">
-        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 8rem;">
-          <h2 style="font-size: var(--font-size-h2); line-height: 1;" data-aos="fade-up">ARCHITECTING<br>THE STANDARD.</h2>
-          <p style="color: var(--color-muted); max-width: 400px; text-align: right;" data-aos="fade-up">The certifications of absolute trust, presented as artifacts of modern governance.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;" data-aos="fade-up">
+          <div class="stat-block">
+            <h2 style="font-size: 3rem; color: var(--color-accent); margin-bottom: 0.5rem; line-height: 1;">7-Stage</h2>
+            <p style="text-transform: uppercase; letter-spacing: 2px; font-weight: 700; font-size: 0.8rem; color: white;">Robotic Purification</p>
+            <p style="color: var(--color-muted); font-size: 0.85rem; margin-top: 1rem;">Complete automation ensuring zero human-biological crossover.</p>
+          </div>
+          <div class="stat-block">
+            <h2 style="font-size: 3rem; color: var(--color-accent); margin-bottom: 0.5rem; line-height: 1;">Rapid</h2>
+            <p style="text-transform: uppercase; letter-spacing: 2px; font-weight: 700; font-size: 0.8rem; color: white;">Network Expansion</p>
+            <p style="color: var(--color-muted); font-size: 0.85rem; margin-top: 1rem;">Aggressively deploying new distribution zones to anchor robust regional supply chain security.</p>
+          </div>
+          <div class="stat-block">
+            <h2 style="font-size: 3rem; color: var(--color-accent); margin-bottom: 0.5rem; line-height: 1;">100%</h2>
+            <p style="text-transform: uppercase; letter-spacing: 2px; font-weight: 700; font-size: 0.8rem; color: white;">Certified Compliance</p>
+            <p style="color: var(--color-muted); font-size: 0.85rem; margin-top: 1rem;">Operating universally above FSSAI, BIS, ISO baseline requirements.</p>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
-          <div class="glass-card" style="padding: 3rem; text-align: center;" data-aos="fade-up" data-aos-delay="100">
-            <p style="color: var(--color-accent); font-weight: 800; margin-bottom: 1rem;">FSSAI</p>
-            <p style="font-size: 0.7rem; color: var(--color-muted);">Food Safety Baseline</p>
+    <!-- ================= THE EXECUTIVE MANDATE ================= -->
+    <section style="padding: 10rem 0; background: var(--color-bg);">
+      <div class="container grid-elite-row">
+        <div>
+          <p class="counter-label" style="color: var(--color-accent); margin-bottom: 1rem; letter-spacing: 5px;" data-aos="fade-up">THE DIRECTIVE</p>
+          <h2 style="font-size: var(--font-size-h2); color: white; line-height: 1.1; margin-bottom: 2rem;" data-aos="fade-up">A COMMITMENT<br>TO THE MODERN<br>CITIZEN.</h2>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="200">
+          <p style="font-size: 1.5rem; color: var(--color-platinum); line-height: 1.8; font-family: var(--font-heading); font-style: italic; margin-bottom: 3rem; position: relative;">
+            <span style="font-size: 4rem; color: var(--color-accent); position: absolute; top: -30px; left: -20px; opacity: 0.3;">"</span>
+            In an era where absolute purity is treated as a luxury, we founded Zenith on a disruptive principle: Molecular integrity is a non-negotiable right for every executive, family, and enterprise.
+          </p>
+          <div style="color: var(--color-muted); line-height: 1.8;">
+            <p style="margin-bottom: 1.5rem;">Our infrastructural ambition goes far beyond bottling water. We are constructing a flawless, highly monitored pipeline stretching from our state-of-the-art facilities in Howrah to every boardroom and dinner table across the state.</p>
+            <p>Every decision we make, every robotic protocol we implement, and every logistics route we establish is engineered solely to protect your health without compromise. We do not tolerate shortcuts. This is the Zenith guarantee.</p>
           </div>
-          <div class="glass-card" style="padding: 3rem; text-align: center;" data-aos="fade-up" data-aos-delay="200">
-            <p style="color: var(--color-accent); font-weight: 800; margin-bottom: 1rem;">BIS</p>
-            <p style="font-size: 0.7rem; color: var(--color-muted);">Technical Integrity</p>
+          <div style="margin-top: 3rem; display: flex; align-items: center; gap: 1rem;">
+             <div style="width: 40px; height: 2px; background: var(--color-accent);"></div>
+             <p style="text-transform: uppercase; letter-spacing: 2px; font-weight: 700; font-size: 0.8rem; color: white;">Maharani Executive Board</p>
           </div>
-          <div class="glass-card" style="padding: 3rem; text-align: center;" data-aos="fade-up" data-aos-delay="300">
-            <p style="color: var(--color-accent); font-weight: 800; margin-bottom: 1rem;">ISO</p>
-            <p style="font-size: 0.7rem; color: var(--color-muted);">Global Compliance</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RAPID EXPANSION TIMELINE ================= -->
+    <section style="padding: 10rem 0; background: var(--color-primary); border-top: 1px solid var(--glass-border);">
+      <div class="container" style="max-width: 900px;">
+        <h2 style="font-size: clamp(2.5rem, 5vw, 4rem); text-align: center; margin-bottom: 6rem; color: white;" data-aos="fade-up">THE EXPANSION ROADMAP</h2>
+        
+        <div style="margin-left: max(1rem, 10%);" data-aos="fade-up">
+          <div class="timeline-node">
+            <h3 style="font-size: 1.5rem; color: white; margin-bottom: 0.5rem;">Phase I: Regional Anchor Blueprint</h3>
+            <p style="color: var(--color-accent); font-weight: 700; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem;">Completed</p>
+            <p style="color: var(--color-muted); line-height: 1.6;">Establishment of the Howrah flagship manufacturing nexus. Deployment of our automated 7-stage filtration robotics and initial penetration into high-density retail vectors.</p>
           </div>
-          <div class="glass-card" style="padding: 3rem; text-align: center;" data-aos="fade-up" data-aos-delay="400">
-            <p style="color: var(--color-accent); font-weight: 800; margin-bottom: 1rem;">AGRO</p>
-            <p style="font-size: 0.7rem; color: var(--color-muted);">Biological Security</p>
+          
+          <div class="timeline-node">
+            <h3 style="font-size: 1.5rem; color: white; margin-bottom: 0.5rem;">Phase II: B2B Omni-Channel Scaling</h3>
+            <p style="color: var(--color-accent); font-weight: 700; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem;">Active Vector</p>
+            <p style="color: var(--color-muted); line-height: 1.6;">Integration of massive distributor networks. Rolling out the bulk supply infrastructure catering to tier-1 corporate campuses, hospitality centers, and high-volume consumers.</p>
+          </div>
+
+          <div class="timeline-node" style="border-color: rgba(181,158,109,0.3);">
+            <h3 style="font-size: 1.5rem; color: white; margin-bottom: 0.5rem;">Phase III: Total Market Ubiquity</h3>
+            <p style="color: rgba(255,255,255,0.4); font-weight: 700; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem;">Horizon State</p>
+            <p style="color: var(--color-muted); line-height: 1.6;">Nationwide logistical expansion. Hardening the brand as the single most trusted, technologically advanced hydration supplier on the subcontinent.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= THE CERTIFICATIONS ================= -->
+    <section style="padding: 10rem 0; background: var(--color-bg); border-top: 1px solid var(--glass-border);">
+      <div class="container text-center">
+        <h2 style="font-size: var(--font-size-h2); line-height: 1; margin-bottom: 2rem; color: white;" data-aos="fade-up">GLOBAL STANDARDS.</h2>
+        <p style="color: var(--color-muted); max-width: 600px; margin: 0 auto 5rem auto;" data-aos="fade-up">Certified baseline trust structures proving absolute molecular safety.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+          <div class="glass-card" style="padding: 3rem; border: 1px solid rgba(255,255,255,0.05);" data-aos="fade-up" data-aos-delay="100">
+            <p style="color: var(--color-accent); font-weight: 800; font-size: 2rem; margin-bottom: 0.5rem;">FSSAI</p>
+            <p style="font-size: 0.8rem; color: var(--color-muted); text-transform: uppercase; letter-spacing: 1px;">Quality Audited</p>
+          </div>
+          <div class="glass-card" style="padding: 3rem; border: 1px solid rgba(255,255,255,0.05);" data-aos="fade-up" data-aos-delay="200">
+            <p style="color: var(--color-accent); font-weight: 800; font-size: 2rem; margin-bottom: 0.5rem;">BIS</p>
+            <p style="font-size: 0.8rem; color: var(--color-muted); text-transform: uppercase; letter-spacing: 1px;">Technical Integrity</p>
+          </div>
+          <div class="glass-card" style="padding: 3rem; border: 1px solid rgba(255,255,255,0.05);" data-aos="fade-up" data-aos-delay="300">
+            <p style="color: var(--color-accent); font-weight: 800; font-size: 2rem; margin-bottom: 0.5rem;">ISO</p>
+            <p style="font-size: 0.8rem; color: var(--color-muted); text-transform: uppercase; letter-spacing: 1px;">Global Compliance</p>
           </div>
         </div>
       </div>
@@ -117,11 +234,11 @@
   <footer style="padding: 5rem 0; border-top: 1px solid var(--glass-border); text-align: center;">
     <div class="container">
       <img src="../zenith_logo_main.png" alt="Zenith" class="logo" loading="lazy" style="width: 160px; height: auto; margin-bottom: 2rem;">
-      <p style="color: var(--color-muted); margin-bottom: 1rem;">Maharani Beverages LLP</p>
+      <p style="color: white; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: 1px;">Maharani Beverages LLP</p>
       <p style="color: var(--color-muted); margin-bottom: 3rem;">Ranihati Industrial Park Mallick Bagan Howrah 711322 India.</p>
       
       <div style="margin-bottom: 3rem;">
-        <a href="../blog/hydration-benefits.html" style="color: var(--color-accent); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px;">The Health Archive</a>
+        <a href="contact.html" style="color: var(--color-accent); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px;">Corporate Engagement Hub →</a>
       </div>
 
       <div style="display: flex; gap: 3rem; justify-content: center; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px;">
@@ -132,15 +249,25 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <!-- ================= WHATSAPP CONCIERGE ================= -->
-  <a href="https://wa.me/918777627142?text=Hello%20Zenith%20Teams%2C%20I%20have%20an%20inquiry%20regarding%20the%20Zenith%20Water%20Flagship." 
-     class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-    <svg viewBox="0 0 448 512" style="width: 28px; height: 28px; fill: white; display: block;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.4 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.3-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.2 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.4-29.9-17-41.2-4.5-10.9-9.1-9.4-12.4-9.6-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-  </a>
-
+  <script src="../assets/js/enquiry-cart.js?v=3.0"></script>
   <script src="../assets/js/aos.js"></script>
   <script src="../assets/js/main.js"></script>
+  <script>
+    window.addEventListener('scroll', function() {
+      var h = document.getElementById('main-header');
+      if (window.scrollY > 50) h.classList.add('scrolled');
+      else h.classList.remove('scrolled');
+    });
+    function toggleMobileMenu() {
+      var menu = document.getElementById('mobile-menu');
+      var btn = document.getElementById('hamburger');
+      menu.classList.toggle('open');
+      btn.classList.toggle('open');
+    }
+    function closeMobileMenu() {
+      document.getElementById('mobile-menu').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    }
+  </script>
 </body>
-
 </html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corporate Careers | ZENITH Premium Water</title>
+  <meta name="description" content="Build the future of hydration precision. Join the Zenith corporate network and engineer purity at scale.">
+
+  <!-- SEO / Canonical -->
+  <link rel="canonical" href="https://maharanibeverages.com/pages/careers.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Careers | ZENITH Modern Purity">
+  <meta property="og:description" content="Architecting the future of molecular integrity. Join the Zenith team.">
+  <meta property="og:image" content="https://maharanibeverages.com/zenith_logo_main.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/mobile-perfection.css?v=1.1">
+  <style>
+    /* Sticky Nav: Transparent → Solid Navy */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+      background: transparent;
+    }
+    .header.scrolled {
+      background: rgba(8, 14, 32, 0.97) !important;
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.06), 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .nav-link {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover { color: white; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -6px; left: 0; width: 0%; height: 1px;
+      background: var(--color-accent); transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .nav-link:hover::after { width: 100%; }
+    
+    .mobile-nav-link {
+      color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.75rem; text-transform: uppercase;
+      letter-spacing: 3px; font-weight: 700; padding: 1.5rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .mobile-nav-link:hover { background: rgba(255,255,255,0.03); color: white; }
+    #mobile-menu.open { display: flex !important; max-height: 80vh !important; padding: 0 !important; }
+    
+    @media (max-width: 992px) {
+      .desktop-nav { display: none !important; }
+      .mobile-nav-group { display: flex !important; }
+    }
+    #hamburger.open .ham-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    #hamburger.open .ham-line:nth-child(2) { opacity: 0; }
+    #hamburger.open .ham-line:nth-child(3) { width: 24px; transform: translateY(-7px) rotate(-45deg); }
+
+    .job-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .job-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(181,158,109,0.3);
+    }
+    @media (max-width: 768px) {
+      .job-card { flex-direction: column; align-items: flex-start; gap: 2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= STEALTH HEADER ================= -->
+  <header class="header" id="main-header">
+    <nav class="container" style="display: flex; justify-content: space-between; align-items: center; pointer-events: auto; padding: 1rem 0;">
+      
+      <!-- Brand Identity -->
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="../index.html"><img src="../zenith_logo_main.png" alt="Zenith Premium Water" class="logo" style="width: 80px; height: auto;"></a>
+      </div>
+
+      <!-- Desktop Nav -->
+      <div class="desktop-nav" style="display: flex; gap: 1.5rem; align-items: center;">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../index.html#products" class="nav-link">Products</a>
+        <a href="vision.html" class="nav-link">About</a>
+        <a href="bulk.html" class="nav-link">Inquiry</a>
+        <a href="../blog/hydration-benefits.html" class="nav-link">Blog</a>
+        <a href="careers.html" class="nav-link" style="color:white;">Careers</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+
+        <a href="enquiry-cart.html" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; position: relative; margin-left:1rem;">
+          <svg viewBox="0 0 576 512" style="width: 20px; height: 20px; fill: currentColor;"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41.1 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
+          <span class="cart-badge-count" style="display: none; align-items: center; justify-content: center; position: absolute; top: -8px; right: -8px; background: #EF4444; color: white; font-size: 0.55rem; font-weight: 800; width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--section-dark);">0</span>
+        </a>
+      </div>
+
+      <!-- Mobile Nav Group -->
+      <div class="mobile-nav-group" style="display: none; align-items: center; gap: 1.5rem; z-index: 1100;">
+        <a href="enquiry-cart.html" style="color: white; text-decoration: none; display: flex; align-items: center; position: relative;">
+          <svg viewBox="0 0 576 512" style="width: 20px; height: 20px; fill: currentColor;"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41.1 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
+          <span class="cart-badge-count" style="display: none; align-items: center; justify-content: center; position: absolute; top: -8px; right: -8px; background: #EF4444; color: white; font-size: 0.55rem; font-weight: 800; width: 18px; height: 18px; border-radius: 50%; border: 2px solid #080e20;">0</span>
+        </a>
+        <button id="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu" style="display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px;">
+          <span class="ham-line" style="display: block; width: 24px; height: 2px; background: white; transition: all 0.3s;"></span>
+          <span class="ham-line" style="display: block; width: 24px; height: 2px; background: white; transition: all 0.3s;"></span>
+          <span class="ham-line" style="display: block; width: 16px; height: 2px; background: white; transition: all 0.3s;"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Slide Menu -->
+    <div id="mobile-menu" style="display: none; flex-direction: column; gap: 0; background: rgba(10, 16, 35, 0.98); backdrop-filter: blur(30px); border-top: 1px solid rgba(255,255,255,0.06); padding: 0; overflow-y: auto; max-height: 0; transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1), padding 0.3s;">
+      <a href="../index.html" onclick="closeMobileMenu()" class="mobile-nav-link">Home</a>
+      <a href="../index.html#products" onclick="closeMobileMenu()" class="mobile-nav-link">Products</a>
+      <a href="vision.html" onclick="closeMobileMenu()" class="mobile-nav-link">About</a>
+      <a href="bulk.html" onclick="closeMobileMenu()" class="mobile-nav-link">Inquiry</a>
+      <a href="../blog/hydration-benefits.html" onclick="closeMobileMenu()" class="mobile-nav-link">Blog</a>
+      <a href="careers.html" onclick="closeMobileMenu()" class="mobile-nav-link">Careers</a>
+      <a href="contact.html" onclick="closeMobileMenu()" class="mobile-nav-link">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero-elite" style="min-height: 60vh; padding-top: 8rem; align-items:center;">
+      <div class="container grid-elite-row">
+        <div class="hero-text-block">
+          <p class="counter-label" style="color: var(--color-accent); margin-bottom: 2rem; font-size: 0.7rem;" data-aos="fade-up">Corporate Talent & Operations</p>
+          <h1 data-aos="fade-up" data-aos-delay="200" style="font-size: clamp(3rem, 7vw, 6rem); margin-bottom: 2rem; line-height: 0.9;">ENGINEER<br>THE FUTURE<br>OF PURITY.</h1>
+          <p data-aos="fade-up" data-aos-delay="400" style="font-size: 1.125rem; color: var(--color-muted); max-width: 500px; line-height: 1.8; margin-bottom: 3rem;">
+            Join a multi-generational legacy architecting absolute molecular integrity for millions of modern professionals and families.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CULTURE & PHILOSOPHY ================= -->
+    <section style="padding: 6rem 0; background: var(--color-primary); border-top: 1px solid var(--glass-border);">
+      <div class="container text-center" style="max-width: 1000px;">
+        <h2 style="font-size: 2rem; margin-bottom: 4rem; color: white;" data-aos="fade-up">BUILDING THE BENCHMARK</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; text-align: left;" data-aos="fade-up" data-aos-delay="200">
+          <div style="padding: 2.5rem; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+            <div style="font-size: 2.5rem; margin-bottom: 1.5rem;">⚡</div>
+            <h3 style="font-size: 1.25rem; color: var(--color-accent); margin-bottom: 1rem;">Execution Velocity</h3>
+            <p style="color: var(--color-muted); font-size: 0.9rem; line-height: 1.8;">We operate at the pulse of the market. Superior ideas mature into nationwide distribution protocols in weeks, not years.</p>
+          </div>
+          <div style="padding: 2.5rem; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+            <div style="font-size: 2.5rem; margin-bottom: 1.5rem;">🛡️</div>
+            <h3 style="font-size: 1.25rem; color: var(--color-accent); margin-bottom: 1rem;">Radical Ownership</h3>
+            <p style="color: var(--color-muted); font-size: 0.9rem; line-height: 1.8;">Every team member governs their architecture. If you build it, you own its integrity from the manufacturing facility directly to the consumer.</p>
+          </div>
+          <div style="padding: 2.5rem; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+            <div style="font-size: 2.5rem; margin-bottom: 1.5rem;">💧</div>
+            <h3 style="font-size: 1.25rem; color: var(--color-accent); margin-bottom: 1rem;">Molecular Standard</h3>
+            <p style="color: var(--color-muted); font-size: 0.9rem; line-height: 1.8;">Zero compromises. Whether you are in logistics or synthesis, the final product represents our unified pursuit of absolute purity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GENERAL RECRUITMENT FORM ================= -->
+    <section style="padding: 8rem 0; background: var(--color-bg);">
+      <div class="container" style="max-width: 800px;">
+        <h2 style="font-size: var(--font-size-h2); margin-bottom: 2rem; color: white; text-align: center;" data-aos="fade-up">EXECUTIVE APPLICATION PIPELINE</h2>
+        <p style="color: var(--color-muted); text-align: center; margin-bottom: 4rem; line-height: 1.8;" data-aos="fade-up">
+          Submit your professional portfolio directly to the Zenith executive recruitment board. <br>Approved candidates are contacted within 12 business hours.
+        </p>
+
+        <div style="background: rgba(10, 16, 35, 0.97); padding: 3rem; border-radius: 16px; border: 1px solid rgba(181,158,109,0.2);" data-aos="fade-up" data-aos-delay="200">
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+            <div>
+              <label style="display: block; color: var(--color-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Full Name *</label>
+              <input type="text" id="appName" placeholder="e.g. John Doe" style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 1rem; border-radius: 8px; font-size: 1rem;" required>
+            </div>
+            <div>
+              <label style="display: block; color: var(--color-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Phone Number *</label>
+              <input type="tel" id="appPhone" placeholder="e.g. +91 98765 43210" style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 1rem; border-radius: 8px; font-size: 1rem;" required>
+            </div>
+          </div>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+            <div>
+              <label style="display: block; color: var(--color-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Email Address *</label>
+              <input type="email" id="appEmail" placeholder="you@example.com" style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 1rem; border-radius: 8px; font-size: 1rem;" required>
+            </div>
+            <div>
+              <label style="display: block; color: var(--color-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Current Location *</label>
+              <input type="text" id="appLocation" placeholder="e.g. Kolkata, West Bengal" style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 1rem; border-radius: 8px; font-size: 1rem;" required>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: block; color: var(--color-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Target Department *</label>
+            <select id="appRole" style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 1rem; border-radius: 8px; font-size: 1rem; outline: none; cursor: pointer;" required>
+              <option value="" disabled selected style="background:#0a1023;">Select your domain...</option>
+              <option value="Sales & Distribution" style="background:#0a1023;">Sales & Distribution</option>
+              <option value="Logistics & Supply Chain" style="background:#0a1023;">Logistics & Supply Chain</option>
+              <option value="Quality & Compliance" style="background:#0a1023;">Quality & Compliance</option>
+              <option value="Corporate Operations" style="background:#0a1023;">Corporate Operations</option>
+              <option value="Executive Management" style="background:#0a1023;">Executive Management</option>
+              <option value="Other" style="background:#0a1023;">Other</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: block; color: var(--color-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Total Years of Experience *</label>
+            <input type="text" id="appExp" placeholder="e.g. 5 Years in FMCG Supply Chain" style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 1rem; border-radius: 8px; font-size: 1rem;" required>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: block; color: var(--color-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Why Zenith? & Key Professional Milestones *</label>
+            <textarea id="appBio" rows="4" placeholder="Detail your core expertise, why you belong at Zenith, and what you aim to achieve..." style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 1rem; border-radius: 8px; font-size: 1rem; resize: vertical;" required></textarea>
+          </div>
+
+          <div style="margin-bottom: 2.5rem;">
+            <label style="display: block; color: var(--color-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">LinkedIn or Portfolio Link (Optional)</label>
+            <input type="url" id="appLink" placeholder="https://" style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 1rem; border-radius: 8px; font-size: 1rem;">
+          </div>
+
+          <button onclick="submitCareerForm()" class="btn-ultimate" style="width: 100%; background: #25D366; color: white; border: none; padding: 1.2rem; font-size: 0.9rem; display: flex; justify-content: center; align-items: center; gap: 0.5rem; border-radius: 8px; font-weight: 800; letter-spacing: 1px;">
+            <svg viewBox="0 0 448 512" style="width:18px;height:18px;fill:white;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.4 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.3-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.2 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.4-29.9-17-41.2-4.5-10.9-9.1-9.4-12.4-9.6-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+            SUBMIT ENQUIRY VIA WHATSAPP
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="padding: 5rem 0; border-top: 1px solid var(--glass-border); text-align: center;">
+    <div class="container">
+      <img src="../zenith_logo_main.png" alt="Zenith" class="logo" loading="lazy" style="width: 160px; height: auto; margin-bottom: 2rem;">
+      <p style="color: var(--color-muted); margin-bottom: 1rem;">Maharani Beverages LLP</p>
+      <p style="color: var(--color-muted); margin-bottom: 3rem;">Ranihati Industrial Park Mallick Bagan Howrah 711322 India.</p>
+      <div style="display: flex; gap: 3rem; justify-content: center; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px;">
+        <a href="privacy.html" style="color: rgba(255,255,255,0.4); text-decoration: none;">Privacy</a>
+        <a href="terms.html" style="color: rgba(255,255,255,0.4); text-decoration: none;">Terms</a>
+        <a href="compliance.html" style="color: rgba(255,255,255,0.4); text-decoration: none;">Compliance</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/enquiry-cart.js?v=3.0"></script>
+  <script src="../assets/js/aos.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    window.addEventListener('scroll', function() {
+      var h = document.getElementById('main-header');
+      if (window.scrollY > 50) { h.classList.add('scrolled'); }
+      else { h.classList.remove('scrolled'); }
+    });
+    function toggleMobileMenu() {
+      var menu = document.getElementById('mobile-menu');
+      var btn = document.getElementById('hamburger');
+      if(menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        btn.classList.remove('open');
+      } else {
+        menu.classList.add('open');
+        btn.classList.add('open');
+      }
+    }
+    function closeMobileMenu() {
+      document.getElementById('mobile-menu').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    }
+
+    function submitCareerForm() {
+      const name = document.getElementById('appName').value.trim();
+      const phone = document.getElementById('appPhone').value.trim();
+      const email = document.getElementById('appEmail').value.trim();
+      const location = document.getElementById('appLocation').value.trim();
+      const role = document.getElementById('appRole').value.trim();
+      const exp = document.getElementById('appExp').value.trim();
+      const bio = document.getElementById('appBio').value.trim();
+      const link = document.getElementById('appLink').value.trim();
+
+      if (!name || !phone || !email || !location || !role || !exp || !bio) {
+        alert("Please completely fill out all mandatory fields.");
+        return;
+      }
+
+      let message = `Hi ZENITH Executive Recruitment,\n\nI am submitting my formal application.\n\n`;
+      message += `Applicant: ${name}\n`;
+      message += `Phone: ${phone}\n`;
+      message += `Email: ${email}\n`;
+      message += `Location: ${location}\n\n`;
+      message += `Target Department: ${role}\n`;
+      message += `Experience: ${exp}\n\n`;
+      message += `Why Zenith / Background Outline:\n${bio}\n\n`;
+      if(link) message += `Portfolio/LinkedIn: ${link}\n\n`;
+      message += `Please advise on the next steps for formal submission of my CV.`;
+
+      const waUrl = `https://wa.me/918777627142?text=${encodeURIComponent(message)}`;
+      window.open(waUrl, '_blank');
+      
+      setTimeout(() => {
+         window.location.href = "success.html";
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
