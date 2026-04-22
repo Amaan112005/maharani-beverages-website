@@ -135,7 +135,7 @@ function initAdvancedPincode() {
           <div class="pincode-result-card available">
             <div class="pincode-area-name">📍 ${areaName}</div>
             <div class="pincode-status">✅ ZENITH is available in your area</div>
-            <div class="pincode-delivery">⚡ Delivery available within 24 hours</div>
+            <div class="pincode-delivery">⚡ Priority delivery available</div>
             <div class="pincode-actions">
               <a href="https://wa.me/918777627142?text=${waMsg}" target="_blank" class="pincode-btn-primary">
                 💬 Order on WhatsApp
@@ -150,7 +150,7 @@ function initAdvancedPincode() {
           <div class="pincode-result-card available">
             <div class="pincode-area-name">📍 ${approxArea} Region</div>
             <div class="pincode-status">✅ ZENITH is available in your region</div>
-            <div class="pincode-delivery">⚡ Delivery available within 24 hours</div>
+            <div class="pincode-delivery">⚡ Priority delivery available</div>
             <div class="pincode-actions">
               <a href="https://wa.me/918777627142?text=${waMsg}" target="_blank" class="pincode-btn-primary">
                 💬 Order on WhatsApp
