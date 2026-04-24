@@ -651,3 +651,38 @@ footer {
   .header .logo { width: 65px !important; }
 }
 
+/* ── 12. UTILITIES: ARCHITECTURAL PRICING ── */
+.v3-mrp-badge {
+  background: rgba(10, 16, 35, 0.6);
+  color: var(--color-accent);
+  border: 1px solid rgba(181, 158, 109, 0.4);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 800;
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  letter-spacing: 3px;
+  display: inline-block;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-transform: uppercase;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5), inset 0 0 20px rgba(181, 158, 109, 0.05);
+  transition: all 0.5s var(--ease-out-expo);
+  white-space: nowrap;
+}
+
+.v3-mrp-badge:hover {
+  background: rgba(181, 158, 109, 0.1);
+  border-color: var(--color-accent);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 50px rgba(181, 158, 109, 0.25);
+}
+
+/* Homepage Card Overrides */
+.v3-product-card .v3-mrp-badge {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  border-radius: 2px;
+}
+
