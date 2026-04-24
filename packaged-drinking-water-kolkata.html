@@ -17,7 +17,9 @@
   <meta property="og:image" content="https://maharanibeverages.com/zenith_logo_main.png">
 
   <!-- Performance Preloads -->
-  <link rel="preload" as="image" href="assets/images/bottles-hero-bg.jpg">
+  <link rel="preload" as="image" href="assets/images/bottles-hero-bg.jpg" fetchpriority="high">
+  <link rel="preload" href="https://fonts.gstatic.com/s/syne/v22/8vIJ7w0mNX08UamX_3vN.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/dmsans/v14/rP2Fp2K8zQ2zzL_8oA7EFRXU.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Content Security Policy -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: *; connect-src 'self' https://formspree.io; frame-src 'none'; object-src 'none';">
