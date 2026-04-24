@@ -137,7 +137,7 @@ function initAdvancedPincode() {
             <div class="pincode-status">✅ ZENITH is available in your area</div>
             <div class="pincode-delivery">⚡ Priority delivery available</div>
             <div class="pincode-actions">
-              <a href="https://wa.me/918777627142?text=${waMsg}" target="_blank" class="pincode-btn-primary">
+              <a href="https://wa.me/918274837341?text=${waMsg}" target="_blank" class="pincode-btn-primary">
                 💬 Order on WhatsApp
               </a>
             </div>
@@ -152,7 +152,7 @@ function initAdvancedPincode() {
             <div class="pincode-status">✅ ZENITH is available in your region</div>
             <div class="pincode-delivery">⚡ Priority delivery available</div>
             <div class="pincode-actions">
-              <a href="https://wa.me/918777627142?text=${waMsg}" target="_blank" class="pincode-btn-primary">
+              <a href="https://wa.me/918274837341?text=${waMsg}" target="_blank" class="pincode-btn-primary">
                 💬 Order on WhatsApp
               </a>
             </div>
@@ -165,7 +165,7 @@ function initAdvancedPincode() {
             <div class="pincode-status">🚀 We're expanding to your area soon!</div>
             <div class="pincode-delivery">Be the first to get ZENITH in <strong>${value}</strong></div>
             <div class="pincode-actions">
-              <a href="https://wa.me/918777627142?text=${waMsg}" target="_blank" class="pincode-btn-secondary">
+              <a href="https://wa.me/918274837341?text=${waMsg}" target="_blank" class="pincode-btn-secondary">
                 📩 Request Availability
               </a>
             </div>
@@ -232,7 +232,7 @@ function initDistributorForm() {
     );
 
     setTimeout(() => {
-      window.location.href = `https://wa.me/918777627142?text=${waMsg}`;
+      window.location.href = `https://wa.me/918274837341?text=${waMsg}`;
     }, 1500);
   });
 }
