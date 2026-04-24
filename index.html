@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
   <title>ZENITH | Best Premium Packaged Drinking Water Kolkata & Howrah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <meta name="description" content="Zenith is the gold standard of premium mineral water in Kolkata and Howrah. Molecularly refined, 7-stage filtered, and mineral-balanced for elite hydration. Bengal's leading brand.">
   
   <!-- Content Security Policy (Temporarily disabled for Chrome diagnostic)
@@ -22,7 +26,12 @@
   <meta property="og:description" content="Experience molecularly refined, mineral-balanced premium hydration. Sculpted for the elite lifestyle. 2024 founding vision.">
   <meta property="og:image" content="https://maharanibeverages.com/zenith_logo_main.png">
 
-  <!-- Performance Preloads -->
+  <!-- Performance Architecture -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  
   <link rel="preload" as="image" href="hero-slide-1.png" fetchpriority="high">
   <link rel="preload" as="image" href="hero-slide-2.png">
   <link rel="preload" href="https://fonts.gstatic.com/s/syne/v22/8vIJ7w0mNX08UamX_3vN.woff2" as="font" type="font/woff2" crossorigin>
@@ -112,12 +121,18 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 
   <!-- CSS (V4.0 — Mobile Perfection Rewrite) -->
-  <link rel="stylesheet" href="assets/css/variables.css?v=4.0">
-  <link rel="stylesheet" href="assets/css/main.css?v=4.0">
-  <link rel="stylesheet" href="assets/css/mobile-perfection.css?v=4.0">
+  <link rel="preload" href="assets/css/variables.css?v=4.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="assets/css/main.css?v=4.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="assets/css/mobile-perfection.css?v=4.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="assets/css/variables.css?v=4.0">
+    <link rel="stylesheet" href="assets/css/main.css?v=4.0">
+    <link rel="stylesheet" href="assets/css/mobile-perfection.css?v=4.0">
+  </noscript>
   
   <style>
     /* Immediate Layout Hardening for Scrolled State */
@@ -160,7 +175,7 @@
       
       <!-- Left: Brand Identity -->
       <div style="display: flex; align-items: center; gap: 1rem;">
-        <a href="index.html"><img src="zenith_logo_main.png" alt="Zenith Premium Water - Official Brand Identity" class="logo" style="width: 80px; height: auto;"></a>
+        <a href="index.html"><img decoding="async" src="zenith_logo_main.png" alt="Zenith Premium Water - Official Brand Identity" class="logo" style="width: 80px; height: auto;" decoding="async"></a>
       </div>
 
       <!-- Center/Right: Desktop Nav -->
@@ -1093,7 +1108,7 @@
           <div data-aos="fade-up" data-aos-delay="100" style="display:flex; flex-direction:column; height:100%;">
             <div class="v3-product-card">
               <div class="v3-card-image">
-                <img src="product-300ml.jpg" alt="ZENITH 300ml drinking water bottle Kolkata" loading="lazy" width="300" height="400">
+                <img decoding="async" src="product-300ml.jpg" alt="ZENITH 300ml drinking water bottle Kolkata" loading="lazy" width="300" height="400" decoding="async">
               </div>
               <div class="v3-card-body">
                 <div class="v3-card-size">300 <span>ML</span></div>
@@ -1122,7 +1137,7 @@
             <div class="v3-product-card v3-card-featured">
               <div class="v3-popularity-tag" style="background: #3B82F6;">⭐ Most Popular</div>
               <div class="v3-card-image">
-                <img src="product-500ml.jpg" alt="ZENITH 500ml premium drinking water bottle Kolkata" loading="lazy" width="300" height="400">
+                <img decoding="async" src="product-500ml.jpg" alt="ZENITH 500ml premium drinking water bottle Kolkata" loading="lazy" width="300" height="400" decoding="async">
               </div>
               <div class="v3-card-body">
                 <div class="v3-card-size">500 <span>ML</span></div>
@@ -1151,7 +1166,7 @@
             <div class="v3-product-card v3-card-featured">
               <div class="v3-popularity-tag" style="background: #B59E6D; color: #010411;">🏆 Best Seller</div>
               <div class="v3-card-image">
-                <img src="product-1l.jpg" alt="ZENITH 1 litre premium drinking water bottle Kolkata" loading="lazy" width="300" height="400">
+                <img decoding="async" src="product-1l.jpg" alt="ZENITH 1 litre premium drinking water bottle Kolkata" loading="lazy" width="300" height="400" decoding="async">
               </div>
               <div class="v3-card-body">
                 <div class="v3-card-size">1.0 <span>L</span></div>
@@ -1179,7 +1194,7 @@
           <div data-aos="fade-up" data-aos-delay="400" style="display:flex; flex-direction:column; height:100%;">
             <div class="v3-product-card">
               <div class="v3-card-image">
-                <img src="product-2l.jpg" alt="ZENITH 2 litre family drinking water bottle Kolkata" loading="lazy" width="300" height="400">
+                <img decoding="async" src="product-2l.jpg" alt="ZENITH 2 litre family drinking water bottle Kolkata" loading="lazy" width="300" height="400" decoding="async">
               </div>
               <div class="v3-card-body">
                 <div class="v3-card-size">2.0 <span>L</span></div>
@@ -1792,7 +1807,7 @@
         <!-- Col 1: Brand & Contact -->
         <div style="grid-column: span 1.5;">
           <a href="index.html">
-            <img src="zenith_logo_main.png" alt="Zenith Water Official Logo" loading="lazy" style="width: 140px; height: auto; margin-bottom: 1.5rem;">
+            <img decoding="async" src="zenith_logo_main.png" alt="Zenith Water Official Logo" loading="lazy" style="width: 140px; height: auto; margin-bottom: 1.5rem;">
           </a>
           <p style="color: var(--color-accent); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem;">
             Premium Packaged Drinking Water Supplier in Kolkata & Howrah
@@ -1923,9 +1938,9 @@
 
 
   <!-- ================= SCRIPTS ================= -->
-  <script src="assets/js/aos.js"></script>
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/enquiry-cart.js?v=3.0"></script>
+  <script src="assets/js/aos.js" defer defer></script>
+  <script src="assets/js/main.js" defer defer></script>
+  <script src="assets/js/enquiry-cart.js?v=3.0" defer defer></script>
 
   <!-- ================= FEATURE 2: ZONE CLAIM SCRIPT ================= -->
   <script>
