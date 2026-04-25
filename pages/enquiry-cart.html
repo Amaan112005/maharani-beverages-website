@@ -293,16 +293,23 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="../assets/js/  enquiry-cart.js?v=3.0" defer></script>
+  <script src="../assets/js/enquiry-cart.js?v=3.0" defer></script>
   <script>
     function renderCart() {
-      const cart = getCart(); // From enquiry-cart.js
+      // Ensure the Cart Engine (enquiry-cart.js) is available
+      if (typeof getCart !== 'function') {
+        console.warn("Cart Engine not ready, retrying...");
+        setTimeout(renderCart, 100);
+        return;
+      }
+
+      const cart = getCart();
       const container = document.getElementById('cart-items-container');
       const emptyContainer = document.getElementById('empty-cart-container');
       
       container.innerHTML = '';
       
-      if (cart.length === 0) {
+      if (!cart || cart.length === 0) {
         container.style.display = 'none';
         emptyContainer.style.display = 'block';
         return;
@@ -334,7 +341,7 @@
 
     function saveCart(cart) {
       localStorage.setItem('zenithEnquiryCart', JSON.stringify(cart));
-      updateCartBadge(cart);
+      if (typeof updateCartBadge === 'function') updateCartBadge(cart);
       renderCart();
     }
 
