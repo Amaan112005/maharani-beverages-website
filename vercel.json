@@ -1,15 +1,3 @@
 {
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.maharanibeverages.com"
-        }
-      ],
-      "destination": "https://maharanibeverages.com/$1",
-      "permanent": true
-    }
-  ]
+  "redirects": []
 }
