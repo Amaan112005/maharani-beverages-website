@@ -97,3 +97,11 @@ function showToast(message) {
 
 // Initialize on load
 document.addEventListener('DOMContentLoaded', initCart);
+
+// Cross-tab synchronization: Update UI instantly when storage changes in another tab
+window.addEventListener('storage', (event) => {
+  if (event.key === CART_KEY) {
+    const newCart = event.newValue ? JSON.parse(event.newValue) : [];
+    updateCartBadge(newCart);
+  }
+});
