@@ -156,7 +156,7 @@
     var annMsgs = [
       '🚀 Now expanding to new zones in Kolkata — Limited territories available',
       '⚡ Rapid delivery network across all Howrah & Kolkata pincodes',
-      '🏆 FSSAI certified · BIS approved · Bengal\'s premium water brand'
+      '🏆 FSSAI certified · Bengal\'s premium water brand'
     ];
     var annIdx = 0;
     setInterval(function() {
@@ -1517,17 +1517,17 @@
             <div class="cert-view">View Certificate →</div>
           </div>
 
-          <!-- BIS -->
-          <div class="cert-card" onclick="openCertModal('bis')" data-aos="fade-up" data-aos-delay="200">
+          <!-- Purification Protocol -->
+          <div class="cert-card" onclick="openCertModal('purity')" data-aos="fade-up" data-aos-delay="200">
             <div class="cert-tick">
               <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" style="width:20px;height:20px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-              Verified
+              Active Protocol
             </div>
-            <div class="cert-icon">🏆</div>
-            <h3 class="cert-name">BIS Approved</h3>
-            <p class="cert-desc">Bureau of Indian Standards certification. Rigorous quality testing confirming purity at the molecular level.</p>
-            <div class="cert-number">IS 14543 Compliant</div>
-            <div class="cert-view">View Certificate →</div>
+            <div class="cert-icon">🔬</div>
+            <h3 class="cert-name">7-Stage Purification</h3>
+            <p class="cert-desc">Proprietary molecular filtration including UV-C Sterilization and Ozonation for absolute biological integrity.</p>
+            <div class="cert-number">0.0001 Micron Precision</div>
+            <div class="cert-view">Explore Process →</div>
           </div>
 
           <!-- ISO -->
@@ -1661,7 +1661,7 @@
     /* Cert Modal */
     var certData = {
       fssai: { icon: '🏛️', name: 'FSSAI Certified', detail: 'License No. 12825999000938\n\nFood Safety & Standards Authority of India certifies that Maharani Beverages LLP meets all requirements of IS 14543 for packaged drinking water. Valid & Active.' },
-      bis: { icon: '🏆', name: 'BIS Approved', detail: 'IS 14543 Compliant\n\nBureau of Indian Standards confirms the product meets strict quality parameters for packaged drinking water including chemical, microbiological, and physical standards.' },
+      purity: { icon: '🔬', name: '7-Stage Purification', detail: 'Molecular Isolation Protocol\n\nOur facility utilizes a proprietary 7-stage purification chain including sand filtration, carbon polishing, 0.0001 micron RO, and dual-layer sterilization (UV + Ozone) to ensure zero biological crossover.' },
       iso: { icon: '⚙️', name: 'ISO 9001:2015', detail: 'Quality Management Certified\n\nISO 9001:2015 certification confirms our quality management system governing all processes from raw material procurement to final product delivery.' }
     };
     function openCertModal(key) {

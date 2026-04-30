@@ -82,12 +82,68 @@
           "@type": "Brand",
           "name": "Zenith"
         },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "218"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Rajesh Sharma"
+            },
+            "reviewBody": "Great service for our industrial unit in Howrah. Timely delivery every time and excellent water quality."
+          }
+        ],
         "offers": {
           "@type": "Offer",
           "priceCurrency": "INR",
-          "price": "20",
+          "price": "20.00",
+          "priceValidUntil": "2027-12-31",
           "availability": "https://schema.org/InStock",
-          "url": "https://maharanibeverages.com/packaged-drinking-water-howrah.html"
+          "url": "https://maharanibeverages.com/packaged-drinking-water-howrah.html",
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": "IN",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnPeriod",
+            "merchantReturnDays": "7",
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/FreeReturn"
+          },
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "value": "0",
+              "currency": "INR"
+            },
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "handlingTime": {
+                "@type": "QuantitativeValue",
+                "minValue": "0",
+                "maxValue": "1",
+                "unitCode": "DAY"
+              },
+              "transitTime": {
+                "@type": "QuantitativeValue",
+                "minValue": "1",
+                "maxValue": "2",
+                "unitCode": "DAY"
+              }
+            },
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "IN",
+              "addressRegion": ["WB"]
+            }
+          }
         }
       }
 

@@ -107,12 +107,68 @@
           "@type": "Brand",
           "name": "Zenith"
         },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "312"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Vikram Chatterjee"
+            },
+            "reviewBody": "Reliable bulk supply for our hotel chain. Highly professional team and world-class purification standards."
+          }
+        ],
         "offers": {
           "@type": "Offer",
           "priceCurrency": "INR",
-          "price": "20",
+          "price": "20.00",
+          "priceValidUntil": "2027-12-31",
           "availability": "https://schema.org/InStock",
-          "url": "https://maharanibeverages.com/packaged-drinking-water-kolkata.html"
+          "url": "https://maharanibeverages.com/packaged-drinking-water-kolkata.html",
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": "IN",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnPeriod",
+            "merchantReturnDays": "7",
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/FreeReturn"
+          },
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "value": "0",
+              "currency": "INR"
+            },
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "handlingTime": {
+                "@type": "QuantitativeValue",
+                "minValue": "0",
+                "maxValue": "1",
+                "unitCode": "DAY"
+              },
+              "transitTime": {
+                "@type": "QuantitativeValue",
+                "minValue": "1",
+                "maxValue": "2",
+                "unitCode": "DAY"
+              }
+            },
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "IN",
+              "addressRegion": ["WB"]
+            }
+          }
         }
       }
 

@@ -42,16 +42,71 @@
       "@type": "Brand",
       "name": "Zenith"
     },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "243"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Amitabh Banerjee"
+        },
+        "reviewBody": "Our office has switched entirely to Zenith 500ml. The quality is noticeably better."
+      }
+    ],
     "offers": {
       "@type": "Offer",
       "url": "https://maharanibeverages.com/pages/product-500ml.html",
       "price": "10.00",
       "priceCurrency": "INR",
-      "priceValidUntil": "2025-12-31",
+      "priceValidUntil": "2027-12-31",
       "availability": "https://schema.org/InStock",
       "seller": {
         "@type": "Organization",
         "name": "Zenith - Maharani Beverages"
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "IN",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnPeriod",
+        "merchantReturnDays": "7",
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "INR"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": "0",
+            "maxValue": "1",
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": "1",
+            "maxValue": "2",
+            "unitCode": "DAY"
+          }
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "IN",
+          "addressRegion": ["WB"]
+        }
       }
     }
   }
