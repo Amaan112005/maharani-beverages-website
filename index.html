@@ -16,11 +16,9 @@
   <meta name="color-scheme" content="dark">
   
   <!-- Performance: Preconnect & DNS Prefetch -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  
+      
   <!-- Critical CSS: Inlined for instant first paint -->
-  <style>:root{--color-primary:#010411;--color-secondary:#0F172A;--color-accent:#B59E6D;--color-accent-glow:rgba(181,158,109,0.15);--color-platinum:#E2E8F0;--color-bg:#010411;--color-text:#F8FAFC;--color-muted:#64748B;--color-water-blue:#0A3D6B;--water-gradient-subtle:linear-gradient(135deg,rgba(10,61,107,0.15) 0%,rgba(1,4,17,0) 100%);--water-gradient-section:linear-gradient(180deg,rgba(10,61,107,0.08) 0%,rgba(15,23,42,0.35) 100%);--section-dark:#010411;--section-mid:#070D24;--section-accent:rgba(10,42,80,0.25);--section-padding:220px;--container-max:1200px;--gutter:60px;--font-heading:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;--font-size-hero:clamp(3.5rem,15vw,10rem);--font-size-h2:clamp(2.5rem,10vw,5rem);--kerning-tight:-0.04em;--kerning-wide:0.15em;--glass-bg:rgba(255,255,255,0.02);--glass-border:rgba(255,255,255,0.05);--radius-elite:0px;--ease-out-expo:cubic-bezier(0.16,1,0.3,1);--transition-slow:1.5s var(--ease-out-expo);--transition-fast:0.6s var(--ease-out-expo);}.header{position:fixed;top:0;left:0;right:0;z-index:9999;padding:1.5rem 0;transition:background 0.4s,backdrop-filter 0.4s;}.header.scrolled{background:rgba(10,10,10,0.8)!important;backdrop-filter:blur(20px);}.container{max-width:var(--container-max);margin:0 auto;padding:0 var(--gutter);}#hero-slideshow{position:relative;height:100vh;min-height:600px;overflow:hidden;}.hslide-bg-track{position:absolute;inset:0;}.hslide-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s ease;}.hslide-bg.active{opacity:1;}.logo{width:80px;height:auto;}.nav-link{color:rgba(255,255,255,0.6);text-decoration:none;font-weight:600;font-size:0.6rem;text-transform:uppercase;letter-spacing:3px;transition:color 0.3s;}@font-face{font-family:'Syne';font-style:normal;font-weight:700;font-display:swap;src:local('Syne Bold'),url(https://fonts.gstatic.com/s/syne/v22/8vIJ7w0mNX08UamX_3vN.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F;}@font-face{font-family:'Syne';font-style:normal;font-weight:800;font-display:swap;src:local('Syne ExtraBold'),url(https://fonts.gstatic.com/s/syne/v22/8vIJ7w0mNX08UamX_3vN.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F;}@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:swap;src:local('DM Sans Regular'),url(https://fonts.gstatic.com/s/dmsans/v14/rP2Fp2K8zQ2zzL_8oA7EFRXU.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F;}@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:swap;src:local('DM Sans Medium'),url(https://fonts.gstatic.com/s/dmsans/v14/rP2Fp2K8zQ2zzL_8oA7EFRXU.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F;}</style>
+  <style>:root{--color-primary:#010411;--color-secondary:#0F172A;--color-accent:#B59E6D;--color-accent-glow:rgba(181,158,109,0.15);--color-platinum:#E2E8F0;--color-bg:#010411;--color-text:#F8FAFC;--color-muted:#64748B;--color-water-blue:#0A3D6B;--water-gradient-subtle:linear-gradient(135deg,rgba(10,61,107,0.15) 0%,rgba(1,4,17,0) 100%);--water-gradient-section:linear-gradient(180deg,rgba(10,61,107,0.08) 0%,rgba(15,23,42,0.35) 100%);--section-dark:#010411;--section-mid:#070D24;--section-accent:rgba(10,42,80,0.25);--section-padding:220px;--container-max:1200px;--gutter:60px;--font-heading:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;--font-size-hero:clamp(3.5rem,15vw,10rem);--font-size-h2:clamp(2.5rem,10vw,5rem);--kerning-tight:-0.04em;--kerning-wide:0.15em;--glass-bg:rgba(255,255,255,0.02);--glass-border:rgba(255,255,255,0.05);--radius-elite:0px;--ease-out-expo:cubic-bezier(0.16,1,0.3,1);--transition-slow:1.5s var(--ease-out-expo);--transition-fast:0.6s var(--ease-out-expo);}.header{position:fixed;top:0;left:0;right:0;z-index:9999;padding:1.5rem 0;transition:background 0.4s,backdrop-filter 0.4s;}.header.scrolled{background:rgba(10,10,10,0.8)!important;backdrop-filter:blur(20px);}.container{max-width:var(--container-max);margin:0 auto;padding:0 var(--gutter);}#hero-slideshow{position:relative;height:100vh;min-height:600px;overflow:hidden;}.hslide-bg-track{position:absolute;inset:0;}.hslide-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s ease;}.hslide-bg.active{opacity:1;}.logo{width:80px;height:auto;}.nav-link{color:rgba(255,255,255,0.72);text-decoration:none;font-weight:600;font-size:0.6rem;text-transform:uppercase;letter-spacing:3px;transition:color 0.3s;}@font-face{font-family:'Syne';font-style:normal;font-weight:700;font-display:swap;src:local('Syne Bold'),url(assets/fonts/syne-700.woff2) format('woff2');}@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:swap;src:local('DM Sans Regular'),url(assets/fonts/dmsans-400.woff2) format('woff2');}@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:swap;src:local('DM Sans Medium'),url(assets/fonts/dmsans-400.woff2) format('woff2');}</style>
   
   <!-- Non-Critical CSS: Loaded asynchronously -->
   <link rel="preload" href="assets/css/main.css?v=5.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -31,7 +29,7 @@
   </noscript>
   
   <!-- LCP Image: Preload only the hero slide 1 -->
-  <link rel="preload" as="image" href="hero-slide-1-optimized.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="hero-slide-1-optimized.webp" fetchpriority="high" type="image/webp">
   
   <!-- Canonical & OG -->
   <link rel="canonical" href="https://maharanibeverages.com/">
@@ -54,6 +52,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%A7%3C/text%3E%3C/svg%3E">
   
   <!-- Schema JSON moved to end of body for faster head parsing -->
+  <style>.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}</style>
 </head>
 
 <body>
@@ -62,22 +61,24 @@
 
   <!-- ================= ANNOUNCEMENT BAR ================= -->
   <div id="announcement-bar" style="background: linear-gradient(90deg, #0a1628, #0d2244, #0a1628); padding: 0.6rem 2rem; text-align: center; font-size: 0.7rem; font-weight: 600; letter-spacing: 2px; color: rgba(255,255,255,0.9); position: relative; z-index: 1001; overflow: hidden;">
-    <span id="ann-text">🚀 Now expanding to new zones in Kolkata — Limited distributor territories available</span>
+    <span id="ann-text">Now expanding to new zones in Kolkata — Limited distributor territories available</span>
   </div>
   <script>
+  setTimeout(function() {
     var annMsgs = [
-      '🚀 Now expanding to new zones in Kolkata — Limited territories available',
-      '⚡ Rapid delivery network across all Howrah & Kolkata pincodes',
-      '🏆 FSSAI certified · Bengal\'s premium water brand'
-    ];
-    var annIdx = 0;
-    setInterval(function() {
-      annIdx = (annIdx + 1) % annMsgs.length;
-      var el = document.getElementById('ann-text');
-      if (el) { el.style.opacity = '0'; setTimeout(function() { el.textContent = annMsgs[annIdx]; el.style.opacity = '1'; }, 300); }
-    }, 4000);
-    document.getElementById('ann-text').style.transition = 'opacity 0.3s';
-  </script>
+          'Now expanding to new zones in Kolkata — Limited territories available',
+          'Rapid delivery network across all Howrah & Kolkata pincodes',
+          'FSSAI certified · Bengal\'s premium water brand'
+        ];
+        var annIdx = 0;
+        setInterval(function() {
+          annIdx = (annIdx + 1) % annMsgs.length;
+          var el = document.getElementById('ann-text');
+          if (el) { el.style.opacity = '0'; setTimeout(function() { el.textContent = annMsgs[annIdx]; el.style.opacity = '1'; }, 300); }
+        }, 4000);
+        document.getElementById('ann-text').style.transition = 'opacity 0.3s';
+  }, 0);
+</script></script>
 
   <!-- ================= STEALTH HEADER ================= -->
   <header class="header" id="main-header">
@@ -85,7 +86,7 @@
       
       <!-- Left: Brand Identity -->
       <div style="display: flex; align-items: center; gap: 1rem;">
-        <a href="index.html"><img src="zenith_logo_compact.png" alt="Zenith Water logo - FSSAI certified packaged drinking water brand in Kolkata" class="logo" style="width: 80px; height: auto;" decoding="async" width="80" height="66" loading="lazy"></a>
+        <a href="index.html"><img src="zenith_logo_compact.png" alt="Zenith Water logo" class="logo" style="width:80px;height:auto;aspect-ratio:80/66;" decoding="async" width="80" height="66" loading="eager"></a>
       </div>
 
       <!-- Center/Right: Desktop Nav -->
@@ -99,7 +100,7 @@
         <a href="pages/contact.html" class="nav-link">Contact</a>
 
         <!-- CART ICON -->
-        <a href="pages/enquiry-cart.html" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; position: relative;">
+        <a href="pages/enquiry-cart.html" aria-label="View enquiry cart" style="color:white;text-decoration:none;display:flex;align-items:center;gap:8px;position:relative;min-width:44px;min-height:44px;justify-content:center;">
           <svg viewBox="0 0 576 512" style="width: 20px; height: 20px; fill: currentColor;"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41.1 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
           <span class="cart-badge-count" style="display: none; align-items: center; justify-content: center; position: absolute; top: -8px; right: -8px; background: #EF4444; color: white; font-size: 0.55rem; font-weight: 800; width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--section-dark);">0</span>
         </a>
@@ -133,8 +134,8 @@
       <a href="blog/" onclick="setTimeout(closeMobileMenu, 200)" class="mobile-nav-link">Blog</a>
       <a href="pages/careers.html" onclick="setTimeout(closeMobileMenu, 200)" class="mobile-nav-link">Careers</a>
       <a href="pages/contact.html" onclick="setTimeout(closeMobileMenu, 200)" class="mobile-nav-link">Contact</a>
-      <a href="tel:+918274837341" onclick="setTimeout(closeMobileMenu, 200)" style="color: #B59E6D; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; padding: 1.5rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); font-family: var(--font-body);">📞 +91 82748 37341</a>
-      <a href="pages/distributor.html" onclick="setTimeout(closeMobileMenu, 200)" style="color: white; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; padding: 1.5rem 2rem; background: rgba(181,158,109,0.1); display: flex; align-items: center; justify-content: space-between;">
+      <a href="tel:+918274837341" onclick="setTimeout(closeMobileMenu, 200)" style="color:#B59E6D;text-decoration:none;font-size:0.75rem;text-transform:uppercase;letter-spacing:3px;font-weight:700;padding:1.5rem 2rem;border-bottom:1px solid rgba(255,255,255,0.05);font-family:var(--font-body);display:flex;align-items:center;min-height:44px;"><svg style="width:16px;height:16px;margin-right:8px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+91 82748 37341</a>
+      <a href="pages/distributor.html" onclick="setTimeout(closeMobileMenu, 200)" style="color:white;text-decoration:none;font-size:0.75rem;text-transform:uppercase;letter-spacing:2px;font-weight:800;padding:1.5rem 2rem;background:rgba(181,158,109,0.1);display:flex;align-items:center;justify-content:space-between;min-height:44px;">
         Become Distributor
         <span style="background: #EF4444; color: white; font-size: 0.5rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 20px; letter-spacing: 1px;">Zones Available</span>
       </a>
@@ -177,8 +178,8 @@
 
       <!-- SLIDE BACKGROUNDS -->
       <div class="hslide-bg-track">
-        <div class="hslide-bg active" style="background-image: url('hero-slide-1-optimized.jpg');"></div>
-        <div class="hslide-bg"        style="background-image: url('hero-slide-2-optimized.jpg');"></div>
+        <div class="hslide-bg active" style="background-image: url('hero-slide-1-optimized.webp');"></div>
+        <div class="hslide-bg"        style="background-image: url('hero-slide-2-optimized.webp');"></div>
       </div>
 
       <!-- OVERLAY GRADIENT (always on) -->
@@ -242,173 +243,175 @@
 
     <!-- ===== HERO SLIDESHOW JS ===== -->
     <script>
+  window.addEventListener("load", function() {
     (function() {
-      var SLIDES = [
-        { bg: 0, panel: 0 },
-        { bg: 1, panel: 1 }
-      ];
-      var INTERVAL = 5000; // ms per slide
-      var current = 0;
-      var timer = null;
-      var progressTimer = null;
-      var progressStart = null;
-
-      var bgs    = document.querySelectorAll('.hslide-bg');
-      var panels = document.querySelectorAll('.hslide-panel');
-      var dots   = document.querySelectorAll('.hdot');
-      var fill   = document.getElementById('hero-progress-fill');
-
-      /* ── Letter splitting ── */
-      function splitLetters(panel) {
-        panel.querySelectorAll('.hword').forEach(function(word) {
-          var text = word.textContent;
-          word.innerHTML = '';
-          text.split('').forEach(function(ch, i) {
-            var s = document.createElement('span');
-            s.className = 'hletter';
-            s.textContent = ch === ' ' ? '\u00a0' : ch;
-            word.appendChild(s);
-          });
-        });
-      }
-
-      /* ── Scatter a single letter into random positions ── */
-      function scatterLetter(el, isOut) {
-        var vx = (Math.random() - 0.5) * 600;
-        var vy = (Math.random() - 0.5) * 400;
-        var rot = (Math.random() - 0.5) * 120;
-        var sc = 0.3 + Math.random() * 0.7;
-        el.style.transform = 'translate(' + vx + 'px,' + vy + 'px) rotate(' + rot + 'deg) scale(' + sc + ')';
-        el.style.filter = 'blur(' + (4 + Math.random() * 6) + 'px)';
-      }
-
-      /* ── Animate panel IN ── */
-      function animateIn(panel) {
-        // Clear any inline opacity that might persist from a previous animateOut
-        panel.querySelector('.hslide-eyebrow').style.opacity = '';
-        panel.querySelector('.hslide-ctas').style.opacity = '';
-
-        var letters = panel.querySelectorAll('.hletter');
-        letters.forEach(function(el, i) {
-          // Start from scattered state
-          el.classList.remove('assembled', 'scattered');
-          scatterLetter(el);
-          el.style.setProperty('--letter-delay', (i * 0.028 + 0.12) + 's');
-          el.style.setProperty('--letter-dur', '0.75s');
-          // Removed inline opacity so CSS class takes over fully
-        });
-        // Trigger assembly
-        requestAnimationFrame(function() {
-          requestAnimationFrame(function() {
-            letters.forEach(function(el) {
-              el.classList.add('assembled');
+          var SLIDES = [
+            { bg: 0, panel: 0 },
+            { bg: 1, panel: 1 }
+          ];
+          var INTERVAL = 5000; // ms per slide
+          var current = 0;
+          var timer = null;
+          var progressTimer = null;
+          var progressStart = null;
+    
+          var bgs    = document.querySelectorAll('.hslide-bg');
+          var panels = document.querySelectorAll('.hslide-panel');
+          var dots   = document.querySelectorAll('.hdot');
+          var fill   = document.getElementById('hero-progress-fill');
+    
+          /* ── Letter splitting ── */
+          function splitLetters(panel) {
+            panel.querySelectorAll('.hword').forEach(function(word) {
+              var text = word.textContent;
+              word.innerHTML = '';
+              text.split('').forEach(function(ch, i) {
+                var s = document.createElement('span');
+                s.className = 'hletter';
+                s.textContent = ch === ' ' ? '\u00a0' : ch;
+                word.appendChild(s);
+              });
             });
+          }
+    
+          /* ── Scatter a single letter into random positions ── */
+          function scatterLetter(el, isOut) {
+            var vx = (Math.random() - 0.5) * 600;
+            var vy = (Math.random() - 0.5) * 400;
+            var rot = (Math.random() - 0.5) * 120;
+            var sc = 0.3 + Math.random() * 0.7;
+            el.style.transform = 'translate(' + vx + 'px,' + vy + 'px) rotate(' + rot + 'deg) scale(' + sc + ')';
+            el.style.filter = 'blur(' + (4 + Math.random() * 6) + 'px)';
+          }
+    
+          /* ── Animate panel IN ── */
+          function animateIn(panel) {
+            // Clear any inline opacity that might persist from a previous animateOut
+            panel.querySelector('.hslide-eyebrow').style.opacity = '';
+            panel.querySelector('.hslide-ctas').style.opacity = '';
+    
+            var letters = panel.querySelectorAll('.hletter');
+            letters.forEach(function(el, i) {
+              // Start from scattered state
+              el.classList.remove('assembled', 'scattered');
+              scatterLetter(el);
+              el.style.setProperty('--letter-delay', (i * 0.028 + 0.12) + 's');
+              el.style.setProperty('--letter-dur', '0.75s');
+              // Removed inline opacity so CSS class takes over fully
+            });
+            // Trigger assembly
+            requestAnimationFrame(function() {
+              requestAnimationFrame(function() {
+                letters.forEach(function(el) {
+                  el.classList.add('assembled');
+                });
+              });
+            });
+          }
+    
+          /* ── Animate panel OUT ── */
+          function animateOut(panel, cb) {
+            var letters = panel.querySelectorAll('.hletter');
+            var max = letters.length;
+            letters.forEach(function(el, i) {
+              var delay = i * 0.015;
+              el.style.setProperty('--letter-delay', delay + 's');
+              el.style.setProperty('--letter-dur', '0.45s');
+              scatterLetter(el);
+              el.classList.remove('assembled');
+              el.classList.add('scattered');
+            });
+            setTimeout(cb || function(){}, max * 15 + 500);
+          }
+    
+          /* ── Go to slide ── */
+          var isAnimating = false;
+          window.goSlide = function(idx) {
+            if (idx === current || isAnimating) return;
+            isAnimating = true;
+    
+            clearInterval(timer);
+            clearTimeout(progressTimer);
+    
+            var prev = current;
+            current = idx;
+    
+            // BG swap
+            bgs[prev].classList.remove('active');
+            bgs[idx].classList.add('active');
+    
+            // Panel swap
+            var prevPanel = panels[prev];
+            var nextPanel = panels[idx];
+    
+            prevPanel.querySelector('.hslide-eyebrow').style.opacity = '0';
+            prevPanel.querySelector('.hslide-ctas').style.opacity = '0';
+    
+            animateOut(prevPanel, function() {
+              prevPanel.classList.remove('active');
+            });
+    
+            nextPanel.classList.add('active');
+            animateIn(nextPanel);
+    
+            // Unlock after animations finish
+            setTimeout(function() { isAnimating = false; }, 800);
+    
+            // Dots
+            dots.forEach(function(d,i){ d.classList.toggle('active', i===idx); });
+    
+            // Restart
+            startProgress();
+            timer = setInterval(nextSlide, INTERVAL);
+          };
+    
+          function nextSlide() {
+            goSlide((current + 1) % SLIDES.length);
+          }
+    
+          /* ── Progress bar ── */
+          function startProgress() {
+            if (!fill) return;
+            fill.style.transition = 'none';
+            fill.style.width = '0%';
+            clearTimeout(progressTimer);
+            requestAnimationFrame(function() {
+              requestAnimationFrame(function() {
+                fill.style.transition = 'width ' + INTERVAL + 'ms linear';
+                fill.style.width = '100%';
+              });
+            });
+          }
+    
+          /* ── Init ── */
+          document.addEventListener('DOMContentLoaded', function() {
+            panels.forEach(splitLetters);
+            // Delay the first slide in so the user can fully see the scatter load effect
+            setTimeout(function() {
+              panels[0].classList.add('active');
+              animateIn(panels[0]);
+              // Start autoplay
+              startProgress();
+              timer = setInterval(nextSlide, INTERVAL);
+            }, 300);
           });
-        });
-      }
-
-      /* ── Animate panel OUT ── */
-      function animateOut(panel, cb) {
-        var letters = panel.querySelectorAll('.hletter');
-        var max = letters.length;
-        letters.forEach(function(el, i) {
-          var delay = i * 0.015;
-          el.style.setProperty('--letter-delay', delay + 's');
-          el.style.setProperty('--letter-dur', '0.45s');
-          scatterLetter(el);
-          el.classList.remove('assembled');
-          el.classList.add('scattered');
-        });
-        setTimeout(cb || function(){}, max * 15 + 500);
-      }
-
-      /* ── Go to slide ── */
-      var isAnimating = false;
-      window.goSlide = function(idx) {
-        if (idx === current || isAnimating) return;
-        isAnimating = true;
-
-        clearInterval(timer);
-        clearTimeout(progressTimer);
-
-        var prev = current;
-        current = idx;
-
-        // BG swap
-        bgs[prev].classList.remove('active');
-        bgs[idx].classList.add('active');
-
-        // Panel swap
-        var prevPanel = panels[prev];
-        var nextPanel = panels[idx];
-
-        prevPanel.querySelector('.hslide-eyebrow').style.opacity = '0';
-        prevPanel.querySelector('.hslide-ctas').style.opacity = '0';
-
-        animateOut(prevPanel, function() {
-          prevPanel.classList.remove('active');
-        });
-
-        nextPanel.classList.add('active');
-        animateIn(nextPanel);
-
-        // Unlock after animations finish
-        setTimeout(function() { isAnimating = false; }, 800);
-
-        // Dots
-        dots.forEach(function(d,i){ d.classList.toggle('active', i===idx); });
-
-        // Restart
-        startProgress();
-        timer = setInterval(nextSlide, INTERVAL);
-      };
-
-      function nextSlide() {
-        goSlide((current + 1) % SLIDES.length);
-      }
-
-      /* ── Progress bar ── */
-      function startProgress() {
-        if (!fill) return;
-        fill.style.transition = 'none';
-        fill.style.width = '0%';
-        clearTimeout(progressTimer);
-        requestAnimationFrame(function() {
-          requestAnimationFrame(function() {
-            fill.style.transition = 'width ' + INTERVAL + 'ms linear';
-            fill.style.width = '100%';
-          });
-        });
-      }
-
-      /* ── Init ── */
-      document.addEventListener('DOMContentLoaded', function() {
-        panels.forEach(splitLetters);
-        // Delay the first slide in so the user can fully see the scatter load effect
-        setTimeout(function() {
-          panels[0].classList.add('active');
-          animateIn(panels[0]);
-          // Start autoplay
-          startProgress();
-          timer = setInterval(nextSlide, INTERVAL);
-        }, 300);
-      });
-
-      // Pause on hover
-      var section = document.getElementById('hero-slideshow');
-      if (section) {
-        section.addEventListener('mouseenter', function() {
-          clearInterval(timer);
-          if (fill) { fill.style.animationPlayState = 'paused'; }
-        });
-        section.addEventListener('mouseleave', function() {
-          clearInterval(timer); // Prevent timer stacking
-          startProgress();
-          timer = setInterval(nextSlide, INTERVAL);
-        });
-      }
-    })();
-    </script>
+    
+          // Pause on hover
+          var section = document.getElementById('hero-slideshow');
+          if (section) {
+            section.addEventListener('mouseenter', function() {
+              clearInterval(timer);
+              if (fill) { fill.style.animationPlayState = 'paused'; }
+            });
+            section.addEventListener('mouseleave', function() {
+              clearInterval(timer); // Prevent timer stacking
+              startProgress();
+              timer = setInterval(nextSlide, INTERVAL);
+            });
+          }
+        })();
+  });
+</script>
 
 
     <!-- ================= HIGH-CONVERSION PINCODE MATRIX ================= -->
@@ -419,7 +422,7 @@
         
         <form id="pincode-form" onsubmit="zenithPincodeCheck(event)" style="display: flex; gap: 1rem; flex-direction: column; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); padding: 10px; border-radius: 12px; backdrop-filter: blur(20px);">
           <div style="display: flex; gap: 0.5rem; width: 100%;">
-            <input type="text" id="pincode-input" placeholder="e.g. 700001" maxlength="6" style="flex-grow: 1; min-width: 0; color: white; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); padding: 1.25rem; font-size: 1.1rem; text-align: center; border-radius: 8px; outline: none; transition: border 0.3s;">
+            <label for="pincode-input" class="visually-hidden">Enter your 6-digit pincode</label><input type="text" id="pincode-input" placeholder="e.g. 700001" maxlength="6" aria-label="Enter your 6-digit pincode" style="flex-grow:1;min-width:0;color:white;background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.1);padding:1.25rem;font-size:1.1rem;text-align:center;border-radius:8px;outline:none;transition:border 0.3s;">
             <button type="submit" class="btn-ultimate" style="background: var(--color-accent); color: var(--color-primary); border: none; padding: 0 2rem; white-space: nowrap; border-radius: 8px; cursor: pointer;">VERIFY</button>
           </div>
         </form>
@@ -497,8 +500,8 @@
           res.innerHTML = '<div class="pincode-result-card available">' +
             '<div class="pincode-area-name">📍 ' + area + '</div>' +
             '<div class="pincode-status">✅ ZENITH is available in your area</div>' +
-            '<div class="pincode-delivery">⚡ Priority delivery available</div>' +
-            '<div class="pincode-actions"><a href="https://wa.me/918274837341?text=' + waMsg + '" target="_blank" class="pincode-btn-primary">💬 Order on WhatsApp</a></div>' +
+            '<div class="pincode-delivery">Priority delivery available</div>' +
+            '<div class="pincode-actions"><a href="https://wa.me/918274837341?text=' + waMsg + '" target="_blank" class="pincode-btn-primary">Order on WhatsApp</a></div>' +
           '</div>';
         } else if (isKolkata || isHowrah) {
           var approx = isKolkata ? 'Kolkata' : 'Howrah';
@@ -506,8 +509,8 @@
           res.innerHTML = '<div class="pincode-result-card available">' +
             '<div class="pincode-area-name">📍 ' + approx + ' Region</div>' +
             '<div class="pincode-status">✅ ZENITH is available in your region</div>' +
-            '<div class="pincode-delivery">⚡ Priority delivery available</div>' +
-            '<div class="pincode-actions"><a href="https://wa.me/918274837341?text=' + waMsg2 + '" target="_blank" class="pincode-btn-primary">💬 Order on WhatsApp</a></div>' +
+            '<div class="pincode-delivery">Priority delivery available</div>' +
+            '<div class="pincode-actions"><a href="https://wa.me/918274837341?text=' + waMsg2 + '" target="_blank" class="pincode-btn-primary">Order on WhatsApp</a></div>' +
           '</div>';
         } else {
           var waMsg3 = encodeURIComponent('Hi, please start ZENITH water supply in my area (' + val + ')');
@@ -651,7 +654,7 @@
           <!-- 1 LITER — Best Seller -->
           <div data-aos="fade-up" data-aos-delay="300" style="display:flex; flex-direction:column; height:100%;">
             <div class="v3-product-card v3-card-featured">
-              <div class="v3-popularity-tag" style="background: #B59E6D; color: #010411;">🏆 Best Seller</div>
+              <div class="v3-popularity-tag" style="background: #B59E6D; color: #010411;">Best Seller</div>
               <div class="v3-card-image">
                 <picture>
                   <source srcset="product-1l-optimized.webp" type="image/webp">
@@ -1287,8 +1290,8 @@
           
           <ul style="list-style: none; color: var(--color-white); font-size: 1.125rem; line-height: 2;">
             <li style="display: flex; gap: 1rem; align-items: flex-start;"><span style="color:var(--color-accent);">📍</span> <div>Maharani Beverages LLP<br>Ranihati Industrial Park Mallick Bagan Howrah 711322 India.</div></li>
-            <li style="display: flex; gap: 1rem; align-items: center;"><span style="color:var(--color-accent);">📞</span> +91 8274837341</li>
-            <li style="display: flex; gap: 1rem; align-items: center;"><span style="color:var(--color-accent);">✉️</span> marketing@maharanibeverages.com</li>
+            <li style="display: flex; gap: 1rem; align-items: center;"><svg style="width:18px;height:18px;color:var(--color-accent);flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+91 8274837341</span></li>
+            <li style="display: flex; gap: 1rem; align-items: center;"><svg style="width:18px;height:18px;color:var(--color-accent);flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>marketing@maharanibeverages.com</span></li>
           </ul>
         </div>
 
@@ -1298,16 +1301,16 @@
             <input type="hidden" name="_subject" value="NEW ZENITH WEB INQUIRY">
             <input type="hidden" name="_next" value="https://maharanibeverages.com/pages/success.html">
             <!-- Honeypot -->
-            <input type="text" name="_gotcha" style="display:none">
-            <input type="text" name="name" placeholder="Full Name" required style="padding: 1rem; background: transparent; border: 1px solid var(--glass-border); color: white; border-radius: var(--radius-sm); font-size: 1rem; outline: none;">
-            <input type="email" name="email" placeholder="Email Address" required style="padding: 1rem; background: transparent; border: 1px solid var(--glass-border); color: white; border-radius: var(--radius-sm); font-size: 1rem; outline: none;">
-            <select name="subject" required style="padding: 1rem; background: var(--color-primary); border: 1px solid var(--glass-border); color: white; border-radius: var(--radius-sm); font-size: 1rem; outline: none; appearance: none;">
+            <input type="text" name="_gotcha" style="display:none" aria-hidden="true" tabindex="-1">
+            <label for="contact-name" class="visually-hidden">Full Name</label><input type="text" id="contact-name" name="name" placeholder="Full Name" required aria-label="Full Name" style="padding:1rem;background:transparent;border:1px solid var(--glass-border);color:white;border-radius:var(--radius-sm);font-size:1rem;outline:none;">
+            <label for="contact-email" class="visually-hidden">Email Address</label><input type="email" id="contact-email" name="email" placeholder="Email Address" required aria-label="Email Address" style="padding:1rem;background:transparent;border:1px solid var(--glass-border);color:white;border-radius:var(--radius-sm);font-size:1rem;outline:none;">
+            <label for="contact-subject" class="visually-hidden">Nature of Inquiry</label><select id="contact-subject" name="subject" required aria-label="Nature of Inquiry" style="padding:1rem;background:var(--color-primary);border:1px solid var(--glass-border);color:white;border-radius:var(--radius-sm);font-size:1rem;outline:none;appearance:none;">
               <option value="" disabled selected>Nature of Inquiry</option>
               <option value="Distributorship">Distributorship</option>
               <option value="Bulk Order">Bulk Order / Event</option>
               <option value="General Support">General Support</option>
             </select>
-            <textarea name="message" rows="4" placeholder="Your Message" required style="padding: 1rem; background: transparent; border: 1px solid var(--glass-border); color: white; border-radius: var(--radius-sm); font-size: 1rem; outline: none;"></textarea>
+            <label for="contact-message" class="visually-hidden">Your Message</label><textarea id="contact-message" name="message" rows="4" placeholder="Your Message" required aria-label="Your Message" style="padding:1rem;background:transparent;border:1px solid var(--glass-border);color:white;border-radius:var(--radius-sm);font-size:1rem;outline:none;"></textarea>
             <button type="submit" class="btn-ultimate" style="width: 100%; border-radius: var(--radius-sm);">SEND MESSAGE</button>
           </form>
         </div>
@@ -1327,7 +1330,7 @@
         <!-- Col 1: Brand & Contact -->
         <div style="grid-column: span 1.5;">
           <a href="index.html">
-            <img decoding="async" src="zenith_logo_compact.png" alt="Zenith Water Official Logo" loading="lazy" style="width: 140px; height: auto; margin-bottom: 1.5rem;">
+            <img decoding="async" src="zenith_logo_compact.png" alt="Zenith Water Official Logo" loading="lazy" style="width:140px;height:auto;aspect-ratio:1/1;margin-bottom:1.5rem;" width="140" height="140">
           </a>
           <p style="color: var(--color-accent); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem;">
             Premium Packaged Drinking Water Supplier in Kolkata & Howrah
@@ -1445,11 +1448,13 @@
 
   <!-- ================= FEATURE 2: ZONE CLAIM SCRIPT ================= -->
   <script>
+  window.addEventListener("load", function() {
     function claimZone(zone, pin) {
-      var msg = encodeURIComponent('Hi, I am interested in becoming a ZENITH distributor for ' + zone + ' (' + pin + '). Is this territory still available?');
-      window.open('https://wa.me/918274837341?text=' + msg, '_blank');
-    }
-  </script>
+          var msg = encodeURIComponent('Hi, I am interested in becoming a ZENITH distributor for ' + zone + ' (' + pin + '). Is this territory still available?');
+          window.open('https://wa.me/918274837341?text=' + msg, '_blank');
+        }
+  });
+</script>
 
   <!-- ================= FEATURE 3: WHATSAPP SMART WIDGET ================= -->
   <div id="wa-widget" style="position:fixed; bottom:100px; right:24px; z-index:9999; display:flex; flex-direction:column; align-items:flex-end; gap:0.75rem;">
@@ -1462,7 +1467,7 @@
       <!-- Consumer -->
       <a id="wa-consumer" href="https://wa.me/918274837341?text=Hi%2C%20I%20want%20to%20order%20ZENITH%20water%20for%20home%20or%20office.%20Can%20you%20help%3F" target="_blank"
          style="display:flex; align-items:center; gap:1rem; padding:1rem; border-radius:10px; background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.2); text-decoration:none; margin-bottom:0.75rem; transition:background 0.2s;">
-        <span style="font-size:1.5rem;">🛒</span>
+        <svg style="width:24px;height:24px;" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         <div>
           <div style="color:white; font-size:0.9rem; font-weight:600;">Order Water</div>
           <div style="color:var(--color-muted); font-size:0.7rem;">For home or office</div>
@@ -1472,7 +1477,7 @@
       <!-- Distributor -->
       <a id="wa-distributor" href="https://wa.me/918274837341?text=Hi%2C%20I%20am%20interested%20in%20becoming%20a%20ZENITH%20water%20distributor.%20Please%20share%20details." target="_blank"
          style="display:flex; align-items:center; gap:1rem; padding:1rem; border-radius:10px; background:rgba(181,158,109,0.08); border:1px solid rgba(181,158,109,0.2); text-decoration:none; transition:background 0.2s;">
-        <span style="font-size:1.5rem;">🤝</span>
+        <svg style="width:24px;height:24px;" viewBox="0 0 24 24" fill="none" stroke="#B59E6D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         <div>
           <div style="color:white; font-size:0.9rem; font-weight:600;">Join Network</div>
           <div style="color:var(--color-muted); font-size:0.7rem;">Become a distributor</div>
@@ -1490,30 +1495,32 @@
   </div>
 
   <script>
+  window.addEventListener("load", function() {
     function toggleWAWidget() {
-      var p = document.getElementById('wa-panel');
-      p.style.display = (p.style.display === 'none' || p.style.display === '') ? 'block' : 'none';
-    }
-    // Close on outside click
-    document.addEventListener('click', function(e) {
-      var w = document.getElementById('wa-widget');
-      if (!w.contains(e.target)) {
-        var p = document.getElementById('wa-panel');
-        if (p) p.style.display = 'none';
-      }
-    });
-  </script>
+          var p = document.getElementById('wa-panel');
+          p.style.display = (p.style.display === 'none' || p.style.display === '') ? 'block' : 'none';
+        }
+        // Close on outside click
+        document.addEventListener('click', function(e) {
+          var w = document.getElementById('wa-widget');
+          if (!w.contains(e.target)) {
+            var p = document.getElementById('wa-panel');
+            if (p) p.style.display = 'none';
+          }
+        });
+  });
+</script>
 
   <!-- ================= FEATURE 4: MOBILE STICKY BOTTOM BAR ================= -->
   <div id="mobile-bottom-bar" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9998; background:rgba(8,14,32,0.97); backdrop-filter:blur(20px); border-top:1px solid rgba(255,255,255,0.1); padding:0.75rem 1rem; grid-template-columns:1fr 1fr 1fr; gap:0.5rem;">
     <a href="tel:+918274837341"
        style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.25rem; padding:0.5rem; border-radius:8px; background:rgba(255,255,255,0.05); text-decoration:none; transition:background 0.2s;">
-      <span style="font-size:1.25rem;">📞</span>
+      <svg style="width:20px;height:20px;" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       <span style="color:white; font-size:0.55rem; text-transform:uppercase; letter-spacing:1px; font-weight:700;">Call Now</span>
     </a>
     <a href="https://wa.me/918274837341?text=Hi%20Zenith%2C%20I%20have%20an%20inquiry." target="_blank"
        style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.25rem; padding:0.5rem; border-radius:8px; background:#25D366; text-decoration:none;">
-      <span style="font-size:1.25rem;">💬</span>
+      <svg style="width:20px;height:20px;" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
       <span style="color:white; font-size:0.55rem; text-transform:uppercase; letter-spacing:1px; font-weight:700;">WhatsApp</span>
     </a>
     <a href="#pincode-form"
@@ -1659,14 +1666,7 @@
   </style>
 
   <!-- 5. SCROLL PROGRESS BAR -->
-  <div id="scroll-bar" style="position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--color-accent),#fff);z-index:99998;width:0%;transition:width 0.1s linear;pointer-events:none;"></div>
-  <script>
-  window.addEventListener('scroll', function() {
-    var scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-    var bar = document.getElementById('scroll-bar');
-    if (bar) bar.style.width = scrolled + '%';
-  });
-  </script>
+  
 
   <!-- 6. ANIMATED HERO GRADIENT MESH -->
   <style> .hero-elite::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 80%,rgba(10,40,107,0.4) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at 80% 20%,rgba(5,20,60,0.5) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 50% 50%,rgba(181,158,109,0.04) 0%,transparent 70%);animation:meshDrift 12s ease-in-out infinite alternate;pointer-events:none;z-index:0;}@keyframes meshDrift{0%{opacity:0.6;transform:scale(1);}50%{opacity:1;transform:scale(1.04);}100%{opacity:0.7;transform:scale(1.02);}}h1,h2{background-clip:text;-webkit-background-clip:text;}[data-aos="fade-up"]{transition-timing-function:cubic-bezier(0.16,1,0.3,1) !important;}</style>
