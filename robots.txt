@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /pages/success.html
+
 Sitemap: https://maharanibeverages.com/sitemap.xml

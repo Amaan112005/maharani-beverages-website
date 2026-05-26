@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="https://maharanibeverages.com/zenith_logo_compact.png">
+  <link rel="shortcut icon" href="https://maharanibeverages.com/zenith_logo_compact.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Maharani Beverages LLP">
+  <title>Zenith Water Products | 300ml, 500ml, 1L, 2L Bottles & 20L Jars Kolkata</title>
+  <meta name="description" content="Explore Zenith Water's full product range: 300ml, 500ml, 1L, 2L mineral water bottles and 20L bulk jars. FSSAI certified packaged drinking water delivered across Kolkata & Howrah.">
+  <meta name="geo.region" content="IN-WB">
+  <meta name="geo.placename" content="Kolkata, Howrah">
+
+  <link rel="canonical" href="https://maharanibeverages.com/pages/products.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maharanibeverages.com/pages/products.html">
+  <meta property="og:title" content="Zenith Water Products | Packaged Drinking Water Kolkata">
+  <meta property="og:description" content="FSSAI certified mineral water in 300ml, 500ml, 1L, 2L bottles and 20L bulk jars. Delivered across Kolkata & Howrah.">
+  <meta property="og:image" content="https://maharanibeverages.com/product-500ml-optimized.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Zenith Water">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zenith Water Products | Packaged Drinking Water Kolkata">
+  <meta name="twitter:description" content="FSSAI certified mineral water bottles and bulk jars. Delivered across Kolkata & Howrah.">
+  <meta name="twitter:image" content="https://maharanibeverages.com/product-500ml-optimized.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/mobile-perfection.css?v=1.1">
+
+  <style>
+    .header { position: sticky; top: 0; z-index: 1000; transition: all 0.4s ease; background: transparent; }
+    .header.scrolled { background: rgba(8, 14, 32, 0.97) !important; backdrop-filter: blur(24px); box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
+    .nav-link { color: rgba(255,255,255,0.7); text-decoration: none; font-weight: 600; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; position: relative; transition: color 0.3s ease; }
+    .nav-link:hover { color: white; }
+    .nav-link::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0%; height: 1px; background: var(--color-accent); transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    .nav-link:hover::after { width: 100%; }
+    .mobile-nav-link { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; padding: 1.5rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.2s ease, color 0.2s ease; }
+    .mobile-nav-link:hover { background: rgba(255,255,255,0.03); color: white; }
+    #mobile-menu.open { max-height: 80vh !important; overflow-y: auto !important; }
+    @media (max-width: 992px) { .desktop-nav { display: none !important; } .mobile-nav-group { display: flex !important; } }
+    #hamburger.open .ham-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    #hamburger.open .ham-line:nth-child(2) { opacity: 0; }
+    #hamburger.open .ham-line:nth-child(3) { width: 24px; transform: translateY(-7px) rotate(-45deg); }
+
+    .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+    @media (max-width: 900px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .product-grid { grid-template-columns: 1fr; } }
+
+    .p-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; overflow: hidden; transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s, border-color 0.35s; cursor: pointer; }
+    .p-card:hover { transform: translateY(-10px); box-shadow: 0 30px 70px rgba(0,0,0,0.5), 0 0 0 1px rgba(181,158,109,0.25); border-color: rgba(181,158,109,0.3); }
+    .p-card-img { height: 320px; display: flex; align-items: flex-end; justify-content: center; padding: 2rem 2rem 0; background: linear-gradient(180deg, rgba(10,40,90,0.12) 0%, rgba(0,0,0,0) 100%); }
+    .p-card-img img { height: 100%; max-height: 300px; width: auto; object-fit: contain; transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5)) drop-shadow(0 5px 20px rgba(181,158,109,0.08)); }
+    .p-card:hover .p-card-img img { transform: scale(1.07) translateY(-4px); }
+    .p-card-body { padding: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); }
+    .p-card-size { font-family: var(--font-heading); font-size: 2rem; font-weight: 800; color: white; line-height: 1; margin-bottom: 0.4rem; }
+    .p-card-size span { color: var(--color-accent); font-size: 1rem; }
+    .p-card-tag { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px; color: var(--color-muted); margin-bottom: 0.75rem; }
+    .p-card-desc { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.5; margin-bottom: 1.25rem; }
+    .p-card-mrp { background: var(--color-accent); color: var(--color-primary); font-size: 0.75rem; font-weight: 800; padding: 0.35rem 0.85rem; border-radius: 6px; letter-spacing: 0.5px; display: inline-block; margin-bottom: 1rem; }
+    .p-card-btn { display: inline-block; color: var(--color-accent); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; font-weight: 800; }
+
+    .bulk-banner { background: rgba(181,158,109,0.05); border: 1px solid rgba(181,158,109,0.2); border-radius: 12px; padding: 3rem; text-align: center; margin: 6rem 0; }
+    .footer-link { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.95rem; transition: color 0.3s, padding-left 0.3s; display: inline-block; }
+    .footer-link:hover { color: var(--color-accent); padding-left: 5px; }
+  </style>
+
+  <!-- Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Maharani Beverages LLP",
+    "alternateName": "Zenith Water",
+    "url": "https://maharanibeverages.com/",
+    "logo": "https://maharanibeverages.com/zenith_logo_compact.png",
+    "foundingDate": "2018",
+    "description": "Premium packaged drinking water manufacturer and supplier in Kolkata and Howrah. FSSAI certified, 7-stage purified mineral water for homes, offices, and events.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ranihati Industrial Park, Mallick Bagan",
+      "addressLocality": "Howrah",
+      "addressRegion": "West Bengal",
+      "postalCode": "711322",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+918274837341",
+      "contactType": "sales",
+      "areaServed": ["Kolkata", "Howrah"],
+      "availableLanguage": ["English", "Hindi", "Bengali"]
+    },
+    "sameAs": [
+      "https://www.instagram.com/zenithwater",
+      "https://www.facebook.com/zenithwater",
+      "https://www.linkedin.com/company/zenith-water"
+    ]
+  }
+  </script>
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://maharanibeverages.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://maharanibeverages.com/pages/products.html" }
+    ]
+  }
+  </script>
+
+  <!-- Product Collection Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Product",
+          "name": "Zenith 300ml Mineral Water Bottle",
+          "image": "https://maharanibeverages.com/product-300ml-optimized.jpg",
+          "description": "FSSAI certified 300ml packaged drinking water. Portable travel size for events and retail.",
+          "brand": { "@type": "Brand", "name": "Zenith Water" },
+          "offers": { "@type": "Offer", "priceCurrency": "INR", "price": "6.00", "availability": "https://schema.org/InStock", "url": "https://maharanibeverages.com/pages/product-300ml.html" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Product",
+          "name": "Zenith 500ml Mineral Water Bottle",
+          "image": "https://maharanibeverages.com/product-500ml-optimized.jpg",
+          "description": "FSSAI certified 500ml packaged drinking water. The office and retail standard.",
+          "brand": { "@type": "Brand", "name": "Zenith Water" },
+          "offers": { "@type": "Offer", "priceCurrency": "INR", "price": "10.00", "availability": "https://schema.org/InStock", "url": "https://maharanibeverages.com/pages/product-500ml.html" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Product",
+          "name": "Zenith 1 Litre Mineral Water Bottle",
+          "image": "https://maharanibeverages.com/product-1l-optimized.jpg",
+          "description": "FSSAI certified 1 litre packaged drinking water. Perfect for home use and daily hydration.",
+          "brand": { "@type": "Brand", "name": "Zenith Water" },
+          "offers": { "@type": "Offer", "priceCurrency": "INR", "price": "20.00", "availability": "https://schema.org/InStock", "url": "https://maharanibeverages.com/pages/product-1l.html" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Product",
+          "name": "Zenith 2 Litre Mineral Water Bottle",
+          "image": "https://maharanibeverages.com/product-2l-optimized.jpg",
+          "description": "FSSAI certified 2 litre packaged drinking water. Family pack for home and events.",
+          "brand": { "@type": "Brand", "name": "Zenith Water" },
+          "offers": { "@type": "Offer", "priceCurrency": "INR", "price": "30.00", "availability": "https://schema.org/InStock", "url": "https://maharanibeverages.com/pages/product-2l.html" }
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <header class="header" id="main-header">
+    <nav class="container" style="display: flex; justify-content: space-between; align-items: center; pointer-events: auto; padding: 1rem 0;">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="../index.html"><img decoding="async" src="../zenith_logo_compact.png" alt="Zenith Water logo - FSSAI certified packaged drinking water brand in Kolkata" class="logo" style="width: 80px; height: auto;" width="80" height="66"></a>
+      </div>
+      <div class="desktop-nav" style="display: flex; gap: 1.5rem; align-items: center;">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="products.html" class="nav-link" style="color:white;">Products</a>
+        <a href="vision.html" class="nav-link">About</a>
+        <a href="bulk.html" class="nav-link">Inquiry</a>
+        <a href="../blog/" class="nav-link">Blog</a>
+        <a href="careers.html" class="nav-link">Careers</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="enquiry-cart.html" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; position: relative; margin-left:1rem;">
+          <svg viewBox="0 0 576 512" style="width: 20px; height: 20px; fill: currentColor;"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41.1 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
+        </a>
+      </div>
+      <div class="mobile-nav-group" style="display: none; align-items: center; gap: 1.5rem; z-index: 1100;">
+        <button id="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu" style="display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px;">
+          <span class="ham-line" style="display: block; width: 24px; height: 2px; background: white; transition: all 0.3s;"></span>
+          <span class="ham-line" style="display: block; width: 24px; height: 2px; background: white; transition: all 0.3s;"></span>
+          <span class="ham-line" style="display: block; width: 16px; height: 2px; background: white; transition: all 0.3s;"></span>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" style="pointer-events: auto; position: absolute; top: 100%; left: 0; width: 100%; display: flex; flex-direction: column; gap: 0; background: rgba(10, 16, 35, 0.98); backdrop-filter: blur(30px); border-top: 1px solid rgba(255,255,255,0.06); padding: 0; overflow: hidden; max-height: 0; transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+      <a href="../index.html" class="mobile-nav-link">Home</a>
+      <a href="products.html" class="mobile-nav-link">Products</a>
+      <a href="vision.html" class="mobile-nav-link">About</a>
+      <a href="bulk.html" class="mobile-nav-link">Inquiry</a>
+      <a href="../blog/" class="mobile-nav-link">Blog</a>
+      <a href="careers.html" class="mobile-nav-link">Careers</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </div>
+  </header>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      var h = document.getElementById('main-header');
+      if (window.scrollY > 100) { h.classList.add('scrolled'); } else { h.classList.remove('scrolled'); }
+    });
+    function toggleMobileMenu() {
+      var menu = document.getElementById('mobile-menu');
+      var btn = document.getElementById('hamburger');
+      var isOpen = menu.classList.contains('open');
+      if (isOpen) { menu.classList.remove('open'); btn.classList.remove('open'); }
+      else { menu.classList.add('open'); btn.classList.add('open'); }
+    }
+  </script>
+
+  <main>
+    <!-- Hero -->
+    <section style="padding: 10rem 0 6rem; text-align: center;">
+      <div class="container">
+        <p style="color: var(--color-accent); font-size: 0.7rem; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 2rem;">The Collection</p>
+        <h1 style="font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1; margin-bottom: 2rem;">PREMIUM PACKAGED<br>DRINKING WATER</h1>
+        <p style="color: var(--color-muted); font-size: 1.1rem; max-width: 700px; margin: 0 auto 3rem; line-height: 1.8;">FSSAI certified mineral water in multiple sizes. From pocket-friendly 300ml travel bottles to 20-litre bulk jars for offices and events across <strong style="color:white;">Kolkata & Howrah</strong>.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="bulk.html" class="btn-ultimate" style="background: var(--color-accent); color: var(--color-primary); border: none; padding: 1rem 2.5rem;">Get Bulk Quote</a>
+          <a href="tel:+918274837341" class="btn-ultimate" style="padding: 1rem 2.5rem;">Call +91 82748 37341</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section style="padding: 4rem 0 8rem;">
+      <div class="container">
+        <div class="product-grid">
+
+          <!-- 300ml -->
+          <div class="p-card">
+            <div class="p-card-img">
+              <picture>
+                <source srcset="../product-300ml-optimized.webp" type="image/webp">
+                <img src="../product-300ml-optimized.jpg" alt="Zenith 300ml mineral water bottle - event size packaged drinking water" loading="lazy" width="300" height="400" decoding="async">
+              </picture>
+            </div>
+            <div class="p-card-body">
+              <div class="p-card-size">300 <span>ML</span></div>
+              <div class="p-card-tag">Travel & Events</div>
+              <p class="p-card-desc">Portable pocket-size bottle perfect for conferences, weddings, and on-the-go hydration.</p>
+              <div class="p-card-mrp">MRP ₹6</div>
+              <br>
+              <a href="product-300ml.html" class="p-card-btn">View Details →</a>
+            </div>
+          </div>
+
+          <!-- 500ml -->
+          <div class="p-card">
+            <div class="p-card-img">
+              <picture>
+                <source srcset="../product-500ml-optimized.webp" type="image/webp">
+                <img src="../product-500ml-optimized.jpg" alt="Zenith 500ml mineral water bottle - office and retail packaged water" loading="lazy" width="300" height="400" decoding="async">
+              </picture>
+            </div>
+            <div class="p-card-body">
+              <div class="p-card-size">500 <span>ML</span></div>
+              <div class="p-card-tag">Most Popular — Office & Retail</div>
+              <p class="p-card-desc">The professional standard. Ideal for corporate offices, retail counters, and daily consumption.</p>
+              <div class="p-card-mrp">MRP ₹10</div>
+              <br>
+              <a href="product-500ml.html" class="p-card-btn">View Details →</a>
+            </div>
+          </div>
+
+          <!-- 1L -->
+          <div class="p-card">
+            <div class="p-card-img">
+              <picture>
+                <source srcset="../product-1l-optimized.webp" type="image/webp">
+                <img src="../product-1l-optimized.jpg" alt="Zenith 1 litre mineral water bottle - home use packaged drinking water" loading="lazy" width="300" height="400" decoding="async">
+              </picture>
+            </div>
+            <div class="p-card-body">
+              <div class="p-card-size">1.0 <span>L</span></div>
+              <div class="p-card-tag">Best Seller — Home Use</div>
+              <p class="p-card-desc">Perfect for family refrigerators, home workouts, and daily household hydration needs.</p>
+              <div class="p-card-mrp">MRP ₹20</div>
+              <br>
+              <a href="product-1l.html" class="p-card-btn">View Details →</a>
+            </div>
+          </div>
+
+          <!-- 2L -->
+          <div class="p-card">
+            <div class="p-card-img">
+              <picture>
+                <source srcset="../product-2l-optimized.webp" type="image/webp">
+                <img src="../product-2l-optimized.jpg" alt="Zenith 2 litre mineral water bottle - family pack packaged water Kolkata" loading="lazy" width="300" height="400" decoding="async">
+              </picture>
+            </div>
+            <div class="p-card-body">
+              <div class="p-card-size">2.0 <span>L</span></div>
+              <div class="p-card-tag">Family & Events</div>
+              <p class="p-card-desc">Large family pack for gatherings, picnics, and extended hydration without frequent reordering.</p>
+              <div class="p-card-mrp">MRP ₹30</div>
+              <br>
+              <a href="product-2l.html" class="p-card-btn">View Details →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Bulk Banner -->
+    <section class="container">
+      <div class="bulk-banner">
+        <h2 style="font-family: var(--font-heading); color: white; margin-bottom: 1.5rem; font-size: clamp(1.5rem, 4vw, 2.5rem);">Need 20-Litre Bulk Jars for Your Office?</h2>
+        <p style="color: var(--color-muted); max-width: 600px; margin: 0 auto 2rem; line-height: 1.8;">We supply FSSAI certified 20-litre mineral water jars with scheduled delivery for offices, hotels, restaurants, and factories across Kolkata and Howrah. Volume pricing available.</p>
+        <a href="bulk.html" class="btn-ultimate" style="background: var(--color-accent); color: var(--color-primary); border: none; padding: 1rem 3rem;">Request Bulk Pricing</a>
+      </div>
+    </section>
+
+    <!-- Delivery Coverage -->
+    <section style="padding: 6rem 0;">
+      <div class="container" style="max-width: 900px; text-align: center;">
+        <h2 style="font-size: var(--font-size-h2); margin-bottom: 2rem;">Delivery Coverage</h2>
+        <p style="color: var(--color-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 3rem;">Zenith Water delivers to all major areas in <strong style="color:white;">Kolkata</strong> and <strong style="color:white;">Howrah</strong> within 24–48 hours. Same-day delivery available for bulk corporate orders in Salt Lake, Park Street, Rajarhat, New Town, and Howrah Station.</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: left;">
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 1.5rem;">
+            <h4 style="color: var(--color-accent); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">Kolkata Central</h4>
+            <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.8;">Park Street, Esplanade, Dalhousie, Bowbazar, Burrabazar, Shyambazar</p>
+          </div>
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 1.5rem;">
+            <h4 style="color: var(--color-accent); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">Kolkata South</h4>
+            <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.8;">Ballygunge, Jadavpur, Garia, Tollygunge, Behala, Alipore, Kalighat</p>
+          </div>
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 1.5rem;">
+            <h4 style="color: var(--color-accent); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">Kolkata East & Howrah</h4>
+            <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.8;">Salt Lake, Rajarhat, New Town, Dum Dum, Howrah Station, Salkia, Shibpur, Bally</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section style="padding: 4rem 0 8rem; text-align: center;">
+      <div class="container">
+        <p style="color: var(--color-accent); font-size: 0.7rem; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 2rem;">The Standard</p>
+        <h2 style="font-size: var(--font-size-h2); margin-bottom: 3rem;">FSSAI CERTIFIED.<br>7-STAGE PURIFIED.</h2>
+        <div style="display: inline-flex; align-items: center; gap: 0.75rem; background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.25); padding: 0.75rem 2rem; border-radius: 50px; margin-bottom: 2rem;">
+          <span style="color: #10B981; font-size: 1.2rem;">✓</span>
+          <span style="color: #10B981; font-weight: 700; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase;">FSSAI License No. 12825999000938</span>
+        </div>
+        <p style="color: var(--color-muted); max-width: 700px; margin: 0 auto; line-height: 1.8;">Every bottle passes through sediment filtration, carbon block, reverse osmosis (0.0001 micron), UV sterilization, and ozone sealing. Manufactured at our Ranihati facility in Howrah.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background: var(--section-dark); border-top: 1px solid rgba(255,255,255,0.08); padding: 6rem 0 3rem;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 4rem;">
+        <div>
+          <a href="../index.html"><img decoding="async" src="../zenith_logo_compact.png" alt="Zenith Water Official Logo" loading="lazy" style="width: 140px; height: auto; margin-bottom: 1.5rem;"></a>
+          <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2rem;">Premium packaged drinking water supplier in Kolkata & Howrah. FSSAI certified.</p>
+          <p style="color: white; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem;">Direct Line</p>
+          <a href="tel:+918274837341" style="color: var(--color-accent); font-size: 1.25rem; font-weight: 800; text-decoration: none; display: block; margin-bottom: 0.5rem;">+91 82748 37341</a>
+        </div>
+        <div>
+          <h4 style="font-family: var(--font-heading); font-size: 1rem; color: white; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 3px;">Products</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;">
+            <li><a href="product-300ml.html" class="footer-link">300ml Travel Bottle</a></li>
+            <li><a href="product-500ml.html" class="footer-link">500ml Office Bottle</a></li>
+            <li><a href="product-1l.html" class="footer-link">1L Home Bottle</a></li>
+            <li><a href="product-2l.html" class="footer-link">2L Family Pack</a></li>
+            <li><a href="bulk.html" class="footer-link">20L Bulk Jar</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-family: var(--font-heading); font-size: 1rem; color: white; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 3px;">Company</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;">
+            <li><a href="vision.html" class="footer-link">About Us</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+            <li><a href="distributor.html" class="footer-link">Distributors</a></li>
+            <li><a href="../blog/" class="footer-link">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 2rem; text-align: center;">
+        <p style="color: rgba(255,255,255,0.3); font-size: 0.8rem;">&copy; 2026 Maharani Beverages LLP — Zenith Water. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

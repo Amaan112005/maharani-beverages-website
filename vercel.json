@@ -1,3 +1,59 @@
 {
-  "redirects": []
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/about", "destination": "/pages/vision.html" },
+    { "source": "/contact", "destination": "/pages/contact.html" },
+    { "source": "/products", "destination": "/#products" },
+    { "source": "/inquiry", "destination": "/pages/bulk.html" },
+    { "source": "/careers", "destination": "/pages/careers.html" },
+    { "source": "/vision", "destination": "/pages/vision.html" },
+    { "source": "/bulk", "destination": "/pages/bulk.html" },
+    { "source": "/distributor", "destination": "/pages/distributor.html" },
+    { "source": "/comparison", "destination": "/pages/comparison.html" },
+    { "source": "/compliance", "destination": "/pages/compliance.html" },
+    { "source": "/privacy", "destination": "/pages/privacy.html" },
+    { "source": "/terms", "destination": "/pages/terms.html" },
+    { "source": "/shipping", "destination": "/pages/shipping.html" },
+    { "source": "/returns", "destination": "/pages/returns.html" },
+    { "source": "/enquiry-cart", "destination": "/pages/enquiry-cart.html" },
+    { "source": "/products", "destination": "/pages/products.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(jpg|jpeg|png|gif|webp|avif|svg|ico|css|js)$",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
 }
