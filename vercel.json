@@ -2,22 +2,70 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/about", "destination": "/pages/vision.html" },
-    { "source": "/contact", "destination": "/pages/contact.html" },
-    { "source": "/products", "destination": "/#products" },
-    { "source": "/inquiry", "destination": "/pages/bulk.html" },
-    { "source": "/careers", "destination": "/pages/careers.html" },
-    { "source": "/vision", "destination": "/pages/vision.html" },
-    { "source": "/bulk", "destination": "/pages/bulk.html" },
-    { "source": "/distributor", "destination": "/pages/distributor.html" },
-    { "source": "/comparison", "destination": "/pages/comparison.html" },
-    { "source": "/compliance", "destination": "/pages/compliance.html" },
-    { "source": "/privacy", "destination": "/pages/privacy.html" },
-    { "source": "/terms", "destination": "/pages/terms.html" },
-    { "source": "/shipping", "destination": "/pages/shipping.html" },
-    { "source": "/returns", "destination": "/pages/returns.html" },
-    { "source": "/enquiry-cart", "destination": "/pages/enquiry-cart.html" },
-    { "source": "/products", "destination": "/pages/products.html" }
+    {
+      "source": "/about",
+      "destination": "/pages/vision.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/pages/contact.html"
+    },
+    {
+      "source": "/products",
+      "destination": "/#products"
+    },
+    {
+      "source": "/inquiry",
+      "destination": "/pages/bulk.html"
+    },
+    {
+      "source": "/careers",
+      "destination": "/pages/careers.html"
+    },
+    {
+      "source": "/vision",
+      "destination": "/pages/vision.html"
+    },
+    {
+      "source": "/bulk",
+      "destination": "/pages/bulk.html"
+    },
+    {
+      "source": "/distributor",
+      "destination": "/pages/distributor.html"
+    },
+    {
+      "source": "/comparison",
+      "destination": "/pages/comparison.html"
+    },
+    {
+      "source": "/compliance",
+      "destination": "/pages/compliance.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/pages/privacy.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/pages/terms.html"
+    },
+    {
+      "source": "/shipping",
+      "destination": "/pages/shipping.html"
+    },
+    {
+      "source": "/returns",
+      "destination": "/pages/returns.html"
+    },
+    {
+      "source": "/enquiry-cart",
+      "destination": "/pages/enquiry-cart.html"
+    },
+    {
+      "source": "/products",
+      "destination": "/pages/products.html"
+    }
   ],
   "headers": [
     {
@@ -34,6 +82,10 @@
         {
           "key": "Referrer-Policy",
           "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
         }
       ]
     },
@@ -52,6 +104,45 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.(woff2?|ttf|otf))",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept-Encoding"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.(css|js))",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept-Encoding"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.(webp|jpg|jpeg|png|gif|svg))",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, immutable"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept-Encoding"
         }
       ]
     }

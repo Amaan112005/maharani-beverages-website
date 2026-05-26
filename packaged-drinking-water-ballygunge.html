@@ -21,23 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root { --color-bg: #080e20; --color-primary: #010411; --color-secondary: #0a1628; --color-accent: #B59E6D; --color-muted: rgba(255,255,255,0.5); --font-heading: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif; }
-    body { margin: 0; background: var(--color-bg); color: white; font-family: var(--font-body); line-height: 1.6; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    .header { position: sticky; top: 0; z-index: 1000; background: rgba(8,14,32,0.97); backdrop-filter: blur(24px); border-bottom: 1px solid rgba(255,255,255,0.06); }
-    .nav-link { color: rgba(255,255,255,0.7); text-decoration: none; font-weight: 600; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; transition: color 0.3s; }
-    .nav-link:hover { color: white; }
-    h1 { font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; letter-spacing: -1px; }
-    h2 { font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 2.2rem); line-height: 1.2; }
-    h3 { font-family: var(--font-heading); font-size: 1.25rem; }
-    .btn-ultimate { display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid rgba(255,255,255,0.15); border-radius: 100px; padding: 1rem 2.5rem; text-decoration: none; color: white; font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s; background: transparent; cursor: pointer; }
-    .btn-ultimate:hover { border-color: var(--color-accent); color: var(--color-accent); }
-    .accent { color: var(--color-accent); }
-    .footer-link { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; display: inline-block; }
-    .footer-link:hover { color: var(--color-accent); }
-    @media (max-width: 768px) { .desktop-nav { display: none !important; } }
-  </style>
+  <style>:root{--color-bg:#080e20;--color-primary:#010411;--color-secondary:#0a1628;--color-accent:#B59E6D;--color-muted:rgba(255,255,255,0.5);--font-heading:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;}body{margin:0;background:var(--color-bg);color:white;font-family:var(--font-body);line-height:1.6;}.container{max-width:1200px;margin:0 auto;padding:0 2rem;}.header{position:sticky;top:0;z-index:1000;background:rgba(8,14,32,0.97);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,0.06);}.nav-link{color:rgba(255,255,255,0.7);text-decoration:none;font-weight:600;font-size:0.65rem;text-transform:uppercase;letter-spacing:2px;transition:color 0.3s;}.nav-link:hover{color:white;}h1{font-family:var(--font-heading);font-size:clamp(2rem,5vw,3.5rem);line-height:1.1;letter-spacing:-1px;}h2{font-family:var(--font-heading);font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.2;}h3{font-family:var(--font-heading);font-size:1.25rem;}.btn-ultimate{display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(255,255,255,0.15);border-radius:100px;padding:1rem 2.5rem;text-decoration:none;color:white;font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:all 0.3s;background:transparent;cursor:pointer;}.btn-ultimate:hover{border-color:var(--color-accent);color:var(--color-accent);}.accent{color:var(--color-accent);}.footer-link{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.9rem;transition:color 0.3s;display:inline-block;}.footer-link:hover{color:var(--color-accent);}@media (max-width:768px){.desktop-nav{display:none !important;}}</style>
 
   <script type="application/ld+json">
   {
@@ -106,7 +90,7 @@
 
 <header class="header">
   <nav class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0;">
-    <a href="index.html"><img src="zenith_logo_compact.png" alt="Zenith Water logo" style="width: 80px; height: auto;"></a>
+    <a href="index.html"><img src="zenith_logo_compact.png" alt="Zenith Water logo" style="width: 80px; height: auto;" decoding="async" loading="lazy"></a>
     <div class="desktop-nav" style="display: flex; gap: 1.5rem; align-items: center;">
       <a href="index.html" class="nav-link">Home</a>
       <a href="pages/products.html" class="nav-link">Products</a>
@@ -191,7 +175,7 @@
   <div class="container">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
       <div>
-        <a href="index.html"><img src="zenith_logo_compact.png" alt="Zenith Water" style="width: 120px; margin-bottom: 1rem;"></a>
+        <a href="index.html"><img src="zenith_logo_compact.png" alt="Zenith Water" style="width: 120px; margin-bottom: 1rem;" decoding="async" loading="lazy"></a>
         <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">Premium packaged drinking water supplier in Kolkata & Howrah. FSSAI certified.</p>
       </div>
       <div>
