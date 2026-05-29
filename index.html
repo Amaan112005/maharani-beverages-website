@@ -1743,8 +1743,10 @@
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js', { scope: '/' })
       .then(() => console.log('[Zenith] Service Worker registered'))
-      .catch((err) => console.log('[Zenith] SW registration failed:', err));
   }
 </script>
+
+<!-- Vercel Speed Insights -->
+<script type="module" src="assets/js/speed-insights.js"></script>
 </body>
 </html>
