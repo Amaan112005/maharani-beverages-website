@@ -99,7 +99,7 @@
       ]
     },
     {
-      "source": "/(.*)\\.(jpg|jpeg|png|gif|webp|avif|svg|ico|css|js)$",
+      "source": "/:path(.*)\\.:ext(jpg|jpeg|png|gif|webp|avif|svg|ico|css|js)$",
       "headers": [
         {
           "key": "Cache-Control",
@@ -108,20 +108,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(woff2?|ttf|otf))",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        },
-        {
-          "key": "Vary",
-          "value": "Accept-Encoding"
-        }
-      ]
-    },
-    {
-      "source": "/(.*\\.(css|js))",
+      "source": "/:path(.*)\\.:ext(woff|woff2|ttf|otf)$",
       "headers": [
         {
           "key": "Cache-Control",
@@ -134,7 +121,20 @@
       ]
     },
     {
-      "source": "/(.*\\.(webp|jpg|jpeg|png|gif|svg))",
+      "source": "/:path(.*)\\.:ext(css|js)$",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept-Encoding"
+        }
+      ]
+    },
+    {
+      "source": "/:path(.*)\\.:ext(webp|jpg|jpeg|png|gif|svg)$",
       "headers": [
         {
           "key": "Cache-Control",

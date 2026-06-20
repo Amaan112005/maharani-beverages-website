@@ -16,3 +16,4 @@ TODO.md
 *.log
 node_modules/
 建设内容
+.vercel
