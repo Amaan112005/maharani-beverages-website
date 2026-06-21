@@ -145,6 +145,15 @@
           "value": "Accept-Encoding"
         }
       ]
+    },
+    {
+      "source": "/udyam_certificate.pdf",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "<https://maharanibeverages.com/udyam_certificate.pdf>; rel=\"canonical\""
+        }
+      ]
     }
   ]
 }
