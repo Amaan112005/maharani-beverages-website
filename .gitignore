@@ -17,3 +17,4 @@ TODO.md
 node_modules/
 建设内容
 .vercel
+scripts/__pycache__/
