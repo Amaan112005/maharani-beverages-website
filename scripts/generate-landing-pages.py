@@ -1195,6 +1195,15 @@ TEMPLATE = '''<!DOCTYPE html>
   <link rel="icon" type="image/png" href="{logo_url}">
   <link rel="shortcut icon" href="{logo_url}">
 
+  <!-- Google Analytics 4 (replace G-XXXXXXXXXX with your real Measurement ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
   <!-- Preconnect / DNS prefetch -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1518,7 +1527,13 @@ def related_cards_html(related):
 
 
 def css_links():
-    return "\n  ".join(f'<link rel="stylesheet" href="{f}">' for f in CSS_FILES)
+    """Render non-blocking stylesheet links. Critical CSS is inlined above."""
+    lines = []
+    for f in CSS_FILES:
+        lines.append(f'<link rel="preload" href="{f}" as="style">')
+        lines.append(f'<link rel="stylesheet" href="{f}" media="print" onload="this.media=\'all\'">')
+        lines.append(f'<noscript><link rel="stylesheet" href="{f}"></noscript>')
+    return "\n  ".join(lines)
 
 
 def js_links():

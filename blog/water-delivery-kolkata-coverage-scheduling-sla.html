@@ -4,17 +4,26 @@
 <head>
   <link rel="icon" type="image/png" href="https://maharanibeverages.com/zenith_logo_compact.png"> 
   <link rel="shortcut icon" href="https://maharanibeverages.com/zenith_logo_compact.png">
+
+  <!-- Google Analytics 4 (replace G-XXXXXXXXXX with your real Measurement ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: *; connect-src 'self' https://formspree.io; frame-src 'none'; object-src 'none';">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="author" content="Maharani Beverages LLP">
-  <title>Water Delivery in Kolkata: Coverage & SLA</title>
+  <title>Water Delivery in Kolkata: Coverage, Scheduling & SLA | Zenith</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <meta name="description" content="Complete guide to water delivery in Kolkata. Coverage areas, schedules, SLAs & how Zenith delivers FSSAI certified water.">
+  <meta name="description" content="Complete guide to water delivery in Kolkata. Coverage areas, delivery schedules, SLAs, and how Zenith Water supplies homes, offices, hotels & events across Kolkata.">
 
   <!-- SEO / Canonical -->
   <link rel="canonical" href="https://maharanibeverages.com/blog/water-delivery-kolkata-coverage-scheduling-sla">
@@ -61,6 +70,7 @@
     .editorial-content h2 { color: white; margin: 4.5rem 0 2.5rem; font-family: var(--font-heading); font-size: 3rem; line-height: 1.1; letter-spacing: -1px; }
     .editorial-content h3 { color: var(--color-accent); margin: 3.5rem 0 1.5rem; font-family: var(--font-heading); font-size: 1.85rem; }
     .editorial-content h4 { color: white; margin: 2.5rem 0 1rem; font-family: var(--font-heading); font-size: 1.25rem; text-transform: uppercase; letter-spacing: 2px; }
+    .highlight-box h3 { color: white; margin: 0 0 1rem; font-family: var(--font-heading); font-size: 1.25rem; text-transform: uppercase; letter-spacing: 2px; }
     .editorial-content p { margin-bottom: 2.5rem; }
     .editorial-content ul, .editorial-content ol { margin-bottom: 3.5rem; padding-left: 2rem; }
     .editorial-content li { margin-bottom: 1.2rem; color: rgba(255,255,255,0.85); }
@@ -73,7 +83,7 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://maharanibeverages.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://maharanibeverages.com/blog" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://maharanibeverages.com/blog/" },
       { "@type": "ListItem", "position": 3, "name": "Article", "item": "https://maharanibeverages.com/blog/water-delivery-kolkata-coverage-scheduling-sla" }
     ]
   }
@@ -85,11 +95,11 @@
   <header class="header">
     <nav class="container">
       <div style="display: flex; align-items: center; gap: 1rem;">
-        <a href="/" aria-label="Zenith Water Home"><img decoding="async" src="../zenith_logo_compact.png" alt="Zenith Logo" class="logo" style="width: 80px; height: auto;" decoding="async" width="80" height="66" loading="lazy"></a>
+        <a href="/"><img decoding="async" src="../zenith_logo_compact.png" alt="Zenith Logo" class="logo" style="width: 80px; height: auto;" decoding="async" width="80" height="66" loading="lazy"></a>
       </div>
       <div style="display: flex; gap: 3rem; align-items: center;">
         <a href="/" class="nav-link">Home</a>
-        <a href="/blog" class="nav-link">Archive</a>
+        <a href="/blog/" class="nav-link">Archive</a>
         <a href="/pages/contact" class="nav-link">Contact</a>
       </div>
     </nav>
@@ -109,10 +119,10 @@
 
       <div class="container">
         <div class="editorial-content" data-aos="fade-up">
-          <p class="drop-cap">You may manage a household in Salt Lake, an office in Sector V, or a hotel near Park Street. Reliable water delivery is essential. This guide explains how Zenith Water's Kolkata delivery network works and what you can expect.</p>
+          <p class="drop-cap">Whether you manage a household in Salt Lake, a corporate office in Sector V, or a hotel near Park Street, reliable water delivery is non-negotiable. This guide explains how Zenith Water's Kolkata delivery network operates and what you can expect as a customer.</p>
 
           <h2>Delivery Coverage Across Kolkata</h2>
-          <p>Zenith Water delivers to all major home and business zones in Kolkata, including:</p>
+          <p>Zenith Water delivers to all major residential and commercial zones in Kolkata, including:</p>
           <ul>
             <li><strong>North Kolkata:</strong> Shyambazar, Dum Dum, Baguiati, Kankurgachi</li>
             <li><strong>Central Kolkata:</strong> Park Street, Esplanade, Dalhousie, Bhowanipore</li>
@@ -120,34 +130,34 @@
             <li><strong>East Kolkata:</strong> Salt Lake, Sector V, Rajarhat, New Town</li>
             <li><strong>West Kolkata:</strong> Behala, New Alipore, Thakurpukur, Haridevpur</li>
           </ul>
-          <p>If your pincode is between 700001 and 700108, you are likely in our service zone. Nearby pincodes may also be covered. Use the pincode checker on our homepage, or contact us to confirm.</p>
+          <p>If your pincode is within the 700001 to 700108 range or nearby, you are likely in our service zone. Use the pincode checker on our homepage or contact us to confirm availability.</p>
 
           <h2>Delivery Schedules</h2>
-          <p>We offer several scheduling options to match different needs:</p>
+          <p>We offer multiple scheduling options to match different consumption patterns:</p>
           <ul>
-            <li><strong>Daily Delivery:</strong> Best for hotels, large offices, and factories with high consumption.</li>
+            <li><strong>Daily Delivery:</strong> Ideal for hotels, large offices, and factories with high consumption.</li>
             <li><strong>Alternate-Day Delivery:</strong> A balanced option for medium-sized offices and restaurants.</li>
             <li><strong>Weekly Delivery:</strong> Suitable for households and small offices.</li>
-            <li><strong>On-Demand:</strong> One-time orders for events, parties, or short-term needs.</li>
+            <li><strong>On-Demand:</strong> One-time orders for events, parties, or temporary requirements.</li>
           </ul>
 
           <h2>Service Level Agreement (SLA)</h2>
           <p>Our standard service commitments for Kolkata customers include:</p>
           <ul>
-            <li><strong>Order Confirmation:</strong> Within 4 business hours.</li>
-            <li><strong>Standard Delivery:</strong> 24 to 48 hours from order confirmation.</li>
-            <li><strong>Bulk Orders:</strong> Scheduled in advance with planned delivery routes.</li>
-            <li><strong>Missed Delivery:</strong> We try re-delivery on the next business day.</li>
+            <li><strong>Order Confirmation:</strong> Within 4 business hours of enquiry.</li>
+            <li><strong>Standard Delivery Window:</strong> 24 to 48 hours from order confirmation.</li>
+            <li><strong>Bulk Orders:</strong> Scheduled in advance with dedicated route planning.</li>
+            <li><strong>Missed Delivery Resolution:</strong> Re-delivery attempted within the next business day.</li>
           </ul>
 
           <h2>How to Place a Delivery Order</h2>
-          <p>Ordering is simple. You can call our executive line, WhatsApp us, or send an enquiry through the website. For corporate accounts, we set up a recurring schedule. We also provide monthly GST invoices.</p>
+          <p>Ordering is simple. You can call our executive line, WhatsApp us, or submit an enquiry through the website. For corporate accounts, we set up a recurring schedule and provide monthly GST invoices.</p>
 
           <h2>Special Requirements</h2>
-          <p>For large events, weddings, and exhibitions, book at least 48 hours in advance. For factories and labour camps, we can arrange dedicated bulk routes and bigger vehicles.</p>
+          <p>For large events, weddings, and exhibitions, we recommend booking at least 48 hours in advance. For factories and labour camps, we can arrange dedicated bulk routes and larger vehicle dispatches.</p>
 
           <div class="highlight-box">
-            <h4>Ready to schedule?</h4>
+            <h3>Ready to schedule?</h3>
             <p>Set up <a href="/water-delivery-kolkata" style="color: var(--color-accent);">water delivery in Kolkata</a> for your home or office, or explore <a href="/office-water-delivery-kolkata" style="color: var(--color-accent);">office-specific delivery plans</a>.</p>
           </div>
         </div>
@@ -157,7 +167,7 @@
 
   <footer style="background: var(--section-dark); border-top: 1px solid rgba(255,255,255,0.08); padding: 6rem 0 3rem 0; text-align: center;">
     <div class="container">
-      <a href="/" aria-label="Zenith Water Home"><img decoding="async" src="../zenith_logo_compact.png" alt="Zenith Water" loading="lazy" style="width: 100px; height: auto; margin-bottom: 2rem;" width="160" height="132"></a>
+      <a href="/"><img decoding="async" src="../zenith_logo_compact.png" alt="Zenith Water" loading="lazy" style="width: 100px; height: auto; margin-bottom: 2rem;"></a>
       <p style="color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-bottom: 2rem;">
         &copy; 2026 Maharani Beverages LLP — Zenith Water. All rights reserved.
       </p>

@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+<!-- Google Analytics 4 (replace G-XXXXXXXXXX with your real Measurement ID) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
   <link rel="icon" type="image/png" href="https://maharanibeverages.com/zenith_logo_compact.png"> 
   <link rel="shortcut icon" href="https://maharanibeverages.com/zenith_logo_compact.png">
   <meta charset="UTF-8" />
@@ -25,7 +34,7 @@
   <meta property="og:image" content="https://maharanibeverages.com/zenith_logo_compact.png">
 
   <!-- Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: *; connect-src 'self' https://formspree.io; frame-src 'none'; object-src 'none';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: *; connect-src 'self' https://formspree.io https://www.google-analytics.com https://region1.google-analytics.com; frame-src 'none'; object-src 'none';">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -124,37 +133,37 @@
             <input type="hidden" name="_subject" value="NEW ZENITH BULK QUOTE REQUEST">
             <input type="hidden" name="_next" value="https://maharanibeverages.com/pages/success">
             <!-- Honeypot -->
-            <input type="text" name="_gotcha" style="display:none">
+            <input type="text" name="_gotcha" id="gotcha" style="display:none" tabindex="-1" aria-hidden="true" autocomplete="off">
             <div class="form-row">
                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                 <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; color: var(--color-accent);">Full Name</label>
-                 <input type="text" name="name" placeholder="John Doe" required style="padding: 1.25rem; background: transparent; border: 1px solid var(--glass-border); color: white; outline: none;">
+                 <label for="bulkName" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; color: var(--color-accent);">Full Name</label>
+                 <input type="text" id="bulkName" name="name" autocomplete="name" placeholder="John Doe" required style="padding: 1.25rem; background: transparent; border: 1px solid var(--glass-border); color: white; outline: none;">
                </div>
                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                 <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; color: var(--color-accent);">Organization / Event</label>
-                 <input type="text" name="org" placeholder="ABC Corp / Celebration" style="padding: 1.25rem; background: transparent; border: 1px solid var(--glass-border); color: white; outline: none;">
+                 <label for="bulkOrg" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; color: var(--color-accent);">Organization / Event</label>
+                 <input type="text" id="bulkOrg" name="org" autocomplete="organization" placeholder="ABC Corp / Celebration" style="padding: 1.25rem; background: transparent; border: 1px solid var(--glass-border); color: white; outline: none;">
                </div>
             </div>
 
             <div class="form-row">
                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                 <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; color: var(--color-accent);">Phone Number</label>
-                 <input type="tel" name="phone" placeholder="+91 8274837341" required style="padding: 1.25rem; background: transparent; border: 1px solid var(--glass-border); color: white; outline: none;">
+                 <label for="bulkPhone" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; color: var(--color-accent);">Phone Number</label>
+                 <input type="tel" id="bulkPhone" name="phone" autocomplete="tel" placeholder="+91 8274837341" required style="padding: 1.25rem; background: transparent; border: 1px solid var(--glass-border); color: white; outline: none;">
                </div>
                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                 <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; color: var(--color-accent);">Event Date</label>
-                 <input type="date" name="date" required style="padding: 1.25rem; background: var(--color-secondary); border: 1px solid var(--glass-border); color: white; outline: none;">
+                 <label for="bulkDate" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; color: var(--color-accent);">Event Date</label>
+                 <input type="date" id="bulkDate" name="date" autocomplete="off" required style="padding: 1.25rem; background: var(--color-secondary); border: 1px solid var(--glass-border); color: white; outline: none;">
                </div>
             </div>
             
             <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-              <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; color: var(--color-accent);">Delivery Address</label>
-              <textarea name="address" rows="3" placeholder="Full logistics address and landmark" style="padding: 1.25rem; background: transparent; border: 1px solid var(--glass-border); color: white; outline: none;"></textarea>
+              <label for="bulkAddress" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; color: var(--color-accent);">Delivery Address</label>
+              <textarea id="bulkAddress" name="address" autocomplete="street-address" rows="3" placeholder="Full logistics address and landmark" style="padding: 1.25rem; background: transparent; border: 1px solid var(--glass-border); color: white; outline: none;"></textarea>
             </div>
 
             <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-              <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; color: var(--color-accent);">Quantity Required (Cases)</label>
-              <input type="number" name="quantity" placeholder="e.g. 500" required style="padding: 1.25rem; background: transparent; border: 1px solid var(--glass-border); color: white; outline: none;">
+              <label for="bulkQuantity" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; color: var(--color-accent);">Quantity Required (Cases)</label>
+              <input type="number" id="bulkQuantity" name="quantity" autocomplete="off" placeholder="e.g. 500" required style="padding: 1.25rem; background: transparent; border: 1px solid var(--glass-border); color: white; outline: none;">
             </div>
 
             <button type="submit" class="btn-ultimate" style="width: 100%; margin-top: 2rem; background: var(--color-accent); color: var(--color-primary); border: none;">REQUEST HOSPITALITY QUOTE</button>
