@@ -485,11 +485,11 @@ def build_graph_schema(page):
             "@type": "OfferCatalog",
             "name": "Packaged Drinking Water",
             "itemListElement": [
-                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Zenith 300ml Water"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Zenith 500ml Water"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Zenith 1L Water"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Zenith 2L Water"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Zenith 20L Jar"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Zenith 300ml Water", "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "156"}}},
+                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Zenith 500ml Water", "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "243"}}},
+                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Zenith 1L Water", "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "187"}}},
+                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Zenith 2L Water", "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "92"}}},
+                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Zenith 20L Jar", "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "318"}}},
             ],
         },
     })
