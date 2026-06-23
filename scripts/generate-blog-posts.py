@@ -156,7 +156,7 @@ POSTS = [
     {
         'slug': 'zenith-7-stage-purification-process',
         'title': "Zenith 7-Stage Purification Process",
-        'meta_description': "Discover how Zenith Water's 7-stage purification process delivers FSSAI certified packaged drinking water in Kolkata and Howrah. RO, UV, ozonation explained.",
+        'meta_description': "Zenith Water's 7-stage purification delivers FSSAI certified drinking water in Kolkata & Howrah. RO, UV, ozonation explained.",
         'og_title': "How Zenith's 7-Stage Purification Works",
         'og_description': "A technical breakdown of Zenith Water's 7-stage purification process for packaged drinking water.",
         'article_headline': "How Zenith's 7-Stage Purification Process Delivers Safe Drinking Water in Kolkata & Howrah",
@@ -212,7 +212,7 @@ POSTS = [
     {
         'slug': 'water-delivery-kolkata-coverage-scheduling-sla',
         'title': 'Kolkata Water Delivery: Coverage, Scheduling & SLA',
-        'meta_description': 'Complete guide to water delivery in Kolkata. Coverage areas, delivery schedules, SLAs, and how Zenith Water supplies homes, offices, hotels & events across Kolkata.',
+        'meta_description': 'Guide to water delivery in Kolkata. Coverage areas, schedules, SLAs, and how Zenith Water supplies homes, offices & events.',
         'og_title': 'Water Delivery in Kolkata: Coverage, Scheduling & SLA',
         'og_description': "Understand Zenith Water's Kolkata delivery network, schedules, and service levels.",
         'article_headline': 'Water Delivery in Kolkata: Coverage, Scheduling, and Service Level Agreements',
@@ -269,7 +269,7 @@ POSTS = [
     {
         'slug': 'packaged-drinking-water-hotels-restaurants-kolkata',
         'title': 'Packaged Water for Hotels & Restaurants Kolkata | Zenith',
-        'meta_description': 'Guide to choosing packaged drinking water for hotels, restaurants, banquets & cafes in Kolkata. Bottle sizes, pricing, delivery & branding tips from Zenith Water.',
+        'meta_description': 'Guide to packaged drinking water for Kolkata hotels, restaurants & cafes. Bottle sizes, pricing, delivery & branding tips.',
         'og_title': 'Packaged Drinking Water for Hotels & Restaurants in Kolkata',
         'og_description': 'How Kolkata hotels and restaurants can choose the right packaged drinking water supply partner.',
         'article_headline': 'Packaged Drinking Water for Hotels, Restaurants, and Banquets in Kolkata',
