@@ -932,7 +932,7 @@ def make_locality_pages():
         for intent in ("packaged-drinking-water", "water-delivery", "water-supplier"):
             page_slug = f"{intent}-{slug}"
             if intent == "packaged-drinking-water":
-                title = truncate(f"Packaged Drinking Water {loc_name} {city}", 60)
+                title = truncate(f"Packaged Drinking Water {loc_name} {city} | Zenith", 60)
                 meta = fit_meta(f"Buy packaged drinking water in {loc_name}, {city}. FSSAI certified 300ml, 500ml, 1L, 2L bottles & 20L jars with same-day delivery. Call +91 82748 37341.")
                 eyebrow = "Local Packaged Water"
                 h1 = f"Packaged Drinking Water in <span style='color: var(--color-accent);'>{loc_name}</span>, {city}"
@@ -955,7 +955,7 @@ def make_locality_pages():
                 )
                 wa = f"Hello%20Zenith%2C%20I%20need%20packaged%20drinking%20water%20in%20{loc_name.replace(' ', '%20')}%2C%20{city}."
             elif intent == "water-delivery":
-                title = truncate(f"Water Delivery {loc_name} {city}", 60)
+                title = truncate(f"Water Delivery {loc_name} {city} | Zenith Water", 60)
                 meta = fit_meta(f"Fast water delivery in {loc_name}, {city}. Zenith delivers FSSAI certified bottled water & 20L jars for home, office & shop. Call +91 82748 37341.")
                 eyebrow = "Scheduled Water Delivery"
                 h1 = f"Water Delivery in <span style='color: var(--color-accent);'>{loc_name}</span>, {city}"
@@ -978,7 +978,7 @@ def make_locality_pages():
                 )
                 wa = f"Hello%20Zenith%2C%20I%20need%20water%20delivery%20in%20{loc_name.replace(' ', '%20')}%2C%20{city}."
             else:  # water-supplier
-                title = truncate(f"Water Supplier {loc_name} {city}", 60)
+                title = truncate(f"Water Supplier {loc_name} {city} | Zenith Water", 60)
                 meta = fit_meta(f"Trusted water supplier in {loc_name}, {city}. FSSAI certified packaged drinking water for homes, offices, hotels & shops. Call +91 82748 37341.")
                 eyebrow = "Authorised Local Supplier"
                 h1 = f"Water Supplier in <span style='color: var(--color-accent);'>{loc_name}</span>, {city}"
