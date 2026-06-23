@@ -886,6 +886,16 @@ def make_hub_pages():
 
 def _hub_section1(city):
     cslug = slugify(city)
+    if city == "Kolkata":
+        corporate_link = "<a href='/corporate-water-supply-kolkata'>corporate supply</a>"
+        it_parks_link = "<a href='/water-supply-for-it-parks-kolkata'>IT park supply</a>"
+        hotels_link = "<a href='/water-supply-for-hotels-restaurants-kolkata'>hotels</a>"
+        factories_link = "<a href='/water-supply-for-factories-industries-kolkata-howrah'>factories</a>"
+    else:  # Howrah
+        corporate_link = "<a href='/office-water-supply-howrah'>office supply</a>"
+        it_parks_link = "<a href='/water-supply-for-it-parks-kolkata'>IT park supply</a>"
+        hotels_link = "<a href='/water-supply-for-hotels-howrah'>hotels</a>"
+        factories_link = "<a href='/water-supply-for-factories-howrah'>factories</a>"
     return (
         f"<p>Whether you need a single home delivery or a recurring bulk contract, Zenith Water covers every segment of the {city} market. "
         f"Explore our product pages for <a href='/water-bottle-supplier-{cslug}'>bottled water</a>, "
@@ -893,13 +903,13 @@ def _hub_section1(city):
         f"<a href='/mineral-water-supplier-{cslug}'>mineral water</a> options.</p>"
         f"<p style='margin-top: 1.5rem;'>For businesses, our corporate cluster includes "
         f"<a href='/office-water-delivery-{cslug}'>office water delivery</a>, "
-        f"<a href='/corporate-water-supply-{cslug}'>corporate supply</a>, and "
-        f"<a href='/water-supply-for-it-parks-{cslug}'>IT park supply</a>. "
-        f"Industry-specific solutions cover <a href='/water-supply-for-hotels-{cslug}'>hotels</a>, "
+        f"{corporate_link}, and "
+        f"{it_parks_link}. "
+        f"Industry-specific solutions cover {hotels_link}, "
         f"<a href='/water-supply-for-restaurants-{cslug}'>restaurants</a>, "
         f"<a href='/water-supply-for-hospitals-{cslug}'>hospitals</a>, "
         f"<a href='/water-supply-for-schools-{cslug}'>schools</a>, and "
-        f"<a href='/water-supply-for-factories-{cslug}'>factories</a>.</p>"
+        f"{factories_link}.</p>"
     )
 
 
