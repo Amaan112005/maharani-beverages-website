@@ -155,7 +155,7 @@ TEMPLATE = '''<!DOCTYPE html>
 POSTS = [
     {
         'slug': 'zenith-7-stage-purification-process',
-        'title': "How Zenith's 7-Stage Water Purification Works | Kolkata & Howrah",
+        'title': "Zenith 7-Stage Water Purification Process Explained",
         'meta_description': "Discover how Zenith Water's 7-stage purification process delivers FSSAI certified packaged drinking water in Kolkata and Howrah. RO, UV, ozonation explained.",
         'og_title': "How Zenith's 7-Stage Purification Works",
         'og_description': "A technical breakdown of Zenith Water's 7-stage purification process for packaged drinking water.",
@@ -211,7 +211,7 @@ POSTS = [
     },
     {
         'slug': 'water-delivery-kolkata-coverage-scheduling-sla',
-        'title': 'Water Delivery in Kolkata: Coverage, Scheduling & SLA | Zenith',
+        'title': 'Kolkata Water Delivery: Coverage, Scheduling & SLA',
         'meta_description': 'Complete guide to water delivery in Kolkata. Coverage areas, delivery schedules, SLAs, and how Zenith Water supplies homes, offices, hotels & events across Kolkata.',
         'og_title': 'Water Delivery in Kolkata: Coverage, Scheduling & SLA',
         'og_description': "Understand Zenith Water's Kolkata delivery network, schedules, and service levels.",
