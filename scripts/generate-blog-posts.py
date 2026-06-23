@@ -89,7 +89,7 @@ TEMPLATE = '''<!DOCTYPE html>
     "@type": "BreadcrumbList",
     "itemListElement": [
       {{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://maharanibeverages.com/" }},
-      {{ "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://maharanibeverages.com/blog/" }},
+      {{ "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://maharanibeverages.com/blog" }},
       {{ "@type": "ListItem", "position": 3, "name": "Article", "item": "https://maharanibeverages.com/blog/{slug}" }}
     ]
   }}
@@ -105,7 +105,7 @@ TEMPLATE = '''<!DOCTYPE html>
       </div>
       <div style="display: flex; gap: 3rem; align-items: center;">
         <a href="/" class="nav-link">Home</a>
-        <a href="/blog/" class="nav-link">Archive</a>
+        <a href="/blog" class="nav-link">Archive</a>
         <a href="/pages/contact" class="nav-link">Contact</a>
       </div>
     </nav>
