@@ -155,7 +155,7 @@ TEMPLATE = '''<!DOCTYPE html>
 POSTS = [
     {
         'slug': 'zenith-7-stage-purification-process',
-        'title': "Zenith 7-Stage Water Purification Process Explained",
+        'title': "Zenith 7-Stage Purification Process",
         'meta_description': "Discover how Zenith Water's 7-stage purification process delivers FSSAI certified packaged drinking water in Kolkata and Howrah. RO, UV, ozonation explained.",
         'og_title': "How Zenith's 7-Stage Purification Works",
         'og_description': "A technical breakdown of Zenith Water's 7-stage purification process for packaged drinking water.",
