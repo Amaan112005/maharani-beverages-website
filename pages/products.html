@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Analytics 4 (replace G-XXXXXXXXXX with your real Measurement ID) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<!-- Google Analytics 4 — lazy-loaded after page interactive (replace G-XXXXXXXXXX with your real Measurement ID) -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
+  window.addEventListener('load', function() {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  });
 </script>
 
   <link rel="icon" type="image/png" href="https://maharanibeverages.com/zenith_logo_compact.png">
@@ -45,9 +50,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../assets/css/variables.css">
-  <link rel="stylesheet" href="../assets/css/main.css">
-  <link rel="stylesheet" href="../assets/css/mobile-perfection.css?v=1.1">
+  <link rel="stylesheet" href="../assets/css/variables.min.css">
+  <link rel="stylesheet" href="../assets/css/main.min.css">
+  <link rel="stylesheet" href="../assets/css/mobile-perfection.min.css?v=1.1">
 
   <style>
     .header { position: sticky; top: 0; z-index: 1000; transition: all 0.4s ease; background: transparent; }

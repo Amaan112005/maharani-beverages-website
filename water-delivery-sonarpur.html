@@ -13,20 +13,19 @@
   <link rel="icon" type="image/png" href="https://maharanibeverages.com/zenith_logo_compact.png">
   <link rel="shortcut icon" href="https://maharanibeverages.com/zenith_logo_compact.png">
 
-  <!-- Google Analytics 4 (replace G-XXXXXXXXXX with your real Measurement ID) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <!-- Google Analytics 4 — lazy-loaded after page interactive (replace G-XXXXXXXXXX with your real Measurement ID) -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
+    window.addEventListener('load', function() {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    });
   </script>
-
-  <!-- Preconnect / DNS prefetch -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -42,26 +41,9 @@
   <meta name="twitter:description" content="Trusted water delivery in Sonarpur, Kolkata. FSSAI certified delivery.">
   <meta name="twitter:image" content="https://maharanibeverages.com/zenith_logo_compact.png">
 
-  <!-- Preload critical fonts -->
-  <link rel="preload" href="https://fonts.gstatic.com/s/syne/v22/8vIJ7w0mNX08UamX_3vN.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="https://fonts.gstatic.com/s/dmsans/v14/rP2Fp2K8zQ2zzL_8oA7EFRXU.woff2" as="font" type="font/woff2" crossorigin>
-
   <!-- Critical CSS -->
-  <style>:root{--color-primary:#040916;--color-bg:#060b1a;--color-accent:#b59e6d;--color-muted:rgba(255,255,255,0.65);--font-heading:'Syne',sans-serif;--font-body:'DM Sans',sans-serif}*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--font-body);background:var(--color-bg);color:var(--color-muted);line-height:1.6}h1,h2,h3,h4{font-family:var(--font-heading);margin:0 0 1rem}a{color:var(--color-accent);text-decoration:none}img{max-width:100%;height:auto;display:block}.container{width:min(1200px,92%);margin:0 auto}.header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(4,9,22,0.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.06)}.header nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}.logo{width:80px;height:auto}.btn-ultimate{display:inline-block;padding:0.9rem 1.6rem;border-radius:6px;font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:0.8rem;transition:transform .2s,box-shadow .2s}.btn-ultimate:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(181,158,109,0.25)}.glass-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;backdrop-filter:blur(8px)}.trust-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:2rem}.trust-pill{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:.6rem 1rem;border-radius:999px;font-size:.8rem;color:#fff}.use-case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:2rem}.use-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.5rem;transition:transform .2s,border-color .2s}.use-card:hover{transform:translateY(-4px);border-color:var(--color-accent)}.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin-top:2rem}.related-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:1.25rem}.faq-item{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:12px;margin-bottom:1rem;overflow:hidden}.faq-q{padding:1.25rem 1.5rem;cursor:pointer;color:#fff;font-weight:700;user-select:none}.faq-a{padding:0 1.5rem 1.5rem;line-height:1.8}@media(max-width:768px){.hero-split{grid-template-columns:1fr}.content-split{grid-template-columns:1fr}.trust-strip{flex-direction:column;align-items:center}}</style>
+  <style>:root{--color-primary:#040916;--color-bg:#060b1a;--color-accent:#b59e6d;--color-muted:rgba(255,255,255,0.65);--font-heading:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;--font-body:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--font-body);background:var(--color-bg);color:var(--color-muted);line-height:1.6}h1,h2,h3,h4{font-family:var(--font-heading);margin:0 0 1rem}a{color:var(--color-accent);text-decoration:none}img{max-width:100%;height:auto;display:block}.container{width:min(1200px,92%);margin:0 auto}.header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(4,9,22,0.98);border-bottom:1px solid rgba(255,255,255,0.06)}.header nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}.logo{width:80px;height:auto}.btn-ultimate{display:inline-block;padding:0.9rem 1.6rem;border-radius:6px;font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:0.8rem;transition:transform .2s,box-shadow .2s}.btn-ultimate:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(181,158,109,0.25)}.glass-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;backdrop-filter:blur(8px)}.trust-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:2rem}.trust-pill{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:.6rem 1rem;border-radius:999px;font-size:.8rem;color:#fff}.use-case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:2rem}.use-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.5rem;transition:transform .2s,border-color .2s}.use-card:hover{transform:translateY(-4px);border-color:var(--color-accent)}.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin-top:2rem}.related-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:1.25rem}.faq-item{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:12px;margin-bottom:1rem;overflow:hidden}.faq-q{padding:1.25rem 1.5rem;cursor:pointer;color:#fff;font-weight:700;user-select:none}.faq-a{padding:0 1.5rem 1.5rem;line-height:1.8}@media(max-width:768px){.hero-split{grid-template-columns:1fr}.content-split{grid-template-columns:1fr}.trust-strip{flex-direction:column;align-items:center}}</style>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <!-- External CSS -->
-  <link rel="preload" href="assets/css/variables.css" as="style">
-  <link rel="stylesheet" href="assets/css/variables.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="assets/css/variables.css"></noscript>
-  <link rel="preload" href="assets/css/main.css" as="style">
-  <link rel="stylesheet" href="assets/css/main.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="assets/css/main.css"></noscript>
-  <link rel="preload" href="assets/css/mobile-perfection.css?v=1.1" as="style">
-  <link rel="stylesheet" href="assets/css/mobile-perfection.css?v=1.1" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="assets/css/mobile-perfection.css?v=1.1"></noscript>
 
   <!-- Schema: FAQPage -->
   <script type="application/ld+json">{
@@ -301,7 +283,7 @@
     <nav class="container" aria-label="Primary navigation">
       <div style="display:flex;align-items:center;gap:1rem;">
         <a href="/">
-          <img src="zenith_logo_compact.png" alt="Zenith Water Official Logo" class="logo" width="80" height="66" loading="lazy">
+          <img src="data:image/webp;base64,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" alt="Zenith Water Official Logo" class="logo" width="80" height="66" loading="eager" fetchpriority="high">
         </a>
       </div>
       <div style="display:flex;gap:2rem;align-items:center;flex-wrap:wrap;">
@@ -462,7 +444,7 @@
         <!-- Brand -->
         <div style="grid-column:span 1;">
           <a href="/">
-            <img src="zenith_logo_compact.png" alt="Zenith Water Official Logo" loading="lazy" width="120" height="99">
+            <img src="zenith_logo_compact.webp" alt="Zenith Water Official Logo" loading="lazy" width="120" height="99">
           </a>
           <p style="color:var(--color-accent);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin:1rem 0;">Premium Packaged Drinking Water</p>
           <p style="color:rgba(255,255,255,0.6);font-size:.9rem;line-height:1.7;margin-bottom:1.5rem;">FSSAI-certified bottled and jar water for homes, offices, hotels, and industries across Kolkata & Howrah.</p>
@@ -537,8 +519,15 @@
     .footer-link:hover{color:var(--color-accent);padding-left:4px;}
   </style>
 
-  <!-- Deferred scripts -->
-  <script src="assets/js/aos.js" defer></script>
-  <script src="assets/js/main.js" defer></script>
+  <!-- Minimal interaction layer -->
+  <script>
+    (function() {
+      document.querySelectorAll('.faq-item').forEach(function(item) {
+        item.querySelector('.faq-q').addEventListener('click', function() {
+          item.classList.toggle('active');
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

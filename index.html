@@ -2,13 +2,18 @@
 <html lang="en">
 
 <head>
-<!-- Google Analytics 4 (replace G-XXXXXXXXXX with your real Measurement ID) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<!-- Google Analytics 4 — lazy-loaded after page interactive (replace G-XXXXXXXXXX with your real Measurement ID) -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
+  window.addEventListener('load', function() {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  });
 </script>
 
   <meta charset="UTF-8" />
@@ -28,19 +33,19 @@
   <!-- Performance: Preconnect & DNS Prefetch -->
       
   <!-- Critical CSS: Inlined for instant first paint -->
-  <style>:root{--color-primary:#010411;--color-secondary:#0F172A;--color-accent:#B59E6D;--color-accent-glow:rgba(181,158,109,0.15);--color-platinum:#E2E8F0;--color-bg:#010411;--color-text:#F8FAFC;--color-muted:#64748B;--color-water-blue:#0A3D6B;--water-gradient-subtle:linear-gradient(135deg,rgba(10,61,107,0.15) 0%,rgba(1,4,17,0) 100%);--water-gradient-section:linear-gradient(180deg,rgba(10,61,107,0.08) 0%,rgba(15,23,42,0.35) 100%);--section-dark:#010411;--section-mid:#070D24;--section-accent:rgba(10,42,80,0.25);--section-padding:220px;--container-max:1200px;--gutter:60px;--font-heading:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;--font-size-hero:clamp(3.5rem,15vw,10rem);--font-size-h2:clamp(2.5rem,10vw,5rem);--kerning-tight:-0.04em;--kerning-wide:0.15em;--glass-bg:rgba(255,255,255,0.02);--glass-border:rgba(255,255,255,0.05);--radius-elite:0px;--ease-out-expo:cubic-bezier(0.16,1,0.3,1);--transition-slow:1.5s var(--ease-out-expo);--transition-fast:0.6s var(--ease-out-expo);}.header{position:fixed;top:0;left:0;right:0;z-index:9999;padding:1.5rem 0;transition:background 0.4s,backdrop-filter 0.4s;}.header.scrolled{background:rgba(10,10,10,0.8)!important;backdrop-filter:blur(20px);}.container{max-width:var(--container-max);margin:0 auto;padding:0 var(--gutter);}#hero-slideshow{position:relative;height:100vh;min-height:600px;overflow:hidden;}.hslide-bg-track{position:absolute;inset:0;}.hslide-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s ease;}.hslide-bg.active{opacity:1;}.logo{width:80px;height:auto;}.nav-link{color:rgba(255,255,255,0.72);text-decoration:none;font-weight:600;font-size:0.6rem;text-transform:uppercase;letter-spacing:3px;transition:color 0.3s;}@font-face{font-family:'Syne';font-style:normal;font-weight:700;font-display:swap;src:local('Syne Bold'),url(assets/fonts/syne-700.woff2) format('woff2');}@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:swap;src:local('DM Sans Regular'),url(assets/fonts/dmsans-400.woff2) format('woff2');}@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:swap;src:local('DM Sans Medium'),url(assets/fonts/dmsans-400.woff2) format('woff2');}</style>
+  <style>:root{--color-primary:#010411;--color-secondary:#0F172A;--color-accent:#B59E6D;--color-accent-glow:rgba(181,158,109,0.15);--color-platinum:#E2E8F0;--color-bg:#010411;--color-text:#F8FAFC;--color-muted:#94a3b8;--color-water-blue:#0A3D6B;--water-gradient-subtle:linear-gradient(135deg,rgba(10,61,107,0.15) 0%,rgba(1,4,17,0) 100%);--water-gradient-section:linear-gradient(180deg,rgba(10,61,107,0.08) 0%,rgba(15,23,42,0.35) 100%);--section-dark:#010411;--section-mid:#070D24;--section-accent:rgba(10,42,80,0.25);--section-padding:220px;--container-max:1200px;--gutter:60px;--font-heading:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;--font-body:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;--font-size-hero:clamp(3.5rem,15vw,10rem);--font-size-h2:clamp(2.5rem,10vw,5rem);--kerning-tight:-0.04em;--kerning-wide:0.15em;--glass-bg:rgba(255,255,255,0.02);--glass-border:rgba(255,255,255,0.05);--radius-elite:0px;--ease-out-expo:cubic-bezier(0.16,1,0.3,1);--transition-slow:1.5s var(--ease-out-expo);--transition-fast:0.6s var(--ease-out-expo);}.header{position:fixed;top:0;left:0;right:0;z-index:9999;padding:1.5rem 0;transition:background 0.4s,backdrop-filter 0.4s;}.header.scrolled{background:rgba(10,10,10,0.8)!important;backdrop-filter:blur(20px);}.container{max-width:var(--container-max);margin:0 auto;padding:0 var(--gutter);}#hero-slideshow{position:relative;height:100vh;min-height:600px;overflow:hidden;}.hslide-bg-track{position:absolute;inset:0;}.hslide-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s ease;}.hslide-bg.active{opacity:1;}.logo{width:80px;height:auto;}.nav-link{color:rgba(255,255,255,0.72);text-decoration:none;font-weight:600;font-size:0.6rem;text-transform:uppercase;letter-spacing:3px;transition:color 0.3s;}</style>
   
   <!-- Non-Critical CSS: Loaded asynchronously -->
-  <link rel="preload" href="assets/css/main.css?v=5.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="assets/css/mobile-perfection.css?v=5.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="assets/css/main.min.css?v=5.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="assets/css/mobile-perfection.min.css?v=5.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
-    <link rel="stylesheet" href="assets/css/main.css?v=5.0">
-    <link rel="stylesheet" href="assets/css/mobile-perfection.css?v=5.0">
+    <link rel="stylesheet" href="assets/css/main.min.css?v=5.0">
+    <link rel="stylesheet" href="assets/css/mobile-perfection.min.css?v=5.0">
   </noscript>
   
   <!-- LCP Image: Preload only the hero slide 1 -->
-  <link rel="preload" as="image" href="hero-slide-1-optimized.webp" fetchpriority="high" type="image/webp">
   
+
   <!-- Canonical & OG -->
   <link rel="canonical" href="https://maharanibeverages.com/">
   <meta property="og:type" content="website">
@@ -96,7 +101,7 @@
       
       <!-- Left: Brand Identity -->
       <div style="display: flex; align-items: center; gap: 1rem;">
-        <a href="/" aria-label="Zenith Water Home"><img src="zenith_logo_compact.png" alt="Zenith Water logo" class="logo" style="width:80px;height:auto;aspect-ratio:80/66;" decoding="async" width="80" height="66" loading="eager"></a>
+        <a href="/" aria-label="Zenith Water Home"><img src="data:image/webp;base64,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" alt="Zenith Water logo" class="logo" style="width:80px;height:auto;aspect-ratio:80/66;" decoding="async" width="80" height="66" loading="eager" fetchpriority="high"></a>
       </div>
 
       <!-- Center/Right: Desktop Nav -->
@@ -186,14 +191,14 @@
 
     <!-- ================= HERO SLIDESHOW — CINEMATIC ================= -->
     <!-- ===== HERO SLIDESHOW STYLES ===== -->
-    <style> #hero-slideshow{position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden;background:#040810;}.hslide-bg-track{position:absolute;inset:0;z-index:0;}.hslide-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-color:#040916;opacity:0;transition:opacity 1.2s cubic-bezier(0.16,1,0.3,1);transform:scale(1.04);transition:opacity 1.2s cubic-bezier(0.16,1,0.3,1),transform 6s cubic-bezier(0.16,1,0.3,1);}.hslide-bg.active{opacity:1;transform:scale(1);}.hslide-bg:nth-child(1){background-image:linear-gradient(135deg,#040916 0%,#0a1f3c 60%,#081428 100%);}.hslide-bg:nth-child(2){background-image:linear-gradient(135deg,#050c1a 0%,#0b2240 60%,#040c1c 100%);}.hslide-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(2,5,14,0.82) 0%,rgba(2,5,14,0.4) 60%,rgba(2,5,14,0.1) 100%),linear-gradient(to top,rgba(2,5,14,0.7) 0%,transparent 50%);pointer-events:none;}.hslide-content{position:absolute;inset:0;z-index:4;display:flex;align-items:center;padding:0 6% 0 8%;}.hslide-panel{position:absolute;left:8%;top:50%;transform:translateY(-50%);max-width:600px;pointer-events:none;opacity:0;visibility:hidden;}.hslide-panel.active{opacity:1;visibility:visible;pointer-events:auto;}@media (max-width:768px){#hero-slideshow{height:85vh;min-height:500px;}.hslide-bg{background-position:center center;}.hslide-panel{left:0;right:0;margin:0 auto;padding:0 1.5rem;text-align:center;top:75%;}.hslide-ctas{justify-content:center !important;}}.hslide-eyebrow{font-size:clamp(0.55rem,1.2vw,0.7rem);letter-spacing:4px;text-transform:uppercase;color:var(--color-accent);font-weight:700;margin-bottom:2rem;opacity:0;transform:translateY(12px);transition:opacity 0.5s ease 0.1s,transform 0.5s ease 0.1s;}.hslide-panel.active .hslide-eyebrow{opacity:1;transform:translateY(0);}.hslide-headline{font-family:var(--font-heading);font-size:clamp(2rem,4vw,3.2rem);font-weight:900;line-height:0.95;letter-spacing:-1px;margin-bottom:3rem;overflow:visible;}.hword{display:inline-block;color:white;white-space:nowrap;}.hword.accent{color:var(--color-accent);}.hletter{display:inline-block;opacity:0;will-change:transform,opacity,filter;}.hletter.assembled{opacity:1 !important;transform:translate(0,0) rotate(0deg) !important;filter:blur(0px) !important;transition:transform var(--letter-dur,0.7s) cubic-bezier(0.16,1,0.3,1) var(--letter-delay,0s),opacity var(--letter-dur,0.7s) ease var(--letter-delay,0s),filter var(--letter-dur,0.7s) ease var(--letter-delay,0s);}.hletter.scattered{opacity:0 !important;transition:transform var(--letter-dur,0.5s) cubic-bezier(0.7,0,1,0.6) var(--letter-delay,0s),opacity 0.3s ease var(--letter-delay,0s),filter 0.3s ease var(--letter-delay,0s);}.hslide-ctas{display:flex;gap:1.25rem;flex-wrap:wrap;opacity:0;transform:translateY(16px);transition:opacity 0.6s ease 0.7s,transform 0.6s cubic-bezier(0.16,1,0.3,1) 0.7s;}.hslide-panel.active .hslide-ctas{opacity:1;transform:translateY(0);}@media (max-width:480px){#hero-slideshow{height:82vh;min-height:480px;}.hslide-bg{background-size:cover !important;background-position:85% center !important;}.hslide-headline{font-size:clamp(1.8rem,8vw,2.2rem) !important;letter-spacing:-0.5px;margin-bottom:2rem !important;}.hslide-eyebrow{font-size:0.6rem !important;letter-spacing:3px;margin-bottom:1rem;}.hslide-ctas{flex-direction:column;gap:0.6rem;width:100%;}.hslide-ctas .btn-ultimate{width:100% !important;margin:0;padding:0.75rem 1.5rem !important;font-size:0.6rem !important;}.hslide-dots{bottom:1rem !important;gap:0.3rem !important;}.hdot{width:8px !important;height:1.5px !important;min-height:0 !important;opacity:0.4;}.hdot.active{width:16px !important;opacity:1;}}.hslide-dots{position:absolute;bottom:2.5rem;left:8%;z-index:10;display:flex;gap:0.6rem;}.hdot{width:28px;height:2px;background:rgba(255,255,255,0.25);border:none;cursor:pointer;transition:background 0.3s,width 0.3s;padding:0;}.hdot.active{background:var(--color-accent);width:48px;}@media(max-width:768px){.hslide-dots{left:50%;transform:translateX(-50%);bottom:4.5rem;}}.hslide-scroll-hint{position:absolute;bottom:2.2rem;right:8%;z-index:10;display:flex;flex-direction:column;align-items:center;gap:0.5rem;opacity:0.35;}.hslide-scroll-hint span{font-size:0.55rem;letter-spacing:3px;text-transform:uppercase;color:white;}.hslide-scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,white,transparent);animation:scrollPulse 2s ease-in-out infinite;}@keyframes scrollPulse{0%,100%{opacity:0.3;transform:scaleY(1);}50%{opacity:1;transform:scaleY(1.2);transform-origin:top;}}@media(max-width:768px){.hslide-scroll-hint{display:none;}}.hslide-progress{position:absolute;bottom:0;left:0;right:0;height:2px;background:rgba(255,255,255,0.06);z-index:10;}.hslide-progress-fill{height:100%;background:linear-gradient(90deg,var(--color-accent),rgba(255,255,255,0.6));width:0%;transition:width 0.1s linear;}</style>
+    <style> #hero-slideshow{position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden;background:#040810;}.hslide-bg-track{position:absolute;inset:0;z-index:0;}.hslide-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-color:#040916;opacity:0;transition:opacity 1.2s cubic-bezier(0.16,1,0.3,1);transform:scale(1.04);transition:opacity 1.2s cubic-bezier(0.16,1,0.3,1),transform 6s cubic-bezier(0.16,1,0.3,1);}.hslide-bg.active{opacity:1;transform:scale(1);}.hslide-bg:nth-child(1){background-image:linear-gradient(135deg,#040916 0%,#0a1f3c 60%,#081428 100%);}.hslide-bg:nth-child(2){background-image:linear-gradient(135deg,#050c1a 0%,#0b2240 60%,#040c1c 100%);}.hslide-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(2,5,14,0.82) 0%,rgba(2,5,14,0.4) 60%,rgba(2,5,14,0.1) 100%),linear-gradient(to top,rgba(2,5,14,0.7) 0%,transparent 50%);pointer-events:none;}.hslide-content{position:absolute;inset:0;z-index:4;display:flex;align-items:center;padding:0 6% 0 8%;}.hslide-panel{position:absolute;left:8%;top:50%;transform:translateY(-50%);max-width:600px;pointer-events:none;opacity:0;transition:opacity 0.5s ease;}.hslide-panel.active{opacity:1;pointer-events:auto;}@media (max-width:768px){#hero-slideshow{height:85vh;min-height:500px;}.hslide-bg{background-position:center center;}.hslide-panel{left:0;right:0;margin:0 auto;padding:0 1.5rem;text-align:center;top:75%;}.hslide-ctas{justify-content:center !important;}}.hslide-eyebrow{font-size:clamp(0.55rem,1.2vw,0.7rem);letter-spacing:4px;text-transform:uppercase;color:var(--color-accent);font-weight:700;margin-bottom:2rem;opacity:0;transform:translateY(12px);transition:opacity 0.5s ease 0.1s,transform 0.5s ease 0.1s;}.hslide-panel.active .hslide-eyebrow{opacity:1;transform:translateY(0);}.hslide-panel.active .hslide-headline{opacity:1;transform:translateY(0);}.hslide-headline{font-family:var(--font-heading);font-size:clamp(2rem,4vw,3.2rem);font-weight:900;line-height:0.95;letter-spacing:-1px;margin-bottom:3rem;overflow:visible;}.hword{display:inline-block;color:white;white-space:nowrap;}.hword.accent{color:var(--color-accent);}.hletter{display:inline-block;opacity:0;will-change:transform,opacity,filter;}.hletter.assembled{opacity:1 !important;transform:translate(0,0) rotate(0deg) !important;filter:blur(0px) !important;transition:transform var(--letter-dur,0.7s) cubic-bezier(0.16,1,0.3,1) var(--letter-delay,0s),opacity var(--letter-dur,0.7s) ease var(--letter-delay,0s),filter var(--letter-dur,0.7s) ease var(--letter-delay,0s);}.hletter.scattered{opacity:0 !important;transition:transform var(--letter-dur,0.5s) cubic-bezier(0.7,0,1,0.6) var(--letter-delay,0s),opacity 0.3s ease var(--letter-delay,0s),filter 0.3s ease var(--letter-delay,0s);}.hslide-ctas{display:flex;gap:1.25rem;flex-wrap:wrap;opacity:0;transform:translateY(16px);transition:opacity 0.6s ease 0.7s,transform 0.6s cubic-bezier(0.16,1,0.3,1) 0.7s;}.hslide-panel.active .hslide-ctas{opacity:1;transform:translateY(0);}@media (max-width:480px){#hero-slideshow{height:82vh;min-height:480px;}.hslide-bg{background-size:cover !important;background-position:85% center !important;}.hslide-headline{font-size:clamp(1.8rem,8vw,2.2rem) !important;letter-spacing:-0.5px;margin-bottom:2rem !important;}.hslide-eyebrow{font-size:0.6rem !important;letter-spacing:3px;margin-bottom:1rem;}.hslide-ctas{flex-direction:column;gap:0.6rem;width:100%;}.hslide-ctas .btn-ultimate{width:100% !important;margin:0;padding:0.75rem 1.5rem !important;font-size:0.6rem !important;}}.hslide-dots{position:absolute;bottom:2.5rem;left:8%;z-index:10;display:flex;gap:0.6rem;}.hdot{width:48px;height:24px;background:transparent;border:none;cursor:pointer;position:relative;padding:0;}.hdot::before{content:"";position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);height:2px;background:rgba(255,255,255,0.25);border-radius:1px;transition:background 0.3s;}.hdot.active::before{background:var(--color-accent);}@media(max-width:768px){.hslide-dots{left:50%;transform:translateX(-50%);bottom:4.5rem;}}.hslide-scroll-hint{position:absolute;bottom:2.2rem;right:8%;z-index:10;display:flex;flex-direction:column;align-items:center;gap:0.5rem;opacity:0.35;}.hslide-scroll-hint span{font-size:0.55rem;letter-spacing:3px;text-transform:uppercase;color:white;}.hslide-scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,white,transparent);animation:scrollPulse 2s ease-in-out infinite;}@keyframes scrollPulse{0%,100%{opacity:0.3;transform:scaleY(1);}50%{opacity:1;transform:scaleY(1.2);transform-origin:top;}}@media(max-width:768px){.hslide-scroll-hint{display:none;}}.hslide-progress{position:absolute;bottom:0;left:0;right:0;height:2px;background:rgba(255,255,255,0.06);z-index:10;}.hslide-progress-fill{height:100%;background:linear-gradient(90deg,var(--color-accent),rgba(255,255,255,0.6));width:0%;transition:width 0.1s linear;}</style>
 
     <section id="hero-slideshow">
 
       <!-- SLIDE BACKGROUNDS -->
       <div class="hslide-bg-track">
-        <div class="hslide-bg active" style="background-image: url('hero-slide-1-optimized.webp');"></div>
-        <div class="hslide-bg"        style="background-image: url('hero-slide-2-optimized.webp');"></div>
+        <div class="hslide-bg active"></div>
+        <div class="hslide-bg" id="hero-slide-2"></div>
       </div>
 
       <!-- OVERLAY GRADIENT (always on) -->
@@ -398,15 +403,13 @@
     
           /* ── Init ── */
           document.addEventListener('DOMContentLoaded', function() {
-            panels.forEach(splitLetters);
+            // panels.forEach(splitLetters); // disabled for LCP
+            // Slide backgrounds are CSS gradients only (no heavy image loads)
             // Delay the first slide in so the user can fully see the scatter load effect
-            setTimeout(function() {
-              panels[0].classList.add('active');
-              animateIn(panels[0]);
-              // Start autoplay
-              startProgress();
-              timer = setInterval(nextSlide, INTERVAL);
-            }, 300);
+            panels[0].classList.add('active');
+            // Start autoplay
+            startProgress();
+            timer = setInterval(nextSlide, INTERVAL);
           });
     
           // Pause on hover
@@ -619,7 +622,7 @@
                     <a href="/pages/product-300ml" style="color:var(--color-accent); font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; text-decoration:none; font-weight:800;">View Details</a>
                   </div>
                   <div style="display:flex; gap:0.5rem; margin-bottom: -0.25rem;">
-                    <input type="number" id="qty-300ml" value="1" min="1" style="width:60px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px; text-align:center; padding:0.5rem;">
+                    <input type="number" id="qty-300ml" aria-label="Quantity for 300ml bottle" value="1" min="1" style="width:60px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px; text-align:center; padding:0.5rem;">
                     <select id="unit-300ml" style="flex-grow:1; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px; padding:0.5rem; outline:none; text-align:center;">
                       <option value="cases" style="background:#0a1023;">Cases</option>
                       <option value="pcs" style="background:#0a1023;">Pieces</option>
@@ -651,7 +654,7 @@
                     <a href="/pages/product-500ml" style="color:var(--color-accent); font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; text-decoration:none; font-weight:800;">View Details</a>
                   </div>
                   <div style="display:flex; gap:0.5rem; margin-bottom: -0.25rem;">
-                    <input type="number" id="qty-500ml" value="1" min="1" style="width:60px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px; text-align:center; padding:0.5rem;">
+                    <input type="number" id="qty-500ml" aria-label="Quantity for 500ml bottle" value="1" min="1" style="width:60px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px; text-align:center; padding:0.5rem;">
                     <select id="unit-500ml" style="flex-grow:1; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px; padding:0.5rem; outline:none; text-align:center;">
                       <option value="cases" style="background:#0a1023;">Cases</option>
                       <option value="pcs" style="background:#0a1023;">Pieces</option>
@@ -683,7 +686,7 @@
                     <a href="/pages/product-1l" style="color:var(--color-accent); font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; text-decoration:none; font-weight:800;">View Details</a>
                   </div>
                   <div style="display:flex; gap:0.5rem; margin-bottom: -0.25rem;">
-                    <input type="number" id="qty-1l" value="1" min="1" style="width:60px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px; text-align:center; padding:0.5rem;">
+                    <input type="number" id="qty-1l" aria-label="Quantity for 1l bottle" value="1" min="1" style="width:60px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px; text-align:center; padding:0.5rem;">
                     <select id="unit-1l" style="flex-grow:1; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px; padding:0.5rem; outline:none; text-align:center;">
                       <option value="cases" style="background:#0a1023;">Cases</option>
                       <option value="pcs" style="background:#0a1023;">Pieces</option>
@@ -714,7 +717,7 @@
                     <a href="/pages/product-2l" style="color:var(--color-accent); font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; text-decoration:none; font-weight:800;">View Details</a>
                   </div>
                   <div style="display:flex; gap:0.5rem; margin-bottom: -0.25rem;">
-                    <input type="number" id="qty-2l" value="1" min="1" style="width:60px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px; text-align:center; padding:0.5rem;">
+                    <input type="number" id="qty-2l" aria-label="Quantity for 2l bottle" value="1" min="1" style="width:60px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px; text-align:center; padding:0.5rem;">
                     <select id="unit-2l" style="flex-grow:1; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px; padding:0.5rem; outline:none; text-align:center;">
                       <option value="cases" style="background:#0a1023;">Cases</option>
                       <option value="pcs" style="background:#0a1023;">Pieces</option>
@@ -734,7 +737,7 @@
 
 
     <!-- ================= CINEMATIC ORIGIN (THE BENGAL ORIGIN) ================= -->
-    <section class="origin-section" style="background-image: url('assets/img/source-to-sip-optimized.jpg');">
+    <section class="origin-section" data-bg="assets/img/source-to-sip-optimized.webp" style="background:#040810;">
       <div class="container">
         <div class="origin-overlay" data-aos="fade-up">
           <p class="counter-label" style="color: var(--color-accent); margin-bottom: 2rem;">The Source</p>
@@ -1398,7 +1401,7 @@
         <!-- Col 1: Brand & Contact -->
         <div style="grid-column: span 1.5;">
           <a href="/" aria-label="Zenith Water Home">
-            <img decoding="async" src="zenith_logo_compact.png" alt="Zenith Water Official Logo" loading="lazy" style="width:140px;height:auto;aspect-ratio:1/1;margin-bottom:1.5rem;" width="140" height="140">
+            <img decoding="async" src="zenith_logo_compact.webp" alt="Zenith Water Official Logo" loading="lazy" style="width:140px;height:auto;aspect-ratio:1/1;margin-bottom:1.5rem;" width="140" height="140">
           </a>
           <p style="color: var(--color-accent); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem;">
             Premium Packaged Drinking Water Supplier in Kolkata & Howrah
@@ -1584,7 +1587,7 @@
       style="width:60px; height:60px; border-radius:50%; background:#25D366; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(37,211,102,0.4); transition:transform 0.2s, box-shadow 0.2s; position:relative;">
       <svg viewBox="0 0 448 512" style="width:28px;height:28px;fill:white;display:block;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.4 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.3-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.2 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.4-29.9-17-41.2-4.5-10.9-9.1-9.4-12.4-9.6-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
       <!-- Unread badge -->
-      <span style="position:absolute;top:-4px;right:-4px;background:#EF4444;color:white;font-size:0.6rem;font-weight:800;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--color-bg);">1</span>
+      <span style="position:absolute;top:-4px;right:-4px;background:#EF4444;color:white;font-size:0.6rem;font-weight:800;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--color-bg);" aria-hidden="true">1</span>
     </button>
   </div>
 
@@ -1614,8 +1617,8 @@
     </a>
     <a href="https://wa.me/918274837341?text=Hi%20Zenith%2C%20I%20have%20an%20inquiry." target="_blank" rel="noopener noreferrer"
        style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.25rem; padding:0.5rem; border-radius:8px; background:#25D366; text-decoration:none;">
-      <svg style="width:20px;height:20px;" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-      <span style="color:white; font-size:0.55rem; text-transform:uppercase; letter-spacing:1px; font-weight:700;">WhatsApp</span>
+      <svg style="width:20px;height:20px;" viewBox="0 0 24 24" fill="none" stroke="#01260d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      <span style="color:#01260d; font-size:0.55rem; text-transform:uppercase; letter-spacing:1px; font-weight:700;">WhatsApp</span>
     </a>
     <a href="#pincode-form"
        style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.25rem; padding:0.5rem; border-radius:8px; background:rgba(181,158,109,0.15); border:1px solid rgba(181,158,109,0.3); text-decoration:none;">
@@ -1632,6 +1635,8 @@
       #wa-widget { bottom: 85px !important; }
       /* Extra padding so last page content isn't hidden behind bar */
       body { padding-bottom: 80px; }
+      /* Extra padding so last page content isn't hidden behind bar */
+      
     }
   </style>
 
@@ -1675,7 +1680,7 @@
   <div id="cursor-inner" aria-hidden="true"></div>
   <style> @media (pointer:fine){*,*::before,*::after{cursor:none !important;}}#cursor-outer{position:fixed;width:40px;height:40px;border:1px solid rgba(181,158,109,0.6);border-radius:50%;pointer-events:none;z-index:99999;transition:transform 0.12s cubic-bezier(0.16,1,0.3,1),opacity 0.3s,width 0.25s,height 0.25s,background 0.25s;transform:translate(-50%,-50%);mix-blend-mode:difference;}#cursor-inner{position:fixed;width:6px;height:6px;background:var(--color-accent);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:transform 0.05s linear;box-shadow:0 0 10px rgba(181,158,109,0.8);}.cursor-hover #cursor-outer{width:60px;height:60px;background:rgba(181,158,109,0.08);border-color:var(--color-accent);}.cursor-click #cursor-outer{width:30px;height:30px;background:rgba(181,158,109,0.2);}</style>
   <script>
-  (function() {
+  window.addEventListener('load', function() {
     var outer = document.getElementById('cursor-outer');
     var inner = document.getElementById('cursor-inner');
     if (!outer || !inner) return;
@@ -1763,7 +1768,7 @@
   
 
   <!-- 6. ANIMATED HERO GRADIENT MESH -->
-  <style> .hero-elite::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 80%,rgba(10,40,107,0.4) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at 80% 20%,rgba(5,20,60,0.5) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 50% 50%,rgba(181,158,109,0.04) 0%,transparent 70%);animation:meshDrift 12s ease-in-out infinite alternate;pointer-events:none;z-index:0;}@keyframes meshDrift{0%{opacity:0.6;transform:scale(1);}50%{opacity:1;transform:scale(1.04);}100%{opacity:0.7;transform:scale(1.02);}}h1,h2{background-clip:text;-webkit-background-clip:text;}[data-aos="fade-up"]{transition-timing-function:cubic-bezier(0.16,1,0.3,1) !important;}</style>
+  <style> .hero-elite::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 80%,rgba(10,40,107,0.4) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at 80% 20%,rgba(5,20,60,0.5) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 50% 50%,rgba(181,158,109,0.04) 0%,transparent 70%);animation:meshDrift 12s ease-in-out infinite alternate;pointer-events:none;z-index:0;}@keyframes meshDrift{0%{opacity:0.6;transform:scale(1);}50%{opacity:1;transform:scale(1.04);}100%{opacity:0.7;transform:scale(1.02);}}[data-aos="fade-up"]{transition-timing-function:cubic-bezier(0.16,1,0.3,1) !important;}</style>
 
   <!-- Structured Data: Organization -->
   <script type="application/ld+json">
@@ -2104,6 +2109,22 @@
       .then(() => console.log('[Zenith] Service Worker registered'))
       .catch((err) => console.log('[Zenith] SW registration failed:', err));
   }
+</script>
+<script>
+(function(){
+  if (!('IntersectionObserver' in window)) return;
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        var el = entry.target;
+        var bg = el.getAttribute('data-bg');
+        if (bg) { el.style.backgroundImage = "url('" + bg + "')"; el.removeAttribute('data-bg'); }
+        obs.unobserve(el);
+      }
+    });
+  }, {rootMargin: '200px'});
+  document.querySelectorAll('[data-bg]').forEach(function(el){ obs.observe(el); });
+})();
 </script>
 </body>
 </html>
