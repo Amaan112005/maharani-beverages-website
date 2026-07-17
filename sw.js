@@ -1,11 +1,14 @@
 /* Zenith Water — Service Worker v1.0 */
-const CACHE_NAME = 'zenith-v1';
+const CACHE_NAME = 'zenith-v2';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
   '/assets/css/variables.css',
+  '/assets/css/variables.min.css',
   '/assets/css/main.css',
+  '/assets/css/main.min.css',
   '/assets/css/mobile-perfection.css',
+  '/assets/css/mobile-perfection.min.css',
   '/assets/js/main.js',
   '/assets/js/aos.js',
   '/assets/js/enquiry-cart.js',

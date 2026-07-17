@@ -686,3 +686,23 @@ footer {
   border-radius: 2px;
 }
 
+
+/* ================================================================
+   PRODUCT CARD IMAGE CONTAINMENT FIX
+   Ensures bottle photos fit fully inside .v3-card-image on mobile
+   without the top being clipped by overflow:hidden on the card.
+   ================================================================ */
+.v3-card-image picture {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.v3-card-image img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
