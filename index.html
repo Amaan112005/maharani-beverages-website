@@ -400,14 +400,23 @@ a,button,input,select,textarea{outline-offset:3px;}
           document.addEventListener('DOMContentLoaded', function() {
             // panels.forEach(splitLetters); // disabled for LCP
             // Defer slide-2 background so it doesn't compete with LCP
-            var s2 = document.getElementById('hero-slide-2');
-            if (s2) {
+            function updateHeroSlide2() {
+              var s2 = document.getElementById('hero-slide-2');
+              if (!s2) return;
               var isDesktop = window.innerWidth >= 769;
               var s2src = isDesktop ? 'hero-images/maharani-hero-slide-2-mist-rocks.jpg' : 'hero-images/maharani-hero-slide-2-mobile-mist-rocks-2.jpg';
-              var s2img = new Image();
-              s2img.src = s2src;
-              s2img.onload = function() { s2.style.backgroundImage = "url('" + s2src + "')"; };
+              var img = new Image();
+              img.src = s2src;
+              img.onload = function() { s2.style.backgroundImage = "url('" + s2src + "')"; };
             }
+            updateHeroSlide2();
+
+            // Switch hero slide 2 image when viewport crosses mobile/desktop breakpoint
+            var heroResizeTimer;
+            window.addEventListener('resize', function() {
+              clearTimeout(heroResizeTimer);
+              heroResizeTimer = setTimeout(updateHeroSlide2, 150);
+            });
             panels[0].classList.add('active');
             // Start autoplay
             startProgress();
