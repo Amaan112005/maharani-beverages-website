@@ -110,7 +110,71 @@ HOWRAH_LOCALITIES = [
     ("amt", "Amta", "Howrah", ["Uluberia", "Bagnan", "Khalisani"]),
 ]
 
-ALL_LOCALITIES = KOLKATA_LOCALITIES + HOWRAH_LOCALITIES
+# Expanded service areas for 2026 — covering the full Kolkata Metropolitan Region
+# and key industrial / commercial corridors of South Bengal.
+HOOGHLY_LOCALITIES = [
+    ("chandannagar", "Chandannagar", "Hooghly", ["Bhadreswar", "Mankundu", "Chinsurah"]),
+    ("chinsurah", "Chinsurah", "Hooghly", ["Hugli", "Bandel", "Bansberia"]),
+    ("serampore", "Serampore", "Hooghly", ["Rishra", "Dankuni", "Baidyabati"]),
+    ("bandel", "Bandel", "Hooghly", ["Chinsurah", "Bansberia", "Tribeni"]),
+    ("uttarpara", "Uttarpara", "Hooghly", ["Bally", "Hindmotor", "Konnagar"]),
+    ("baidyabati", "Baidyabati", "Hooghly", ["Serampore", "Rishra", "Saptagram"]),
+    ("rishra", "Rishra", "Hooghly", ["Serampore", "Baidyabati", "Dankuni"]),
+    ("hooghly-industrial-belt", "Hooghly Industrial Belt", "Hooghly", ["Pujali", "Shibpur", "Naihati"]),
+]
+
+MIDNAPORE_LOCALITIES = [
+    ("midnapore", "Midnapore", "Midnapore", ["Midnapur", "Kharagpur", "Medinipur"]),
+    ("kharagpur", "Kharagpur", "Midnapore", ["Midnapore", "Debra", "Balichak"]),
+    ("haldia", "Haldia", "Midnapore", ["Tamluk", "Contai", "Digha"]),
+    ("tamluk", "Tamluk", "Midnapore", ["Haldia", "Contai", "Panskura"]),
+    ("contai", "Contai", "Midnapore", ["Tamluk", "Digha", "Ramnagar"]),
+    ("ghatal", "Ghatal", "Midnapore", ["Midnapore", "Chandrakona", "Daspur"]),
+    ("jhargram", "Jhargram", "Midnapore", ["Gopiballavpur", "Belpahari", "Lalgarh"]),
+]
+
+TWENTY_FOUR_PARGANAS_LOCALITIES = [
+    ("barasat", "Barasat", "24 Parganas", ["Madhyamgram", "New Barrackpore", "Duttapukur"]),
+    ("barrackpore", "Barrackpore", "24 Parganas", ["Dum Dum", "Titagarh", "Shyamnagar"]),
+    ("basirhat", "Basirhat", "24 Parganas", ["Haroa", "Baduria", "Hasnabad"]),
+    ("bidhannagar", "Bidhannagar", "24 Parganas", ["Salt Lake", "Sector V", "Karunamoyee"]),
+    ("rajarhat-24-parganas", "Rajarhat", "24 Parganas", ["New Town", "Action Area", "Unitech"]),
+    ("new-town-24-parganas", "New Town", "24 Parganas", ["Rajarhat", "Eco Park", "Rajarhat Gopalpur"]),
+    ("sonarpur-24-parganas", "Sonarpur", "24 Parganas", ["Narendrapur", "Baruipur", "Rajpur"]),
+    ("diamond-harbour", "Diamond Harbour", "24 Parganas", ["Falta", "Kulpi", "Mandirbazar"]),
+    ("behala-24-parganas", "Behala", "24 Parganas", ["New Alipore", "Thakurpukur", "Sarsuna"]),
+    ("garia-24-parganas", "Garia", "24 Parganas", ["Narendrapur", "New Garia", "Ashaban Housing"]),
+]
+
+DURGAPUR_LOCALITIES = [
+    ("durgapur-city-centre", "Durgapur City Centre", "Durgapur", ["Benachity", "Bidhan Nagar", "A-Zone"]),
+    ("benachity", "Benachity", "Durgapur", ["City Centre", "Sarbamangala", "Nachan Road"]),
+    ("durgapur-steel-township", "Durgapur Steel Township", "Durgapur", ["Steel Township East", "Alloy Steels Plant", "DVC"]),
+    ("bidhan-nagar-durgapur", "Bidhan Nagar Durgapur", "Durgapur", ["City Centre", "Fuljhore", "A-Zone"]),
+    ("fuljhore", "Fuljhore", "Durgapur", ["Bidhan Nagar", "Durgapur Bazaar", "Steel Township"]),
+    ("abl-township", "ABL Township", "Durgapur", ["Ispat Nagar", "Durgapur Steel", "City Centre"]),
+    ("andal", "Andal", "Durgapur", ["Panagarh", "Raniganj", "Durgapur"]),
+]
+
+ASANSOL_LOCALITIES = [
+    ("asansol-city", "Asansol City", "Asansol", ["Burnpur", "Raniganj", "Kulti"]),
+    ("burnpur", "Burnpur", "Asansol", ["Asansol", "IISCO", "Neamatpur"]),
+    ("raniganj", "Raniganj", "Asansol", ["Asansol", "Jamuria", "Kulti"]),
+    ("kulti", "Kulti", "Asansol", ["Asansol", "Raniganj", "Barabani"]),
+    ("barabani", "Barabani", "Asansol", ["Kulti", "Raniganj", "Jamuria"]),
+    ("chittaranjan", "Chittaranjan", "Asansol", ["Asansol", "Jamuria", "Salanpur"]),
+]
+
+BURDWAN_LOCALITIES = [
+    ("bardhaman-city", "Bardhaman City", "Burdwan", ["Burdwan", "Shaktigarh", "Guskara"]),
+    ("katwa", "Katwa", "Burdwan", ["Bardhaman", "Manteswar", "Ketugram"]),
+    ("kalna", "Kalna", "Burdwan", ["Bardhaman", "Purbasthali", "Saptagram"]),
+    ("durgapur-burdwan", "Durgapur", "Burdwan", ["Bardhaman", "Panagarh", "Andal"]),
+    ("memari", "Memari", "Burdwan", ["Bardhaman", "Jamalpur", "Manteswar"]),
+    ("panagarh", "Panagarh", "Burdwan", ["Durgapur", "Bardhaman", "Andal"]),
+]
+
+ALL_LOCALITIES = KOLKATA_LOCALITIES + HOWRAH_LOCALITIES + HOOGHLY_LOCALITIES + MIDNAPORE_LOCALITIES + TWENTY_FOUR_PARGANAS_LOCALITIES + DURGAPUR_LOCALITIES + ASANSOL_LOCALITIES + BURDWAN_LOCALITIES
 
 INDUSTRY_CONTEXT = {
     "hotels": {
@@ -119,7 +183,7 @@ INDUSTRY_CONTEXT = {
         "pain": "high-volume room service, banquet hydration, and lobby dispenser needs",
         "benefit": "consistent supply of sealed premium water that elevates guest experience and brand perception",
         "sizes": "300ml and 500ml room bottles, 1L table bottles, and 20L dispenser jars",
-        "cities": ["Kolkata", "Howrah"],
+        "cities": ["Kolkata", "Howrah", "Hooghly", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "restaurants": {
         "label": "Restaurants",
@@ -127,7 +191,7 @@ INDUSTRY_CONTEXT = {
         "pain": "steady table-water availability and take-away packs during peak hours",
         "benefit": "reliable refill cycles so you never run dry during lunch and dinner rushes",
         "sizes": "500ml, 1L, and 2L bottles plus 20L jars for kitchen and dispenser use",
-        "cities": ["Kolkata", "Howrah"],
+        "cities": ["Kolkata", "Howrah", "Hooghly", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "hospitals": {
         "label": "Hospitals",
@@ -135,7 +199,7 @@ INDUSTRY_CONTEXT = {
         "pain": "safe hydration for patients, visitors, and staff with strict hygiene standards",
         "benefit": "FSSAI-certified, sealed-at-source water that supports infection-control protocols",
         "sizes": "300ml patient bottles, 500ml visitor bottles, and 20L jars for staff areas",
-        "cities": ["Kolkata", "Howrah"],
+        "cities": ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "schools": {
         "label": "Schools",
@@ -143,7 +207,7 @@ INDUSTRY_CONTEXT = {
         "pain": "safe drinking water for children during school hours and events",
         "benefit": "certified purity and child-safe sealed bottles for canteens and dispensers",
         "sizes": "300ml and 500ml bottles plus 20L jars for staff and common areas",
-        "cities": ["Kolkata", "Howrah"],
+        "cities": ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "colleges": {
         "label": "Colleges",
@@ -151,7 +215,7 @@ INDUSTRY_CONTEXT = {
         "pain": "hydration across large campuses, canteens, hostels, and events",
         "benefit": "bulk-capacity supply with scheduled delivery aligned to academic calendars",
         "sizes": "500ml, 1L, and 2L bottles plus 20L jars for hostels and departments",
-        "cities": ["Kolkata"],
+        "cities": ["Kolkata", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "factories": {
         "label": "Factories",
@@ -159,7 +223,7 @@ INDUSTRY_CONTEXT = {
         "pain": "high-volume hydration for workers across shifts with minimal downtime",
         "benefit": "palletized bulk supply and 20L jar programs designed for shop-floor use",
         "sizes": "20L jars, 2L bottles, and bulk pallet options",
-        "cities": ["Kolkata", "Howrah"],
+        "cities": ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "construction-sites": {
         "label": "Construction Sites",
@@ -167,7 +231,7 @@ INDUSTRY_CONTEXT = {
         "pain": "dusty environments require abundant safe water for labour welfare",
         "benefit": "large-volume jar and bottle delivery directly to site gates on recurring schedules",
         "sizes": "20L jars and 1L/2L bottles for on-site distribution",
-        "cities": ["Kolkata", "Howrah"],
+        "cities": ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "banquet-halls": {
         "label": "Banquet Halls",
@@ -175,7 +239,7 @@ INDUSTRY_CONTEXT = {
         "pain": "large one-day or weekend events need hundreds of sealed bottles quickly",
         "benefit": "event-size bottled water delivery with coordinated timing for caterers and hosts",
         "sizes": "300ml, 500ml, and 1L bottles plus 20L jars for buffet stations",
-        "cities": ["Kolkata"],
+        "cities": ["Kolkata", "Hooghly", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "event-management": {
         "label": "Event Management",
@@ -183,7 +247,7 @@ INDUSTRY_CONTEXT = {
         "pain": "temporary venues need branded or plain bottled water on exact event dates",
         "benefit": "just-in-time bulk delivery across multiple venues with flexible invoicing",
         "sizes": "300ml and 500ml for delegates, 1L/2L for crew, 20L jars for back offices",
-        "cities": ["Kolkata"],
+        "cities": ["Kolkata", "Hooghly", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "gyms": {
         "label": "Gyms",
@@ -191,7 +255,7 @@ INDUSTRY_CONTEXT = {
         "pain": "members expect chilled, safe hydration before and after workouts",
         "benefit": "regular supply of premium bottles and jars that align with membership traffic",
         "sizes": "500ml and 1L bottles plus 20L jars for dispenser stations",
-        "cities": ["Kolkata"],
+        "cities": ["Kolkata", "Howrah", "Hooghly", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
 }
 
@@ -201,63 +265,63 @@ CORPORATE_CONTEXT = {
         "audience": "offices and corporate premises",
         "pain": "dependable drinking water for employees without interruption",
         "benefit": "scheduled 20L jar and bottle supply with monthly invoicing",
-        "cities": ["Kolkata", "Howrah"],
+        "cities": ["Kolkata", "Howrah", "Hooghly", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "office-water-delivery": {
         "label": "Office Water Delivery",
         "audience": "offices and co-working spaces",
         "pain": "regular delivery windows that match office hours",
         "benefit": "on-time delivery fleet covering all major business districts",
-        "cities": ["Kolkata", "Howrah"],
+        "cities": ["Kolkata", "Howrah", "Hooghly", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "corporate-water-supply": {
         "label": "Corporate Water Supply",
         "audience": "corporate campuses and enterprise clients",
         "pain": "centralized hydration across multiple floors and buildings",
         "benefit": "dedicated account management and consolidated billing",
-        "cities": ["Kolkata"],
+        "cities": ["Kolkata", "Hooghly", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "commercial-water-supplier": {
         "label": "Commercial Water Supplier",
         "audience": "commercial complexes and business hubs",
         "pain": "multi-tenant buildings need consistent vendor quality",
         "benefit": "scalable supply agreements with FSSAI-certified quality assurance",
-        "cities": ["Kolkata"],
+        "cities": ["Kolkata", "Hooghly", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "water-supply-for-it-parks": {
         "label": "IT Parks",
         "audience": "IT parks and technology campuses",
         "pain": "24x7 operations require uninterrupted dispenser water",
         "benefit": "scheduled refills and emergency replenishment for round-the-clock facilities",
-        "cities": ["Kolkata"],
+        "cities": ["Kolkata", "Hooghly", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "water-supply-for-co-working-spaces": {
         "label": "Co-working Spaces",
         "audience": "co-working spaces and shared offices",
         "pain": "fluctuating headcount makes inventory planning hard",
         "benefit": "flexible weekly or bi-weekly plans that scale with occupancy",
-        "cities": ["Kolkata"],
+        "cities": ["Kolkata", "Hooghly", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "water-supply-for-banks": {
         "label": "Banks",
         "audience": "banks, NBFCs, and financial institutions",
         "pain": "premium customer experience requires premium amenities",
         "benefit": "branded bottled water for branches and staff hydration programs",
-        "cities": ["Kolkata"],
+        "cities": ["Kolkata", "Hooghly", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "water-supply-for-call-centers": {
         "label": "Call Centers",
         "audience": "call centres and BPOs",
         "pain": "voice professionals need constant hydration during long shifts",
         "benefit": "high-volume 20L jar programs with frequent refill cycles",
-        "cities": ["Kolkata"],
+        "cities": ["Kolkata", "Hooghly", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "water-supply-for-government-offices": {
         "label": "Government Offices",
         "audience": "government offices and public-sector undertakings",
         "pain": "compliant procurement with proper documentation and taxation",
         "benefit": "FSSAI-certified supply with GST invoices and transparent pricing",
-        "cities": ["Kolkata"],
+        "cities": ["Kolkata", "Howrah", "Hooghly", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
 }
 
@@ -268,7 +332,7 @@ PRODUCT_CONTEXT = {
         "desc": "office and home dispenser jars",
         "sizes": ["20L"],
         "has_product_schema": True,
-        "cities": ["Kolkata", "Howrah"],
+        "cities": ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "20-litre-jar-supplier": {
         "label": "20 Litre Jar Supplier",
@@ -276,7 +340,7 @@ PRODUCT_CONTEXT = {
         "desc": "scheduled 20L jar supply",
         "sizes": ["20L"],
         "has_product_schema": True,
-        "cities": ["Kolkata", "Howrah"],
+        "cities": ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "water-jar-supplier": {
         "label": "Water Jar Supplier",
@@ -284,7 +348,7 @@ PRODUCT_CONTEXT = {
         "desc": "dispenser jar supply",
         "sizes": ["20L"],
         "has_product_schema": True,
-        "cities": ["Kolkata", "Howrah"],
+        "cities": ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "water-bottle-supplier": {
         "label": "Water Bottle Supplier",
@@ -292,7 +356,7 @@ PRODUCT_CONTEXT = {
         "desc": "retail and bulk bottled water",
         "sizes": ["300ml", "500ml", "1L", "2L"],
         "has_product_schema": True,
-        "cities": ["Kolkata", "Howrah"],
+        "cities": ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "mineral-water-supplier": {
         "label": "Mineral Water Supplier",
@@ -300,7 +364,7 @@ PRODUCT_CONTEXT = {
         "desc": "premium packaged mineral water",
         "sizes": ["300ml", "500ml", "1L", "2L", "20L"],
         "has_product_schema": True,
-        "cities": ["Kolkata", "Howrah"],
+        "cities": ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "drinking-water-supplier": {
         "label": "Drinking Water Supplier",
@@ -308,7 +372,7 @@ PRODUCT_CONTEXT = {
         "desc": "safe packaged drinking water",
         "sizes": ["300ml", "500ml", "1L", "2L", "20L"],
         "has_product_schema": True,
-        "cities": ["Kolkata", "Howrah"],
+        "cities": ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "packaged-water-supplier": {
         "label": "Packaged Water Supplier",
@@ -316,7 +380,7 @@ PRODUCT_CONTEXT = {
         "desc": "IS 14543 packaged drinking water",
         "sizes": ["300ml", "500ml", "1L", "2L", "20L"],
         "has_product_schema": True,
-        "cities": ["Kolkata", "Howrah"],
+        "cities": ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "bisleri-alternative": {
         "label": "Bisleri Alternative",
@@ -324,7 +388,7 @@ PRODUCT_CONTEXT = {
         "desc": "affordable premium alternative to Bisleri",
         "sizes": ["300ml", "500ml", "1L", "2L", "20L"],
         "has_product_schema": True,
-        "cities": ["Kolkata", "Howrah"],
+        "cities": ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
 }
 
@@ -414,10 +478,10 @@ def fit_meta(text, target_min=150, target_max=155):
 
 
 def city_coverage(city, exclude=None):
-    """Return a list of coverage areas for a city."""
+    """Return a list of coverage areas for a city or district."""
     exclude = exclude or []
-    if city == "Kolkata":
-        base = [
+    coverage_map = {
+        "Kolkata": [
             "Salt Lake & Sector V",
             "Park Street & Esplanade",
             "Ballygunge & Alipore",
@@ -428,9 +492,8 @@ def city_coverage(city, exclude=None):
             "Rajarhat & New Town",
             "Shyambazar & Maniktala",
             "Kasba & EM Bypass",
-        ]
-    else:
-        base = [
+        ],
+        "Howrah": [
             "Howrah Station & Salkia",
             "Shibpur & Botanical Garden",
             "Bally & Liluah",
@@ -439,7 +502,58 @@ def city_coverage(city, exclude=None):
             "Uluberia & Amta",
             "Ranihati Industrial Belt",
             "Jagacha & Bargachia",
-        ]
+        ],
+        "Hooghly": [
+            "Chandannagar & Bhadreswar",
+            "Chinsurah & Bandel",
+            "Serampore & Rishra",
+            "Uttarpara & Baidyabati",
+            "Hooghly Industrial Belt",
+            "Dankuni & Saptagram",
+            "Bansberia & Tribeni",
+        ],
+        "Midnapore": [
+            "Midnapore (Midnapur) Town",
+            "Kharagpur & Debra",
+            "Haldia & Tamluk",
+            "Contai & Digha",
+            "Ghatal & Chandrakona",
+            "Jhargram & Belpahari",
+        ],
+        "24 Parganas": [
+            "Barasat & Madhyamgram",
+            "Barrackpore & Titagarh",
+            "Basirhat & Baduria",
+            "Bidhannagar & Salt Lake",
+            "Rajarhat & New Town",
+            "Sonarpur & Baruipur",
+            "Diamond Harbour & Falta",
+            "Behala & Garia",
+        ],
+        "Durgapur": [
+            "Durgapur City Centre",
+            "Benachity & Sarbamangala",
+            "Durgapur Steel Township",
+            "Bidhan Nagar & Fuljhore",
+            "ABL Township & Ispat Nagar",
+            "Andal & Panagarh",
+        ],
+        "Asansol": [
+            "Asansol City Centre",
+            "Burnpur & IISCO",
+            "Raniganj & Jamuria",
+            "Kulti & Barabani",
+            "Chittaranjan & Salanpur",
+        ],
+        "Burdwan": [
+            "Bardhaman (Burdwan) City",
+            "Katwa & Manteswar",
+            "Kalna & Purbasthali",
+            "Durgapur & Panagarh",
+            "Memari & Jamalpur",
+        ],
+    }
+    base = coverage_map.get(city, [f"{city} Central", f"{city} Industrial Area", f"{city} Station Road"])
     return [b for b in base if b not in exclude]
 
 
@@ -545,7 +659,7 @@ def build_graph_schema(page):
             "addressRegion": ADDRESS["region"],
             "addressCountry": ADDRESS["country"],
         },
-        "areaServed": ["Kolkata", "Howrah"],
+        "areaServed": ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
         "sameAs": SOCIALS,
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
@@ -911,9 +1025,9 @@ def _industry_section2(ctx, city):
 
 
 def make_hub_pages():
-    """Generate city hub pages that act as SEO silo homepages."""
+    """Generate city / district hub pages that act as SEO silo homepages."""
     pages = []
-    for city in ["Kolkata", "Howrah"]:
+    for city in ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"]:
         city_slug = slugify(city)
         slug = f"{city_slug}-water-supply"
         title = truncate(f"Water Supply {city} | Packaged Drinking Water | Zenith", 60)
@@ -954,16 +1068,15 @@ def make_hub_pages():
 
 def _hub_section1(city):
     cslug = slugify(city)
-    if city == "Kolkata":
-        corporate_link = "<a href='/corporate-water-supply-kolkata'>corporate supply</a>"
-        it_parks_link = "<a href='/water-supply-for-it-parks-kolkata'>IT park supply</a>"
-        hotels_link = "<a href='/water-supply-for-hotels-restaurants-kolkata'>hotels</a>"
-        factories_link = "<a href='/water-supply-for-factories-industries-kolkata-howrah'>factories</a>"
-    else:  # Howrah
-        corporate_link = "<a href='/office-water-supply-howrah'>office supply</a>"
-        it_parks_link = "<a href='/water-supply-for-it-parks-kolkata'>IT park supply</a>"
-        hotels_link = "<a href='/water-supply-for-hotels-howrah'>hotels</a>"
-        factories_link = "<a href='/water-supply-for-factories-howrah'>factories</a>"
+    # Generic business links that gracefully fall back to city-specific pages if they exist
+    corporate_href = f"/corporate-water-supply-{cslug}" if city in ("Kolkata", "Howrah") else f"/office-water-supply-{cslug}"
+    it_parks_href = f"/water-supply-for-it-parks-{cslug}" if city in ("Kolkata",) else "/water-supply-for-it-parks-kolkata"
+    hotels_href = f"/water-supply-for-hotels-{cslug}" if city in ("Howrah",) else "/water-supply-for-hotels-restaurants-kolkata"
+    factories_href = f"/water-supply-for-factories-{cslug}" if city in ("Howrah",) else "/water-supply-for-factories-industries-kolkata-howrah"
+    restaurants_href = f"/water-supply-for-restaurants-{cslug}" if city in ("Kolkata", "Howrah") else f"/water-supply-for-restaurants-kolkata"
+    hospitals_href = f"/water-supply-for-hospitals-{cslug}" if city in ("Kolkata", "Howrah") else f"/water-supply-for-hospitals-kolkata"
+    schools_href = f"/water-supply-for-schools-{cslug}" if city in ("Kolkata", "Howrah") else f"/water-supply-for-schools-kolkata"
+
     return (
         f"<p>Whether you need a single home delivery or a recurring bulk contract, Zenith Water covers every segment of the {city} market. "
         f"Explore our product pages for <a href='/water-bottle-supplier-{cslug}'>bottled water</a>, "
@@ -971,13 +1084,13 @@ def _hub_section1(city):
         f"<a href='/mineral-water-supplier-{cslug}'>mineral water</a> options.</p>"
         f"<p style='margin-top: 1.5rem;'>For businesses, our corporate cluster includes "
         f"<a href='/office-water-delivery-{cslug}'>office water delivery</a>, "
-        f"{corporate_link}, and "
-        f"{it_parks_link}. "
-        f"Industry-specific solutions cover {hotels_link}, "
-        f"<a href='/water-supply-for-restaurants-{cslug}'>restaurants</a>, "
-        f"<a href='/water-supply-for-hospitals-{cslug}'>hospitals</a>, "
-        f"<a href='/water-supply-for-schools-{cslug}'>schools</a>, and "
-        f"{factories_link}.</p>"
+        f"<a href='{corporate_href}'>corporate supply</a>, and "
+        f"<a href='{it_parks_href}'>IT park supply</a>. "
+        f"Industry-specific solutions cover <a href='{hotels_href}'>hotels</a>, "
+        f"<a href='{restaurants_href}'>restaurants</a>, "
+        f"<a href='{hospitals_href}'>hospitals</a>, "
+        f"<a href='{schools_href}'>schools</a>, and "
+        f"<a href='{factories_href}'>factories &amp; industries</a>.</p>"
     )
 
 
@@ -990,6 +1103,79 @@ def _hub_section2(city):
         f"<a href='/bulk-water-supply-{cslug}' style='color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);'>Get a bulk quote ↗</a>, "
         f"<a href='/pages/contact' style='color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);'>send an enquiry ↗</a>, or "
         f"call +91 82748 37341 for immediate assistance.</p>"
+    )
+
+
+def make_city_intent_pages():
+    """Generate core city-level intent pages for new districts.
+
+    Kolkata and Howrah already have manually-crafted city pages, so we skip them
+    to preserve their richer content and design.
+    """
+    pages = []
+    new_cities = ["Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"]
+    intents = [
+        ("packaged-drinking-water", "Packaged Drinking Water", "Packaged Drinking Water", "Buy packaged drinking water in {city}. FSSAI certified bottles & 20L jars delivered to homes, offices & shops. Call +91 82748 37341."),
+        ("water-delivery", "Water Delivery", "Drinking Water Delivery", "Fast water delivery in {city}. Zenith delivers FSSAI certified bottled water & 20L jars for home, office & shop. Call +91 82748 37341."),
+        ("water-supplier", "Water Supplier", "Packaged Drinking Water Supply", "Trusted water supplier in {city}. FSSAI certified packaged drinking water for homes, offices, hotels & shops. Call +91 82748 37341."),
+        ("bulk-water-supply", "Bulk Water Supply", "Bulk Water Supply", "Bulk water supply in {city}. Zenith delivers FSSAI certified packaged drinking water for offices, hotels, factories & events. Call +91 82748 37341."),
+        ("bottled-water", "Bottled Water", "Bottled Water", "Bottled water supplier in {city}. 300ml, 500ml, 1L & 2L FSSAI certified bottles delivered across {city}. Call +91 82748 37341."),
+        ("drinking-water", "Drinking Water", "Drinking Water", "Drinking water supplier in {city}. FSSAI certified packaged drinking water for homes & businesses. Call +91 82748 37341."),
+        ("mineral-water", "Mineral Water", "Mineral Water", "Mineral water supplier in {city}. Premium FSSAI certified packaged mineral water delivered across {city}. Call +91 82748 37341."),
+    ]
+    for city in new_cities:
+        cslug = slugify(city)
+        for key, label, service_type, meta_template in intents:
+            slug = f"{key}-{cslug}"
+            title = truncate(f"{label} {city} | FSSAI Certified | Zenith", 60)
+            meta = fit_meta(meta_template.format(city=city))
+            h1 = f"{label} in <span style='color: var(--color-accent);'>{city}</span>"
+            pages.append({
+                "slug": slug,
+                "city": city,
+                "title": title,
+                "meta_description": meta,
+                "og_title": title,
+                "og_description": truncate(f"Trusted {label.lower()} in {city}. FSSAI certified, scheduled delivery.", 200),
+                "twitter_title": title,
+                "twitter_description": truncate(f"Trusted {label.lower()} in {city}. FSSAI certified, scheduled delivery.", 200),
+                "service_type": service_type,
+                "service_schema_description": truncate(f"{label} services in {city} providing FSSAI certified packaged drinking water for residential and commercial clients.", 250),
+                "breadcrumb_name": f"{label} {city}",
+                "eyebrow": f"{label} {city}",
+                "h1": h1,
+                "hero_subtitle": f"Zenith Water provides {label.lower()} in {city} with FSSAI-certified quality, flexible sizes, and dependable delivery.",
+                "section1_title": f"Why {city} Chooses Zenith for {label}",
+                "section1_body": _city_intent_section1(label, city),
+                "section2_title": f"Delivery & Coverage in {city}",
+                "section2_body": _city_intent_section2(label, city),
+                "coverage": city_coverage(city),
+                "coverage_footer": f"We deliver {label.lower()} across {city} and surrounding areas. <a href='/areas-we-serve' style='color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);'>View all service areas ↗</a>",
+                "faqs": make_generic_faqs(label, city),
+                "wa_text": f"Hello%20Zenith%2C%20I%20am%20looking%20for%20{label.lower().replace(' ', '%20')}%20in%20{city}.%20Please%20share%20details.",
+                "has_product_schema": key in ("packaged-drinking-water", "bottled-water", "drinking-water", "mineral-water"),
+                "product_sizes": ["300ml", "500ml", "1L", "2L", "20L"] if key in ("packaged-drinking-water", "mineral-water") else (["300ml", "500ml", "1L", "2L"] if key == "bottled-water" else ["300ml", "500ml", "1L", "2L", "20L"]),
+                "cluster": "product" if key in ("packaged-drinking-water", "bottled-water", "drinking-water", "mineral-water") else "corporate",
+            })
+    return pages
+
+
+def _city_intent_section1(label, city):
+    return (
+        f"<ul style='list-style: none; padding: 0;'>"
+        f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Certified Purity</strong>Every batch is FSSAI certified and meets BIS IS 14543 standards before leaving our Ranihati plant.</li>"
+        f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Local Distribution</strong>We maintain regular supply routes across {city} for homes, offices, shops, and industries.</li>"
+        f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Flexible Sizes</strong>300ml, 500ml, 1L, 2L bottles and 20L dispenser jars are available in {city}.</li>"
+        "</ul>"
+    )
+
+
+def _city_intent_section2(label, city):
+    cslug = slugify(city)
+    return (
+        f"<p>Our {city} delivery network covers residential neighbourhoods, commercial hubs, and industrial zones. "
+        f"Whether you need a one-time order or a recurring subscription, Zenith Water scales with your needs.</p>"
+        f"<p style='margin-top: 1.5rem;'>For larger volumes, explore <a href='/bulk-water-supply-{cslug}' style='color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);'>{city} bulk water supply ↗</a> or <a href='/{cslug}-water-supply' style='color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);'>{city} water supply hub ↗</a>.</p>"
     )
 
 
@@ -1551,13 +1737,19 @@ TEMPLATE = '''<!DOCTYPE html>
 
 def use_case_cards(city):
     """Generate use-case cards with internal links."""
+    cslug = slugify(city)
+    # City-aware fallback links for sectors that may not have a dedicated page in every city
+    hotels_href = f"/water-supply-for-hotels-{cslug}" if city == "Howrah" else "/water-supply-for-hotels-restaurants-kolkata"
+    factories_href = f"/water-supply-for-factories-{cslug}" if city == "Howrah" else "/water-supply-for-factories-industries-kolkata-howrah"
+    events_href = "/event-water-supply-kolkata"
+    hospitals_href = f"/water-supply-for-hospitals-{cslug}" if city in ("Kolkata", "Howrah") else "/water-supply-for-hospitals-kolkata"
     cases = [
-        ("🏠", "Homes", f"Daily bottles & 20L jars for families in {city}", f"/water-delivery-{slugify(city)}"),
-        ("🏢", "Offices", f"Scheduled dispenser jar delivery for {city} offices", f"/office-water-delivery-{slugify(city)}"),
-        ("🏨", "Hotels", "Premium bottled water for guest rooms & banquets", "/water-supply-for-hotels-restaurants-kolkata"),
-        ("🏭", "Factories", "Bulk 20L jar programs for industrial units", "/water-supply-for-factories-industries-kolkata-howrah"),
-        ("🏥", "Hospitals", "Safe hydration for patients, staff & visitors", f"/water-supply-for-hospitals-{slugify(city)}"),
-        ("🎉", "Events", "On-time bulk supply for conferences & weddings", "/event-water-supply-kolkata"),
+        ("🏠", "Homes", f"Daily bottles & 20L jars for families in {city}", f"/water-delivery-{cslug}"),
+        ("🏢", "Offices", f"Scheduled dispenser jar delivery for {city} offices", f"/office-water-delivery-{cslug}"),
+        ("🏨", "Hotels", "Premium bottled water for guest rooms & banquets", hotels_href),
+        ("🏭", "Factories", "Bulk 20L jar programs for industrial units", factories_href),
+        ("🏥", "Hospitals", "Safe hydration for patients, staff & visitors", hospitals_href),
+        ("🎉", "Events", "On-time bulk supply for conferences & weddings", events_href),
     ]
     cards = []
     for icon, label, desc, href in cases:
@@ -1787,6 +1979,7 @@ def generate_all_pages():
     pages.extend(make_corporate_pages())
     pages.extend(make_industry_pages())
     pages.extend(make_hub_pages())
+    pages.extend(make_city_intent_pages())
     pages.extend(make_locality_pages())
     return pages
 
