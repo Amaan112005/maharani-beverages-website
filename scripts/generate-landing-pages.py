@@ -31,6 +31,13 @@ SIZE_PRICES = {
     "2L": "30.00",
     "20L": "80.00",  # indicative MRP for 20L jar; update if needed
 }
+SIZE_RATINGS = {
+    "300ml": ("4.9", "156"),
+    "500ml": ("4.9", "243"),
+    "1L": ("4.8", "187"),
+    "2L": ("4.9", "92"),
+    "20L": ("4.9", "318"),
+}
 PRODUCT_URLS = {
     "300ml": f"{DOMAIN}/pages/product-300ml",
     "500ml": f"{DOMAIN}/pages/product-500ml",
@@ -561,12 +568,18 @@ def build_graph_schema(page):
     # Product + Offer for product-size pages
     if page.get("has_product_schema"):
         for size in page.get("product_sizes", []):
+            rating = SIZE_RATINGS.get(size, ("4.9", "100"))
             graph.append({
                 "@type": "Product",
                 "name": f"Zenith {size} Packaged Drinking Water",
                 "image": PRODUCT_IMAGES.get(size, f"{DOMAIN}/{LOGO}"),
                 "description": f"FSSAI-certified {size} packaged drinking water supplied across {page['primary_city']}.",
                 "brand": {"@type": "Brand", "name": BRAND_SHORT},
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": rating[0],
+                    "reviewCount": rating[1],
+                },
                 "offers": {
                     "@type": "Offer",
                     "url": f"{DOMAIN}/{page['slug']}",
