@@ -24,6 +24,27 @@ PHONE = "+91 82748 37341"
 PHONE_E164 = "918274837341"
 EMAIL = "marketing@maharanibeverages.com"
 FSSAI = "12825999000938"
+SIZE_PRICES = {
+    "300ml": "6.00",
+    "500ml": "10.00",
+    "1L": "20.00",
+    "2L": "30.00",
+    "20L": "80.00",  # indicative MRP for 20L jar; update if needed
+}
+PRODUCT_URLS = {
+    "300ml": f"{DOMAIN}/pages/product-300ml",
+    "500ml": f"{DOMAIN}/pages/product-500ml",
+    "1L": f"{DOMAIN}/pages/product-1l",
+    "2L": f"{DOMAIN}/pages/product-2l",
+    "20L": f"{DOMAIN}/20-liter-water-jar-delivery-kolkata",
+}
+PRODUCT_IMAGES = {
+    "300ml": f"{DOMAIN}/product-300ml-optimized.jpg",
+    "500ml": f"{DOMAIN}/product-500ml-optimized.jpg",
+    "1L": f"{DOMAIN}/product-1l-optimized.jpg",
+    "2L": f"{DOMAIN}/product-2l-optimized.jpg",
+    "20L": f"{DOMAIN}/zenith_logo_compact.png",
+}
 ADDRESS = {
     "street": "Ranihati Industrial Park",
     "locality": "Howrah",
@@ -442,6 +463,44 @@ def build_faq_schema(faqs):
     }
 
 
+def build_catalog_items():
+    """Build OfferCatalog itemListElement with valid Product offers."""
+    catalog = [
+        ("Zenith 300ml Water", "300ml", "4.9", "156"),
+        ("Zenith 500ml Water", "500ml", "4.9", "243"),
+        ("Zenith 1L Water", "1L", "4.8", "187"),
+        ("Zenith 2L Water", "2L", "4.9", "92"),
+        ("Zenith 20L Jar", "20L", "4.9", "318"),
+    ]
+    items = []
+    for name, size, rating, count in catalog:
+        items.append({
+            "@type": "Offer",
+            "itemOffered": {
+                "@type": "Product",
+                "name": name,
+                "image": PRODUCT_IMAGES[size],
+                "description": f"FSSAI-certified {name.lower()} delivered across Kolkata and Howrah.",
+                "brand": {"@type": "Brand", "name": BRAND_SHORT},
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": rating,
+                    "reviewCount": count,
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "url": PRODUCT_URLS[size],
+                    "price": SIZE_PRICES[size],
+                    "priceCurrency": "INR",
+                    "priceValidUntil": "2027-12-31",
+                    "availability": "https://schema.org/InStock",
+                    "seller": {"@type": "Organization", "name": BRAND},
+                },
+            },
+        })
+    return items
+
+
 def build_graph_schema(page):
     """Build the full @graph schema for a page."""
     # Normalize city field
@@ -484,13 +543,7 @@ def build_graph_schema(page):
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Packaged Drinking Water",
-            "itemListElement": [
-                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Zenith 300ml Water", "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "156"}}},
-                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Zenith 500ml Water", "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "243"}}},
-                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Zenith 1L Water", "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "187"}}},
-                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Zenith 2L Water", "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "92"}}},
-                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Zenith 20L Jar", "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "318"}}},
-            ],
+            "itemListElement": build_catalog_items(),
         },
     })
 
@@ -511,13 +564,15 @@ def build_graph_schema(page):
             graph.append({
                 "@type": "Product",
                 "name": f"Zenith {size} Packaged Drinking Water",
-                "image": f"{DOMAIN}/{LOGO}",
+                "image": PRODUCT_IMAGES.get(size, f"{DOMAIN}/{LOGO}"),
                 "description": f"FSSAI-certified {size} packaged drinking water supplied across {page['primary_city']}.",
                 "brand": {"@type": "Brand", "name": BRAND_SHORT},
                 "offers": {
                     "@type": "Offer",
                     "url": f"{DOMAIN}/{page['slug']}",
+                    "price": SIZE_PRICES.get(size, "0.00"),
                     "priceCurrency": "INR",
+                    "priceValidUntil": "2027-12-31",
                     "availability": "https://schema.org/InStock",
                     "seller": {"@type": "Organization", "name": BRAND},
                 },
@@ -599,7 +654,7 @@ def make_locality_faqs(locality, city, nearby):
         (f"Where can I get packaged drinking water in {loc}, {c}?", f"Zenith Water delivers FSSAI-certified packaged drinking water directly to homes, offices, and businesses in {loc}, {c}."),
         (f"Do you provide home water delivery in {loc}?", f"Yes, we offer home delivery of bottles and 20L jars in {loc} with scheduled slots."),
         (f"Is same-day water delivery available in {loc}?", f"Same-day delivery may be available for bulk orders in {loc}; standard delivery is typically within 24–48 hours."),
-        (f"What sizes are available for delivery in {loc}?", "We deliver 300ml, 500ml, 1L, 2L bottles and 20L dispenser jars in {loc}."),
+        (f"What sizes are available for delivery in {loc}?", f"We deliver 300ml, 500ml, 1L, 2L bottles and 20L dispenser jars in {loc}."),
         (f"Do you supply offices and shops in {loc}?", f"Yes, offices, shops, clinics, and institutions in {loc} can set up recurring supply plans."),
         (f"Is Zenith water FSSAI certified?", "Yes, all Zenith packaged drinking water is FSSAI certified and complies with BIS IS 14543."),
         (f"How do I order water in {loc}?", f"Call +91 82748 37341 or WhatsApp us with your {loc} address for quick confirmation and scheduling."),
