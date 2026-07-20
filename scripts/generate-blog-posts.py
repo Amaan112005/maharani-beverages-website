@@ -289,7 +289,7 @@ POSTS = [
           <h2>Choosing the Right Bottle Size</h2>
           <p>Different service areas call for different formats:</p>
           <ul>
-            <li><strong>300ml:</strong> Fine-dining tables, airline catering, premium room minibars.</li>
+            <li><strong>250ml:</strong> Fine-dining tables, airline catering, premium room minibars.</li>
             <li><strong>500ml:</strong> Casual dining, conference rooms, takeaways, event goodie bags.</li>
             <li><strong>1L / 2L:</strong> Room service, family dining tables, premium retail.</li>
             <li><strong>20L Jars:</strong> Staff pantries, kitchen use, housekeeping, and dispensers.</li>
@@ -466,8 +466,8 @@ POSTS = [
           <p>Unlike household customers, HORECA buyers also need consistent branding, GST-compliant invoicing, and documentation for health inspections. These requirements make supplier selection a strategic decision rather than a simple purchase.</p>
 
           <h2>Choosing the Right Bottle and Jar Sizes</h2>
-          <p>Different service points need different formats. Fine-dining tables may prefer 300ml or 500ml premium bottles for presentation. Room service and family dining often use 1 litre or 2 litre bottles. Staff pantries, kitchens, and housekeeping rely on <a href="/20-liter-water-jar-delivery-kolkata" style="color: var(--color-accent);">20 litre water jars</a> connected to dispensers. The best suppliers offer the full range so you can source everything from one partner.</p>
-          <p>Offering the right size improves guest perception and controls cost. A 300ml bottle at a premium table feels appropriate, while a 2 litre bottle at a family restaurant offers value. Match the format to the occasion.</p>
+          <p>Different service points need different formats. Fine-dining tables may prefer 250ml or 500ml premium bottles for presentation. Room service and family dining often use 1 litre or 2 litre bottles. Staff pantries, kitchens, and housekeeping rely on <a href="/20-liter-water-jar-delivery-kolkata" style="color: var(--color-accent);">20 litre water jars</a> connected to dispensers. The best suppliers offer the full range so you can source everything from one partner.</p>
+          <p>Offering the right size improves guest perception and controls cost. A 250ml bottle at a premium table feels appropriate, while a 2 litre bottle at a family restaurant offers value. Match the format to the occasion.</p>
 
           <h2>Certifications HORECA Buyers Must Verify</h2>
           <p>Food businesses face stricter scrutiny than households. Verify the following before signing a contract:</p>

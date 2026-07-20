@@ -13,7 +13,7 @@ Zenith Water by Maharani Beverages LLP is a static, multi-page marketing and lea
 
 The site architecture is best understood as a central brand hub — the homepage and a dozen core landing pages — surrounded by a programmatically generated “long tail” of roughly 200+ search-engine-optimized pages targeting localities, industries, and product-intent keywords. These pages are produced by Python scripts (`generate-landing-pages.py`, `generate-service-areas-page.py`, `generate-blog-posts.py`) that inject brand constants, location data, and keyword templates into a shared HTML shell. The result is a dense topical map that covers virtually every high-intent query a Kolkata or Howrah buyer might type: “packaged drinking water Salt Lake”, “water supplier Howrah”, “20 litre jar supplier Kolkata”, “water supply for hotels Kolkata”, and so on.
 
-Every page is reinforced with JSON-LD structured data (Organization, LocalBusiness, Service, Product, FAQPage, BreadcrumbList), Open Graph and Twitter Card tags, canonical URLs, unique title and meta descriptions, and an internally linked footer. Conversion is driven by a WhatsApp-first model: floating buttons, mobile sticky bars, form-to-WhatsApp redirects, and click-to-call links. The brand voice is premium and somewhat abstract — “molecularly refined,” “architectural elegance,” “absolute purity” — yet the underlying offer is pragmatic: FSSAI-certified packaged drinking water in 300ml, 500ml, 1L, 2L bottles and 20L jars, delivered across the Kolkata-Howrah metro.
+Every page is reinforced with JSON-LD structured data (Organization, LocalBusiness, Service, Product, FAQPage, BreadcrumbList), Open Graph and Twitter Card tags, canonical URLs, unique title and meta descriptions, and an internally linked footer. Conversion is driven by a WhatsApp-first model: floating buttons, mobile sticky bars, form-to-WhatsApp redirects, and click-to-call links. The brand voice is premium and somewhat abstract — “molecularly refined,” “architectural elegance,” “absolute purity” — yet the underlying offer is pragmatic: FSSAI-certified packaged drinking water in 250ml, 500ml, 1L, 2L bottles and 20L jars, delivered across the Kolkata-Howrah metro.
 
 This report walks through the website alphabetically and functionally, from brand positioning to deployment configuration, page by page, feature by feature, and script by script.
 
@@ -231,7 +231,7 @@ The `ZENITH_PINCODES` object maps selected Kolkata and Howrah pincodes to locali
 
 A grid of four product cards with 3D tilt hover effect:
 
-- **300ml** — ₹6
+- **250ml** — ₹6
 - **500ml** — ₹10, “Most Popular”
 - **1L** — ₹20, “Best Seller”
 - **2L** — ₹30
@@ -285,7 +285,7 @@ The homepage injects a large `@graph` schema containing:
 - Organization
 - WebSite (with SearchAction)
 - LocalBusiness
-- Product ItemList (300ml, 500ml, 1L, 2L, 20L jar)
+- Product ItemList (250ml, 500ml, 1L, 2L, 20L jar)
 - FAQPage
 
 This gives Google rich-signal data for sitelinks, local pack, product listings, and FAQ snippets.
@@ -486,7 +486,7 @@ The `PRODUCT_CONTEXT` dictionary defines eight product intents:
 7. Packaged Water Supplier
 8. Bisleri Alternative
 
-Each generates city-specific pages such as `/20-liter-water-jar-delivery-kolkata`, `/bisleri-alternative-kolkata`, `/mineral-water-supplier-howrah`. Product pages include `Product` schema for each available size (300ml, 500ml, 1L, 2L, 20L).
+Each generates city-specific pages such as `/20-liter-water-jar-delivery-kolkata`, `/bisleri-alternative-kolkata`, `/mineral-water-supplier-howrah`. Product pages include `Product` schema for each available size (250ml, 500ml, 1L, 2L, 20L).
 
 ### 7.6 City Hub Pages
 
@@ -930,7 +930,7 @@ A lightweight version of the Animate On Scroll library. It adds `fade-up`, `fade
 
 Handles the “Add to Enquiry” feature on product cards. It:
 
-- Stores selected SKUs (300ml, 500ml, 1L, 2L) and quantities.
+- Stores selected SKUs (250ml, 500ml, 1L, 2L) and quantities.
 - Renders a floating cart summary.
 - Builds a WhatsApp message with the enquiry list.
 - Opens WhatsApp when the user submits the enquiry.
@@ -1025,7 +1025,7 @@ Key image assets include:
 - `zenith_logo_compact.webp` — optimized logo variant.
 - Hero slide images (`hero-slide-1-optimized.webp`, `hero-slide-1-mobile.webp`, etc.).
 - `bottles-hero-bg.jpg`, `bulk-hero-bg.jpg` — page-specific hero backgrounds.
-- Product bottle photos for 300ml, 500ml, 1L, 2L, 20L.
+- Product bottle photos for 250ml, 500ml, 1L, 2L, 20L.
 - `fssai_certificate.jpg` — certificate thumbnail.
 - `udyam_certificate.pdf` — MSME registration.
 - Certificate thumbnails in the certifications section.
@@ -1151,7 +1151,7 @@ All forms post to the same Formspree form ID `mbdqkpbn`. This makes it harder to
 
 ### 17.10 Fabricated Reviews
 
-The aggregateRating and review schema use made-up star ratings and review counts (e.g., 156 reviews for 300ml, 318 for 20L jar). If these are not based on real reviews, they violate Google’s structured data guidelines and could result in manual actions or rich-result suppression.
+The aggregateRating and review schema use made-up star ratings and review counts (e.g., 156 reviews for 250ml, 318 for 20L jar). If these are not based on real reviews, they violate Google’s structured data guidelines and could result in manual actions or rich-result suppression.
 
 ### 17.11 No E-Commerce or Order Tracking
 
@@ -1440,7 +1440,7 @@ Zenith Water offers five standard SKUs across consumer and commercial channels:
 
 | Size | MRP | Positioning | Typical Use Case |
 |------|-----|-------------|------------------|
-| 300ml | ₹6 | Compact / premium serve | Fine dining, airlines, conferences, hotel minibars |
+| 250ml | ₹6 | Compact / premium serve | Fine dining, airlines, conferences, hotel minibars |
 | 500ml | ₹10 | Most Popular | Everyday hydration, offices, gyms, events, takeaways |
 | 1L | ₹20 | Best Seller | Hospitality tables, family use, premium retail |
 | 2L | ₹30 | Volume serve | Gyms, canteens, households, picnics |
@@ -1537,7 +1537,7 @@ The packaging is presented as part of the brand experience, especially for hotel
 ### 26.2 Product Page Keywords
 
 - “Zenith Water products”
-- “300ml bottled water Kolkata”
+- “250ml bottled water Kolkata”
 - “500ml packaged drinking water”
 - “1 litre water bottle price Kolkata”
 - “2 litre water bottle supplier”
@@ -2126,7 +2126,7 @@ The intent is `packaged-drinking-water`.
 
 - **Slug:** `packaged-drinking-water-salt-lake`
 - **Title:** `Packaged Drinking Water Salt Lake Kolkata | Zenith`
-- **Meta Description:** `Buy packaged drinking water in Salt Lake, Kolkata. FSSAI certified 300ml, 500ml, 1L, 2L bottles & 20L jars with same-day delivery. Call +91 82748 37341.`
+- **Meta Description:** `Buy packaged drinking water in Salt Lake, Kolkata. FSSAI certified 250ml, 500ml, 1L, 2L bottles & 20L jars with same-day delivery. Call +91 82748 37341.`
 - **H1:** `Packaged Drinking Water in <span style='color: var(--color-accent);'>Salt Lake</span>, Kolkata`
 - **Hero Subtitle:** `Zenith Water delivers FSSAI-certified packaged drinking water in Salt Lake, Kolkata. Bottles and 20L jars delivered to your door.`
 - **Service Type:** `Packaged Drinking Water Delivery`

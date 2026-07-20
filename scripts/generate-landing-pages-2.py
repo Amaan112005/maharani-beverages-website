@@ -108,7 +108,7 @@ PAGES = [
         'section1_body': '''<ul style="list-style: none; padding: 0;">
                 <li style="margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;"><strong style="color: white; display: block; margin-bottom: 0.5rem;">Balanced Minerals</strong>Our water retains essential minerals while removing impurities, delivering both taste and health benefits.</li>
                 <li style="margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;"><strong style="color: white; display: block; margin-bottom: 0.5rem;">7-Stage Purification</strong>Advanced filtration, RO, UV, and ozonation ensure purity in every bottle.</li>
-                <li style="margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;"><strong style="color: white; display: block; margin-bottom: 0.5rem;">Multiple Sizes</strong>Choose from 300ml, 500ml, 1L, 2L bottles, and 20L jars for every need.</li>
+                <li style="margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;"><strong style="color: white; display: block; margin-bottom: 0.5rem;">Multiple Sizes</strong>Choose from 250ml, 500ml, 1L, 2L bottles, and 20L jars for every need.</li>
               </ul>''',
         'section2_title': 'Mineral Water for Homes & Businesses',
         'section2_body': '''<p>Our mineral water is trusted by hotels, restaurants, corporate offices, and households across Kolkata. The mineral balance is carefully maintained to provide a clean, refreshing taste that complements any dining or hydration setting.</p>
@@ -118,7 +118,7 @@ PAGES = [
         'faqs': [
             ('Where can I buy mineral water in Kolkata?', 'Zenith supplies premium mineral water across Kolkata. Contact us for home delivery or bulk supply.'),
             ('Is Zenith mineral water FSSAI certified?', 'Yes, all Zenith mineral water is FSSAI certified and complies with BIS IS 14543 standards.'),
-            ('What sizes of mineral water are available?', 'We offer 300ml, 500ml, 1L, 2L bottles, and 20L jars.'),
+            ('What sizes of mineral water are available?', 'We offer 250ml, 500ml, 1L, 2L bottles, and 20L jars.'),
         ],
         'wa_text': 'Hello%20Zenith%2C%20I%20want%20to%20buy%20mineral%20water%20in%20Kolkata.%20Please%20share%20details.'
     },
@@ -180,7 +180,7 @@ PAGES = [
         'section1_body': '''<ul style="list-style: none; padding: 0;">
                 <li style="margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;"><strong style="color: white; display: block; margin-bottom: 0.5rem;">Guest-Ready Presentation</strong>Elegant bottle designs that complement fine-dining tables, hotel minibars, and banquet settings.</li>
                 <li style="margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;"><strong style="color: white; display: block; margin-bottom: 0.5rem;">Consistent Supply</strong>Scheduled deliveries ensure your stock never runs low during peak service hours.</li>
-                <li style="margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;"><strong style="color: white; display: block; margin-bottom: 0.5rem;">Size Flexibility</strong>300ml and 500ml for guest tables, 1L and 2L for room service, 20L jars for staff and kitchen use.</li>
+                <li style="margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;"><strong style="color: white; display: block; margin-bottom: 0.5rem;">Size Flexibility</strong>250ml and 500ml for guest tables, 1L and 2L for room service, 20L jars for staff and kitchen use.</li>
               </ul>''',
         'section2_title': 'Serving Kolkata\'s HORECA Sector',
         'section2_body': '''<p>We supply premium packaged drinking water to hotels near Park Street, restaurants in Salt Lake, banquet halls in Rajarhat, and cafes across South Kolkata. Our delivery schedules align with your business operations, and our pricing supports high-volume contracts.</p>
@@ -189,7 +189,7 @@ PAGES = [
         'coverage_footer': 'We also supply hotels and restaurants in Howrah. <a href="/packaged-drinking-water-howrah" style="color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);">View Howrah supply ↗</a>',
         'faqs': [
             ('Do you supply water to restaurants in Kolkata?', 'Yes, Zenith supplies packaged drinking water to restaurants, cafes, and cloud kitchens across Kolkata.'),
-            ('What bottle sizes are best for hotels?', 'Hotels typically use 300ml/500ml for guest tables, 1L/2L for room service, and 20L jars for staff areas.'),
+            ('What bottle sizes are best for hotels?', 'Hotels typically use 250ml/500ml for guest tables, 1L/2L for room service, and 20L jars for staff areas.'),
             ('Do you offer credit billing for hotels?', 'Yes, we offer bulk invoicing and credit terms for verified hotel and restaurant clients.'),
         ],
         'wa_text': 'Hello%20Zenith%2C%20I%20need%20water%20supply%20for%20my%20hotel%2Frestaurant%20in%20Kolkata.%20Please%20share%20details.'
@@ -287,7 +287,7 @@ PAGES = [
         'section1_title': 'Why Event Planners Choose Zenith',
         'section1_body': '''<ul style="list-style: none; padding: 0;">
                 <li style="margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;"><strong style="color: white; display: block; margin-bottom: 0.5rem;">On-Time Delivery</strong>We coordinate delivery with your event schedule, ensuring water is available before guests arrive.</li>
-                <li style="margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;"><strong style="color: white; display: block; margin-bottom: 0.5rem;">Bulk Pricing</strong>Special event pricing for large orders of 300ml and 500ml bottles.</li>
+                <li style="margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;"><strong style="color: white; display: block; margin-bottom: 0.5rem;">Bulk Pricing</strong>Special event pricing for large orders of 250ml and 500ml bottles.</li>
                 <li style="margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;"><strong style="color: white; display: block; margin-bottom: 0.5rem;">Branded Options</strong>Premium packaging that looks elegant on banquet tables and conference setups.</li>
               </ul>''',
         'section2_title': 'Events We Cover in Kolkata',

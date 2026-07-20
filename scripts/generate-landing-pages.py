@@ -25,28 +25,28 @@ PHONE_E164 = "918274837341"
 EMAIL = "marketing@maharanibeverages.com"
 FSSAI = "12825999000938"
 SIZE_PRICES = {
-    "300ml": "6.00",
+    "250ml": "6.00",
     "500ml": "10.00",
     "1L": "20.00",
     "2L": "30.00",
     "20L": "80.00",  # indicative MRP for 20L jar; update if needed
 }
 SIZE_RATINGS = {
-    "300ml": ("4.9", "156"),
+    "250ml": ("4.9", "156"),
     "500ml": ("4.9", "243"),
     "1L": ("4.8", "187"),
     "2L": ("4.9", "92"),
     "20L": ("4.9", "318"),
 }
 PRODUCT_URLS = {
-    "300ml": f"{DOMAIN}/pages/product-300ml",
+    "250ml": f"{DOMAIN}/pages/product-300ml",
     "500ml": f"{DOMAIN}/pages/product-500ml",
     "1L": f"{DOMAIN}/pages/product-1l",
     "2L": f"{DOMAIN}/pages/product-2l",
     "20L": f"{DOMAIN}/20-liter-water-jar-delivery-kolkata",
 }
 PRODUCT_IMAGES = {
-    "300ml": f"{DOMAIN}/product-300ml-optimized.jpg",
+    "250ml": f"{DOMAIN}/product-300ml-optimized.jpg",
     "500ml": f"{DOMAIN}/product-500ml-optimized.jpg",
     "1L": f"{DOMAIN}/product-1l-optimized.jpg",
     "2L": f"{DOMAIN}/product-2l-optimized.jpg",
@@ -182,7 +182,7 @@ INDUSTRY_CONTEXT = {
         "audience": "hotels, lodges, and guest houses",
         "pain": "high-volume room service, banquet hydration, and lobby dispenser needs",
         "benefit": "consistent supply of sealed premium water that elevates guest experience and brand perception",
-        "sizes": "300ml and 500ml room bottles, 1L table bottles, and 20L dispenser jars",
+        "sizes": "250ml and 500ml room bottles, 1L table bottles, and 20L dispenser jars",
         "cities": ["Kolkata", "Howrah", "Hooghly", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "restaurants": {
@@ -198,7 +198,7 @@ INDUSTRY_CONTEXT = {
         "audience": "hospitals, nursing homes, clinics, and diagnostic centres",
         "pain": "safe hydration for patients, visitors, and staff with strict hygiene standards",
         "benefit": "FSSAI-certified, sealed-at-source water that supports infection-control protocols",
-        "sizes": "300ml patient bottles, 500ml visitor bottles, and 20L jars for staff areas",
+        "sizes": "250ml patient bottles, 500ml visitor bottles, and 20L jars for staff areas",
         "cities": ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "schools": {
@@ -206,7 +206,7 @@ INDUSTRY_CONTEXT = {
         "audience": "schools, day-care centres, and coaching institutes",
         "pain": "safe drinking water for children during school hours and events",
         "benefit": "certified purity and child-safe sealed bottles for canteens and dispensers",
-        "sizes": "300ml and 500ml bottles plus 20L jars for staff and common areas",
+        "sizes": "250ml and 500ml bottles plus 20L jars for staff and common areas",
         "cities": ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "colleges": {
@@ -238,7 +238,7 @@ INDUSTRY_CONTEXT = {
         "audience": "banquet halls, wedding venues, and party lawns",
         "pain": "large one-day or weekend events need hundreds of sealed bottles quickly",
         "benefit": "event-size bottled water delivery with coordinated timing for caterers and hosts",
-        "sizes": "300ml, 500ml, and 1L bottles plus 20L jars for buffet stations",
+        "sizes": "250ml, 500ml, and 1L bottles plus 20L jars for buffet stations",
         "cities": ["Kolkata", "Hooghly", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "event-management": {
@@ -246,7 +246,7 @@ INDUSTRY_CONTEXT = {
         "audience": "event management companies, conferences, exhibitions, and marathons",
         "pain": "temporary venues need branded or plain bottled water on exact event dates",
         "benefit": "just-in-time bulk delivery across multiple venues with flexible invoicing",
-        "sizes": "300ml and 500ml for delegates, 1L/2L for crew, 20L jars for back offices",
+        "sizes": "250ml and 500ml for delegates, 1L/2L for crew, 20L jars for back offices",
         "cities": ["Kolkata", "Hooghly", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
     "gyms": {
@@ -354,7 +354,7 @@ PRODUCT_CONTEXT = {
         "label": "Water Bottle Supplier",
         "headline_city": "{city}",
         "desc": "retail and bulk bottled water",
-        "sizes": ["300ml", "500ml", "1L", "2L"],
+        "sizes": ["250ml", "500ml", "1L", "2L"],
         "has_product_schema": True,
         "cities": ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
@@ -362,7 +362,7 @@ PRODUCT_CONTEXT = {
         "label": "Mineral Water Supplier",
         "headline_city": "{city}",
         "desc": "premium packaged mineral water",
-        "sizes": ["300ml", "500ml", "1L", "2L", "20L"],
+        "sizes": ["250ml", "500ml", "1L", "2L", "20L"],
         "has_product_schema": True,
         "cities": ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
@@ -370,7 +370,7 @@ PRODUCT_CONTEXT = {
         "label": "Drinking Water Supplier",
         "headline_city": "{city}",
         "desc": "safe packaged drinking water",
-        "sizes": ["300ml", "500ml", "1L", "2L", "20L"],
+        "sizes": ["250ml", "500ml", "1L", "2L", "20L"],
         "has_product_schema": True,
         "cities": ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
@@ -378,7 +378,7 @@ PRODUCT_CONTEXT = {
         "label": "Packaged Water Supplier",
         "headline_city": "{city}",
         "desc": "IS 14543 packaged drinking water",
-        "sizes": ["300ml", "500ml", "1L", "2L", "20L"],
+        "sizes": ["250ml", "500ml", "1L", "2L", "20L"],
         "has_product_schema": True,
         "cities": ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
@@ -386,7 +386,7 @@ PRODUCT_CONTEXT = {
         "label": "Bisleri Alternative",
         "headline_city": "{city}",
         "desc": "affordable premium alternative to Bisleri",
-        "sizes": ["300ml", "500ml", "1L", "2L", "20L"],
+        "sizes": ["250ml", "500ml", "1L", "2L", "20L"],
         "has_product_schema": True,
         "cities": ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"],
     },
@@ -587,7 +587,7 @@ def build_faq_schema(faqs):
 def build_catalog_items():
     """Build OfferCatalog itemListElement with valid Product offers."""
     catalog = [
-        ("Zenith 300ml Water", "300ml", "4.9", "156"),
+        ("Zenith 250ml Water", "250ml", "4.9", "156"),
         ("Zenith 500ml Water", "500ml", "4.9", "243"),
         ("Zenith 1L Water", "1L", "4.8", "187"),
         ("Zenith 2L Water", "2L", "4.9", "92"),
@@ -727,7 +727,7 @@ def make_generic_faqs(page_name, city, audience="homes and offices"):
     return [
         (f"Who is the best {page_name.lower()} in {c}?", f"Zenith Water is a leading {page_name.lower()} in {c}, offering FSSAI-certified packaged drinking water with scheduled delivery and transparent pricing."),
         (f"Do you deliver packaged drinking water to {audience} in {c}?", f"Yes, we supply sealed, certified packaged drinking water to {audience} across {c} with flexible order sizes."),
-        (f"What bottle and jar sizes are available in {c}?", f"We offer 300ml, 500ml, 1L, 2L bottles and 20L dispenser jars for {audience} in {c}."),
+        (f"What bottle and jar sizes are available in {c}?", f"We offer 250ml, 500ml, 1L, 2L bottles and 20L dispenser jars for {audience} in {c}."),
         (f"Is your water FSSAI and BIS IS 14543 certified?", "Yes, every batch is FSSAI certified and complies with BIS IS 14543 packaged drinking water standards."),
         (f"How fast is delivery in {c}?", f"Most {c} orders are delivered within 24 to 48 hours, with same-day options for select central areas on bulk orders."),
         (f"What is the minimum order quantity?", "We have no strict minimum for retail orders; bulk and subscription plans receive better per-unit pricing."),
@@ -781,7 +781,7 @@ def make_locality_faqs(locality, city, nearby):
         (f"Where can I get packaged drinking water in {loc}, {c}?", f"Zenith Water delivers FSSAI-certified packaged drinking water directly to homes, offices, and businesses in {loc}, {c}."),
         (f"Do you provide home water delivery in {loc}?", f"Yes, we offer home delivery of bottles and 20L jars in {loc} with scheduled slots."),
         (f"Is same-day water delivery available in {loc}?", f"Same-day delivery may be available for bulk orders in {loc}; standard delivery is typically within 24–48 hours."),
-        (f"What sizes are available for delivery in {loc}?", f"We deliver 300ml, 500ml, 1L, 2L bottles and 20L dispenser jars in {loc}."),
+        (f"What sizes are available for delivery in {loc}?", f"We deliver 250ml, 500ml, 1L, 2L bottles and 20L dispenser jars in {loc}."),
         (f"Do you supply offices and shops in {loc}?", f"Yes, offices, shops, clinics, and institutions in {loc} can set up recurring supply plans."),
         (f"Is Zenith water FSSAI certified?", "Yes, all Zenith packaged drinking water is FSSAI certified and complies with BIS IS 14543."),
         (f"How do I order water in {loc}?", f"Call +91 82748 37341 or WhatsApp us with your {loc} address for quick confirmation and scheduling."),
@@ -1154,7 +1154,7 @@ def make_city_intent_pages():
                 "faqs": make_generic_faqs(label, city),
                 "wa_text": f"Hello%20Zenith%2C%20I%20am%20looking%20for%20{label.lower().replace(' ', '%20')}%20in%20{city}.%20Please%20share%20details.",
                 "has_product_schema": key in ("packaged-drinking-water", "bottled-water", "drinking-water", "mineral-water"),
-                "product_sizes": ["300ml", "500ml", "1L", "2L", "20L"] if key in ("packaged-drinking-water", "mineral-water") else (["300ml", "500ml", "1L", "2L"] if key == "bottled-water" else ["300ml", "500ml", "1L", "2L", "20L"]),
+                "product_sizes": ["250ml", "500ml", "1L", "2L", "20L"] if key in ("packaged-drinking-water", "mineral-water") else (["250ml", "500ml", "1L", "2L"] if key == "bottled-water" else ["250ml", "500ml", "1L", "2L", "20L"]),
                 "cluster": "product" if key in ("packaged-drinking-water", "bottled-water", "drinking-water", "mineral-water") else "corporate",
             })
     return pages
