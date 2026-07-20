@@ -14,19 +14,19 @@ render_page = ns['render_page']
 page = {
     'slug': 'areas-we-serve',
     'city': 'Kolkata',
-    'title': 'Areas We Serve | Packaged Drinking Water Delivery Across South Bengal | Zenith',
+    'title': 'Areas We Serve | Packaged Drinking Water Delivery Across Southern West Bengal | Zenith',
     'meta_description': 'Zenith Water delivers packaged drinking water across Kolkata, Howrah, Hooghly, Midnapore, 24 Parganas, Durgapur, Asansol & Burdwan. Check service areas & order now.',
     'og_title': 'Areas We Serve | Zenith Water',
-    'og_description': 'Complete list of areas served by Zenith Water delivery network across South Bengal.',
+    'og_description': 'Complete list of areas served by Zenith Water delivery network across Southern West Bengal.',
     'twitter_title': 'Areas We Serve | Zenith Water',
-    'twitter_description': 'Complete list of areas served by Zenith Water delivery network across South Bengal.',
+    'twitter_description': 'Complete list of areas served by Zenith Water delivery network across Southern West Bengal.',
     'service_type': 'Water Delivery',
     'service_schema_description': 'Packaged drinking water delivery service covering major residential, commercial, and industrial areas across Kolkata, Howrah, Hooghly, Midnapore, 24 Parganas, Durgapur, Asansol and Burdwan.',
     'breadcrumb_name': 'Areas We Serve',
     'back_link': 'packaged-drinking-water-kolkata',
     'back_label': 'Kolkata Hub',
     'eyebrow': 'Delivery Network',
-    'h1': 'Areas We Serve Across <span style="color: var(--color-accent);">South Bengal</span>',
+    'h1': 'Areas We Serve Across <span style="color: var(--color-accent);">Southern West Bengal</span>',
     'hero_subtitle': 'Zenith Water delivers FSSAI certified packaged drinking water to homes, offices, hotels, and industries across Kolkata, Howrah, Hooghly, Midnapore, 24 Parganas, Durgapur, Asansol and Burdwan.',
     'cta_text': 'Check availability in your area',
     'cta_url': '/',
@@ -80,7 +80,7 @@ page = {
                 <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/24-parganas-water-supply" style="color: var(--color-accent); text-decoration: none;">All 24 Parganas Zones</a></li>
               </ul>''',
     'section2_title': 'Howrah, Durgapur, Asansol & Burdwan',
-    'section2_body': '''<p>Our Howrah plant and expanding South Bengal distribution network enable fast, reliable delivery across industrial and residential zones.</p>
+    'section2_body': '''<p>Our Howrah plant and expanding Southern West Bengal distribution network enable fast, reliable delivery across industrial and residential zones.</p>
               <h3 style="color:#fff;font-size:1.25rem;margin:1.5rem 0 1rem;">Howrah</h3>
               <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                 <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/packaged-drinking-water-howrah-station" style="color: var(--color-accent); text-decoration: none;">Howrah Station</a></li>

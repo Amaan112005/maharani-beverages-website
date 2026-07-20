@@ -111,7 +111,7 @@ HOWRAH_LOCALITIES = [
 ]
 
 # Expanded service areas for 2026 — covering the full Kolkata Metropolitan Region
-# and key industrial / commercial corridors of South Bengal.
+# and key industrial / commercial corridors of Southern West Bengal.
 HOOGHLY_LOCALITIES = [
     ("chandannagar", "Chandannagar", "Hooghly", ["Bhadreswar", "Mankundu", "Chinsurah"]),
     ("chinsurah", "Chinsurah", "Hooghly", ["Hugli", "Bandel", "Bansberia"]),

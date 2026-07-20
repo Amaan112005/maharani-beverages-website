@@ -1,7 +1,7 @@
-# Zenith Water — South Bengal Expansion Changelog
+# Zenith Water — Southern West Bengal Expansion Changelog
 
 **Date:** 2026-07-20  
-**Scope:** Expand delivery network from Kolkata & Howrah to full South Bengal corridor:  
+**Scope:** Expand delivery network from Kolkata & Howrah to full Southern West Bengal corridor:  
 `Kolkata, Howrah, Hooghly, Midnapore (Midnapur), 24 Parganas, Durgapur, Asansol, Burdwan`
 
 ---
@@ -15,7 +15,7 @@
 | **City intent pages** | 7 core intent pages per new district: `/packaged-drinking-water-{city}`, `/water-delivery-{city}`, `/water-supplier-{city}`, `/bulk-water-supply-{city}`, `/bottled-water-{city}`, `/drinking-water-{city}`, `/mineral-water-{city}`. |
 | **Locality pages** | 3 intent pages per locality across 59 new localities (Chandannagar, Chinsurah, Serampore, Kharagpur, Haldia, Durgapur City Centre, Asansol City, Bardhaman City, etc.). |
 | **Product / Corporate / Industry pages** | City-specific pages now generated for all 8 districts (e.g., `/mineral-water-supplier-durgapur`, `/office-water-delivery-asansol`, `/water-supply-for-factories-hooghly`). |
-| **Homepage (`index.html`)** | Updated title, meta, OG/Twitter, geo tags, hero H1, brand authority section, service network, footer, schema `areaServed`, pincode checker (100+ new pincodes), and FAQs. Added a new visual "South Bengal Service Network" section with elegant district cards so the full city list appears in one professional place instead of crammed throughout the page. |
+| **Homepage (`index.html`)** | Updated title, meta, OG/Twitter, geo tags, hero H1, brand authority section, service network, footer, schema `areaServed`, pincode checker (100+ new pincodes), and FAQs. Added a new visual "Southern West Bengal Service Network" section with elegant district cards so the full city list appears in one professional place instead of crammed throughout the page. |
 | **Areas We Serve (`areas-we-serve.html`)** | Fully rewritten with all 8 districts, locality grids, hub links, and expanded FAQs. |
 | **Sitemap** | 507 unique URLs (no duplicates), all new district/city/locality/corporate/product pages included with proper priorities. |
 | **Generator scripts** | `scripts/generate-landing-pages.py` updated with new locality arrays, city coverage maps, schema areaServed, and generic hub/link logic. `scripts/generate-service-areas-page.py` rewritten to use the shared template engine. |
@@ -71,10 +71,10 @@ Every generated page includes:
 
 ## 4. Homepage Enhancements
 
-- **Title:** `Premium Packaged Drinking Water Kolkata, Howrah & South Bengal | Zenith`
+- **Title:** `Premium Packaged Drinking Water Kolkata, Howrah & Southern West Bengal | Zenith`
 - **Meta description** now lists all 8 districts.
 - **Geo tags** updated to include all service districts.
-- **Hero H1** updated to "Kolkata, Howrah & South Bengal".
+- **Hero H1** updated to "Kolkata, Howrah & Southern West Bengal".
 - **Pincode checker** expanded with 100+ new pincodes for Hooghly (`712xxx`), Midnapore (`721xxx`), 24 Parganas (`743xxx`), Durgapur/Asansol/Burdwan (`713xxx`).
 - **Service Network section** now links to all 8 district hub pages.
 - **Footer** includes new "District Hubs" column.
