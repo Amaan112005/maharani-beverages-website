@@ -1442,7 +1442,44 @@ img{max-width:100%;height:auto;display:block}
 .faq-item{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:12px;margin-bottom:1rem;overflow:hidden}
 .faq-q{padding:1.25rem 1.5rem;cursor:pointer;color:#fff;font-weight:700;user-select:none}
 .faq-a{padding:0 1.5rem 1.5rem;line-height:1.8}
-@media(max-width:768px){.hero-split{grid-template-columns:1fr}.content-split{grid-template-columns:1fr}.trust-strip{flex-direction:column;align-items:center}}
+.content-split{display:grid;grid-template-columns:3fr 2fr;gap:4rem}
+.coverage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+.hero{padding:10rem 0 6rem;position:relative;overflow:hidden;background:var(--color-primary)}
+.hero-eyebrow{color:var(--color-accent);font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:4px;margin-bottom:1.5rem}
+.hero-subtitle{color:rgba(255,255,255,0.75);font-size:1.1rem;max-width:700px;margin:0 auto 2rem;line-height:1.8}
+.hero-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-bottom:2rem}
+.nav-links{display:flex;gap:2rem;align-items:center;flex-wrap:wrap}
+.sticky-sidebar{position:sticky;top:100px}
+@media(max-width:768px){
+.header nav{flex-wrap:wrap;gap:.75rem;padding:.75rem 0}
+.nav-links{gap:.75rem 1rem;justify-content:center;width:100%}
+.nav-links a{font-size:.65rem!important;letter-spacing:1.5px!important}
+.nav-links .btn-ultimate{padding:.5rem .85rem!important;font-size:.65rem!important}
+.logo{width:64px}
+.hero{padding:7rem 0 4rem}
+.hero h1{font-size:clamp(1.7rem,8vw,2.3rem)!important;line-height:1.15!important;margin-bottom:1rem!important}
+.hero-eyebrow{font-size:.65rem!important;letter-spacing:3px!important;margin-bottom:1rem!important}
+.hero-subtitle{font-size:.95rem!important;max-width:100%!important;margin-bottom:1.5rem!important;line-height:1.7!important}
+.hero-cta{flex-direction:column;align-items:stretch;gap:.75rem}
+.hero-cta .btn-ultimate{width:100%;text-align:center;padding:.85rem 1rem!important;font-size:.75rem!important}
+.content-split{grid-template-columns:1fr!important;gap:2rem}
+.use-case-grid{grid-template-columns:1fr!important;gap:1rem}
+.coverage-grid{grid-template-columns:1fr!important;gap:.75rem}
+.coverage-grid>div{border-left-width:2px!important;padding-left:.75rem!important;font-size:.9rem!important}
+.related-grid{grid-template-columns:1fr!important;gap:1rem}
+.related-card{padding:1rem!important}
+.glass-card{padding:1.5rem!important}
+.sticky-sidebar{position:static!important}
+.faq-q{padding:1rem 1.25rem!important}
+.faq-a{padding:0 1.25rem 1rem!important}
+.trust-strip{flex-direction:column;align-items:stretch;gap:.5rem}
+.trust-pill{justify-content:center;font-size:.75rem;padding:.5rem .75rem}
+section[id=content]{padding:4rem 0!important}
+section[id=who-we-serve]{padding:3.5rem 0!important}
+section[id=related]{padding:3.5rem 0!important}
+h2{font-size:1.6rem!important}
+h3{font-size:1.2rem!important}
+}
 """.replace("\n", "")
 
 TEMPLATE = '''<!DOCTYPE html>
@@ -1511,7 +1548,7 @@ TEMPLATE = '''<!DOCTYPE html>
           <img src="{logo_data}" alt="{brand_short} Official Logo" class="logo" width="80" height="66" loading="eager" fetchpriority="high">
         </a>
       </div>
-      <div style="display:flex;gap:2rem;align-items:center;flex-wrap:wrap;">
+      <div class="nav-links">
         <a href="/" style="color:rgba(255,255,255,0.7);font-weight:600;font-size:.7rem;text-transform:uppercase;letter-spacing:2px;">Home</a>
         <a href="/pages/products" style="color:rgba(255,255,255,0.7);font-weight:600;font-size:.7rem;text-transform:uppercase;letter-spacing:2px;">Products</a>
         <a href="/{city_hub}" style="color:rgba(255,255,255,0.7);font-weight:600;font-size:.7rem;text-transform:uppercase;letter-spacing:2px;">{primary_city} Hub</a>
@@ -1523,14 +1560,14 @@ TEMPLATE = '''<!DOCTYPE html>
 
   <main>
     <!-- HERO -->
-    <section id="hero" style="position:relative;padding:10rem 0 6rem;background:var(--color-primary);overflow:hidden;">
+    <section id="hero" class="hero" style="background:var(--color-primary);">
       <div class="container" style="position:relative;z-index:2;text-align:center;">
-        <p style="color:var(--color-accent);font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:4px;margin-bottom:1.5rem;">{eyebrow}</p>
+        <p class="hero-eyebrow">{eyebrow}</p>
         <h1 style="font-family:var(--font-heading);font-size:clamp(2.2rem,6vw,4rem);color:#fff;line-height:1.1;margin-bottom:1.5rem;">{h1}</h1>
-        <p style="color:rgba(255,255,255,0.75);font-size:1.1rem;max-width:700px;margin:0 auto 2rem;line-height:1.8;">{hero_subtitle}</p>
+        <p class="hero-subtitle">{hero_subtitle}</p>
 
         <!-- CTA buttons -->
-        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-bottom:2rem;">
+        <div class="hero-cta">
           <a href="https://wa.me/{phone_e164}?text={wa_text}" class="btn-ultimate" style="background:#25D366;color:#fff;border:none;">Order on WhatsApp</a>
           <a href="tel:{phone}" class="btn-ultimate" style="background:transparent;color:#fff;border:1px solid var(--color-accent);">Call {phone}</a>
           <a href="/pages/contact" class="btn-ultimate" style="background:var(--color-accent);color:var(--color-primary);border:none;">Send Enquiry</a>
@@ -1561,7 +1598,7 @@ TEMPLATE = '''<!DOCTYPE html>
     <!-- MAIN CONTENT -->
     <section id="content" style="padding:6rem 0;background:var(--color-bg);">
       <div class="container">
-        <div class="content-split" style="display:grid;grid-template-columns:3fr 2fr;gap:4rem;">
+        <div class="content-split">
 
           <article style="color:var(--color-muted);line-height:1.9;">
             <div style="margin-bottom:4rem;">
@@ -1577,7 +1614,7 @@ TEMPLATE = '''<!DOCTYPE html>
             <div style="margin-bottom:4rem;">
               <h3 style="color:#fff;font-size:1.5rem;margin-bottom:1.25rem;">Service Coverage</h3>
               <p>Our delivery network covers the key sectors and neighbourhoods of {primary_city}:</p>
-              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem;">
+              <div class="coverage-grid">
                 {coverage_items}
               </div>
               <p style="margin-top:1.5rem;">{coverage_footer}</p>
@@ -1591,7 +1628,7 @@ TEMPLATE = '''<!DOCTYPE html>
 
           <!-- STICKY SIDEBAR -->
           <aside>
-            <div class="glass-card" style="padding:2rem;position:sticky;top:100px;">
+            <div class="glass-card sticky-sidebar" style="padding:2rem;">
               <h3 style="color:#fff;font-size:1.35rem;margin-bottom:1rem;">Quick Contact</h3>
               <p style="font-size:.9rem;opacity:.7;margin-bottom:1.5rem;">Get certified water delivered to your {primary_city} location today.</p>
 
