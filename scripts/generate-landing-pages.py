@@ -757,6 +757,10 @@ def build_graph_schema(page):
 def make_generic_faqs(page_name, city, audience="homes and offices"):
     """Generate a robust FAQ list for generic pages."""
     c = city
+    if c in ("Kolkata", "Howrah"):
+        geo_q = ("Do you serve both Kolkata and Howrah?", "Yes, our Ranihati facility and Kolkata distribution network cover both cities.")
+    else:
+        geo_q = (f"Do you serve areas beyond {c}?", f"Yes, our Ranihati facility delivers across {c} and nearby districts. WhatsApp us to confirm your exact location.")
     return [
         (f"Who is the best {page_name.lower()} in {c}?", f"Zenith Water is a leading {page_name.lower()} in {c}, offering FSSAI-certified packaged drinking water with scheduled delivery and transparent pricing."),
         (f"Do you deliver packaged drinking water to {audience} in {c}?", f"Yes, we supply sealed, certified packaged drinking water to {audience} across {c} with flexible order sizes."),
@@ -765,7 +769,7 @@ def make_generic_faqs(page_name, city, audience="homes and offices"):
         (f"How fast is delivery in {c}?", f"Most {c} orders are delivered within 24 to 48 hours, with same-day options for select central areas on bulk orders."),
         (f"What is the minimum order quantity?", "We have no strict minimum for retail orders; bulk and subscription plans receive better per-unit pricing."),
         (f"Can I schedule recurring deliveries?", "Yes, you can set daily, alternate-day, weekly, or custom schedules based on your consumption."),
-        (f"Do you serve both Kolkata and Howrah?", "Yes, our Ranihati facility and Kolkata distribution network cover both cities."),
+        geo_q,
         (f"How do I place an order?", "Call +91 82748 37341, WhatsApp, or submit the enquiry form for a quick quote and delivery slot."),
         (f"Do you provide GST invoices for businesses?", "Yes, all B2B deliveries come with proper GST invoices and compliance documentation."),
     ]
@@ -782,10 +786,10 @@ def make_industry_faqs(slug, city, ctx):
         (f"Is same-day delivery available for {audience} in {city}?", f"Same-day delivery may be available for central {city} locations; standard delivery is 24–48 hours."),
         (f"Do you provide GST invoices and compliance documents?", "Yes, every B2B delivery includes GST invoices, FSSAI license details, and batch traceability."),
         (f"How do I set up a recurring supply contract?", "Contact us with your monthly volume and schedule; we will draft a supply agreement with fixed delivery windows."),
-        (f"Is the water safe for patients and children?", "Yes, our 7-stage purification and sealed packaging make it safe for all age groups and sensitive settings."),
-        (f"Do you cover both Kolkata and Howrah?", "Yes, we deliver across Kolkata and Howrah from our Ranihati manufacturing facility."),
+        (f"Is the water safe for patients and children?", "Yes, our multi-stage purification and sealed packaging make it safe for all age groups and sensitive settings."),
+        (f"Do you cover both {city} and nearby districts?", f"Yes, we deliver across {city} and surrounding areas from our Ranihati manufacturing facility."),
         (f"What is the shelf life of Zenith bottled water?", "Sealed bottles are best consumed before the expiry date printed on the cap, typically 6 months from packing."),
-        (f"Can I get a free sample for my premises?", "Yes, sample bottles or jars can be arranged for qualified business enquiries in Kolkata and Howrah."),
+        (f"Can I get a free sample for my premises?", f"Yes, sample bottles or jars can be arranged for qualified business enquiries in {city}."),
     ]
 
 
@@ -806,22 +810,39 @@ def make_corporate_faqs(slug, city, ctx):
     ]
 
 
-def make_locality_faqs(locality, city, nearby):
+def make_locality_faqs(locality, city, nearby, intent="packaged-drinking-water"):
     loc = locality
     c = city
     nearby_name = nearby[0][1] if nearby else "the next zone"
-    return [
+    common = [
         (f"Where can I get packaged drinking water in {loc}, {c}?", f"Zenith Water delivers FSSAI-certified packaged drinking water directly to homes, offices, and businesses in {loc}, {c}."),
-        (f"Do you provide home water delivery in {loc}?", f"Yes, we offer home delivery of bottles and 20L jars in {loc} with scheduled slots."),
-        (f"Is same-day water delivery available in {loc}?", f"Same-day delivery may be available for bulk orders in {loc}; standard delivery is typically within 24–48 hours."),
-        (f"What sizes are available for delivery in {loc}?", f"We deliver 250ml, 500ml, 1L, 2L bottles and 20L dispenser jars in {loc}."),
-        (f"Do you supply offices and shops in {loc}?", f"Yes, offices, shops, clinics, and institutions in {loc} can set up recurring supply plans."),
         (f"Is Zenith water FSSAI certified?", "Yes, all Zenith packaged drinking water is FSSAI certified."),
         (f"How do I order water in {loc}?", f"Call +91 82748 37341 or WhatsApp us with your {loc} address for quick confirmation and scheduling."),
         (f"Do you deliver to nearby areas like {nearby_name}?", f"Yes, our fleet also covers {nearby_name} and surrounding {c} localities from our local dispatch centre."),
-        (f"What is the minimum order for {loc}?", "Retail orders are accepted with no strict minimum; bulk orders receive discounted per-unit pricing."),
         (f"Can I set up a monthly subscription?", f"Yes, monthly and quarterly subscription plans are available for {loc} residents and businesses."),
     ]
+    if intent == "water-delivery":
+        family = [
+            (f"Do you provide home water delivery in {loc}?", f"Yes, we offer home delivery of bottles and 20L jars in {loc} with scheduled slots."),
+            (f"How fast is water delivery in {loc}?", f"Standard delivery in {loc} is typically within 24–48 hours; same-day may be available for bulk orders."),
+            (f"What sizes can I get delivered in {loc}?", f"We deliver 250ml, 500ml, 1L, 2L bottles and 20L dispenser jars in {loc}."),
+            (f"Can I choose a recurring delivery slot in {loc}?", f"Yes, choose daily, alternate-day, or weekly slots and our {loc} route will serve your address on schedule."),
+        ]
+    elif intent == "water-supplier":
+        family = [
+            (f"Who supplies packaged drinking water in {loc}?", f"Zenith Water is a trusted supplier serving {loc} with sealed, FSSAI-certified bottles and 20L jars."),
+            (f"What is the minimum order in {loc}?", "Retail orders are accepted with no strict minimum; bulk orders receive discounted per-unit pricing."),
+            (f"Do you supply offices and shops in {loc}?", f"Yes, offices, shops, clinics, and institutions in {loc} can set up recurring supply plans."),
+            (f"Which jar and bottle sizes do you supply in {loc}?", f"250ml, 500ml, 1L, 2L bottles and 20L dispenser jars are stocked for {loc} customers."),
+        ]
+    else:  # packaged-drinking-water
+        family = [
+            (f"Do you provide home delivery in {loc}?", f"Yes, bottles and 20L jars are delivered to homes across {loc} with scheduled slots."),
+            (f"What pack sizes are available in {loc}?", f"250ml, 500ml, 1L, and 2L bottles plus 20L dispenser jars are available in {loc}."),
+            (f"Is same-day delivery available in {loc}?", f"Same-day delivery may be available for bulk orders in {loc}; standard delivery is typically within 24–48 hours."),
+            (f"Do you supply offices and shops in {loc}?", f"Yes, offices, shops, clinics, and institutions in {loc} can set up recurring supply plans."),
+        ]
+    return common[:2] + family + common[2:]
 
 
 def make_product_faqs(slug, city, ctx):
@@ -837,7 +858,7 @@ def make_product_faqs(slug, city, ctx):
         (f"Do you supply 20L jars to offices?", "Yes, 20L jars are our most popular office hydration solution with scheduled refill delivery."),
         (f"Can I order a mix of bottle sizes?", "Yes, mixed-size orders are welcome for hotels, events, and offices."),
         (f"What is the shelf life?", "Sealed bottles and jars have a shelf life of approximately 6 months from the packing date."),
-        (f"Do you deliver to Howrah as well?", "Yes, we manufacture at Ranihati, Howrah, and deliver across both Kolkata and Howrah."),
+        (f"Do you deliver across {city}?", f"Yes, we deliver across {city} from our Ranihati, Howrah facility, with scheduled slots for recurring orders."),
     ]
 
 
@@ -1294,7 +1315,7 @@ def make_locality_pages():
 
             coverage = [f"{loc_name} core area"] + [f"{a}" for a in nearby_areas[:5]]
             nearby = nearby_localities(slug, city, count=5)
-            faqs = make_locality_faqs(loc_name, city, nearby)
+            faqs = make_locality_faqs(loc_name, city, nearby, intent)
             pages.append({
                 "slug": page_slug,
                 "city": city,
