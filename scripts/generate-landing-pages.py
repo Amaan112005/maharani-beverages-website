@@ -408,6 +408,11 @@ PROTECTED_PATHS = {
     "packaged-drinking-water-bidhannagar.html",
     "water-delivery-bidhannagar.html",
     "water-supplier-bidhannagar.html",
+    "packaged-drinking-water-dum-dum.html",
+    "packaged-drinking-water-garia.html",
+    "packaged-drinking-water-howrah.html",
+    "packaged-drinking-water-new-town.html",
+    "packaged-drinking-water-rajarhat.html",
 }
 
 # =============================================================================
@@ -1009,7 +1014,7 @@ def _industry_section1(ctx, city):
         "<ul style='list-style: none; padding: 0;'>"
         f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Built for {ctx['label']}</strong>We understand the {ctx['pain']} and tailor supply frequency accordingly.</li>"
         f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Recommended Sizes</strong>{ctx['sizes']}.</li>"
-        f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Quality Assurance</strong>Every batch is tested and sealed at our Ranihati facility under FSSAI and BIS IS 14543.</li>"
+        f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Quality Assurance</strong>Every batch is tested and sealed at our Ranihati facility under FSSAI license {FSSAI}.</li>"
         "</ul>"
     )
 
@@ -1096,7 +1101,7 @@ def _hub_section2(city):
     cslug = slugify(city)
     return (
         f"<p>Our Ranihati plant and {city} distribution fleet give us the shortest lead times in the region. "
-        f"Every batch is FSSAI certified (license 12825999000938) and meets BIS IS 14543 standards.</p>"
+        f"Every batch is FSSAI certified (license 12825999000938).</p>"
         f"<p style='margin-top: 1.5rem;'>Ready to start? "
         f"<a href='/bulk-water-supply-{cslug}' style='color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);'>Get a bulk quote ↗</a>, "
         f"<a href='/pages/contact' style='color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);'>send an enquiry ↗</a>, or "
@@ -1161,7 +1166,7 @@ def make_city_intent_pages():
 def _city_intent_section1(label, city):
     return (
         f"<ul style='list-style: none; padding: 0;'>"
-        f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Certified Purity</strong>Every batch is FSSAI certified and meets BIS IS 14543 standards before leaving our Ranihati plant.</li>"
+        f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Certified Purity</strong>Every batch is FSSAI certified before leaving our Ranihati plant.</li>"
         f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Local Distribution</strong>We maintain regular supply routes across {city} for homes, offices, shops, and industries.</li>"
         f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Flexible Sizes</strong>250ml, 500ml, 1L, 2L bottles and 20L dispenser jars are available in {city}.</li>"
         "</ul>"
@@ -1578,7 +1583,7 @@ TEMPLATE = '''<!DOCTYPE html>
         <!-- Trust strip -->
         <div class="trust-strip" aria-label="Trust badges">
           <span class="trust-pill">✓ FSSAI {fssai}</span>
-          <span class="trust-pill">✓ BIS IS 14543</span>
+          <span class="trust-pill">✓ FSSAI Certified</span>
           <span class="trust-pill">✓ 7-Stage Purification</span>
           <span class="trust-pill">✓ Same-Day Delivery</span>
           <span class="trust-pill">✓ Local Ranihati Plant</span>
