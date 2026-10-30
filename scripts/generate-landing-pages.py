@@ -945,7 +945,7 @@ def _product_section2(ctx, city):
         f"<p>Our {city} distribution network carries {sizes} options so you can choose the right pack for every use case. "
         f"All units are sealed at our Ranihati facility and processed through 7-stage purification.</p>"
         f"<p style='margin-top: 1.5rem;'>For offices and recurring needs, we recommend the 20L jar program with scheduled refills. "
-        f"<a href='/office-water-delivery-{slugify(city)}' style='color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);'>View office delivery options ↗</a>.</p>"
+        f"<a href='{office_href(city)}' style='color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);'>View office delivery options ↗</a>.</p>"
     )
 
 
@@ -1077,7 +1077,7 @@ def _industry_section2(ctx, city):
     return (
         f"<p>{ctx['benefit'].capitalize()}. Our team plans delivery routes, inventory cycles, and emergency refills so you can focus on operations.</p>"
         f"<p style='margin-top: 1.5rem;'>We also support related sectors such as offices, events, and factories. "
-        f"<a href='/office-water-delivery-{slugify(city)}' style='color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);'>Explore office delivery ↗</a>.</p>"
+        f"<a href='{office_href(city)}' style='color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);'>Explore office delivery ↗</a>.</p>"
     )
 
 
@@ -1126,7 +1126,7 @@ def make_hub_pages():
 def _hub_section1(city):
     cslug = slugify(city)
     # Generic business links that gracefully fall back to city-specific pages if they exist
-    corporate_href = f"/corporate-water-supply-{cslug}" if city in ("Kolkata", "Howrah") else f"/office-water-supply-{cslug}"
+    corporate_href = f"/corporate-water-supply-{cslug}" if city in CORPORATE_CONTEXT["corporate-water-supply"]["cities"] else office_href(city)
     it_parks_href = f"/water-supply-for-it-parks-{cslug}" if city in ("Kolkata",) else "/water-supply-for-it-parks-kolkata"
     hotels_href = f"/water-supply-for-hotels-{cslug}" if city in ("Howrah",) else "/water-supply-for-hotels-restaurants-kolkata"
     factories_href = f"/water-supply-for-factories-{cslug}" if city in ("Howrah",) else "/water-supply-for-factories-industries-kolkata-howrah"
@@ -1140,7 +1140,7 @@ def _hub_section1(city):
         f"<a href='/20-litre-jar-supplier-{cslug}'>20L dispenser jars</a>, and "
         f"<a href='/mineral-water-supplier-{cslug}'>mineral water</a> options.</p>"
         f"<p style='margin-top: 1.5rem;'>For businesses, our corporate cluster includes "
-        f"<a href='/office-water-delivery-{cslug}'>office water delivery</a>, "
+        f"<a href='{office_href(city)}'>office water delivery</a>, "
         f"<a href='{corporate_href}'>corporate supply</a>, and "
         f"<a href='{it_parks_href}'>IT park supply</a>. "
         f"Industry-specific solutions cover <a href='{hotels_href}'>hotels</a>, "
@@ -1410,6 +1410,35 @@ INDUSTRY_LINKS = [
 ]
 
 
+def family_page_slug(key, city, cluster):
+    """Canonical slug for a (family, city) page, mirroring the special
+    slug cases in the page builders so internal links always target
+    real pages."""
+    cslug = slugify(city)
+    if cluster == "product" and key == "20-litre-water-jar" and city == "Kolkata":
+        return "20-liter-water-jar-delivery-kolkata"
+    if cluster == "industry":
+        if key in ("hotels", "water-supply-for-hotels") and city == "Kolkata":
+            return "water-supply-for-hotels-restaurants-kolkata"
+        if key in ("factories", "water-supply-for-factories") and city == "Kolkata":
+            return "water-supply-for-factories-industries-kolkata-howrah"
+        if key.startswith("water-supply-for-"):
+            return f"{key}-{cslug}"
+        return f"water-supply-for-{key}-{cslug}"
+    return f"{key}-{cslug}"
+
+
+def office_href(city):
+    """Link to the office-supply page that exists for this city;
+    fall back to bulk supply where no office page is generated."""
+    cslug = slugify(city)
+    if city in CORPORATE_CONTEXT["office-water-delivery"]["cities"]:
+        return f"/office-water-delivery-{cslug}"
+    if city in CORPORATE_CONTEXT["office-water-supply"]["cities"]:
+        return f"/office-water-supply-{cslug}"
+    return f"/bulk-water-supply-{cslug}"
+
+
 def related_links_for(page):
     """Return geographically coherent related links for a page.
 
@@ -1457,7 +1486,10 @@ def related_links_for(page):
             for c in ctx.get("cities", []):
                 if c == city:
                     continue
-                push(f"/{key}-{slugify(c)}", f"{label.split(' ' + city)[0]} {c}")
+                sslug = family_page_slug(key, c, cluster)
+                if sslug == slug:
+                    continue
+                push(f"/{sslug}", f"{label.split(' ' + city)[0]} {c}")
                 sib += 1
                 if sib >= 3:
                     break
@@ -1880,7 +1912,7 @@ def use_case_cards(city):
     hospitals_href = f"/water-supply-for-hospitals-{cslug}" if city in ("Kolkata", "Howrah") else "/water-supply-for-hospitals-kolkata"
     cases = [
         ("🏠", "Homes", f"Daily bottles & 20L jars for families in {city}", f"/water-delivery-{cslug}"),
-        ("🏢", "Offices", f"Scheduled dispenser jar delivery for {city} offices", f"/office-water-delivery-{cslug}"),
+        ("🏢", "Offices", f"Scheduled dispenser jar delivery for {city} offices", office_href(city)),
         ("🏨", "Hotels", "Premium bottled water for guest rooms & banquets", hotels_href),
         ("🏭", "Factories", "Bulk 20L jar programs for industrial units", factories_href),
         ("🏥", "Hospitals", "Safe hydration for patients, staff & visitors", hospitals_href),
