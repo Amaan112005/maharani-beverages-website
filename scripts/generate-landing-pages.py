@@ -625,6 +625,36 @@ def build_catalog_items():
     return items
 
 
+def breadcrumb_trail(page):
+    """Hierarchical trail used for both the visible breadcrumb nav and
+    the BreadcrumbList schema: Home -> hub(s) -> page."""
+    slug = page["slug"]
+    city = page.get("city", "Kolkata")
+    city_slug = slugify(city)
+    trail = [{"name": "Home", "item": f"{DOMAIN}/"}]
+    cluster = page.get("cluster", "generic")
+    if cluster in ("hub", "locality"):
+        trail.append({"name": "Areas We Serve", "item": f"{DOMAIN}/areas-we-serve"})
+    if cluster != "hub":
+        trail.append({"name": f"{city} Water Supply", "item": f"{DOMAIN}/{city_slug}-water-supply"})
+    if trail[-1]["item"] != f"{DOMAIN}/{slug}":
+        trail.append({"name": page["breadcrumb_name"], "item": f"{DOMAIN}/{slug}"})
+    return trail
+
+
+def breadcrumb_nav_html(trail):
+    """Visible breadcrumb nav matching the trail; last item is current page."""
+    parts = []
+    for i, node in enumerate(trail):
+        if i:
+            parts.append('<span style="color:rgba(255,255,255,0.3);margin:0 .5rem;" aria-hidden="true">›</span>')
+        if i == len(trail) - 1:
+            parts.append(f'<span aria-current="page" style="color:rgba(255,255,255,0.5);">{esc(node["name"])}</span>')
+        else:
+            parts.append(f'<a href="{node["item"]}" style="color:var(--color-accent);text-decoration:none;">{esc(node["name"])}</a>')
+    return "".join(parts)
+
+
 def build_graph_schema(page):
     """Build the full @graph schema for a page."""
     # Normalize city field
@@ -712,8 +742,8 @@ def build_graph_schema(page):
     graph.append({
         "@type": "BreadcrumbList",
         "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{DOMAIN}/"},
-            {"@type": "ListItem", "position": 2, "name": page["breadcrumb_name"], "item": f"{DOMAIN}/{page['slug']}"},
+            {"@type": "ListItem", "position": i + 1, **node}
+            for i, node in enumerate(breadcrumb_trail(page))
         ],
     })
 
@@ -1357,66 +1387,79 @@ INDUSTRY_LINKS = [
 
 
 def related_links_for(page):
-    """Return related page links for a given page."""
+    """Return geographically coherent related links for a page.
+
+    Every link must be a real sibling: same family in nearby cities, or
+    the other page families in the same city, or the parent city hub.
+    No more identical 10-link blocks across dozens of pages.
+    """
     cluster = page.get("cluster", "generic")
     city = page.get("city", "Kolkata")
     city_slug = slugify(city)
+    slug = page["slug"]
     related = []
 
-    if cluster == "product":
-        pool = PRODUCT_LINKS[:]
-    elif cluster == "corporate":
-        pool = CORPORATE_LINKS[:]
-    elif cluster == "industry":
-        pool = INDUSTRY_LINKS[:]
-    elif cluster == "locality":
-        loc = page.get("locality", "")
-        loc_slug = slugify(loc)
-        # Add generic city pages and a few nearby locality pages
-        pool = [
-            (f"/packaged-drinking-water-{city_slug}", f"Packaged Drinking Water {city}"),
-            (f"/water-delivery-{city_slug}", f"Water Delivery {city}"),
-            (f"/water-supplier-{city_slug}", f"Water Supplier {city}"),
-            ("/areas-we-serve", "Areas We Serve"),
-            ("/bulk-water-supply-kolkata", "Bulk Water Supply Kolkata"),
-            ("/bulk-water-supply-howrah", "Bulk Water Supply Howrah"),
-            ("/office-water-delivery-kolkata", "Office Water Delivery Kolkata"),
-            ("/water-supply-for-hotels-restaurants-kolkata", "Hotels & Restaurants"),
-            ("/water-supply-for-factories-industries-kolkata-howrah", "Factories & Industries"),
-        ]
+    def push(href, label):
+        if href.strip("/") != slug and (href, label) not in related:
+            related.append((href, label))
+
+    if cluster == "locality":
+        push(f"/packaged-drinking-water-{city_slug}", f"Packaged Drinking Water {city}")
+        push(f"/water-delivery-{city_slug}", f"Water Delivery {city}")
+        push(f"/water-supplier-{city_slug}", f"Water Supplier {city}")
+        push(f"/{city_slug}-water-supply", f"{city} Water Supply Hub")
         for ns, nname, ncity, _ in page.get("nearby_localities", [])[:4]:
-            pool.append((f"/packaged-drinking-water-{ns}", f"Packaged Drinking Water {nname}"))
-    elif cluster == "hub":
-        # Hub page: link to city-level product, corporate, industry, and locality pages
-        pool = [
-            (f"/packaged-drinking-water-{city_slug}", f"Packaged Drinking Water {city}"),
-            (f"/bulk-water-supply-{city_slug}", f"Bulk Water Supply {city}"),
-            (f"/water-supplier-{city_slug}", f"Water Supplier {city}"),
-            (f"/water-delivery-{city_slug}", f"Water Delivery {city}"),
-            (f"/bottled-water-{city_slug}", f"Bottled Water {city}"),
-            (f"/mineral-water-{city_slug}", f"Mineral Water {city}"),
-            (f"/drinking-water-{city_slug}", f"Drinking Water {city}"),
-        ]
-        for href, label in PRODUCT_LINKS + CORPORATE_LINKS + INDUSTRY_LINKS:
-            if href.endswith(f"-{city_slug}"):
-                pool.append((href, label))
+            push(f"/packaged-drinking-water-{ns}", f"Packaged Drinking Water {nname}")
+        push("/areas-we-serve", "Areas We Serve")
+        return related[:8]
+
+    if cluster in ("product", "corporate", "industry"):
+        # Same family in other cities (up to 3)
+        if slug.endswith(f"-{city_slug}"):
+            key = slug[: -len(city_slug) - 1]
+        else:
+            key = slug
+        ctx = None
+        if cluster == "product":
+            ctx = PRODUCT_CONTEXT.get(key)
+        elif cluster == "corporate":
+            ctx = CORPORATE_CONTEXT.get(key)
+        else:
+            ind_key = key[len("water-supply-for-"):] if key.startswith("water-supply-for-") else key
+            ctx = INDUSTRY_CONTEXT.get(ind_key)
+        label = page.get("breadcrumb_name", key.replace("-", " ").title())
+        if ctx:
+            sib = 0
+            for c in ctx.get("cities", []):
+                if c == city:
+                    continue
+                push(f"/{key}-{slugify(c)}", f"{label.split(' ' + city)[0]} {c}")
+                sib += 1
+                if sib >= 3:
+                    break
+        # Same city: the other core families + hub
+        push(f"/packaged-drinking-water-{city_slug}", f"Packaged Drinking Water {city}")
+        push(f"/water-delivery-{city_slug}", f"Water Delivery {city}")
+        push(f"/water-supplier-{city_slug}", f"Water Supplier {city}")
+        push(f"/{city_slug}-water-supply", f"{city} Water Supply Hub")
+        return related[:7]
+
+    if cluster == "hub":
+        for fam in ("packaged-drinking-water", "water-delivery", "water-supplier",
+                    "bottled-water", "mineral-water", "drinking-water"):
+            push(f"/{fam}-{city_slug}", f"{fam.replace('-', ' ').title()} {city}")
         added = 0
         for ls, lname, lcity, _ in ALL_LOCALITIES:
             if lcity == city:
-                pool.append((f"/packaged-drinking-water-{ls}", f"Packaged Drinking Water {lname}"))
+                push(f"/packaged-drinking-water-{ls}", f"Packaged Drinking Water {lname}")
                 added += 1
-                if added >= 8:
+                if added >= 6:
                     break
-        pool.append((f"/{city_slug}-water-supply", f"{city} Water Supply Hub"))
-    else:
-        pool = CORE_LINKS[:]
+        push("/areas-we-serve", "Areas We Serve")
+        return related[:10]
 
-    # Remove self-reference
-    pool = [(href, label) for href, label in pool if href.strip("/") != page["slug"]]
-
-    # Select 8-12 links deterministically
-    count = 10 if cluster != "locality" else 12
-    related = (pool * 2)[:count]
+    for href, label in CORE_LINKS[:6]:
+        push(href, label)
     return related
 
 
@@ -1569,6 +1612,9 @@ TEMPLATE = '''<!DOCTYPE html>
     <!-- HERO -->
     <section id="hero" class="hero" style="background:var(--color-primary);">
       <div class="container" style="position:relative;z-index:2;text-align:center;">
+        <nav aria-label="Breadcrumb" style="text-align:left;margin-bottom:2rem;font-size:.75rem;letter-spacing:.5px;">
+          {breadcrumb_nav}
+        </nav>
         <p class="hero-eyebrow">{eyebrow}</p>
         <h1 style="font-family:var(--font-heading);font-size:clamp(2.2rem,6vw,4rem);color:#fff;line-height:1.1;margin-bottom:1.5rem;">{h1}</h1>
         <p class="hero-subtitle">{hero_subtitle}</p>
@@ -1889,10 +1935,11 @@ def render_page(page):
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{DOMAIN}/"},
-            {"@type": "ListItem", "position": 2, "name": page["breadcrumb_name"], "item": canonical},
+            {"@type": "ListItem", "position": i + 1, **node}
+            for i, node in enumerate(breadcrumb_trail(page))
         ],
     }, indent=2)
+    breadcrumb_nav = breadcrumb_nav_html(breadcrumb_trail(page))
 
     html_out = TEMPLATE.format(
         title=esc(page["title"]),
@@ -1913,6 +1960,7 @@ def render_page(page):
         faq_schema=faq_schema,
         graph_schema=graph_schema,
         breadcrumb_schema=breadcrumb_schema,
+        breadcrumb_nav=breadcrumb_nav,
         city_hub=city_hub,
         primary_city=esc(city),
         eyebrow=esc(page["eyebrow"]),
