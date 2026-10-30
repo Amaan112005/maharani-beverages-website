@@ -399,10 +399,24 @@ ALWAYS_GENERATE = {
 }
 
 # Paths to protect from accidental overwrite (we never write these via this script).
+# The 11 pages below carry hand-written content that regeneration would destroy
+# (20L Kolkata pricing matrix, bespoke Midnapore copy, hand-tuned Barasat/Bidhannagar
+# edits). Verified via in-memory render diff 2026-10-30. Template-level improvements
+# (mobile CTA, breadcrumbs) must be hand-applied to these.
 PROTECTED_PATHS = {
     "index.html",
     "areas-we-serve.html",
     "googlee01cd75741d33e02.html",
+    "20-liter-water-jar-delivery-kolkata.html",
+    "water-supplier-midnapore.html",
+    "water-delivery-midnapore.html",
+    "packaged-drinking-water-midnapore.html",
+    "packaged-drinking-water-barasat.html",
+    "water-delivery-barasat.html",
+    "water-supplier-barasat.html",
+    "packaged-drinking-water-bidhannagar.html",
+    "water-delivery-bidhannagar.html",
+    "water-supplier-bidhannagar.html",
 }
 
 # =============================================================================
