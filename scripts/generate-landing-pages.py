@@ -139,11 +139,8 @@ TWENTY_FOUR_PARGANAS_LOCALITIES = [
     ("basirhat", "Basirhat", "24 Parganas", ["Haroa", "Baduria", "Hasnabad"]),
     ("bidhannagar", "Bidhannagar", "24 Parganas", ["Salt Lake", "Sector V", "Karunamoyee"]),
     ("rajarhat-24-parganas", "Rajarhat", "24 Parganas", ["New Town", "Action Area", "Unitech"]),
-    ("new-town-24-parganas", "New Town", "24 Parganas", ["Rajarhat", "Eco Park", "Rajarhat Gopalpur"]),
     ("sonarpur-24-parganas", "Sonarpur", "24 Parganas", ["Narendrapur", "Baruipur", "Rajpur"]),
     ("diamond-harbour", "Diamond Harbour", "24 Parganas", ["Falta", "Kulpi", "Mandirbazar"]),
-    ("behala-24-parganas", "Behala", "24 Parganas", ["New Alipore", "Thakurpukur", "Sarsuna"]),
-    ("garia-24-parganas", "Garia", "24 Parganas", ["Narendrapur", "New Garia", "Ashaban Housing"]),
 ]
 
 DURGAPUR_LOCALITIES = [
@@ -157,7 +154,6 @@ DURGAPUR_LOCALITIES = [
 ]
 
 ASANSOL_LOCALITIES = [
-    ("asansol-city", "Asansol City", "Asansol", ["Burnpur", "Raniganj", "Kulti"]),
     ("burnpur", "Burnpur", "Asansol", ["Asansol", "IISCO", "Neamatpur"]),
     ("raniganj", "Raniganj", "Asansol", ["Asansol", "Jamuria", "Kulti"]),
     ("kulti", "Kulti", "Asansol", ["Asansol", "Raniganj", "Barabani"]),
@@ -166,7 +162,6 @@ ASANSOL_LOCALITIES = [
 ]
 
 BURDWAN_LOCALITIES = [
-    ("bardhaman-city", "Bardhaman City", "Burdwan", ["Burdwan", "Shaktigarh", "Guskara"]),
     ("katwa", "Katwa", "Burdwan", ["Bardhaman", "Manteswar", "Ketugram"]),
     ("kalna", "Kalna", "Burdwan", ["Bardhaman", "Purbasthali", "Saptagram"]),
     ("durgapur-burdwan", "Durgapur", "Burdwan", ["Bardhaman", "Panagarh", "Andal"]),

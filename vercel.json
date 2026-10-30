@@ -26,6 +26,111 @@
       "source": "/locations/drinking-water-supplier-kolkata",
       "destination": "/drinking-water-supplier-kolkata",
       "permanent": true
+    },
+    {
+      "source": "/water-supplier-asansol-city",
+      "destination": "/water-supplier-asansol",
+      "permanent": true
+    },
+    {
+      "source": "/water-delivery-asansol-city",
+      "destination": "/water-delivery-asansol",
+      "permanent": true
+    },
+    {
+      "source": "/packaged-drinking-water-asansol-city",
+      "destination": "/packaged-drinking-water-asansol",
+      "permanent": true
+    },
+    {
+      "source": "/water-supplier-bardhaman-city",
+      "destination": "/water-supplier-burdwan",
+      "permanent": true
+    },
+    {
+      "source": "/water-delivery-bardhaman-city",
+      "destination": "/water-delivery-burdwan",
+      "permanent": true
+    },
+    {
+      "source": "/packaged-drinking-water-bardhaman-city",
+      "destination": "/packaged-drinking-water-burdwan",
+      "permanent": true
+    },
+    {
+      "source": "/water-supplier-new-town-24-parganas",
+      "destination": "/water-supplier-new-town",
+      "permanent": true
+    },
+    {
+      "source": "/water-delivery-new-town-24-parganas",
+      "destination": "/water-delivery-new-town",
+      "permanent": true
+    },
+    {
+      "source": "/packaged-drinking-water-new-town-24-parganas",
+      "destination": "/packaged-drinking-water-new-town",
+      "permanent": true
+    },
+    {
+      "source": "/water-supplier-behala-24-parganas",
+      "destination": "/water-supplier-behala",
+      "permanent": true
+    },
+    {
+      "source": "/water-delivery-behala-24-parganas",
+      "destination": "/water-delivery-behala",
+      "permanent": true
+    },
+    {
+      "source": "/packaged-drinking-water-behala-24-parganas",
+      "destination": "/packaged-drinking-water-behala",
+      "permanent": true
+    },
+    {
+      "source": "/water-supplier-garia-24-parganas",
+      "destination": "/water-supplier-garia",
+      "permanent": true
+    },
+    {
+      "source": "/water-delivery-garia-24-parganas",
+      "destination": "/water-delivery-garia",
+      "permanent": true
+    },
+    {
+      "source": "/packaged-drinking-water-garia-24-parganas",
+      "destination": "/packaged-drinking-water-garia",
+      "permanent": true
+    },
+    {
+      "source": "/water-supplier-rajarhat-24-parganas",
+      "destination": "/water-supplier-rajarhat",
+      "permanent": true
+    },
+    {
+      "source": "/water-delivery-rajarhat-24-parganas",
+      "destination": "/water-delivery-rajarhat",
+      "permanent": true
+    },
+    {
+      "source": "/packaged-drinking-water-rajarhat-24-parganas",
+      "destination": "/packaged-drinking-water-rajarhat",
+      "permanent": true
+    },
+    {
+      "source": "/water-supplier-sonarpur-24-parganas",
+      "destination": "/water-supplier-sonarpur",
+      "permanent": true
+    },
+    {
+      "source": "/water-delivery-sonarpur-24-parganas",
+      "destination": "/water-delivery-sonarpur",
+      "permanent": true
+    },
+    {
+      "source": "/packaged-drinking-water-sonarpur-24-parganas",
+      "destination": "/packaged-drinking-water-sonarpur",
+      "permanent": true
     }
   ],
   "rewrites": [

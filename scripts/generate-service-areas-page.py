@@ -74,8 +74,8 @@ page = {
                 <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/packaged-drinking-water-barrackpore" style="color: var(--color-accent); text-decoration: none;">Barrackpore</a></li>
                 <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/packaged-drinking-water-basirhat" style="color: var(--color-accent); text-decoration: none;">Basirhat</a></li>
                 <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/packaged-drinking-water-bidhannagar" style="color: var(--color-accent); text-decoration: none;">Bidhannagar / Salt Lake</a></li>
-                <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/packaged-drinking-water-rajarhat-24-parganas" style="color: var(--color-accent); text-decoration: none;">Rajarhat / New Town</a></li>
-                <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/packaged-drinking-water-sonarpur-24-parganas" style="color: var(--color-accent); text-decoration: none;">Sonarpur / Baruipur</a></li>
+                <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/packaged-drinking-water-rajarhat" style="color: var(--color-accent); text-decoration: none;">Rajarhat / New Town</a></li>
+                <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/packaged-drinking-water-sonarpur" style="color: var(--color-accent); text-decoration: none;">Sonarpur / Baruipur</a></li>
                 <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/packaged-drinking-water-diamond-harbour" style="color: var(--color-accent); text-decoration: none;">Diamond Harbour</a></li>
                 <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/24-parganas-water-supply" style="color: var(--color-accent); text-decoration: none;">All 24 Parganas Zones</a></li>
               </ul>''',
@@ -96,10 +96,10 @@ page = {
                 <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/packaged-drinking-water-durgapur-city-centre" style="color: var(--color-accent); text-decoration: none;">Durgapur City Centre</a></li>
                 <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/packaged-drinking-water-benachity" style="color: var(--color-accent); text-decoration: none;">Benachity</a></li>
                 <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/packaged-drinking-water-durgapur-steel-township" style="color: var(--color-accent); text-decoration: none;">Durgapur Steel Township</a></li>
-                <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/packaged-drinking-water-asansol-city" style="color: var(--color-accent); text-decoration: none;">Asansol City</a></li>
+                <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/packaged-drinking-water-asansol" style="color: var(--color-accent); text-decoration: none;">Asansol City</a></li>
                 <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/packaged-drinking-water-burnpur" style="color: var(--color-accent); text-decoration: none;">Burnpur</a></li>
                 <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/packaged-drinking-water-raniganj" style="color: var(--color-accent); text-decoration: none;">Raniganj</a></li>
-                <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/packaged-drinking-water-bardhaman-city" style="color: var(--color-accent); text-decoration: none;">Bardhaman / Burdwan City</a></li>
+                <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/packaged-drinking-water-burdwan" style="color: var(--color-accent); text-decoration: none;">Bardhaman / Burdwan City</a></li>
                 <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/packaged-drinking-water-katwa" style="color: var(--color-accent); text-decoration: none;">Katwa</a></li>
                 <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/durgapur-water-supply" style="color: var(--color-accent); text-decoration: none;">Durgapur Hub</a></li>
                 <li style="border-left: 2px solid var(--color-accent); padding-left: 1rem;"><a href="/asansol-water-supply" style="color: var(--color-accent); text-decoration: none;">Asansol Hub</a></li>
