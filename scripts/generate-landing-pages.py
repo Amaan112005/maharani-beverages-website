@@ -90,8 +90,6 @@ KOLKATA_LOCALITIES = [
     ("bhawanipore", "Bhowanipore", "Kolkata", ["Hazra", "Kalighat", "Alipore"]),
     ("kasba", "Kasba", "Kolkata", ["East Kolkata Township", "Rubi", "Haltu"]),
     ("sonarpur", "Sonarpur", "Kolkata", ["Narendrapur", "Baruipur", "Rajpur"]),
-    ("barasat", "Barasat", "Kolkata", ["Madhyamgram", "New Barrackpore", "Duttapukur"]),
-    ("bidhannagar", "Bidhannagar", "Kolkata", ["Salt Lake", "Sector V", "Karunamoyee"]),
     ("kankurgachi", "Kankurgachi", "Kolkata", ["Maniktala", "Phoolbagan", "Salt Lake"]),
     ("maniktala", "Maniktala", "Kolkata", ["Girish Park", "Shobhabazar", "Kankurgachi"]),
     ("shyambazar", "Shyambazar", "Kolkata", ["Hatibagan", "Bagbazar", "Gariahat"]),
@@ -138,8 +136,6 @@ TWENTY_FOUR_PARGANAS_LOCALITIES = [
     ("barrackpore", "Barrackpore", "24 Parganas", ["Dum Dum", "Titagarh", "Shyamnagar"]),
     ("basirhat", "Basirhat", "24 Parganas", ["Haroa", "Baduria", "Hasnabad"]),
     ("bidhannagar", "Bidhannagar", "24 Parganas", ["Salt Lake", "Sector V", "Karunamoyee"]),
-    ("rajarhat-24-parganas", "Rajarhat", "24 Parganas", ["New Town", "Action Area", "Unitech"]),
-    ("sonarpur-24-parganas", "Sonarpur", "24 Parganas", ["Narendrapur", "Baruipur", "Rajpur"]),
     ("diamond-harbour", "Diamond Harbour", "24 Parganas", ["Falta", "Kulpi", "Mandirbazar"]),
 ]
 
@@ -147,7 +143,7 @@ DURGAPUR_LOCALITIES = [
     ("durgapur-city-centre", "Durgapur City Centre", "Durgapur", ["Benachity", "Bidhan Nagar", "A-Zone"]),
     ("benachity", "Benachity", "Durgapur", ["City Centre", "Sarbamangala", "Nachan Road"]),
     ("durgapur-steel-township", "Durgapur Steel Township", "Durgapur", ["Steel Township East", "Alloy Steels Plant", "DVC"]),
-    ("bidhan-nagar-durgapur", "Bidhan Nagar Durgapur", "Durgapur", ["City Centre", "Fuljhore", "A-Zone"]),
+    ("bidhan-nagar-durgapur", "Bidhan Nagar", "Durgapur", ["City Centre", "Fuljhore", "A-Zone"]),
     ("fuljhore", "Fuljhore", "Durgapur", ["Bidhan Nagar", "Durgapur Bazaar", "Steel Township"]),
     ("abl-township", "ABL Township", "Durgapur", ["Ispat Nagar", "Durgapur Steel", "City Centre"]),
     ("andal", "Andal", "Durgapur", ["Panagarh", "Raniganj", "Durgapur"]),
@@ -454,11 +450,11 @@ def fit_meta(text, target_min=150, target_max=155):
             pos = text.rfind(marker, target_min - 1, target_max + 1)
             if pos != -1:
                 return text[: pos + 1].rstrip()
-        # Word-boundary fallback
+        # Word-boundary fallback: prefer a clean cut even if slightly under target_min
         trimmed = text[: target_max].rsplit(" ", 1)[0].rstrip(".,;")
-        if target_min <= len(trimmed) <= target_max:
+        if len(trimmed) >= 100:
             return trimmed + "."
-        # Hard trim with ellipsis guard
+        # Hard trim with ellipsis guard (last resort)
         return text[: target_max - 1].rstrip() + "."
 
     # Too short: append clean suffixes
@@ -467,23 +463,16 @@ def fit_meta(text, target_min=150, target_max=155):
         " Get same-day delivery across the city.",
         " Trusted by offices, hotels & homes.",
         " FSSAI license 12825999000938.",
-        " BIS IS 14543 certified purity.",
+        " Sealed-at-source purity.",
     ]
     base = text.rstrip(".")
     for suffix in suffixes:
         candidate = base + suffix
         if target_min <= len(candidate) <= target_max:
             return candidate
-        if len(candidate) > target_max:
-            # Trim suffix at word boundary, not mid-word
-            allowed = target_max - len(base)
-            if allowed < 4:
-                continue
-            trimmed_suffix = suffix[: allowed].rsplit(" ", 1)[0]
-            candidate2 = base + trimmed_suffix
-            if target_min <= len(candidate2) <= target_max:
-                return candidate2
-    return text.ljust(target_min)
+    # No clean suffix fits: a shorter meta ending at a sentence
+    # boundary is better than one padded into a mid-phrase cut.
+    return base + "."
 
 
 def city_coverage(city, exclude=None):
@@ -737,7 +726,7 @@ def make_generic_faqs(page_name, city, audience="homes and offices"):
         (f"Who is the best {page_name.lower()} in {c}?", f"Zenith Water is a leading {page_name.lower()} in {c}, offering FSSAI-certified packaged drinking water with scheduled delivery and transparent pricing."),
         (f"Do you deliver packaged drinking water to {audience} in {c}?", f"Yes, we supply sealed, certified packaged drinking water to {audience} across {c} with flexible order sizes."),
         (f"What bottle and jar sizes are available in {c}?", f"We offer 250ml, 500ml, 1L, 2L bottles and 20L dispenser jars for {audience} in {c}."),
-        (f"Is your water FSSAI and BIS IS 14543 certified?", "Yes, every batch is FSSAI certified and complies with BIS IS 14543 packaged drinking water standards."),
+        (f"Is your water FSSAI certified?", "Yes, every batch is FSSAI certified. Our license number is 12825999000938."),
         (f"How fast is delivery in {c}?", f"Most {c} orders are delivered within 24 to 48 hours, with same-day options for select central areas on bulk orders."),
         (f"What is the minimum order quantity?", "We have no strict minimum for retail orders; bulk and subscription plans receive better per-unit pricing."),
         (f"Can I schedule recurring deliveries?", "Yes, you can set daily, alternate-day, weekly, or custom schedules based on your consumption."),
@@ -774,7 +763,7 @@ def make_corporate_faqs(slug, city, ctx):
         (f"Can you deliver 20L jars on a recurring schedule?", "Yes, recurring 20L jar delivery is our most popular corporate plan with fixed weekly or bi-weekly slots."),
         (f"Do you offer corporate billing and GST invoices?", "Yes, we provide GST-compliant invoices, purchase orders, and credit terms for eligible enterprises."),
         (f"Which areas in {city} do you cover?", f"We cover all major business districts and industrial zones in {city}, plus extended suburbs on request."),
-        (f"Is the water FSSAI certified?", "Yes, Zenith Water is FSSAI certified with license number 12825999000938 and meets BIS IS 14543 standards."),
+        (f"Is the water FSSAI certified?", "Yes, Zenith Water is FSSAI certified with license number 12825999000938."),
         (f"Can you support multiple office locations?", "Yes, we can set up multi-location delivery schedules under a single corporate account."),
         (f"How do I request a quotation?", "Call +91 82748 37341 or WhatsApp us with your location and monthly volume for an instant quote."),
         (f"Do you supply branded or plain bottles?", "We primarily supply Zenith-branded sealed bottles; custom labelling can be discussed for large event orders."),
@@ -792,7 +781,7 @@ def make_locality_faqs(locality, city, nearby):
         (f"Is same-day water delivery available in {loc}?", f"Same-day delivery may be available for bulk orders in {loc}; standard delivery is typically within 24–48 hours."),
         (f"What sizes are available for delivery in {loc}?", f"We deliver 250ml, 500ml, 1L, 2L bottles and 20L dispenser jars in {loc}."),
         (f"Do you supply offices and shops in {loc}?", f"Yes, offices, shops, clinics, and institutions in {loc} can set up recurring supply plans."),
-        (f"Is Zenith water FSSAI certified?", "Yes, all Zenith packaged drinking water is FSSAI certified and complies with BIS IS 14543."),
+        (f"Is Zenith water FSSAI certified?", "Yes, all Zenith packaged drinking water is FSSAI certified."),
         (f"How do I order water in {loc}?", f"Call +91 82748 37341 or WhatsApp us with your {loc} address for quick confirmation and scheduling."),
         (f"Do you deliver to nearby areas like {nearby_name}?", f"Yes, our fleet also covers {nearby_name} and surrounding {c} localities from our local dispatch centre."),
         (f"What is the minimum order for {loc}?", "Retail orders are accepted with no strict minimum; bulk orders receive discounted per-unit pricing."),
@@ -808,7 +797,7 @@ def make_product_faqs(slug, city, ctx):
         (f"What sizes do you offer?", f"We offer {', '.join(sizes)} sizes to match home, office, and event requirements."),
         (f"Is the 20L jar compatible with standard dispensers?", "Yes, our 20L jars fit all standard top-load and bottom-load water dispensers."),
         (f"Do you offer bulk pricing for {label.lower()}?", f"Yes, bulk and recurring orders receive discounted pricing for {label.lower()} in {city}."),
-        (f"Is Zenith water safe for daily consumption?", "Yes, it is processed through 7-stage purification and is FSSAI and BIS IS 14543 certified."),
+        (f"Is Zenith water safe for daily consumption?", "Yes, it is processed through multi-stage purification and is FSSAI certified."),
         (f"How fast is delivery in {city}?", f"Standard delivery in {city} is 24–48 hours; same-day options may be available for central areas."),
         (f"Do you supply 20L jars to offices?", "Yes, 20L jars are our most popular office hydration solution with scheduled refill delivery."),
         (f"Can I order a mix of bottle sizes?", "Yes, mixed-size orders are welcome for hotels, events, and offices."),
@@ -839,12 +828,12 @@ def make_product_pages():
 
             label = ctx["label"]
             display = label.replace("20 Litre", "20 Litre").replace("Water Jar", "Water Jar")
-            title = truncate(f"{label} {city} | FSSAI Certified Packaged Water | Zenith", 60)
+            title = truncate(f"{label} {city} | Zenith Water", 60)
             meta = fit_meta(
                 f"Buy {label.lower()} in {city}. Zenith Water delivers FSSAI certified packaged drinking water "
                 f"for homes, offices & events. Call +91 82748 37341."
             )
-            h1 = f"{label} Supplier in <span style='color: var(--color-accent);'>{city}</span>"
+            h1 = f"{label}{'' if label.endswith('Supplier') else ' Supplier'} in <span style='color: var(--color-accent);'>{city}</span>"
             eyebrow = f"{label} {city}"
             service_type = f"{label} Supply"
 
@@ -884,7 +873,7 @@ def _product_section1(ctx, city):
         if size == "20L":
             lines.append(f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>20L Dispenser Jars</strong>Ideal for offices, factories, and homes in {city} that use water dispensers.</li>")
         elif size == "300ml":
-            lines.append(f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>300ml Bottles</strong>Compact serves for conferences, hotels, and retail counters in {city}.</li>")
+            lines.append(f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>250ml Bottles</strong>Compact serves for conferences, hotels, and retail counters in {city}.</li>")
         elif size == "500ml":
             lines.append(f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>500ml Bottles</strong>The everyday choice for offices, gyms, and events across {city}.</li>")
         elif size == "1L":
@@ -914,7 +903,7 @@ def make_corporate_pages():
             if key == "office-water-delivery" and city == "Kolkata":
                 slug = "office-water-delivery-kolkata"
             label = ctx["label"]
-            title = truncate(f"{label} {city} | Bulk Office Water Delivery | Zenith", 60)
+            title = truncate(f"{label} {city} | Zenith Water", 60)
             meta = fit_meta(
                 f"{label} in {city}. Zenith Water delivers FSSAI certified packaged drinking water to {ctx['audience']} with scheduled supply. Call +91 82748 37341."
             )
@@ -931,7 +920,7 @@ def make_corporate_pages():
                 "service_type": label,
                 "service_schema_description": truncate(f"{label} services in {city} for {ctx['audience']} with FSSAI certified packaged drinking water.", 250),
                 "breadcrumb_name": f"{label} {city}",
-                "eyebrow": f"Corporate Hydration Solutions",
+                "eyebrow": label,
                 "h1": h1,
                 "hero_subtitle": f"Zenith Water provides {label.lower()} in {city} for {ctx['audience']}. FSSAI-certified, scheduled delivery, and GST billing.",
                 "section1_title": f"Why {ctx['audience'].capitalize()} Choose Zenith",
@@ -952,7 +941,7 @@ def _corporate_section1(ctx, city):
     return (
         "<ul style='list-style: none; padding: 0;'>"
         f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Solves {ctx['pain'].capitalize()}</strong>We design schedules that prevent stock-outs and keep hydration points full.</li>"
-        f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Certified Quality</strong>FSSAI and BIS IS 14543 compliant water sealed at our Ranihati plant.</li>"
+        f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Certified Quality</strong>FSSAI certified water sealed at our Ranihati plant.</li>"
         f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Business Friendly</strong>GST invoices, purchase-order support, and flexible payment terms.</li>"
         "</ul>"
     )
@@ -981,7 +970,7 @@ def make_industry_pages():
             if key == "factories" and city == "Kolkata":
                 slug = "water-supply-for-factories-industries-kolkata-howrah"
             label = ctx["label"]
-            title = truncate(f"Water Supply for {label} {city} | Zenith Water", 60)
+            title = truncate(f"Water Supply for {label} {city} | Zenith", 60)
             meta = fit_meta(
                 f"Water supply for {label.lower()} in {city}. Zenith delivers FSSAI certified packaged drinking water to {ctx['audience']}. Call +91 82748 37341."
             )
@@ -1128,7 +1117,7 @@ def make_city_intent_pages():
         ("water-delivery", "Water Delivery", "Drinking Water Delivery", "Fast water delivery in {city}. Zenith delivers FSSAI certified bottled water & 20L jars for home, office & shop. Call +91 82748 37341."),
         ("water-supplier", "Water Supplier", "Packaged Drinking Water Supply", "Trusted water supplier in {city}. FSSAI certified packaged drinking water for homes, offices, hotels & shops. Call +91 82748 37341."),
         ("bulk-water-supply", "Bulk Water Supply", "Bulk Water Supply", "Bulk water supply in {city}. Zenith delivers FSSAI certified packaged drinking water for offices, hotels, factories & events. Call +91 82748 37341."),
-        ("bottled-water", "Bottled Water", "Bottled Water", "Bottled water supplier in {city}. 300ml, 500ml, 1L & 2L FSSAI certified bottles delivered across {city}. Call +91 82748 37341."),
+        ("bottled-water", "Bottled Water", "Bottled Water", "Bottled water supplier in {city}. 250ml, 500ml, 1L & 2L FSSAI certified bottles delivered across {city}. Call +91 82748 37341."),
         ("drinking-water", "Drinking Water", "Drinking Water", "Drinking water supplier in {city}. FSSAI certified packaged drinking water for homes & businesses. Call +91 82748 37341."),
         ("mineral-water", "Mineral Water", "Mineral Water", "Mineral water supplier in {city}. Premium FSSAI certified packaged mineral water delivered across {city}. Call +91 82748 37341."),
     ]
@@ -1136,7 +1125,7 @@ def make_city_intent_pages():
         cslug = slugify(city)
         for key, label, service_type, meta_template in intents:
             slug = f"{key}-{cslug}"
-            title = truncate(f"{label} {city} | FSSAI Certified | Zenith", 60)
+            title = truncate(f"{label} {city} | Zenith Water", 60)
             meta = fit_meta(meta_template.format(city=city))
             h1 = f"{label} in <span style='color: var(--color-accent);'>{city}</span>"
             pages.append({
@@ -1174,7 +1163,7 @@ def _city_intent_section1(label, city):
         f"<ul style='list-style: none; padding: 0;'>"
         f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Certified Purity</strong>Every batch is FSSAI certified and meets BIS IS 14543 standards before leaving our Ranihati plant.</li>"
         f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Local Distribution</strong>We maintain regular supply routes across {city} for homes, offices, shops, and industries.</li>"
-        f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Flexible Sizes</strong>300ml, 500ml, 1L, 2L bottles and 20L dispenser jars are available in {city}.</li>"
+        f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Flexible Sizes</strong>250ml, 500ml, 1L, 2L bottles and 20L dispenser jars are available in {city}.</li>"
         "</ul>"
     )
 
@@ -1195,8 +1184,8 @@ def make_locality_pages():
         for intent in ("packaged-drinking-water", "water-delivery", "water-supplier"):
             page_slug = f"{intent}-{slug}"
             if intent == "packaged-drinking-water":
-                title = truncate(f"Packaged Drinking Water {loc_name} | Zenith", 55)
-                meta = fit_meta(f"Buy packaged drinking water in {loc_name}, {city}. FSSAI certified 300ml, 500ml, 1L, 2L bottles & 20L jars with same-day delivery. Call +91 82748 37341.")
+                title = truncate(f"Packaged Drinking Water {loc_name} | Zenith", 60)
+                meta = fit_meta(f"Buy packaged drinking water in {loc_name}, {city}. FSSAI certified 250ml, 500ml, 1L, 2L bottles & 20L jars with same-day delivery. Call +91 82748 37341.")
                 eyebrow = "Local Packaged Water"
                 h1 = f"Packaged Drinking Water in <span style='color: var(--color-accent);'>{loc_name}</span>, {city}"
                 hero = f"Zenith Water delivers FSSAI-certified packaged drinking water in {loc_name}, {city}. Bottles and 20L jars delivered to your door."
@@ -1206,7 +1195,7 @@ def make_locality_pages():
                 sec1_body = (
                     "<ul style='list-style: none; padding: 0;'>"
                     f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Neighbourhood Delivery</strong>We route deliveries through {loc_name} and nearby sectors daily.</li>"
-                    f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Certified Purity</strong>FSSAI and BIS IS 14543 certified water sealed at source.</li>"
+                    f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Certified Purity</strong>FSSAI certified water sealed at source.</li>"
                     f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Flexible Orders</strong>From a single bottle to monthly 20L jar plans for {loc_name} households and offices.</li>"
                     "</ul>"
                 )
@@ -1218,7 +1207,9 @@ def make_locality_pages():
                 )
                 wa = f"Hello%20Zenith%2C%20I%20need%20packaged%20drinking%20water%20in%20{loc_name.replace(' ', '%20')}%2C%20{city}."
             elif intent == "water-delivery":
-                title = truncate(f"Water Delivery {loc_name} {city} | Zenith Water", 60)
+                title = f"Water Delivery {loc_name} {city} | Zenith Water"
+                if len(title) > 60:
+                    title = f"Water Delivery {loc_name} | Zenith Water"
                 meta = fit_meta(f"Fast water delivery in {loc_name}, {city}. Zenith delivers FSSAI certified bottled water & 20L jars for home, office & shop. Call +91 82748 37341.")
                 eyebrow = "Scheduled Water Delivery"
                 h1 = f"Water Delivery in <span style='color: var(--color-accent);'>{loc_name}</span>, {city}"
@@ -1241,7 +1232,9 @@ def make_locality_pages():
                 )
                 wa = f"Hello%20Zenith%2C%20I%20need%20water%20delivery%20in%20{loc_name.replace(' ', '%20')}%2C%20{city}."
             else:  # water-supplier
-                title = truncate(f"Water Supplier {loc_name} {city} | Zenith Water", 60)
+                title = f"Water Supplier {loc_name} {city} | Zenith Water"
+                if len(title) > 60:
+                    title = f"Water Supplier {loc_name} | Zenith Water"
                 meta = fit_meta(f"Trusted water supplier in {loc_name}, {city}. FSSAI certified packaged drinking water for homes, offices, hotels & shops. Call +91 82748 37341.")
                 eyebrow = "Authorised Local Supplier"
                 h1 = f"Water Supplier in <span style='color: var(--color-accent);'>{loc_name}</span>, {city}"
@@ -1252,8 +1245,8 @@ def make_locality_pages():
                 sec1_body = (
                     "<ul style='list-style: none; padding: 0;'>"
                     f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Local Availability</strong>We maintain regular supply routes through {loc_name} and surrounding sectors.</li>"
-                    f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Quality Certified</strong>FSSAI license {FSSAI} and BIS IS 14543 compliance for every unit.</li>"
-                    f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>All Sizes</strong>300ml to 20L jars for households, offices, and commercial users in {loc_name}.</li>"
+                    f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Quality Certified</strong>FSSAI license {FSSAI} for every unit.</li>"
+                    f"<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>All Sizes</strong>250ml to 20L jars for households, offices, and commercial users in {loc_name}.</li>"
                     "</ul>"
                 )
                 sec2_title = f"Supply Coverage Near {loc_name}"
@@ -1578,7 +1571,7 @@ TEMPLATE = '''<!DOCTYPE html>
         <!-- CTA buttons -->
         <div class="hero-cta">
           <a href="https://wa.me/{phone_e164}?text={wa_text}" class="btn-ultimate" style="background:#25D366;color:#fff;border:none;">Order on WhatsApp</a>
-          <a href="tel:{phone}" class="btn-ultimate" style="background:transparent;color:#fff;border:1px solid var(--color-accent);">Call {phone}</a>
+          <a href="tel:{phone_e164}" class="btn-ultimate" style="background:transparent;color:#fff;border:1px solid var(--color-accent);">Call {phone}</a>
           <a href="/pages/contact" class="btn-ultimate" style="background:var(--color-accent);color:var(--color-primary);border:none;">Send Enquiry</a>
         </div>
 
@@ -1643,7 +1636,7 @@ TEMPLATE = '''<!DOCTYPE html>
 
               <div style="margin-bottom:1.5rem;">
                 <p style="font-size:.7rem;color:var(--color-accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:.25rem;">Phone</p>
-                <a href="tel:{phone}" style="color:#fff;font-weight:800;font-size:1.4rem;text-decoration:none;">{phone}</a>
+                <a href="tel:{phone_e164}" style="color:#fff;font-weight:800;font-size:1.4rem;text-decoration:none;">{phone}</a>
               </div>
 
               <div style="margin-bottom:1.5rem;">
@@ -1958,6 +1951,32 @@ def validate(html_content, slug):
         issues.append(f"{slug}: missing canonical")
     if "@graph" not in html_content:
         issues.append(f"{slug}: missing @graph schema")
+
+    # Artifact guards (generator bug tripwires)
+    title_m = re.search(r"<title>(.*?)</title>", html_content, re.S)
+    title_text = title_m.group(1) if title_m else ""
+    if "..." in title_text:
+        issues.append(f"{slug}: literal ... in title")
+    dup_m = re.search(r"\b([A-Za-z]+)\s+\1\b", title_text, re.I)
+    if dup_m and dup_m.group(1).lower() != "dum":
+        issues.append(f"{slug}: duplicated word in title")
+    h1_m = re.search(r"<h1[^>]*>(.*?)</h1>", html_content, re.S)
+    h1_text = re.sub(r"<[^>]+>", " ", h1_m.group(1)) if h1_m else ""
+    dup_h1 = re.search(r"\b([A-Za-z]+)\s+\1\b", h1_text, re.I)
+    if dup_h1 and dup_h1.group(1).lower() != "dum":
+        issues.append(f"{slug}: duplicated word in h1")
+    for placeholder in ("{loc}", "{city}", "{label}", "{audience}", "{primary_city}", "{segment}", "{page_name}"):
+        if placeholder in html_content:
+            issues.append(f"{slug}: unfilled placeholder {placeholder}")
+    if re.search(r'href="tel:[^"]*\s', html_content):
+        issues.append(f"{slug}: spaced tel: link")
+    meta_m = re.search(r'<meta name="description" content="([^"]*)"', html_content)
+    if meta_m:
+        md = meta_m.group(1).replace("&amp;", "&").replace("&quot;", '"').replace("&#39;", "'")
+        if len(md) > 160:
+            issues.append(f"{slug}: meta description {len(md)} chars (>160)")
+        if "..." in md:
+            issues.append(f"{slug}: literal ... in meta description")
     return issues
 
 
@@ -2034,6 +2053,8 @@ def main():
     pages = generate_all_pages()
     generated_slugs = []
     validation_issues = []
+    seen_titles = {}
+    seen_h1s = {}
 
     for page in pages:
         slug = page["slug"]
@@ -2045,6 +2066,24 @@ def main():
             continue
 
         html_out = render_page(page)
+
+        # Cross-page duplicate title / H1 guard
+        title_m = re.search(r"<title>(.*?)</title>", html_out, re.S)
+        title_text = title_m.group(1).strip() if title_m else ""
+        if title_text:
+            if title_text in seen_titles:
+                validation_issues.append(f"{slug}: duplicate title also used by {seen_titles[title_text]}")
+            else:
+                seen_titles[title_text] = slug
+        h1_m = re.search(r"<h1[^>]*>(.*?)</h1>", html_out, re.S)
+        h1_text = re.sub(r"<[^>]+>", " ", h1_m.group(1)).strip() if h1_m else ""
+        h1_text = re.sub(r"\s+", " ", h1_text)
+        if h1_text:
+            if h1_text in seen_h1s:
+                validation_issues.append(f"{slug}: duplicate h1 also used by {seen_h1s[h1_text]}")
+            else:
+                seen_h1s[h1_text] = slug
+
         issues = validate(html_out, slug)
         validation_issues.extend(issues)
 
