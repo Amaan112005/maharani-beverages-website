@@ -131,6 +131,31 @@
       "source": "/packaged-drinking-water-sonarpur-24-parganas",
       "destination": "/packaged-drinking-water-sonarpur",
       "permanent": true
+    },
+    {
+      "source": "/pages/product-300ml",
+      "destination": "/pages/product-250ml",
+      "permanent": true
+    },
+    {
+      "source": "/product-300ml.jpg",
+      "destination": "/product-250ml.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/product-300ml.webp",
+      "destination": "/product-250ml.webp",
+      "permanent": true
+    },
+    {
+      "source": "/product-300ml-optimized.jpg",
+      "destination": "/product-250ml-optimized.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/product-300ml-optimized.webp",
+      "destination": "/product-250ml-optimized.webp",
+      "permanent": true
     }
   ],
   "rewrites": [

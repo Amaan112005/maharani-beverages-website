@@ -39,14 +39,14 @@ SIZE_RATINGS = {
     "20L": ("4.9", "318"),
 }
 PRODUCT_URLS = {
-    "250ml": f"{DOMAIN}/pages/product-300ml",
+    "250ml": f"{DOMAIN}/pages/product-250ml",
     "500ml": f"{DOMAIN}/pages/product-500ml",
     "1L": f"{DOMAIN}/pages/product-1l",
     "2L": f"{DOMAIN}/pages/product-2l",
     "20L": f"{DOMAIN}/20-liter-water-jar-delivery-kolkata",
 }
 PRODUCT_IMAGES = {
-    "250ml": f"{DOMAIN}/product-300ml-optimized.jpg",
+    "250ml": f"{DOMAIN}/product-250ml-optimized.jpg",
     "500ml": f"{DOMAIN}/product-500ml-optimized.jpg",
     "1L": f"{DOMAIN}/product-1l-optimized.jpg",
     "2L": f"{DOMAIN}/product-2l-optimized.jpg",

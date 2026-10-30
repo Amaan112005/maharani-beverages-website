@@ -137,12 +137,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://maharanibeverages.com/pages/product-300ml</loc>
+    <loc>https://maharanibeverages.com/pages/product-250ml</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://maharanibeverages.com/product-300ml-optimized.jpg</image:loc>
+      <image:loc>https://maharanibeverages.com/product-250ml-optimized.jpg</image:loc>
       <image:title>Zenith 250ml Mineral Water Bottle</image:title>
     </image:image>
   </url>
