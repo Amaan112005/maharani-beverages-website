@@ -14,7 +14,7 @@ render_page = ns['render_page']
 page = {
     'slug': 'areas-we-serve',
     'city': 'Kolkata',
-    'title': 'Areas We Serve | Packaged Drinking Water Delivery Across Southern West Bengal | Zenith',
+    'title': 'Areas We Serve | Packaged Drinking Water in West Bengal | Zenith',
     'meta_description': 'Zenith Water delivers packaged drinking water across Kolkata, Howrah, Hooghly, Midnapore, 24 Parganas, Durgapur, Asansol & Burdwan. Check service areas & order now.',
     'og_title': 'Areas We Serve | Zenith Water',
     'og_description': 'Complete list of areas served by Zenith Water delivery network across Southern West Bengal.',

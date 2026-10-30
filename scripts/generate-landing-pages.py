@@ -1186,7 +1186,7 @@ def make_locality_pages():
         for intent in ("packaged-drinking-water", "water-delivery", "water-supplier"):
             page_slug = f"{intent}-{slug}"
             if intent == "packaged-drinking-water":
-                title = truncate(f"Packaged Drinking Water {loc_name} {city} | Zenith", 60)
+                title = truncate(f"Packaged Drinking Water {loc_name} | Zenith", 55)
                 meta = fit_meta(f"Buy packaged drinking water in {loc_name}, {city}. FSSAI certified 300ml, 500ml, 1L, 2L bottles & 20L jars with same-day delivery. Call +91 82748 37341.")
                 eyebrow = "Local Packaged Water"
                 h1 = f"Packaged Drinking Water in <span style='color: var(--color-accent);'>{loc_name}</span>, {city}"

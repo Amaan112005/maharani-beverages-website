@@ -1,6 +1,33 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/index.php",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*.html",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/index_test",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index_test_out",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/drinking-water-supplier-kolkata",
+      "destination": "/drinking-water-supplier-kolkata",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/about",
