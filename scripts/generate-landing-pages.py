@@ -1026,6 +1026,9 @@ def make_industry_pages():
             if key == "factories" and city == "Kolkata":
                 slug = "water-supply-for-factories-industries-kolkata-howrah"
             label = ctx["label"]
+            if key == "hotels" and city == "Kolkata":
+                # Legacy slug serves hotels AND restaurants; say so in the heading
+                label = "Hotels & Restaurants"
             title = truncate(f"Water Supply for {label} {city} | Zenith", 60)
             meta = fit_meta(
                 f"Water supply for {label.lower()} in {city}. Zenith delivers FSSAI certified packaged drinking water to {ctx['audience']}. Call +91 82748 37341."
