@@ -31,13 +31,6 @@ SIZE_PRICES = {
     "2L": "30.00",
     "20L": "80.00",  # indicative MRP for 20L jar; update if needed
 }
-SIZE_RATINGS = {
-    "250ml": ("4.9", "156"),
-    "500ml": ("4.9", "243"),
-    "1L": ("4.8", "187"),
-    "2L": ("4.9", "92"),
-    "20L": ("4.9", "318"),
-}
 PRODUCT_URLS = {
     "250ml": f"{DOMAIN}/pages/product-250ml",
     "500ml": f"{DOMAIN}/pages/product-500ml",
@@ -590,14 +583,14 @@ def build_faq_schema(faqs):
 def build_catalog_items():
     """Build OfferCatalog itemListElement with valid Product offers."""
     catalog = [
-        ("Zenith 250ml Water", "250ml", "4.9", "156"),
-        ("Zenith 500ml Water", "500ml", "4.9", "243"),
-        ("Zenith 1L Water", "1L", "4.8", "187"),
-        ("Zenith 2L Water", "2L", "4.9", "92"),
-        ("Zenith 20L Jar", "20L", "4.9", "318"),
+        ("Zenith 250ml Water", "250ml"),
+        ("Zenith 500ml Water", "500ml"),
+        ("Zenith 1L Water", "1L"),
+        ("Zenith 2L Water", "2L"),
+        ("Zenith 20L Jar", "20L"),
     ]
     items = []
-    for name, size, rating, count in catalog:
+    for name, size in catalog:
         items.append({
             "@type": "Offer",
             "itemOffered": {
@@ -606,11 +599,6 @@ def build_catalog_items():
                 "image": PRODUCT_IMAGES[size],
                 "description": f"FSSAI-certified {name.lower()} delivered across Kolkata and Howrah.",
                 "brand": {"@type": "Brand", "name": BRAND_SHORT},
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": rating,
-                    "reviewCount": count,
-                },
                 "offers": {
                     "@type": "Offer",
                     "url": PRODUCT_URLS[size],
@@ -715,18 +703,12 @@ def build_graph_schema(page):
     # Product + Offer for product-size pages
     if page.get("has_product_schema"):
         for size in page.get("product_sizes", []):
-            rating = SIZE_RATINGS.get(size, ("4.9", "100"))
             graph.append({
                 "@type": "Product",
                 "name": f"Zenith {size} Packaged Drinking Water",
                 "image": PRODUCT_IMAGES.get(size, f"{DOMAIN}/{LOGO}"),
                 "description": f"FSSAI-certified {size} packaged drinking water supplied across {page['primary_city']}.",
                 "brand": {"@type": "Brand", "name": BRAND_SHORT},
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": rating[0],
-                    "reviewCount": rating[1],
-                },
                 "offers": {
                     "@type": "Offer",
                     "url": f"{DOMAIN}/{page['slug']}",
