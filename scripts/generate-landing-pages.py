@@ -2032,6 +2032,7 @@ TEMPLATE = '''<!DOCTYPE html>
     <a href="https://wa.me/{phone_e164}?text={wa_text}" target="_blank" rel="noopener noreferrer" style="background:#25D366;color:#01260d;">WhatsApp</a>
   </div>
   {pincode_script}
+  <script src="assets/js/lead-events.js" defer></script>
 </body>
 </html>
 '''

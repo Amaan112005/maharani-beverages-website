@@ -653,5 +653,6 @@
 function toggleMobileMenu(){var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');if(m.classList.contains('open')){closeMobileMenu();}else{m.style.display='flex';setTimeout(function(){m.classList.add('open');b.classList.add('open');},10);}}
 function closeMobileMenu(){var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');m.classList.remove('open');b.classList.remove('open');setTimeout(function(){if(!m.classList.contains('open'))m.style.display='none';},400);}
 </script>
+<script src="assets/js/lead-events.js" defer></script>
 </body>
 </html>
