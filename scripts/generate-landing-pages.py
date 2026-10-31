@@ -650,16 +650,11 @@ def build_graph_schema(page):
         page["primary_city"] = page["city"]
     graph = []
 
-    # WebSite
+    # WebSite (no SearchAction — the site has no search feature)
     graph.append({
         "@type": "WebSite",
         "name": f"{BRAND_SHORT} — {BRAND}",
         "url": DOMAIN,
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": {"@type": "EntryPoint", "urlTemplate": f"{DOMAIN}/?s={{search_term_string}}"},
-            "query-input": "required name=search_term_string",
-        },
     })
 
     # Organization / LocalBusiness
