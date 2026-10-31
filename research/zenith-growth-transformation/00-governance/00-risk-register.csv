@@ -1,0 +1,13 @@
+id,risk,likelihood,impact,class,mitigation,owner,status
+R-1,Regulatory claim inaccuracy (BIS/FSSAI) on public site,Low (verified accurate 2026-10-31),High,F → CLOSED,"Phase-1 review verified claim; residual: Gazette read via secondary sources → G3 gate on new wording",programme,closed
+R-2,Measurement blindness until GA4 approved,High,High,F,"Event spec ready; GSC exports as interim evidence; no vanity-metric reporting",owner,open
+R-3,Seasonal trough misread as strategy failure,Medium,Medium,H,"Pre-registered interpretation rule (baseline §2): judge vs seasonality-adjusted trend",programme,open
+R-4,GBP absence persists while owner verification pending,Medium,High,F,"Readiness audit done; owner action checklist issued; near-me recovery deferred",owner,open
+R-5,Review-star absence cedes SERP advantage,High,Medium,F,"Real-review programme is the only compliant path (spec in 08-local-seo phase)",programme,open
+R-6,Homepage LCP ~5.5s lab harms mobile first impression,Medium,Medium,F,"Decision framed for owner (D-16); interim: hero image compression already shipped",programme,open
+R-7,WhatsApp single-channel dependence,Medium,Medium,O,"Maintain tel + forms in parallel; track channel split post-GA4",programme,open
+R-8,Thin-page reassessment if locality pages not deepened,Low-Medium,Medium,H,"Differentiation wave-1 gated on owner facts; monitor GSC per-page trend",programme,open
+R-9,Owner-fact dependencies stall P1 items,High,Medium,F,"Owner register consolidated; sprint backlog sequenced around confirmed items first",owner,open
+R-10,Production regression during programme changes,Low,High,F,"Release gate §6: 721-URL crawl + strict parse + CDP suite per deploy; preview SSO noted as evidence limitation",programme,open
+R-11,Unverified third-party content (AI-overview misquotes),Low,Medium,O,"Entity consistency audit (Phase 14); factual discipline; no GEO tricks",programme,open
+R-12,Citation NAP inconsistency (future),Medium,Medium,O,"NAP spec from site as single source; quarterly audit",programme,open
