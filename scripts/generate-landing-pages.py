@@ -603,22 +603,19 @@ def build_catalog_items():
     items = []
     for name, size in catalog:
         items.append({
-            "@type": "Offer",
-            "itemOffered": {
-                "@type": "Product",
-                "name": name,
-                "image": PRODUCT_IMAGES[size],
-                "description": f"FSSAI-certified {name.lower()} delivered across Kolkata and Howrah.",
-                "brand": {"@type": "Brand", "name": BRAND_SHORT},
-                "offers": {
-                    "@type": "Offer",
-                    "url": PRODUCT_URLS[size],
-                    "price": SIZE_PRICES[size],
-                    "priceCurrency": "INR",
-                    "priceValidUntil": "2027-12-31",
-                    "availability": "https://schema.org/InStock",
-                    "seller": {"@type": "Organization", "name": BRAND},
-                },
+            "@type": "Product",
+            "name": name,
+            "image": PRODUCT_IMAGES[size],
+            "description": f"FSSAI-certified {name.lower()} delivered across Kolkata and Howrah.",
+            "brand": {"@type": "Brand", "name": BRAND_SHORT},
+            "offers": {
+                "@type": "Offer",
+                "url": PRODUCT_URLS[size],
+                "price": SIZE_PRICES[size],
+                "priceCurrency": "INR",
+                "priceValidUntil": "2027-12-31",
+                "availability": "https://schema.org/InStock",
+                "seller": {"@type": "Organization", "name": BRAND},
             },
         })
     return items
@@ -1017,9 +1014,12 @@ def make_industry_pages():
             if key == "hotels" and city == "Kolkata":
                 # Legacy slug serves hotels AND restaurants; say so in the heading
                 label = "Hotels &amp; Restaurants"
-            title = truncate(f"Water Supply for {label} {city} | Zenith", 60)
+            # label is HTML-escaped for raw-inserted fields (h1); fields that
+            # get esc()'d at render time need the unescaped form
+            label_raw = html.unescape(label)
+            title = truncate(f"Water Supply for {label_raw} {city} | Zenith", 60)
             meta = fit_meta(
-                f"Water supply for {label.lower()} in {city}. Zenith delivers FSSAI certified packaged drinking water to {ctx['audience']}. Call +91 82748 37341."
+                f"Water supply for {label_raw.lower()} in {city}. Zenith delivers FSSAI certified packaged drinking water to {ctx['audience']}. Call +91 82748 37341."
             )
             h1 = f"Water Supply for {label} in <span style='color: var(--color-accent);'>{city}</span>"
             pages.append({
@@ -1028,23 +1028,23 @@ def make_industry_pages():
                 "title": title,
                 "meta_description": meta,
                 "og_title": title,
-                "og_description": truncate(f"Reliable water supply for {label.lower()} in {city}. FSSAI certified delivery.", 200),
+                "og_description": truncate(f"Reliable water supply for {label_raw.lower()} in {city}. FSSAI certified delivery.", 200),
                 "twitter_title": title,
-                "twitter_description": truncate(f"Reliable water supply for {label.lower()} in {city}. FSSAI certified delivery.", 200),
+                "twitter_description": truncate(f"Reliable water supply for {label_raw.lower()} in {city}. FSSAI certified delivery.", 200),
                 "service_type": f"Water Supply for {label}",
                 "service_schema_description": truncate(f"Water supply services for {ctx['audience']} in {city} with FSSAI certified packaged drinking water.", 250),
                 "breadcrumb_name": f"Water Supply for {label} {city}",
                 "eyebrow": f"Industry-Specific Hydration",
                 "h1": h1,
-                "hero_subtitle": f"Zenith Water supplies {label.lower()} in {city} with {ctx['sizes']}. FSSAI certified, scheduled delivery, and bulk pricing.",
-                "section1_title": f"Hydration Solutions for {label} in {city}",
+                "hero_subtitle": f"Zenith Water supplies {label_raw.lower()} in {city} with {ctx['sizes']}. FSSAI certified, scheduled delivery, and bulk pricing.",
+                "section1_title": f"Hydration Solutions for {label_raw} in {city}",
                 "section1_body": _industry_section1(ctx, city),
-                "section2_title": f"Why {label} Trust Zenith",
+                "section2_title": f"Why {label_raw} Trust Zenith",
                 "section2_body": _industry_section2(ctx, city),
                 "coverage": city_coverage(city),
                 "coverage_footer": f"We serve {ctx['audience']} across {city} and surrounding districts. <a href='/bulk-water-supply-{city_slug}' style='color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);'>Get bulk pricing ↗</a>",
                 "faqs": make_industry_faqs(slug, city, ctx),
-                "wa_text": f"Hello%20Zenith%2C%20I%20need%20water%20supply%20for%20{label.lower().replace(' ', '%20')}%20in%20{city}.%20Please%20share%20details.",
+                "wa_text": f"Hello%20Zenith%2C%20I%20need%20water%20supply%20for%20{label_raw.lower().replace('&', '%26').replace(' ', '%20')}%20in%20{city}.%20Please%20share%20details.",
                 "has_product_schema": False,
                 "cluster": "industry",
             })
