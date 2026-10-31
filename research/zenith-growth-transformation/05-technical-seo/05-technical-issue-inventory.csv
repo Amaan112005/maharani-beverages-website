@@ -1,0 +1,11 @@
+issue_id,severity,area,description,status,owner,notes
+TI-1,P2,performance,Homepage TBT 957ms — hero slideshow letter-animation + inline payload,baseline logged; fix gated (D-16),owner,Performance baseline 2026-11-01
+TI-2,P2,performance,Homepage LCP 3.40s lab — JS-timed slideshow reveal,baseline logged; fix gated (D-16),owner,Improved from 5.5s via hero compression
+TI-3,P3,content,Homepage pincode checker uses inline duplicate dataset (vs assets/data/pincodes.json),open,programme,Unify when next touching homepage scripts
+TI-4,P3,data,pincodes.json legacy (93 entries); 4 top-demand localities uncovered (OC-22),awaiting owner,owner,OC-21/22
+TI-5,P3,fonts,Google Fonts CDN render-blocking (self-hosting ~200-400ms potential),deferred,programme,Quarter-2 candidate
+TI-6,P3,architecture,Homepage inline payload 164K,deferred (with any homepage redesign),programme,
+TI-7,P4,schema,1 legacy format inconsistency risk: duplicate title/H1 guard passes but og:title sync relies on scripted pass,monitor,programme,Generator validation covers titles/H1
+TI-8,P2,measurement,GA4 absent → no field data (CrUX) possible,deferred (Rule 7),owner,OC-20
+TI-9,P3,preview,SSO blocks automated preview validation; evidence level local-only for branch,known limitation,owner,Production validation used for relaunch
+TI-10,P3,review,No compliant path to review rich results until real corpus exists (E12),spec ready,programme,Review programme gated on GBP

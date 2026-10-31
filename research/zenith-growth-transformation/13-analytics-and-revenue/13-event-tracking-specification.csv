@@ -1,0 +1,10 @@
+event,trigger_source,status,parameters,dedupe_rule,ga4_key_event
+whatsapp_click,lead-events.js click delegation,LIVE,"page_url, page_family, segment, cta_type",1 per session per element,NO (diagnostic)
+phone_click,lead-events.js click delegation,LIVE,"page_url, page_family, segment",1 per session per element,NO (diagnostic)
+pincode_check,pincode-checker.js result render,LIVE,result state (available/region/unconfirmed),log every check,NO (diagnostic)
+form_submit,Formspree success (bulk/distributor/contact forms),SPEC,"form_type, page_family",1 per form submit,YES
+add_to_enquiry,enquiry-cart.js addToCart/addCustomToCart,LIVE,product + unit,per add,NO
+cart_checkout_click,enquiry-cart.js checkout,LIVE,items_count + total_qty,per checkout,YES
+generate_lead,derived: form_submit OR whatsapp_click (lead-class pages),SPEC,"lead_type (household/office/b2b/distributor), source_page","cross-event dedupe: form then whatsapp within 10 min = 1 lead",YES (primary)
+scroll_50 / scroll_90,scroll listener (throttled),SPEC,page_family,per page per session,NO
+page_view,GA4 default on activation,FUTURE,standard,default,NO
