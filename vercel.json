@@ -156,6 +156,26 @@
       "source": "/product-300ml-optimized.webp",
       "destination": "/product-250ml-optimized.webp",
       "permanent": true
+    },
+    {
+      "source": "/drinking-water-kolkata",
+      "destination": "/drinking-water-supplier-kolkata",
+      "permanent": true
+    },
+    {
+      "source": "/mineral-water-kolkata",
+      "destination": "/mineral-water-supplier-kolkata",
+      "permanent": true
+    },
+    {
+      "source": "/drinking-water-howrah",
+      "destination": "/drinking-water-supplier-howrah",
+      "permanent": true
+    },
+    {
+      "source": "/mineral-water-howrah",
+      "destination": "/mineral-water-supplier-howrah",
+      "permanent": true
     }
   ],
   "rewrites": [
