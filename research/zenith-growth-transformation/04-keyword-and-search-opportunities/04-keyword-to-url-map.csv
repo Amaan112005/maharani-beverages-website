@@ -1,0 +1,11 @@
+intent_cluster,example_queries,primary_target_url,supporting_urls,cannibal_risk,notes
+local-nearme,"20 litre water supply near me; water delivery near me; water supply near me",/20-liter-water-jar-delivery-kolkata,"/ ; /water-delivery-kolkata ; city hubs",Low,"Money page owns; homepage/hubs secondary. GBP will absorb much of this surface."
+transactional,"order water online 20l; water 20 litre home delivery; 20 litre water instant delivery",/20-liter-water-jar-delivery-kolkata,/pages/bulk,Low,"Instant/same-day modifier gated E4."
+product,"mineral water 20 litre; water 20 litre; 20 litre water",/20-liter-water-jar-delivery-kolkata,"/pages/products ; /blog/20-litre-water-can-vs-jar-vs-bottle",Low,"Can/jar language bridge article captures synonym demand."
+commercial-price,"cheapest 20 ltr water can delivery near me; 20 litre water jar price kolkata",/20-liter-water-jar-delivery-kolkata,,Low,"Visible pricing shipped; copy extension owner-gated."
+comparison,"kinley vs bisleri; bisleri vs kinley vs zenith; kinley or bisleri which is better",/blog/bisleri-vs-kinley-vs-zenith-kolkata,,None,"ME-2 title shipped; monitor."
+informational-regulatory,"is 14543; 14543; fssai packaged drinking water; is 14543 vs is 10500",/blog/is-14543-vs-is-10500-drinking-water-standards,"/blog/how-to-verify-fssai-license-water-brands ; /blog/verify-fssai-bis-is-14543-water-brand-checklist ; /blog/how-to-read-packaged-water-bottle-label-india",None,"Cluster A authority hub; new label guide extends it."
+b2b,"office water supply kolkata; bulk water supply; corporate water supplier",/pages/bulk,"/office-water-delivery-kolkata ; /office-water-supply-kolkata ; /corporate-water-supply-kolkata",Medium,"Watch office vs corporate pairs (differentiated in relaunch; monitor GSC)."
+local-geo,"water supply kolkata; kolkata water supply; howrah water",/kolkata-water-supply,/howrah-water-supply,None,"Hubs own."
+brand,"zenith water; zenith water bottle; zenith kolkata",/,,None,"Homepage owns by default."
+informational-general,"benefits of drinking water; hydration",/blog/hydration-benefits,,None,"Soft-CTA only; do not over-invest."
