@@ -1,0 +1,8 @@
+platform,listing_type,url_or_process,nap_source,duplicate_check,status,notes
+Google Business Profile,business profile,maps.google.com via Google account,GBP pack §1,owner re-check in Maps app (claim if exists),prepared-not-submitted,"Storefront vs service-area decision pending owner §2"
+Justdial,business listing,justdial.com → Free Listing,GBP pack §1,search exact name + phone before creating,prepared,"High-value: observed to dominate local water SERPs [O]"
+Sulekha,business listing,sulekha.com → List Your Business,GBP pack §1,search name + variants,prepared,
+IndiaMART,business listing,indiamart.com → Seller Registration,GBP pack §1,search company name; also check existing seller accounts,prepared,"B2B discovery channel for retailer/distributor flow"
+Bing Places,business listing,bingplaces.com → Claim/Create,GBP pack §1,search before create,prepared,
+Apple Business Connect,place card,businessconnect.apple.com,GBP pack §1,claim via Apple ID; check existing,prepared,"Powers Apple Maps/Siri local results"
+Facebook Page,page,facebook.com → Create Page (Business),GBP pack §1,search name variants; claim unofficial pages,prepared,"Also serves as citation + WhatsApp-adjacent social proof"

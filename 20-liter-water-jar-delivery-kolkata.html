@@ -561,6 +561,32 @@
               <p style="margin-top:1.5rem;">We deliver 20 litre water jar across Kolkata and surrounding areas. <a href='/bulk-water-supply-kolkata' style='color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);'>Get bulk pricing ↗</a></p>
             </div>
 
+            <style>
+            .zc-wrap .pincode-result-card{margin-top:1.25rem;padding:1.5rem;border-radius:12px;text-align:left;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);}
+            .zc-wrap .pincode-result-card.available{border-color:rgba(37,211,102,0.4);}
+            .zc-wrap .pincode-result-card.unavailable{border-color:rgba(181,158,109,0.35);}
+            .zc-wrap .pincode-area-name{color:#fff;font-weight:700;margin-bottom:.4rem;}
+            .zc-wrap .pincode-status{color:#fff;margin-bottom:.3rem;}
+            .zc-wrap .pincode-result-card.available .pincode-status{color:#4ade80;}
+            .zc-wrap .pincode-delivery{color:rgba(255,255,255,0.6);font-size:.9rem;margin-bottom:1rem;}
+            .zc-wrap .pincode-result-msg{padding:.9rem;border-radius:8px;}
+            .zc-wrap .pincode-result-msg.error{background:rgba(239,68,68,0.12);color:#fca5a5;}
+            .zc-wrap .pincode-result-msg.checking{color:rgba(255,255,255,0.6);}
+            .zc-wrap .pincode-btn-primary,.zc-wrap .pincode-btn-secondary{display:inline-flex;align-items:center;gap:.4rem;font-weight:700;font-size:.85rem;padding:.85rem 1.5rem;border-radius:8px;text-decoration:none;min-height:48px;}
+            .zc-wrap .pincode-btn-primary{background:#25D366;color:#052e12;}
+            .zc-wrap .pincode-btn-secondary{background:rgba(181,158,109,0.15);color:#e8dcc0;border:1px solid rgba(181,158,109,0.4);}
+            </style>
+            <section class="zc-wrap" aria-label="Check delivery availability" style="padding:2.5rem 0;">
+              <h3 style="color:#fff;font-size:1.5rem;margin-bottom:.5rem;">Check Delivery in Your Area</h3>
+              <p style="color:rgba(255,255,255,0.6);margin-bottom:1.25rem;">Enter your pincode — we will tell you if Zenith delivers to you.</p>
+              <form onsubmit="zenithPincodeCheck(event)" style="display:flex;gap:.75rem;flex-wrap:wrap;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);padding:1.25rem;border-radius:12px;">
+                <label class="visually-hidden" for="zc-pin">Enter your 6-digit pincode</label>
+                <input class="zc-input" id="zc-pin" aria-label="Enter your 6-digit pincode" inputmode="numeric" maxlength="6" placeholder="e.g. 700001" type="text" style="flex:1;min-width:180px;color:#fff;background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.12);padding:.9rem 1rem;font-size:1rem;text-align:center;border-radius:8px;outline:none;" />
+                <button type="submit" style="background:var(--color-accent,#B59E6D);color:#0a0a0a;border:none;padding:.9rem 1.75rem;border-radius:8px;font-weight:700;cursor:pointer;font-size:.85rem;letter-spacing:1px;">CHECK</button>
+              </form>
+              <div class="zc-result" aria-live="polite" style="margin-top:1rem;text-align:left;"></div>
+            </section>
+
             <div style="margin-bottom:4rem;">
               <h3 style="color:#fff;font-size:1.5rem;margin-bottom:1.5rem;">Frequently Asked Questions</h3>
               <div class="faq-item"><div class="faq-q">Where can I buy 20 litre water jar in Kolkata?</div><div class="faq-a">Zenith Water supplies 20 litre water jar across Kolkata. Call or WhatsApp +91 82748 37341 to place an order.</div></div>
@@ -748,5 +774,6 @@
 function toggleMobileMenu(){var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');if(m.classList.contains('open')){closeMobileMenu();}else{m.style.display='flex';setTimeout(function(){m.classList.add('open');b.classList.add('open');},10);}}
 function closeMobileMenu(){var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');m.classList.remove('open');b.classList.remove('open');setTimeout(function(){if(!m.classList.contains('open'))m.style.display='none';},400);}
 </script>
+<script src="assets/js/pincode-checker.js" defer></script>
 </body>
 </html>

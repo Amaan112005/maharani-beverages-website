@@ -602,9 +602,9 @@ a,button,input,select,textarea{outline-offset:3px;}
         } else {
           var waMsg3 = encodeURIComponent('Hi, please start ZENITH water supply in my area (' + val + ')');
           res.innerHTML = '<div class="pincode-result-card unavailable">' +
-            '<div class="pincode-status">🚀 We\'re expanding to your area soon!</div>' +
-            '<div class="pincode-delivery">Be the first to get ZENITH in <strong>' + val + '</strong></div>' +
-            '<div class="pincode-actions"><a href="https://wa.me/918274837341?text=' + waMsg3 + '" target="_blank" rel="noopener noreferrer" class="pincode-btn-secondary">📩 Request Availability</a></div>' +
+            '<div class="pincode-status">⚠ Delivery to ' + val + ' is not confirmed yet</div>' +
+            '<div class="pincode-delivery">We will verify serviceability and reply with exact details.</div>' +
+            '<div class="pincode-actions"><a href="https://wa.me/918274837341?text=' + waMsg3 + '" target="_blank" rel="noopener noreferrer" class="pincode-btn-secondary">📩 Check availability on WhatsApp</a></div>' +
           '</div>';
         }
       }, 700);

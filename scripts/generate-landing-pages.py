@@ -851,6 +851,47 @@ def make_product_faqs(slug, city, ctx):
 # PAGE DEFINITION BUILDERS
 # =============================================================================
 
+# ---------------------------------------------------------------------------
+# H1-overlap consolidation (D-3): unique content ported from retiring legacy
+# pages (drinking-water-{city}, mineral-water-{city}) onto the primary
+# supplier URLs before the legacy URLs are 301-redirected away.
+# Source content: legacy hand pages, owner-approved consolidation mapping.
+# ---------------------------------------------------------------------------
+LEGACY_CONTENT_PORT = {
+    "drinking-water-supplier-kolkata": (
+        "<h3 style='margin-top:3rem;'>Why Choose Zenith for Drinking Water in Kolkata</h3>"
+        "<ul style='list-style: none; padding: 0;'>"
+        "<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Purity Guaranteed</strong>7-stage purification using RO, UV, and ozonation keeps every drop safe to drink.</li>"
+        "<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Certified Safe</strong>FSSAI-certified packaged drinking water under licence 12825999000938.</li>"
+        "<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Citywide Delivery</strong>We deliver drinking water to all major Kolkata areas on flexible days.</li></ul>"
+        "<p style='margin-top:1.5rem;'>From household daily use to offices, hotel buffets, and large events, Zenith supplies drinking water that meets high safety standards, with our fleet covering critical sectors across the city.</p>"
+    ),
+    "mineral-water-supplier-kolkata": (
+        "<h3 style='margin-top:3rem;'>What Makes Zenith Mineral Water Different</h3>"
+        "<ul style='list-style: none; padding: 0;'>"
+        "<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Balanced Minerals</strong>Essential minerals are retained while impurities are removed — taste and health benefits together.</li>"
+        "<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>7-Stage Purification</strong>Advanced filtration, RO, UV, and ozonation ensure purity in every bottle.</li>"
+        "<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Multiple Sizes</strong>250ml, 500ml, 1L, and 2L bottles plus 20L jars for every need.</li></ul>"
+        "<p style='margin-top:1.5rem;'>Trusted by hotels, restaurants, corporate offices, and households across Kolkata — a carefully maintained mineral balance for a clean, refreshing taste in any dining or hydration setting.</p>"
+    ),
+    "drinking-water-supplier-howrah": (
+        "<h3 style='margin-top:3rem;'>Why Choose Zenith for Drinking Water in Howrah</h3>"
+        "<ul style='list-style: none; padding: 0;'>"
+        "<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Local Manufacturing</strong>Made at Ranihati Industrial Park, Howrah — fresher water and faster delivery.</li>"
+        "<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Certified Quality</strong>FSSAI-certified for full safety under licence 12825999000938.</li>"
+        "<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Industrial Focus</strong>We supply factories, labour camps, and warehouses with bulk drinking water.</li></ul>"
+        "<p style='margin-top:1.5rem;'>Whether you need drinking water for a home in Shibpur or a factory in Domjur, Zenith has the local capacity to serve you reliably.</p>"
+    ),
+    "mineral-water-supplier-howrah": (
+        "<h3 style='margin-top:3rem;'>What Makes Zenith Mineral Water Different</h3>"
+        "<ul style='list-style: none; padding: 0;'>"
+        "<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Locally Bottled</strong>Our Ranihati facility bottles mineral water fresh for the Howrah market.</li>"
+        "<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Balanced Composition</strong>Key minerals kept for taste and hydration.</li>"
+        "<li style='margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;'><strong style='color: white; display: block; margin-bottom: 0.5rem;'>Certified Quality</strong>FSSAI-certified packaged drinking water.</li></ul>"
+        "<p style='margin-top:1.5rem;'>From housing complexes in Bally to factories in Uluberia — local production means shorter wait times and dependable supply across Howrah.</p>"
+    ),
+}
+
 def make_product_pages():
     pages = []
     for key, ctx in PRODUCT_CONTEXT.items():
@@ -900,11 +941,16 @@ def make_product_pages():
                 "coverage": city_coverage(city),
                 "coverage_footer": f"We deliver {label.lower()} across {city} and surrounding areas. <a href='/bulk-water-supply-{city_slug}' style='color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);'>Get bulk pricing ↗</a>",
                 "faqs": make_product_faqs(slug, city, ctx),
-                "wa_text": f"Hello%20Zenith%2C%20I%20am%20looking%20for%20{label.lower().replace(' ', '%20')}%20in%20{city}.%20Please%20share%20details.",
+                "wa_text": f"Hi%20Zenith%2C%20I%20found%20you%20on%20your%20{label.lower().replace(' ', '%20')}%20page.%20I%20need%20{label.lower().replace(' ', '%20')}%20delivery%20in%20{city}.%20Please%20share%20price%20and%20booking%20details.",
                 "has_product_schema": ctx["has_product_schema"],
                 "product_sizes": ctx["sizes"],
                 "cluster": "product",
             })
+    # H1-overlap consolidation (owner-approved D-3): unique legacy-page content
+    # preserved onto the primary supplier URLs before the legacy pages retire.
+    for page in pages:
+        if page["slug"] in LEGACY_CONTENT_PORT:
+            page["section2_body"] = page["section2_body"] + LEGACY_CONTENT_PORT[page["slug"]]
     return pages
 
 
@@ -971,7 +1017,7 @@ def make_corporate_pages():
                 "coverage": city_coverage(city),
                 "coverage_footer": f"Custom supply schedules are available for enterprise clients across {city}. <a href='/bulk-water-supply-{city_slug}' style='color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);'>Explore bulk options ↗</a>",
                 "faqs": make_corporate_faqs(slug, city, ctx),
-                "wa_text": f"Hello%20Zenith%2C%20I%20need%20{label.lower().replace(' ', '%20')}%20in%20{city}.%20Please%20share%20details.",
+                "wa_text": f"Hi%20Zenith%2C%20I%27m%20on%20your%20{label.lower().replace(' ', '%20')}%20page.%20We%20need%20recurring%20office%20water%20supply%20in%20{city}.%20Please%20share%20a%20corporate%20quote%20with%20rates%20and%20delivery%20schedule.",
                 "has_product_schema": False,
                 "cluster": "corporate",
             })
@@ -1044,7 +1090,9 @@ def make_industry_pages():
                 "coverage": city_coverage(city),
                 "coverage_footer": f"We serve {ctx['audience']} across {city} and surrounding districts. <a href='/bulk-water-supply-{city_slug}' style='color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);'>Get bulk pricing ↗</a>",
                 "faqs": make_industry_faqs(slug, city, ctx),
-                "wa_text": f"Hello%20Zenith%2C%20I%20need%20water%20supply%20for%20{label_raw.lower().replace('&', '%26').replace(' ', '%20')}%20in%20{city}.%20Please%20share%20details.",
+                "wa_text": (f"Hi%20Zenith%2C%20I%27m%20on%20your%20{label_raw.lower().replace('&', '%26').replace(' ', '%20')}%20page.%20I%20manage%20procurement%20for%20a%20{label_raw.lower().replace('&', '%26').replace(' ', '%20')}%20in%20{city}%20and%20need%20an%20FSSAI-compliant%20water%20supplier.%20Please%20share%20compliance%20details%20and%20trade%20rates."
+                            if key in ("hotels", "restaurants", "hotels-restaurants")
+                            else f"Hi%20Zenith%2C%20I%27m%20on%20your%20{label_raw.lower().replace('&', '%26').replace(' ', '%20')}%20page.%20We%20need%20regular%20bulk%20water%20supply%20in%20{city}.%20Please%20share%20bulk%20pricing."),
                 "has_product_schema": False,
                 "cluster": "industry",
             })
@@ -1104,7 +1152,7 @@ def make_hub_pages():
             "coverage": city_coverage(city),
             "coverage_footer": f"We deliver to every major neighbourhood and industrial belt in {city}. <a href='/areas-we-serve' style='color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);'>View all service areas ↗</a>",
             "faqs": make_generic_faqs("water supply", city),
-            "wa_text": f"Hello%20Zenith%2C%20I%20need%20water%20supply%20in%20{city}.%20Please%20share%20details.",
+            "wa_text": f"Hi%20Zenith%2C%20I%20found%20you%20on%20your%20{city}%20water%20supply%20page.%20I%20need%20water%20delivery%20in%20{city}.%20Please%20share%20prices%20and%20delivery%20slots.",
             "has_product_schema": False,
             "cluster": "hub",
         })
@@ -1197,7 +1245,7 @@ def make_city_intent_pages():
                 "coverage": city_coverage(city),
                 "coverage_footer": f"We deliver {label.lower()} across {city} and surrounding areas. <a href='/areas-we-serve' style='color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);'>View all service areas ↗</a>",
                 "faqs": make_generic_faqs(label, city),
-                "wa_text": f"Hello%20Zenith%2C%20I%20am%20looking%20for%20{label.lower().replace(' ', '%20')}%20in%20{city}.%20Please%20share%20details.",
+                "wa_text": f"Hi%20Zenith%2C%20I%20found%20you%20on%20your%20{label.lower().replace(' ', '%20')}%20page.%20I%20need%20water%20delivery%20for%20my%20home%20or%20office%20in%20{city}.%20Please%20share%20prices.",
                 "has_product_schema": key in ("packaged-drinking-water", "bottled-water", "drinking-water", "mineral-water"),
                 "product_sizes": ["250ml", "500ml", "1L", "2L", "20L"] if key in ("packaged-drinking-water", "mineral-water") else (["250ml", "500ml", "1L", "2L"] if key == "bottled-water" else ["250ml", "500ml", "1L", "2L", "20L"]),
                 "cluster": "product" if key in ("packaged-drinking-water", "bottled-water", "drinking-water", "mineral-water") else "corporate",
@@ -1846,6 +1894,7 @@ TEMPLATE = '''<!DOCTYPE html>
         </div>
       </div>
     </section>
+    {pincode_block}
   </main>
 
   <!-- FOOTER -->
@@ -1982,9 +2031,42 @@ TEMPLATE = '''<!DOCTYPE html>
     <a href="tel:{phone_e164}" style="background:rgba(255,255,255,.08);color:#fff;">&#128222; Call Now</a>
     <a href="https://wa.me/{phone_e164}?text={wa_text}" target="_blank" rel="noopener noreferrer" style="background:#25D366;color:#01260d;">WhatsApp</a>
   </div>
+  {pincode_script}
 </body>
 </html>
 '''
+
+# Pincode availability checker embed (rendered on city-hub cluster pages only).
+PINCODE_BLOCK = '''
+    <style>
+    .zc-wrap .pincode-result-card{margin-top:1.25rem;padding:1.5rem;border-radius:12px;text-align:left;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);}
+    .zc-wrap .pincode-result-card.available{border-color:rgba(37,211,102,0.4);}
+    .zc-wrap .pincode-result-card.unavailable{border-color:rgba(181,158,109,0.35);}
+    .zc-wrap .pincode-area-name{color:#fff;font-weight:700;margin-bottom:.4rem;}
+    .zc-wrap .pincode-status{color:#fff;margin-bottom:.3rem;}
+    .zc-wrap .pincode-result-card.available .pincode-status{color:#4ade80;}
+    .zc-wrap .pincode-delivery{color:rgba(255,255,255,0.6);font-size:.9rem;margin-bottom:1rem;}
+    .zc-wrap .pincode-result-msg{padding:.9rem;border-radius:8px;}
+    .zc-wrap .pincode-result-msg.error{background:rgba(239,68,68,0.12);color:#fca5a5;}
+    .zc-wrap .pincode-result-msg.checking{color:rgba(255,255,255,0.6);}
+    .zc-wrap .pincode-btn-primary,.zc-wrap .pincode-btn-secondary{display:inline-flex;align-items:center;gap:.4rem;font-weight:700;font-size:.85rem;padding:.85rem 1.5rem;border-radius:8px;text-decoration:none;min-height:48px;}
+    .zc-wrap .pincode-btn-primary{background:#25D366;color:#052e12;}
+    .zc-wrap .pincode-btn-secondary{background:rgba(181,158,109,0.15);color:#e8dcc0;border:1px solid rgba(181,158,109,0.4);}
+    </style>
+    <section class="zc-wrap" aria-label="Check delivery availability" style="padding:3.5rem 0;background:#050a16;border-top:1px solid rgba(255,255,255,0.05);">
+      <div class="container" style="max-width:640px;text-align:center;">
+        <h2 style="color:#fff;font-size:1.6rem;margin-bottom:.5rem;">Check Delivery in Your Area</h2>
+        <p style="color:rgba(255,255,255,0.6);margin-bottom:1.5rem;">Enter your pincode — we will tell you if Zenith delivers to you.</p>
+        <form onsubmit="zenithPincodeCheck(event)" style="display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);padding:1.25rem;border-radius:12px;">
+          <label class="visually-hidden" for="zc-pin">Enter your 6-digit pincode</label>
+          <input class="zc-input" id="zc-pin" aria-label="Enter your 6-digit pincode" inputmode="numeric" maxlength="6" placeholder="e.g. 700001" type="text" style="flex:1;min-width:180px;color:#fff;background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.12);padding:.9rem 1rem;font-size:1rem;text-align:center;border-radius:8px;outline:none;" />
+          <button type="submit" class="btn-ultimate" style="background:var(--color-accent,#B59E6D);color:#0a0a0a;border:none;padding:.9rem 1.75rem;border-radius:8px;font-weight:700;cursor:pointer;font-size:.85rem;letter-spacing:1px;">CHECK</button>
+        </form>
+        <div class="zc-result" aria-live="polite" style="margin-top:1rem;text-align:left;"></div>
+      </div>
+    </section>
+'''
+PINCODE_SCRIPT = '<script src="assets/js/pincode-checker.js" defer></script>'
 
 
 # =============================================================================
@@ -2073,6 +2155,11 @@ def render_page(page):
     city_hub = f"packaged-drinking-water-{city_slug}"
     canonical = f"{DOMAIN}/{slug}"
     related = related_links_for(page)
+    # Pincode checker embed: city-hub cluster pages only (owner condition:
+    # 20L product page + relevant city pages; availability states honest).
+    is_hub = page.get("cluster") == "hub"
+    pincode_block = PINCODE_BLOCK if is_hub else ""
+    pincode_script = PINCODE_SCRIPT if is_hub else ""
 
     faq_schema = json.dumps(build_faq_schema(page["faqs"]), indent=2)
     graph_schema = json.dumps(build_graph_schema(page), indent=2)
@@ -2095,6 +2182,8 @@ def render_page(page):
         og_title=esc(page["og_title"]),
         og_description=esc(page["og_description"]),
         twitter_title=esc(page["twitter_title"]),
+        pincode_block=pincode_block,
+        pincode_script=pincode_script,
         twitter_description=esc(page["twitter_description"]),
         brand_short=esc(BRAND_SHORT),
         brand=esc(BRAND),
