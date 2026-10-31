@@ -1,0 +1,10 @@
+intent_cluster,queries,clicks,impressions,ctr_pct,zero_click_queries,commercial_value_1-5,recovery_headroom_clicks_at_3.5pct,opportunity_score_0-100,primary_lever
+local-nearme,331,84,4351,1.93,5,5,68,68,GBP + pincode + snippet locality
+transactional,150,32,2184,1.47,11,5,44,63,money-page CTR + title R4 (gated)
+commercial-price,55,0,375,0.0,2,5,13,48,pricing copy (owner facts)
+product,96,19,1675,1.13,6,4,40,47,products page + add-to-cart
+b2b,22,1,83,1.2,0,5,2,43,office/industry pages + forms
+comparison,82,2,992,0.2,7,3,33,37,comparison article title (ME-2 shipped)
+local-geo,12,3,196,1.53,2,4,4,34,city pages + hubs
+informational-general,166,40,1242,3.22,5,1,3,30,soft CTA only; low priority
+informational-regulatory,86,6,1022,0.59,3,2,30,28,content Cluster A (briefs ready)
