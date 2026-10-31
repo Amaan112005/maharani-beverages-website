@@ -1582,8 +1582,12 @@ TEMPLATE = '''<!DOCTYPE html>
   <link rel="canonical" href="{canonical}">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="{logo_url}">
-  <link rel="shortcut icon" href="{logo_url}">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#010411">
 
   <!-- Google Analytics 4 — lazy-loaded after page interactive (replace G-XXXXXXXXXX with your real Measurement ID) -->
   <script>
