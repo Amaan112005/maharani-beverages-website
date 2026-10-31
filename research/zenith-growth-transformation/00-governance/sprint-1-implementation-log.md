@@ -55,6 +55,14 @@ Functional-test transcripts: this session's CDP outputs (pincode 3 states, Whats
 
 Branch pushed to GitHub; Vercel will build a **Preview** for `feature/growth-sprint-1` automatically (Git integration). Preview SSO prevents automated validation — owner review via the Vercel dashboard, or approve G4 deploy to validate on production directly (rollback documented per change).
 
+## 10b. Sprint extension (same day): D-11, D-12, D-13 — ALL CLOSED
+
+- **D-11 ✅** products page: 4 add-to-enquiry buttons wired to the existing enquiry cart (localStorage → /pages/enquiry-cart checkout with WhatsApp handoff); toast feedback; cart script included. Cart E2E verified by code-path review (same addToCart the homepage uses, proven in round-4 E2E).
+- **D-12 ✅** autocomplete attributes on index + distributor Formspree fields. **Audit finding:** all 3 Formspree forms already ≤6 fields with `_gotcha` honeypots; contact/careers "forms" verified functional via existing WhatsApp-routing handlers — no fix needed, no fabricated problem solved.
+- **D-13 ✅ verified pre-satisfied:** the IS 14543 article already carries an accurate answer-first quick-answer + 2026 regulatory update box (matches the Phase-1 verified timeline). No change made.
+- **Defect caught by the release gate (and fixed before push):** the autocomplete patch initially inserted attributes inside self-closing tags (`type="text"/ autocomplete=...>`) — caught by the strict-HTML check, repaired, repo-wide sweep confirmed no other instances. Commit amended. Lesson recorded: attribute-insertion regex must handle `/>`.
+- Commits: `21108f2` (amended). Crawl re-run: 0 broken / 0 via redirect.
+
 ## 11. Production confirmation
 
 **Production `main` is untouched.** Verified: `git log origin/main` = 4684ca2 (relaunch); all sprint work exists only on `feature/growth-sprint-1` (27d1589, 8fbddf3). Live site maharanibeverages.com serves the relaunch build, unchanged by this sprint.
