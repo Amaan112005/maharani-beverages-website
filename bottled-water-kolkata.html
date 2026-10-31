@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <meta name="description" content="Buy premium bottled water in Kolkata. 250ml, 500ml, 1L, 2L & 20L jars delivered. FSSAI certified. Home, office & event supply.">
+  <meta name="description" content="Buy premium bottled water in Kolkata. 250ml, 500ml, 1L, 2L &amp; 20L jars delivered. FSSAI certified. Home, office &amp; event supply.">
 
   <!-- SEO / Canonical -->
   <link rel="canonical" href="https://maharanibeverages.com/bottled-water-kolkata">
@@ -51,7 +51,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&amp;family=DM+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
   <!-- FAQ Schema -->
   <script type="application/ld+json">
@@ -201,8 +201,20 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Bottled Water Kolkata | Zenith Water">
-<meta name="twitter:description" content="Buy premium bottled water in Kolkata. 250ml, 500ml, 1L, 2L & 20L jars delivered. FSSAI certified. Home, office & event supply.">
+<meta name="twitter:description" content="Buy premium bottled water in Kolkata. 250ml, 500ml, 1L, 2L &amp; 20L jars delivered. FSSAI certified. Home, office &amp; event supply.">
 <meta name="twitter:image" content="https://maharanibeverages.com/zenith_logo_compact.png">
+<style>
+@media (max-width: 768px) {
+  .desktop-nav{display:none !important;} .nav-links{display:none !important;}
+  .mobile-nav-group{display:flex !important;}
+}
+#mobile-menu.open{max-height:80vh !important;overflow-y:auto !important;}
+#hamburger.open .ham-line:nth-child(1){transform:translateY(7px) rotate(45deg);}
+#hamburger.open .ham-line:nth-child(2){opacity:0;}
+#hamburger.open .ham-line:nth-child(3){width:24px;transform:translateY(-7px) rotate(-45deg);}
+.mobile-nav-link{color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.75rem;text-transform:uppercase;letter-spacing:3px;font-weight:700;padding:1.25rem 2rem;border-bottom:1px solid rgba(255,255,255,0.05);display:block;}
+.mobile-nav-link:hover{background:rgba(255,255,255,0.03);color:white;}
+</style>
 </head>
 
 <body>
@@ -211,14 +223,29 @@
   <header class="header">
     <nav class="container">
       <div style="display: flex; align-items: center; gap: 1rem;">
-        <a href="/" aria-label="Zenith Water Home"><img decoding="async" src="zenith_logo_compact.png" alt="Zenith Water Logo" class="logo" style="width: 80px; height: auto;" decoding="async" width="80" height="66" loading="lazy"></a>
+        <a href="/" aria-label="Zenith Water Home"><img decoding="async" src="zenith_logo_compact.png" alt="Zenith Water Logo" class="logo" style="width: 80px; height: auto;" width="80" height="66" loading="lazy"></a>
       </div>
       <div style="display: flex; gap: 3rem; align-items: center;">
         <a href="/" style="color: rgba(255,255,255,0.6); text-decoration: none; font-weight: 600; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px;">Home</a>
         <a href="/packaged-drinking-water-kolkata" style="color: rgba(255,255,255,0.6); text-decoration: none; font-weight: 600; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px;">Kolkata Hub</a>
       </div>
     </nav>
-  </header>
+  <div class="mobile-nav-group" style="display:none;align-items:center;">
+        <button id="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu" style="display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;">
+          <span class="ham-line" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+          <span class="ham-line" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+          <span class="ham-line" style="display:block;width:16px;height:2px;background:white;transition:all 0.3s;"></span>
+        </button>
+      </div>
+    </header>
+  <div id="mobile-menu" style="position:fixed;top:64px;left:0;right:0;display:none;flex-direction:column;background:rgba(10,16,35,0.98);backdrop-filter:blur(30px);border-top:1px solid rgba(255,255,255,0.06);overflow:hidden;max-height:0;transition:max-height 0.4s cubic-bezier(0.16,1,0.3,1);box-shadow:0 20px 40px rgba(0,0,0,0.5);z-index:9998;">
+    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/pages/products" class="mobile-nav-link">Products</a>
+    <a href="/areas-we-serve" class="mobile-nav-link">Areas We Serve</a>
+    <a href="/pages/bulk" class="mobile-nav-link">Bulk Supply</a>
+    <a href="/blog" class="mobile-nav-link">Blog</a>
+    <a href="/pages/contact" class="mobile-nav-link">Contact</a>
+  </div>
 
   <main>
     <!-- ================= SEO HERO ================= -->
@@ -248,8 +275,8 @@
             <div data-aos="fade-up" style="margin-bottom: 6rem;">
               <h2 style="color: white; font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 2.5rem;">Bottled Water Sizes for Every Need</h2>
               <ul style="list-style: none; padding: 0;">
-                <li style="margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;"><strong style="color: white; display: block; margin-bottom: 0.5rem;">250ml & 500ml</strong>Ideal for conferences, hotels, airlines, retail, and events where convenience and portability matter.</li>
-                <li style="margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;"><strong style="color: white; display: block; margin-bottom: 0.5rem;">1L & 2L</strong>Perfect for family use, hospitality tables, gymnasiums, and premium retail shelves.</li>
+                <li style="margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;"><strong style="color: white; display: block; margin-bottom: 0.5rem;">250ml &amp; 500ml</strong>Ideal for conferences, hotels, airlines, retail, and events where convenience and portability matter.</li>
+                <li style="margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;"><strong style="color: white; display: block; margin-bottom: 0.5rem;">1L &amp; 2L</strong>Perfect for family use, hospitality tables, gymnasiums, and premium retail shelves.</li>
                 <li style="margin-bottom: 2rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;"><strong style="color: white; display: block; margin-bottom: 0.5rem;">20L Jars</strong>The office and factory favourite for dispenser-based hydration with scheduled refill delivery.</li>
               </ul>
             </div>
@@ -264,12 +291,12 @@
               <h3 style="color: white; font-family: var(--font-heading); font-size: 1.75rem; margin-bottom: 1.5rem;">Service Coverage</h3>
               <p>Our logistical fleet delivers precision purity across Kolkata's critical sectors:</p>
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
-                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• Salt Lake & Sector V</div>
-                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• Park Street & Central</div>
-                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• Ballygunge & South</div>
-                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• Rajarhat & New Town</div>
-                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• Behala & West</div>
-                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• Dum Dum & North</div>
+                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• Salt Lake &amp; Sector V</div>
+                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• Park Street &amp; Central</div>
+                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• Ballygunge &amp; South</div>
+                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• Rajarhat &amp; New Town</div>
+                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• Behala &amp; West</div>
+                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• Dum Dum &amp; North</div>
               </div>
               <p style="margin-top: 2rem;">We deliver bottled water across Kolkata and Howrah. <a href="/bottled-water-howrah" style="color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);">View Howrah bottled water ↗</a></p>
             </div>
@@ -332,13 +359,13 @@
       <!-- Footer Grid: High Authority Architecture -->
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 6rem;">
         
-        <!-- Col 1: Brand & Contact -->
+        <!-- Col 1: Brand &amp; Contact -->
         <div style="grid-column: span 1.5;">
           <a href="/" aria-label="Zenith Water Home">
             <img decoding="async" src="zenith_logo_compact.png" alt="Zenith Water Official Logo" loading="lazy" style="width: 140px; height: auto; margin-bottom: 1.5rem;" width="140" height="115">
           </a>
           <p style="color: var(--color-accent); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem;">
-            Premium Packaged Drinking Water Supplier in Kolkata & Howrah
+            Premium Packaged Drinking Water Supplier in Kolkata &amp; Howrah
           </p>
           <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2.5rem; max-width: 320px;">
             The gold standard of premium mineral water. Engineered for absolute molecular purity and architectural elegance.
@@ -385,7 +412,7 @@
           <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.25rem;">
             <li><a href="/pages/shipping" class="footer-link">Shipping Policy</a></li>
             <li><a href="/pages/returns" class="footer-link">Returns Policy</a></li>
-            <li><a href="/pages/terms" class="footer-link">Terms & Conditions</a></li>
+            <li><a href="/pages/terms" class="footer-link">Terms &amp; Conditions</a></li>
             <li><a href="/pages/privacy" class="footer-link">Privacy Policy</a></li>
           </ul>
         </div>
@@ -421,6 +448,10 @@
 
   <script src="assets/js/aos.js" defer></script>
   <script src="assets/js/main.js" defer></script>
+<script>
+function toggleMobileMenu(){var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');if(m.classList.contains('open')){closeMobileMenu();}else{m.style.display='flex';setTimeout(function(){m.classList.add('open');b.classList.add('open');},10);}}
+function closeMobileMenu(){var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');m.classList.remove('open');b.classList.remove('open');setTimeout(function(){if(!m.classList.contains('open'))m.style.display='none';},400);}
+</script>
 </body>
 
 </html>

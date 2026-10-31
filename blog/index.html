@@ -32,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <meta name="description" content="Zenith Water blog: hydration tips, water quality guides, certification explainers & industry insights for Kolkata & Howrah.">
+  <meta name="description" content="Zenith Water blog: hydration tips, water quality guides, certification explainers &amp; industry insights for Kolkata &amp; Howrah.">
 
   <!-- SEO / Canonical -->
   <link rel="canonical" href="https://maharanibeverages.com/blog">
@@ -46,7 +46,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&amp;family=DM+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="../assets/css/variables.min.css">
@@ -169,22 +169,49 @@
   <style>.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}</style>
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Zenith Water Blog | Hydration Tips">
-<meta name="twitter:description" content="Zenith Water blog: hydration tips, water quality guides, certification explainers & industry insights for Kolkata & Howrah.">
+<meta name="twitter:description" content="Zenith Water blog: hydration tips, water quality guides, certification explainers &amp; industry insights for Kolkata &amp; Howrah.">
 <meta name="twitter:image" content="https://maharanibeverages.com/zenith_logo_compact.png">
+<style>
+@media (max-width: 768px) {
+  .desktop-nav{display:none !important;} .nav-links{display:none !important;}
+  .mobile-nav-group{display:flex !important;}
+}
+#mobile-menu.open{max-height:80vh !important;overflow-y:auto !important;}
+#hamburger.open .ham-line:nth-child(1){transform:translateY(7px) rotate(45deg);}
+#hamburger.open .ham-line:nth-child(2){opacity:0;}
+#hamburger.open .ham-line:nth-child(3){width:24px;transform:translateY(-7px) rotate(-45deg);}
+.mobile-nav-link{color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.75rem;text-transform:uppercase;letter-spacing:3px;font-weight:700;padding:1.25rem 2rem;border-bottom:1px solid rgba(255,255,255,0.05);display:block;}
+.mobile-nav-link:hover{background:rgba(255,255,255,0.03);color:white;}
+</style>
 </head>
 
 <body>
   <header class="header">
     <nav class="container">
       <div style="display: flex; align-items: center; gap: 1rem;">
-        <a href="/" aria-label="Zenith Water Home"><img decoding="async" src="../zenith_logo_compact.png" alt="Zenith Logo" class="logo" style="width: 80px; height: auto;" decoding="async" width="80" height="66" loading="lazy"></a>
+        <a href="/" aria-label="Zenith Water Home"><img decoding="async" src="../zenith_logo_compact.png" alt="Zenith Logo" class="logo" style="width: 80px; height: auto;" width="80" height="66" loading="lazy"></a>
       </div>
       <div style="display: flex; gap: 3rem; align-items: center;">
         <a href="/" style="color: rgba(255,255,255,0.6); text-decoration: none; font-weight: 600; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px;">Home</a>
         <a href="/pages/vision" style="color: rgba(255,255,255,0.6); text-decoration: none; font-weight: 600; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px;">Vision</a>
       </div>
     </nav>
-  </header>
+  <div class="mobile-nav-group" style="display:none;align-items:center;">
+        <button id="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu" style="display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;">
+          <span class="ham-line" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+          <span class="ham-line" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+          <span class="ham-line" style="display:block;width:16px;height:2px;background:white;transition:all 0.3s;"></span>
+        </button>
+      </div>
+    </header>
+  <div id="mobile-menu" style="position:fixed;top:64px;left:0;right:0;display:none;flex-direction:column;background:rgba(10,16,35,0.98);backdrop-filter:blur(30px);border-top:1px solid rgba(255,255,255,0.06);overflow:hidden;max-height:0;transition:max-height 0.4s cubic-bezier(0.16,1,0.3,1);box-shadow:0 20px 40px rgba(0,0,0,0.5);z-index:9998;">
+    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/pages/products" class="mobile-nav-link">Products</a>
+    <a href="/areas-we-serve" class="mobile-nav-link">Areas We Serve</a>
+    <a href="/pages/bulk" class="mobile-nav-link">Bulk Supply</a>
+    <a href="/blog" class="mobile-nav-link">Blog</a>
+    <a href="/pages/contact" class="mobile-nav-link">Contact</a>
+  </div>
 
   <main style="padding-top: 180px; padding-bottom: 10rem;">
     <div class="container">
@@ -204,7 +231,7 @@
             <span class="article-tag">Regulatory / Technical</span>
             <h3 class="article-title">IS 14543 vs IS 10500: Understanding Indian Drinking Water Standards.</h3>
             <p class="article-excerpt">A complete technical breakdown of India's two most important drinking water standards — and why knowing the difference protects your health.</p>
-            <div class="article-footer">Read Full Editorial <span>&rarr;</span></div>
+            <div class="article-footer">Read Full Editorial <span>&amp;rarr;</span></div>
           </div>
         </a>
         
@@ -214,7 +241,7 @@
             <span class="article-tag">Consumer Safety / HowTo</span>
             <h3 class="article-title">How to Verify FSSAI License for Packaged Drinking Water Brands.</h3>
             <p class="article-excerpt">Step-by-step guide to checking FSSAI license numbers online, spotting fake brands, and ensuring the water you drink is safe and certified.</p>
-            <div class="article-footer">Read Full Editorial <span>&rarr;</span></div>
+            <div class="article-footer">Read Full Editorial <span>&amp;rarr;</span></div>
           </div>
         </a>
 
@@ -222,9 +249,9 @@
         <a href="/blog/fssai-standards-packaged-drinking-water" class="article-card">
           <div class="article-meta">
             <span class="article-tag">Oversight / Regulatory</span>
-            <h3 class="article-title">Understanding FSSAI & BIS Standards for Water.</h3>
+            <h3 class="article-title">Understanding FSSAI &amp; BIS Standards for Water.</h3>
             <p class="article-excerpt">A technical breakdown of IS 14543 requirements and why legal certification is non-negotiable for safe hydration.</p>
-            <div class="article-footer">Read Full Editorial <span>&rarr;</span></div>
+            <div class="article-footer">Read Full Editorial <span>&amp;rarr;</span></div>
           </div>
         </a>
 
@@ -234,7 +261,7 @@
             <span class="article-tag">Strategic Guide</span>
             <h3 class="article-title">How to Choose the Best Water Supplier.</h3>
             <p class="article-excerpt">Key metrics for evaluating purity, logistical depth, and clinical reliability in the Kolkata distribution landscape.</p>
-            <div class="article-footer">Read Full Editorial <span>&rarr;</span></div>
+            <div class="article-footer">Read Full Editorial <span>&amp;rarr;</span></div>
           </div>
         </a>
 
@@ -244,7 +271,7 @@
             <span class="article-tag">Business Intelligence</span>
             <h3 class="article-title">The Corporate Case for Bulk Hydration.</h3>
             <p class="article-excerpt">Exploring the impact of premium mineral water on workplace productivity and office operational efficiency.</p>
-            <div class="article-footer">Read Full Editorial <span>&rarr;</span></div>
+            <div class="article-footer">Read Full Editorial <span>&amp;rarr;</span></div>
           </div>
         </a>
 
@@ -252,9 +279,9 @@
         <a href="/blog/hydration-benefits" class="article-card">
           <div class="article-meta">
             <span class="article-tag">Deep Science</span>
-            <h3 class="article-title">The Molecular Imperative & Cell Pressure.</h3>
+            <h3 class="article-title">The Molecular Imperative &amp; Cell Pressure.</h3>
             <p class="article-excerpt">Architecting health at the cellular level. A blueprint for biological integrity through molecular refinement.</p>
-            <div class="article-footer">Read Full Editorial <span>&rarr;</span></div>
+            <div class="article-footer">Read Full Editorial <span>&amp;rarr;</span></div>
           </div>
         </a>
 
@@ -264,7 +291,7 @@
             <span class="article-tag">Water Quality / Technical</span>
             <h3 class="article-title">How Zenith's 7-Stage Purification Works.</h3>
             <p class="article-excerpt">A technical deep-dive into sand filtration, carbon, micron, RO, UV, mineral infusion, and ozonation.</p>
-            <div class="article-footer">Read Full Editorial <span>&rarr;</span></div>
+            <div class="article-footer">Read Full Editorial <span>&amp;rarr;</span></div>
           </div>
         </a>
 
@@ -272,9 +299,9 @@
         <a href="/blog/water-delivery-kolkata-coverage-scheduling-sla" class="article-card">
           <div class="article-meta">
             <span class="article-tag">Logistics / Kolkata</span>
-            <h3 class="article-title">Water Delivery in Kolkata: Coverage, Scheduling & SLA.</h3>
+            <h3 class="article-title">Water Delivery in Kolkata: Coverage, Scheduling &amp; SLA.</h3>
             <p class="article-excerpt">Everything you need to know about scheduled water delivery across Kolkata's major sectors.</p>
-            <div class="article-footer">Read Full Editorial <span>&rarr;</span></div>
+            <div class="article-footer">Read Full Editorial <span>&amp;rarr;</span></div>
           </div>
         </a>
 
@@ -282,9 +309,9 @@
         <a href="/blog/packaged-drinking-water-hotels-restaurants-kolkata" class="article-card">
           <div class="article-meta">
             <span class="article-tag">Hospitality / HORECA</span>
-            <h3 class="article-title">Packaged Drinking Water for Hotels & Restaurants in Kolkata.</h3>
+            <h3 class="article-title">Packaged Drinking Water for Hotels &amp; Restaurants in Kolkata.</h3>
             <p class="article-excerpt">How HORECA businesses can choose the right bottle sizes, certifications, and delivery schedules.</p>
-            <div class="article-footer">Read Full Editorial <span>&rarr;</span></div>
+            <div class="article-footer">Read Full Editorial <span>&amp;rarr;</span></div>
           </div>
         </a>
 
@@ -292,9 +319,9 @@
         <a href="/blog/best-water-supplier-kolkata-howrah" class="article-card">
           <div class="article-meta">
             <span class="article-tag">Buying Guide / Supplier</span>
-            <h3 class="article-title">Best Water Supplier in Kolkata & Howrah: 2026 Guide.</h3>
+            <h3 class="article-title">Best Water Supplier in Kolkata &amp; Howrah: 2026 Guide.</h3>
             <p class="article-excerpt">Compare certifications, purification quality, delivery reliability, and pricing before choosing your packaged drinking water partner.</p>
-            <div class="article-footer">Read Full Editorial <span>&rarr;</span></div>
+            <div class="article-footer">Read Full Editorial <span>&amp;rarr;</span></div>
           </div>
         </a>
 
@@ -304,7 +331,7 @@
             <span class="article-tag">Office / Comparison</span>
             <h3 class="article-title">20 Litre Water Jar vs Bottled Water for Offices.</h3>
             <p class="article-excerpt">Cost, convenience, storage, hygiene, and sustainability — a complete comparison for Kolkata and Howrah offices.</p>
-            <div class="article-footer">Read Full Editorial <span>&rarr;</span></div>
+            <div class="article-footer">Read Full Editorial <span>&amp;rarr;</span></div>
           </div>
         </a>
 
@@ -312,9 +339,9 @@
         <a href="/blog/water-supply-for-hotels-restaurants-kolkata" class="article-card">
           <div class="article-meta">
             <span class="article-tag">HORECA / Industry</span>
-            <h3 class="article-title">Packaged Drinking Water for Hotels & Restaurants.</h3>
+            <h3 class="article-title">Packaged Drinking Water for Hotels &amp; Restaurants.</h3>
             <p class="article-excerpt">An industry guide to bottle sizes, delivery schedules, compliance, and pricing for Kolkata hospitality businesses.</p>
-            <div class="article-footer">Read Full Editorial <span>&rarr;</span></div>
+            <div class="article-footer">Read Full Editorial <span>&amp;rarr;</span></div>
           </div>
         </a>
 
@@ -322,9 +349,9 @@
         <a href="/blog/bulk-water-supply-events-factories-construction" class="article-card">
           <div class="article-meta">
             <span class="article-tag">Industrial / Bulk</span>
-            <h3 class="article-title">Bulk Water Supply for Events, Factories & Sites.</h3>
+            <h3 class="article-title">Bulk Water Supply for Events, Factories &amp; Sites.</h3>
             <p class="article-excerpt">Plan volume, logistics, compliance, and pricing for bulk water at events, factories, and construction sites.</p>
-            <div class="article-footer">Read Full Editorial <span>&rarr;</span></div>
+            <div class="article-footer">Read Full Editorial <span>&amp;rarr;</span></div>
           </div>
         </a>
 
@@ -334,7 +361,7 @@
             <span class="article-tag">Brand Compare / Review</span>
             <h3 class="article-title">Bisleri vs Kinley vs Zenith: Best Water in Kolkata.</h3>
             <p class="article-excerpt">See how purity, price, delivery, and local service compare across three leading packaged water brands.</p>
-            <div class="article-footer">Read Full Editorial <span>&rarr;</span></div>
+            <div class="article-footer">Read Full Editorial <span>&amp;rarr;</span></div>
           </div>
         </a>
 
@@ -342,9 +369,9 @@
         <a href="/blog/verify-fssai-bis-is-14543-water-brand-checklist" class="article-card">
           <div class="article-meta">
             <span class="article-tag">Compliance / Checklist</span>
-            <h3 class="article-title">Verify FSSAI & BIS IS 14543 for Water Brands.</h3>
+            <h3 class="article-title">Verify FSSAI &amp; BIS IS 14543 for Water Brands.</h3>
             <p class="article-excerpt">A step-by-step checklist to confirm FSSAI license and BIS IS 14543 certification before you buy.</p>
-            <div class="article-footer">Read Full Editorial <span>&rarr;</span></div>
+            <div class="article-footer">Read Full Editorial <span>&amp;rarr;</span></div>
           </div>
         </a>
 
@@ -359,5 +386,9 @@
        <p style="color:rgba(255,255,255,0.3); font-size:0.8rem;">&copy; 2026 Maharani Beverages LLP. Molecularly Refined. Architecturally Superior.</p>
     </div>
   </footer>
+<script>
+function toggleMobileMenu(){var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');if(m.classList.contains('open')){closeMobileMenu();}else{m.style.display='flex';setTimeout(function(){m.classList.add('open');b.classList.add('open');},10);}}
+function closeMobileMenu(){var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');m.classList.remove('open');b.classList.remove('open');setTimeout(function(){if(!m.classList.contains('open'))m.style.display='none';},400);}
+</script>
 </body>
 </html>

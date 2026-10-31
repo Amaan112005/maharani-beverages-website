@@ -26,19 +26,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="author" content="Maharani Beverages LLP">
-  <title>Shipping & Delivery Policy | Zenith Water Kolkata & Howrah</title>
+  <title>Shipping &amp; Delivery Policy | Zenith Water Kolkata &amp; Howrah</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <meta name="description" content="Zenith Water delivers across Kolkata & Howrah in 24-48 hours. Free delivery on bulk orders. Same-day available for select areas.">
+  <meta name="description" content="Zenith Water delivers across Kolkata &amp; Howrah in 24-48 hours. Free delivery on bulk orders. Same-day available for select areas.">
 
   <!-- SEO / Canonical -->
   <link rel="canonical" href="https://maharanibeverages.com/pages/shipping">
   
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Shipping & Delivery Policy | Zenith Water Kolkata & Howrah">
+  <meta property="og:title" content="Shipping &amp; Delivery Policy | Zenith Water Kolkata &amp; Howrah">
   <meta property="og:description" content="Precision logistical protocols and delivery governance for Zenith hydration units.">
   <meta property="og:image" content="https://maharanibeverages.com/zenith_logo_compact.png">
 
@@ -48,7 +48,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&amp;family=DM+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="../assets/css/variables.min.css">
@@ -98,9 +98,21 @@
   </script>
   <style>.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}</style>
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Shipping & Delivery Policy | Zenith Water Kolkata & Howrah">
-<meta name="twitter:description" content="Zenith Water delivers across Kolkata & Howrah in 24-48 hours. Free delivery on bulk orders. Same-day available for select areas.">
+<meta name="twitter:title" content="Shipping &amp; Delivery Policy | Zenith Water Kolkata &amp; Howrah">
+<meta name="twitter:description" content="Zenith Water delivers across Kolkata &amp; Howrah in 24-48 hours. Free delivery on bulk orders. Same-day available for select areas.">
 <meta name="twitter:image" content="https://maharanibeverages.com/zenith_logo_compact.png">
+<style>
+@media (max-width: 768px) {
+  .desktop-nav{display:none !important;} .nav-links{display:none !important;}
+  .mobile-nav-group{display:flex !important;}
+}
+#mobile-menu.open{max-height:80vh !important;overflow-y:auto !important;}
+#hamburger.open .ham-line:nth-child(1){transform:translateY(7px) rotate(45deg);}
+#hamburger.open .ham-line:nth-child(2){opacity:0;}
+#hamburger.open .ham-line:nth-child(3){width:24px;transform:translateY(-7px) rotate(-45deg);}
+.mobile-nav-link{color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.75rem;text-transform:uppercase;letter-spacing:3px;font-weight:700;padding:1.25rem 2rem;border-bottom:1px solid rgba(255,255,255,0.05);display:block;}
+.mobile-nav-link:hover{background:rgba(255,255,255,0.03);color:white;}
+</style>
 </head>
 
 <body>
@@ -109,14 +121,29 @@
   <header class="header">
     <nav class="container">
       <div style="display: flex; align-items: center; gap: 1rem;">
-        <a href="/" aria-label="Zenith Water Home"><img decoding="async" src="../zenith_logo_compact.png" alt="Zenith Logo" class="logo" style="width: 80px; height: auto;" decoding="async" width="80" height="66" loading="lazy"></a>
+        <a href="/" aria-label="Zenith Water Home"><img decoding="async" src="../zenith_logo_compact.png" alt="Zenith Logo" class="logo" style="width: 80px; height: auto;" width="80" height="66" loading="lazy"></a>
       </div>
       <div style="display: flex; gap: 3rem; align-items: center;">
         <a href="/" style="color: rgba(255,255,255,0.6); text-decoration: none; font-weight: 600; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px;">Home</a>
         <a href="/pages/returns" style="color: rgba(255,255,255,0.6); text-decoration: none; font-weight: 600; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px;">Returns Policy</a>
       </div>
     </nav>
-  </header>
+  <div class="mobile-nav-group" style="display:none;align-items:center;">
+        <button id="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu" style="display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;">
+          <span class="ham-line" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+          <span class="ham-line" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+          <span class="ham-line" style="display:block;width:16px;height:2px;background:white;transition:all 0.3s;"></span>
+        </button>
+      </div>
+    </header>
+  <div id="mobile-menu" style="position:fixed;top:64px;left:0;right:0;display:none;flex-direction:column;background:rgba(10,16,35,0.98);backdrop-filter:blur(30px);border-top:1px solid rgba(255,255,255,0.06);overflow:hidden;max-height:0;transition:max-height 0.4s cubic-bezier(0.16,1,0.3,1);box-shadow:0 20px 40px rgba(0,0,0,0.5);z-index:9998;">
+    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/pages/products" class="mobile-nav-link">Products</a>
+    <a href="/areas-we-serve" class="mobile-nav-link">Areas We Serve</a>
+    <a href="/pages/bulk" class="mobile-nav-link">Bulk Supply</a>
+    <a href="/blog" class="mobile-nav-link">Blog</a>
+    <a href="/pages/contact" class="mobile-nav-link">Contact</a>
+  </div>
 
   <main>
     <!-- ================= LEGAL HERO ================= -->
@@ -124,18 +151,18 @@
       <div class="container" style="text-align: center;">
         <p class="counter-label" style="color: var(--color-accent); margin-bottom: 2rem; font-size: 0.7rem;" data-aos="fade-up">Governance / Distribution</p>
         <h1 data-aos="fade-up" data-aos-delay="200" style="font-size: clamp(3rem, 10vw, 5rem); margin-bottom: 3rem; line-height: 1;">LOGISTICAL<br>PRECISION PROTOCOL.</h1>
-        <p style="font-size: 0.8rem; color: var(--color-muted); letter-spacing: 4px; text-transform: uppercase;">Shipping & Delivery Governance</p>
+        <p style="font-size: 0.8rem; color: var(--color-muted); letter-spacing: 4px; text-transform: uppercase;">Shipping &amp; Delivery Governance</p>
       </div>
     </section>
 
     <!-- ================= POLICY CONTENT ================= -->
     <section style="padding: 10rem 0; background: var(--color-bg);">
       <div class="container" style="max-width: 800px; color: var(--color-muted); line-height: 2;">
-        <h2 style="color: white; font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 4rem; text-align: center;" data-aos="fade-up">Shipping & Delivery Policy</h2>
+        <h2 style="color: white; font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 4rem; text-align: center;" data-aos="fade-up">Shipping &amp; Delivery Policy</h2>
         
         <div data-aos="fade-up" style="margin-bottom: 6rem;">
-          <h3 style="color: white; font-family: var(--font-heading); font-size: 2rem; margin-bottom: 2rem;">1. Regional Logistics & Coverage</h3>
-          <p>Maharani Beverages LLP provides strategic delivery services for Zenith Packaged Drinking Water across **Kolkata** and flanking metropolitan regions. Deliveries to locations outside standard service archetypes are reserved for bulk and institutional acquisitions, subject to operational feasibility and prior high-level confirmation.</p>
+          <h3 style="color: white; font-family: var(--font-heading); font-size: 2rem; margin-bottom: 2rem;">1. Regional Logistics &amp; Coverage</h3>
+          <p>Maharani Beverages LLP provides strategic delivery services for Zenith Packaged Drinking Water across <strong>Kolkata</strong> and flanking metropolitan regions. Deliveries to locations outside standard service archetypes are reserved for bulk and institutional acquisitions, subject to operational feasibility and prior high-level confirmation.</p>
         </div>
 
         <div data-aos="fade-up" style="margin-bottom: 6rem;">
@@ -145,19 +172,17 @@
               <li style="border-left: 2px solid var(--color-accent); padding-left: 1.5rem; margin-bottom: 0.5rem;"><strong style="color:white;">Standard Orders:</strong> Regular high-frequency residential and small-volume unit fulfillment.</li>
               <li style="border-left: 2px solid var(--color-accent); padding-left: 1.5rem; margin-bottom: 0.5rem;"><strong style="color:white;">Bulk / Institutional:</strong> High-volume deployment for corporate offices, premiere events, and commercial sanctuaries.</li>
             </ul>
-          </p>
         </div>
 
         <div data-aos="fade-up" style="margin-bottom: 6rem;">
-          <h3 style="color: white; font-family: var(--font-heading); font-size: 2rem; margin-bottom: 2rem;">3. Processing & Dispatch Governance</h3>
+          <h3 style="color: white; font-family: var(--font-heading); font-size: 2rem; margin-bottom: 2rem;">3. Processing &amp; Dispatch Governance</h3>
           <p>Every order undergoes a multi-stage validation cycle prior to dispatch:
             <ul style="list-style: none; padding-left: 0; margin-top: 1rem;">
               <li style="border-left: 2px solid var(--color-accent); padding-left: 1.5rem; margin-bottom: 0.5rem;">Inventory Availability Synchronization.</li>
-              <li style="border-left: 2px solid var(--color-accent); padding-left: 1.5rem; margin-bottom: 0.5rem;">Address Verification & Geocoding.</li>
+              <li style="border-left: 2px solid var(--color-accent); padding-left: 1.5rem; margin-bottom: 0.5rem;">Address Verification &amp; Geocoding.</li>
               <li style="border-left: 2px solid var(--color-accent); padding-left: 1.5rem; margin-bottom: 0.5rem;">Final Dispatch Coordination.</li>
             </ul>
             Operations are conducted during established business windows. Direct contact may be initiated for logistical alignment before the vehicle leaves the hub.
-          </p>
         </div>
 
         <div data-aos="fade-up" style="margin-bottom: 6rem;">
@@ -168,7 +193,6 @@
               <li style="border-left: 2px solid var(--color-accent); padding-left: 1.5rem; margin-bottom: 0.5rem;"><strong style="color:white;">Institutional Volume:</strong> Timelines for bulk orders are calibrated based on quantity and site complexity.</li>
             </ul>
             Precise delivery windows will be communicated during the validation phase.
-          </p>
         </div>
 
         <div data-aos="fade-up" style="margin-bottom: 6rem;">
@@ -179,12 +203,11 @@
               <li style="border-left: 2px solid var(--color-accent); padding-left: 1.5rem; margin-bottom: 0.5rem;">Distance from our central fulfillment hub.</li>
               <li style="border-left: 2px solid var(--color-accent); padding-left: 1.5rem; margin-bottom: 0.5rem;">Institutional Priority Agreements.</li>
             </ul>
-            *Complimentary delivery may be native to recurring elite plans and specific bulk volumes.*
-          </p>
+            <em>Complimentary delivery may be native to recurring elite plans and specific bulk volumes.</em>
         </div>
 
         <div data-aos="fade-up" style="margin-bottom: 6rem;">
-          <h3 style="color: white; font-family: var(--font-heading); font-size: 2rem; margin-bottom: 2rem;">6. Precision Coordination & Scheduling</h3>
+          <h3 style="color: white; font-family: var(--font-heading); font-size: 2rem; margin-bottom: 2rem;">6. Precision Coordination &amp; Scheduling</h3>
           <p>For large-scale institutional deliveries, absolute scheduling is required. Verified time slots are generated to ensure non-disruptive deployment. Customers are expected to ensure the receiving site is architected for immediate intake to avoid operational fatigue.</p>
         </div>
 
@@ -201,8 +224,7 @@
               <li style="border-left: 2px solid var(--color-accent); padding-left: 1.5rem; margin-bottom: 0.5rem;">Invalid geodata or contact metrics.</li>
               <li style="border-left: 2px solid var(--color-accent); padding-left: 1.5rem; margin-bottom: 0.5rem;">Refusal of intake without pharmacological justification.</li>
             </ul>
-            *Secondary attempts may incur architectural penalty fees.*
-          </p>
+            <em>Secondary attempts may incur architectural penalty fees.</em>
         </div>
 
         <div data-aos="fade-up" style="margin-bottom: 6rem;">
@@ -225,8 +247,8 @@
           <p>
             Maharani Beverages LLP<br>
             Ranihati Industrial Park, Howrah, West Bengal, India<br><br>
-            📞 Phone: **8274837341**<br>
-            📧 Email: **marketing@maharanibeverages.com**
+            📞 Phone: <strong>8274837341</strong><br>
+            📧 Email: <strong>marketing@maharanibeverages.com</strong>
           </p>
         </div>
 
@@ -246,13 +268,13 @@
       <!-- Footer Grid: High Authority Architecture -->
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 6rem;">
         
-        <!-- Col 1: Brand & Contact -->
+        <!-- Col 1: Brand &amp; Contact -->
         <div style="grid-column: span 1.5;">
           <a href="/" aria-label="Zenith Water Home">
             <img decoding="async" src="../zenith_logo_compact.png" alt="Zenith Water Official Logo" loading="lazy" style="width: 140px; height: auto; margin-bottom: 1.5rem;" width="140" height="115">
           </a>
           <p style="color: var(--color-accent); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem;">
-            Premium Packaged Drinking Water Supplier in Kolkata & Howrah
+            Premium Packaged Drinking Water Supplier in Kolkata &amp; Howrah
           </p>
           <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2.5rem; max-width: 320px;">
             The gold standard of premium mineral water. Engineered for absolute molecular purity and architectural elegance.
@@ -296,7 +318,7 @@
           <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.25rem;">
             <li><a href="/pages/shipping" class="footer-link">Shipping Policy</a></li>
             <li><a href="/pages/returns" class="footer-link">Returns Policy</a></li>
-            <li><a href="/pages/terms" class="footer-link">Terms & Conditions</a></li>
+            <li><a href="/pages/terms" class="footer-link">Terms &amp; Conditions</a></li>
             <li><a href="/pages/privacy" class="footer-link">Privacy Policy</a></li>
           </ul>
         </div>
@@ -327,6 +349,10 @@
   <!-- Scripts -->
   <script src="../assets/js/aos.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
+<script>
+function toggleMobileMenu(){var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');if(m.classList.contains('open')){closeMobileMenu();}else{m.style.display='flex';setTimeout(function(){m.classList.add('open');b.classList.add('open');},10);}}
+function closeMobileMenu(){var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');m.classList.remove('open');b.classList.remove('open');setTimeout(function(){if(!m.classList.contains('open'))m.style.display='none';},400);}
+</script>
 </body>
 
 </html>

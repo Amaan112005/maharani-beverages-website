@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <meta name="description" content="Zenith Water delivers FSSAI certified packaged drinking water in Kolkata. 7-stage purified water for homes, offices, hotels & events. Order now.">
+  <meta name="description" content="Zenith Water delivers FSSAI certified packaged drinking water in Kolkata. 7-stage purified water for homes, offices, hotels &amp; events. Order now.">
 
   <!-- SEO / Canonical -->
   <link rel="canonical" href="https://maharanibeverages.com/packaged-drinking-water-kolkata">
@@ -51,7 +51,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&amp;family=DM+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
   <!-- Breadcrumb Schema -->
   <script type="application/ld+json">
@@ -286,8 +286,20 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Packaged Drinking Water Kolkata | Zenith">
-<meta name="twitter:description" content="Zenith Water delivers FSSAI certified packaged drinking water in Kolkata. 7-stage purified water for homes, offices, hotels & events. Order now.">
+<meta name="twitter:description" content="Zenith Water delivers FSSAI certified packaged drinking water in Kolkata. 7-stage purified water for homes, offices, hotels &amp; events. Order now.">
 <meta name="twitter:image" content="https://maharanibeverages.com/zenith_logo_compact.png">
+<style>
+@media (max-width: 768px) {
+  .desktop-nav{display:none !important;} .nav-links{display:none !important;}
+  .mobile-nav-group{display:flex !important;}
+}
+#mobile-menu.open{max-height:80vh !important;overflow-y:auto !important;}
+#hamburger.open .ham-line:nth-child(1){transform:translateY(7px) rotate(45deg);}
+#hamburger.open .ham-line:nth-child(2){opacity:0;}
+#hamburger.open .ham-line:nth-child(3){width:24px;transform:translateY(-7px) rotate(-45deg);}
+.mobile-nav-link{color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.75rem;text-transform:uppercase;letter-spacing:3px;font-weight:700;padding:1.25rem 2rem;border-bottom:1px solid rgba(255,255,255,0.05);display:block;}
+.mobile-nav-link:hover{background:rgba(255,255,255,0.03);color:white;}
+</style>
 </head>
 
 <body>
@@ -296,14 +308,29 @@
   <header class="header">
     <nav class="container">
       <div style="display: flex; align-items: center; gap: 1rem;">
-        <a href="/" aria-label="Zenith Water Home"><img decoding="async" src="zenith_logo_compact.png" alt="Zenith Logo" class="logo" style="width: 80px; height: auto;" decoding="async" width="80" height="66" loading="lazy"></a>
+        <a href="/" aria-label="Zenith Water Home"><img decoding="async" src="zenith_logo_compact.png" alt="Zenith Logo" class="logo" style="width: 80px; height: auto;" width="80" height="66" loading="lazy"></a>
       </div>
       <div style="display: flex; gap: 3rem; align-items: center;">
         <a href="/" style="color: rgba(255,255,255,0.6); text-decoration: none; font-weight: 600; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px;">Home</a>
         <a href="/bulk-water-supply-kolkata" style="color: rgba(255,255,255,0.6); text-decoration: none; font-weight: 600; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px;">Bulk Site</a>
       </div>
     </nav>
-  </header>
+  <div class="mobile-nav-group" style="display:none;align-items:center;">
+        <button id="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu" style="display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;">
+          <span class="ham-line" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+          <span class="ham-line" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+          <span class="ham-line" style="display:block;width:16px;height:2px;background:white;transition:all 0.3s;"></span>
+        </button>
+      </div>
+    </header>
+  <div id="mobile-menu" style="position:fixed;top:64px;left:0;right:0;display:none;flex-direction:column;background:rgba(10,16,35,0.98);backdrop-filter:blur(30px);border-top:1px solid rgba(255,255,255,0.06);overflow:hidden;max-height:0;transition:max-height 0.4s cubic-bezier(0.16,1,0.3,1);box-shadow:0 20px 40px rgba(0,0,0,0.5);z-index:9998;">
+    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/pages/products" class="mobile-nav-link">Products</a>
+    <a href="/areas-we-serve" class="mobile-nav-link">Areas We Serve</a>
+    <a href="/pages/bulk" class="mobile-nav-link">Bulk Supply</a>
+    <a href="/blog" class="mobile-nav-link">Blog</a>
+    <a href="/pages/contact" class="mobile-nav-link">Contact</a>
+  </div>
 
   <main>
     <!-- ================= SEO HERO ================= -->
@@ -359,19 +386,19 @@
               <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2.5rem; text-align: center;">
                  <div class="glass-card" style="padding: 2.5rem;">
                    <p style="color: white; font-weight: 800; font-size: 1.5rem; margin-bottom: 0.5rem;">250ML / 500ML</p>
-                   <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Offices, Corporate Events & Hospitality</p>
+                   <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Offices, Corporate Events &amp; Hospitality</p>
                  </div>
                  <div class="glass-card" style="padding: 2.5rem;">
                    <p style="color: white; font-weight: 800; font-size: 1.5rem; margin-bottom: 0.5rem;">1L / 2L</p>
-                   <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Hotels, Restaurants & Social Functions</p>
+                   <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Hotels, Restaurants &amp; Social Functions</p>
                  </div>
                  <div class="glass-card" style="padding: 2.5rem;">
                    <p style="color: white; font-weight: 800; font-size: 1.5rem; margin-bottom: 0.5rem;">20L JAR</p>
-                   <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;"><a href="/20-liter-water-jar-delivery-kolkata" style="color: var(--color-accent); text-decoration: none;">Homes, Offices & Factories ↗</a></p>
+                   <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;"><a href="/20-liter-water-jar-delivery-kolkata" style="color: var(--color-accent); text-decoration: none;">Homes, Offices &amp; Factories ↗</a></p>
                  </div>
                  <div class="glass-card" style="padding: 2.5rem;">
                    <p style="color: white; font-weight: 800; font-size: 1.5rem; margin-bottom: 0.5rem;">BULK</p>
-                   <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;"><a href="/bulk-water-supply-kolkata" style="color: var(--color-accent); text-decoration: none;">Factories, Hospitals & Events ↗</a></p>
+                   <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;"><a href="/bulk-water-supply-kolkata" style="color: var(--color-accent); text-decoration: none;">Factories, Hospitals &amp; Events ↗</a></p>
                  </div>
               </div>
             </div>
@@ -386,12 +413,12 @@
               <h3 style="color: white; font-family: var(--font-heading); font-size: 1.75rem; margin-bottom: 1.5rem;">Territorial Reach</h3>
               <p>Our delivery fleet brings pure water to key sectors across Kolkata:</p>
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
-                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• <a href="/packaged-drinking-water-new-town" style="color: var(--color-accent); text-decoration: none;">New Town</a> & Salt Lake</div>
-                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• <a href="/packaged-drinking-water-rajarhat" style="color: var(--color-accent); text-decoration: none;">Rajarhat</a> & Dum Dum</div>
-                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• Park Street & Central Kolkata</div>
-                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• <a href="/packaged-drinking-water-garia" style="color: var(--color-accent); text-decoration: none;">Garia</a> & South Kolkata</div>
-                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• <a href="/packaged-drinking-water-howrah" style="color: var(--color-accent); text-decoration: none;">Howrah</a> & Mallick Bagan</div>
-                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• Industrial zones & events</div>
+                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• <a href="/packaged-drinking-water-new-town" style="color: var(--color-accent); text-decoration: none;">New Town</a> &amp; Salt Lake</div>
+                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• <a href="/packaged-drinking-water-rajarhat" style="color: var(--color-accent); text-decoration: none;">Rajarhat</a> &amp; Dum Dum</div>
+                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• Park Street &amp; Central Kolkata</div>
+                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• <a href="/packaged-drinking-water-garia" style="color: var(--color-accent); text-decoration: none;">Garia</a> &amp; South Kolkata</div>
+                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• <a href="/packaged-drinking-water-howrah" style="color: var(--color-accent); text-decoration: none;">Howrah</a> &amp; Mallick Bagan</div>
+                <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">• Industrial zones &amp; events</div>
               </div>
               <p style="margin-top: 2rem;">Custom delivery plans are available for large businesses that need reliable 24–48 hour delivery. We also cover <a href="/packaged-drinking-water-dum-dum" style="color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);">Dum Dum</a>, Hooghly, Durgapur, Asansol, Burdwan, Midnapore, and 24 Parganas.</p>
             </div>
@@ -408,7 +435,7 @@
                 <a href="/drinking-water-kolkata" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">→ Drinking Water Kolkata</a>
                 <a href="/mineral-water-kolkata" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">→ Mineral Water Kolkata</a>
                 <a href="/bulk-water-supply-kolkata" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">→ Bulk Water Supply Kolkata</a>
-                <a href="/water-supply-for-hotels-restaurants-kolkata" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">→ Hotel & Restaurant Supply</a>
+                <a href="/water-supply-for-hotels-restaurants-kolkata" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">→ Hotel &amp; Restaurant Supply</a>
                 <a href="/office-water-delivery-kolkata" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">→ Office Water Delivery</a>
               </div>
             </div>
@@ -508,7 +535,7 @@
     </section>
 
 
-    <!-- ================= KOLKATA CERTIFICATION & DELIVERY ================= -->
+    <!-- ================= KOLKATA CERTIFICATION &amp; DELIVERY ================= -->
     <section style="padding: 8rem 0; background: var(--color-primary); border-top: 1px solid rgba(255,255,255,0.06);">
       <div class="container" style="max-width: 900px;">
         <h2 style="font-family: var(--font-heading); font-size: 2rem; color: white; text-align: center; margin-bottom: 3rem;">Certified Packaged Drinking Water Company in Kolkata</h2>
@@ -533,13 +560,13 @@
       <!-- Footer Grid: High Authority Architecture -->
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 6rem;">
         
-        <!-- Col 1: Brand & Contact -->
+        <!-- Col 1: Brand &amp; Contact -->
         <div style="grid-column: span 1.5;">
           <a href="/" aria-label="Zenith Water Home">
             <img decoding="async" src="zenith_logo_compact.png" alt="Zenith Water Official Logo" loading="lazy" style="width: 140px; height: auto; margin-bottom: 1.5rem;" width="140" height="115">
           </a>
           <p style="color: var(--color-accent); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem;">
-            Premium Packaged Drinking Water Supplier in Kolkata & Howrah
+            Premium Packaged Drinking Water Supplier in Kolkata &amp; Howrah
           </p>
           <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2.5rem; max-width: 320px;">
             The gold standard of premium mineral water. Engineered for absolute molecular purity and architectural elegance.
@@ -584,7 +611,7 @@
           <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.25rem;">
             <li><a href="/pages/shipping" class="footer-link">Shipping Policy</a></li>
             <li><a href="/pages/returns" class="footer-link">Returns Policy</a></li>
-            <li><a href="/pages/terms" class="footer-link">Terms & Conditions</a></li>
+            <li><a href="/pages/terms" class="footer-link">Terms &amp; Conditions</a></li>
             <li><a href="/pages/privacy" class="footer-link">Privacy Policy</a></li>
           </ul>
         </div>
@@ -618,6 +645,10 @@
 
   <script src="assets/js/aos.js" defer></script>
   <script src="assets/js/main.js" defer></script>
+<script>
+function toggleMobileMenu(){var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');if(m.classList.contains('open')){closeMobileMenu();}else{m.style.display='flex';setTimeout(function(){m.classList.add('open');b.classList.add('open');},10);}}
+function closeMobileMenu(){var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');m.classList.remove('open');b.classList.remove('open');setTimeout(function(){if(!m.classList.contains('open'))m.style.display='none';},400);}
+</script>
 </body>
 
 </html>

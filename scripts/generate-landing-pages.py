@@ -459,7 +459,7 @@ def fit_meta(text, target_min=150, target_max=155):
     suffixes = [
         " Order online or call today.",
         " Get same-day delivery across the city.",
-        " Trusted by offices, hotels & homes.",
+        " Trusted by offices, hotels &amp; homes.",
         " FSSAI license 12825999000938.",
         " Sealed-at-source purity.",
     ]
@@ -478,75 +478,75 @@ def city_coverage(city, exclude=None):
     exclude = exclude or []
     coverage_map = {
         "Kolkata": [
-            "Salt Lake & Sector V",
-            "Park Street & Esplanade",
-            "Ballygunge & Alipore",
-            "Behala & New Alipore",
-            "Garia & Jadavpur",
-            "Tollygunge & Bansdroni",
-            "Dum Dum & North Kolkata",
-            "Rajarhat & New Town",
-            "Shyambazar & Maniktala",
-            "Kasba & EM Bypass",
+            "Salt Lake &amp; Sector V",
+            "Park Street &amp; Esplanade",
+            "Ballygunge &amp; Alipore",
+            "Behala &amp; New Alipore",
+            "Garia &amp; Jadavpur",
+            "Tollygunge &amp; Bansdroni",
+            "Dum Dum &amp; North Kolkata",
+            "Rajarhat &amp; New Town",
+            "Shyambazar &amp; Maniktala",
+            "Kasba &amp; EM Bypass",
         ],
         "Howrah": [
-            "Howrah Station & Salkia",
-            "Shibpur & Botanical Garden",
-            "Bally & Liluah",
-            "Belur & Santragachi",
-            "Andul & Domjur",
-            "Uluberia & Amta",
+            "Howrah Station &amp; Salkia",
+            "Shibpur &amp; Botanical Garden",
+            "Bally &amp; Liluah",
+            "Belur &amp; Santragachi",
+            "Andul &amp; Domjur",
+            "Uluberia &amp; Amta",
             "Ranihati Industrial Belt",
-            "Jagacha & Bargachia",
+            "Jagacha &amp; Bargachia",
         ],
         "Hooghly": [
-            "Chandannagar & Bhadreswar",
-            "Chinsurah & Bandel",
-            "Serampore & Rishra",
-            "Uttarpara & Baidyabati",
+            "Chandannagar &amp; Bhadreswar",
+            "Chinsurah &amp; Bandel",
+            "Serampore &amp; Rishra",
+            "Uttarpara &amp; Baidyabati",
             "Hooghly Industrial Belt",
-            "Dankuni & Saptagram",
-            "Bansberia & Tribeni",
+            "Dankuni &amp; Saptagram",
+            "Bansberia &amp; Tribeni",
         ],
         "Midnapore": [
             "Midnapore (Midnapur) Town",
-            "Kharagpur & Debra",
-            "Haldia & Tamluk",
-            "Contai & Digha",
-            "Ghatal & Chandrakona",
-            "Jhargram & Belpahari",
+            "Kharagpur &amp; Debra",
+            "Haldia &amp; Tamluk",
+            "Contai &amp; Digha",
+            "Ghatal &amp; Chandrakona",
+            "Jhargram &amp; Belpahari",
         ],
         "24 Parganas": [
-            "Barasat & Madhyamgram",
-            "Barrackpore & Titagarh",
-            "Basirhat & Baduria",
-            "Bidhannagar & Salt Lake",
-            "Rajarhat & New Town",
-            "Sonarpur & Baruipur",
-            "Diamond Harbour & Falta",
-            "Behala & Garia",
+            "Barasat &amp; Madhyamgram",
+            "Barrackpore &amp; Titagarh",
+            "Basirhat &amp; Baduria",
+            "Bidhannagar &amp; Salt Lake",
+            "Rajarhat &amp; New Town",
+            "Sonarpur &amp; Baruipur",
+            "Diamond Harbour &amp; Falta",
+            "Behala &amp; Garia",
         ],
         "Durgapur": [
             "Durgapur City Centre",
-            "Benachity & Sarbamangala",
+            "Benachity &amp; Sarbamangala",
             "Durgapur Steel Township",
-            "Bidhan Nagar & Fuljhore",
-            "ABL Township & Ispat Nagar",
-            "Andal & Panagarh",
+            "Bidhan Nagar &amp; Fuljhore",
+            "ABL Township &amp; Ispat Nagar",
+            "Andal &amp; Panagarh",
         ],
         "Asansol": [
             "Asansol City Centre",
-            "Burnpur & IISCO",
-            "Raniganj & Jamuria",
-            "Kulti & Barabani",
-            "Chittaranjan & Salanpur",
+            "Burnpur &amp; IISCO",
+            "Raniganj &amp; Jamuria",
+            "Kulti &amp; Barabani",
+            "Chittaranjan &amp; Salanpur",
         ],
         "Burdwan": [
             "Bardhaman (Burdwan) City",
-            "Katwa & Manteswar",
-            "Kalna & Purbasthali",
-            "Durgapur & Panagarh",
-            "Memari & Jamalpur",
+            "Katwa &amp; Manteswar",
+            "Kalna &amp; Purbasthali",
+            "Durgapur &amp; Panagarh",
+            "Memari &amp; Jamalpur",
         ],
     }
     base = coverage_map.get(city, [f"{city} Central", f"{city} Industrial Area", f"{city} Station Road"])
@@ -554,13 +554,24 @@ def city_coverage(city, exclude=None):
 
 
 def nearby_localities(locality_slug, city, count=5):
-    """Return nearby locality slugs for internal linking."""
-    pool = [l for l in ALL_LOCALITIES if l[2] == city and l[0] != locality_slug]
-    # Deterministic selection based on index in the original list
-    idx = next((i for i, l in enumerate(pool) if l[0] == locality_slug), 0)
+    """Return nearby locality slugs for internal linking.
+
+    Selection is based on the locality's position in the FULL city list
+    (including itself) so every locality is linked by its predecessors —
+    the previous implementation looked the slug up in a pool that excluded
+    itself, so idx was always 0 and every city page linked to the same
+    4-5 localities, orphaning the rest.
+    """
+    city_list = [l for l in ALL_LOCALITIES if l[2] == city]
+    idx = next((i for i, l in enumerate(city_list) if l[0] == locality_slug), 0)
+    n = len(city_list)
     selected = []
-    for i in range(1, count + 1):
-        selected.append(pool[(idx + i) % len(pool)])
+    for i in range(1, n):
+        cand = city_list[(idx + i) % n]
+        if cand[0] != locality_slug:
+            selected.append(cand)
+        if len(selected) >= count:
+            break
     return selected
 
 
@@ -864,7 +875,7 @@ def make_product_pages():
             title = truncate(f"{label} {city} | Zenith Water", 60)
             meta = fit_meta(
                 f"Buy {label.lower()} in {city}. Zenith Water delivers FSSAI certified packaged drinking water "
-                f"for homes, offices & events. Call +91 82748 37341."
+                f"for homes, offices &amp; events. Call +91 82748 37341."
             )
             h1 = f"{label}{'' if label.endswith('Supplier') else ' Supplier'} in <span style='color: var(--color-accent);'>{city}</span>"
             eyebrow = f"{label} {city}"
@@ -887,7 +898,7 @@ def make_product_pages():
                 "hero_subtitle": f"Zenith Water supplies {label.lower()} in {city} with FSSAI-certified quality, flexible sizes, and dependable delivery.",
                 "section1_title": f"Why Choose Zenith for {label} in {city}",
                 "section1_body": _product_section1(ctx, city),
-                "section2_title": f"Delivery & Sizes Available",
+                "section2_title": f"Delivery &amp; Sizes Available",
                 "section2_body": _product_section2(ctx, city),
                 "coverage": city_coverage(city),
                 "coverage_footer": f"We deliver {label.lower()} across {city} and surrounding areas. <a href='/bulk-water-supply-{city_slug}' style='color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);'>Get bulk pricing ↗</a>",
@@ -1005,7 +1016,7 @@ def make_industry_pages():
             label = ctx["label"]
             if key == "hotels" and city == "Kolkata":
                 # Legacy slug serves hotels AND restaurants; say so in the heading
-                label = "Hotels & Restaurants"
+                label = "Hotels &amp; Restaurants"
             title = truncate(f"Water Supply for {label} {city} | Zenith", 60)
             meta = fit_meta(
                 f"Water supply for {label.lower()} in {city}. Zenith delivers FSSAI certified packaged drinking water to {ctx['audience']}. Call +91 82748 37341."
@@ -1067,7 +1078,7 @@ def make_hub_pages():
         title = truncate(f"Water Supply {city} | Packaged Drinking Water | Zenith", 60)
         meta = fit_meta(
             f"Zenith Water is the trusted water supply partner in {city}. "
-            f"FSSAI certified packaged drinking water for homes, offices, hotels & industries. Call +91 82748 37341."
+            f"FSSAI certified packaged drinking water for homes, offices, hotels &amp; industries. Call +91 82748 37341."
         )
         pages.append({
             "slug": slug,
@@ -1149,12 +1160,12 @@ def make_city_intent_pages():
     pages = []
     new_cities = ["Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"]
     intents = [
-        ("packaged-drinking-water", "Packaged Drinking Water", "Packaged Drinking Water", "Buy packaged drinking water in {city}. FSSAI certified bottles & 20L jars delivered to homes, offices & shops. Call +91 82748 37341."),
-        ("water-delivery", "Water Delivery", "Drinking Water Delivery", "Fast water delivery in {city}. Zenith delivers FSSAI certified bottled water & 20L jars for home, office & shop. Call +91 82748 37341."),
-        ("water-supplier", "Water Supplier", "Packaged Drinking Water Supply", "Trusted water supplier in {city}. FSSAI certified packaged drinking water for homes, offices, hotels & shops. Call +91 82748 37341."),
-        ("bulk-water-supply", "Bulk Water Supply", "Bulk Water Supply", "Bulk water supply in {city}. Zenith delivers FSSAI certified packaged drinking water for offices, hotels, factories & events. Call +91 82748 37341."),
-        ("bottled-water", "Bottled Water", "Bottled Water", "Bottled water supplier in {city}. 250ml, 500ml, 1L & 2L FSSAI certified bottles delivered across {city}. Call +91 82748 37341."),
-        ("drinking-water", "Drinking Water", "Drinking Water", "Drinking water supplier in {city}. FSSAI certified packaged drinking water for homes & businesses. Call +91 82748 37341."),
+        ("packaged-drinking-water", "Packaged Drinking Water", "Packaged Drinking Water", "Buy packaged drinking water in {city}. FSSAI certified bottles &amp; 20L jars delivered to homes, offices &amp; shops. Call +91 82748 37341."),
+        ("water-delivery", "Water Delivery", "Drinking Water Delivery", "Fast water delivery in {city}. Zenith delivers FSSAI certified bottled water &amp; 20L jars for home, office &amp; shop. Call +91 82748 37341."),
+        ("water-supplier", "Water Supplier", "Packaged Drinking Water Supply", "Trusted water supplier in {city}. FSSAI certified packaged drinking water for homes, offices, hotels &amp; shops. Call +91 82748 37341."),
+        ("bulk-water-supply", "Bulk Water Supply", "Bulk Water Supply", "Bulk water supply in {city}. Zenith delivers FSSAI certified packaged drinking water for offices, hotels, factories &amp; events. Call +91 82748 37341."),
+        ("bottled-water", "Bottled Water", "Bottled Water", "Bottled water supplier in {city}. 250ml, 500ml, 1L &amp; 2L FSSAI certified bottles delivered across {city}. Call +91 82748 37341."),
+        ("drinking-water", "Drinking Water", "Drinking Water", "Drinking water supplier in {city}. FSSAI certified packaged drinking water for homes &amp; businesses. Call +91 82748 37341."),
         ("mineral-water", "Mineral Water", "Mineral Water", "Mineral water supplier in {city}. Premium FSSAI certified packaged mineral water delivered across {city}. Call +91 82748 37341."),
     ]
     for city in new_cities:
@@ -1181,7 +1192,7 @@ def make_city_intent_pages():
                 "hero_subtitle": f"Zenith Water provides {label.lower()} in {city} with FSSAI-certified quality, flexible sizes, and dependable delivery.",
                 "section1_title": f"Why {city} Chooses Zenith for {label}",
                 "section1_body": _city_intent_section1(label, city),
-                "section2_title": f"Delivery & Coverage in {city}",
+                "section2_title": f"Delivery &amp; Coverage in {city}",
                 "section2_body": _city_intent_section2(label, city),
                 "coverage": city_coverage(city),
                 "coverage_footer": f"We deliver {label.lower()} across {city} and surrounding areas. <a href='/areas-we-serve' style='color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);'>View all service areas ↗</a>",
@@ -1221,7 +1232,7 @@ def make_locality_pages():
             page_slug = f"{intent}-{slug}"
             if intent == "packaged-drinking-water":
                 title = truncate(f"Packaged Drinking Water {loc_name} | Zenith", 60)
-                meta = fit_meta(f"Buy packaged drinking water in {loc_name}, {city}. FSSAI certified 250ml, 500ml, 1L, 2L bottles & 20L jars with same-day delivery. Call +91 82748 37341.")
+                meta = fit_meta(f"Buy packaged drinking water in {loc_name}, {city}. FSSAI certified 250ml, 500ml, 1L, 2L bottles &amp; 20L jars with same-day delivery. Call +91 82748 37341.")
                 eyebrow = "Local Packaged Water"
                 h1 = f"Packaged Drinking Water in <span style='color: var(--color-accent);'>{loc_name}</span>, {city}"
                 hero = f"Zenith Water delivers FSSAI-certified packaged drinking water in {loc_name}, {city}. Bottles and 20L jars delivered to your door."
@@ -1246,7 +1257,7 @@ def make_locality_pages():
                 title = f"Water Delivery {loc_name} {city} | Zenith Water"
                 if len(title) > 60:
                     title = f"Water Delivery {loc_name} | Zenith Water"
-                meta = fit_meta(f"Fast water delivery in {loc_name}, {city}. Zenith delivers FSSAI certified bottled water & 20L jars for home, office & shop. Call +91 82748 37341.")
+                meta = fit_meta(f"Fast water delivery in {loc_name}, {city}. Zenith delivers FSSAI certified bottled water &amp; 20L jars for home, office &amp; shop. Call +91 82748 37341.")
                 eyebrow = "Scheduled Water Delivery"
                 h1 = f"Water Delivery in <span style='color: var(--color-accent);'>{loc_name}</span>, {city}"
                 hero = f"Reliable water delivery in {loc_name}, {city}. Order bottles or 20L jars for home, office, or shop with scheduled slots."
@@ -1271,7 +1282,7 @@ def make_locality_pages():
                 title = f"Water Supplier {loc_name} {city} | Zenith Water"
                 if len(title) > 60:
                     title = f"Water Supplier {loc_name} | Zenith Water"
-                meta = fit_meta(f"Trusted water supplier in {loc_name}, {city}. FSSAI certified packaged drinking water for homes, offices, hotels & shops. Call +91 82748 37341.")
+                meta = fit_meta(f"Trusted water supplier in {loc_name}, {city}. FSSAI certified packaged drinking water for homes, offices, hotels &amp; shops. Call +91 82748 37341.")
                 eyebrow = "Authorised Local Supplier"
                 h1 = f"Water Supplier in <span style='color: var(--color-accent);'>{loc_name}</span>, {city}"
                 hero = f"Zenith Water is a trusted water supplier in {loc_name}, {city}. We deliver certified packaged drinking water to homes, offices, and shops."
@@ -1343,8 +1354,8 @@ CORE_LINKS = [
     ("/pages/compliance", "Compliance"),
     ("/blog", "Blog"),
     ("/office-water-delivery-kolkata", "Office Water Delivery Kolkata"),
-    ("/water-supply-for-hotels-restaurants-kolkata", "Water Supply for Hotels & Restaurants"),
-    ("/water-supply-for-factories-industries-kolkata-howrah", "Water Supply for Factories & Industries"),
+    ("/water-supply-for-hotels-restaurants-kolkata", "Water Supply for Hotels &amp; Restaurants"),
+    ("/water-supply-for-factories-industries-kolkata-howrah", "Water Supply for Factories &amp; Industries"),
 ]
 
 PRODUCT_LINKS = [
@@ -1374,7 +1385,7 @@ CORPORATE_LINKS = [
 ]
 
 INDUSTRY_LINKS = [
-    ("/water-supply-for-hotels-restaurants-kolkata", "Water Supply for Hotels & Restaurants"),
+    ("/water-supply-for-hotels-restaurants-kolkata", "Water Supply for Hotels &amp; Restaurants"),
     ("/water-supply-for-hospitals-kolkata", "Water Supply for Hospitals"),
     ("/water-supply-for-schools-kolkata", "Water Supply for Schools"),
     ("/water-supply-for-colleges-kolkata", "Water Supply for Colleges"),
@@ -1416,6 +1427,18 @@ def office_href(city):
     return f"/bulk-water-supply-{cslug}"
 
 
+def href_exists(href):
+    """True if an internal href resolves to a file on disk (Vercel static
+    semantics: exact, +.html, or directory index). Prevents broken links."""
+    path = href.split("#")[0].split("?")[0].strip("/")
+    if path == "":
+        return os.path.isfile(os.path.join(ROOT, "index.html"))
+    for cand in (path, path + ".html", os.path.join(path, "index.html")):
+        if os.path.isfile(os.path.join(ROOT, cand)):
+            return True
+    return False
+
+
 def related_links_for(page):
     """Return geographically coherent related links for a page.
 
@@ -1430,18 +1453,28 @@ def related_links_for(page):
     related = []
 
     def push(href, label):
-        if href.strip("/") != slug and (href, label) not in related:
+        if href.strip("/") != slug and (href, label) not in related and href_exists(href):
             related.append((href, label))
+            return True
+        return False
 
     if cluster == "locality":
+        fam = next((f for f in ("packaged-drinking-water", "water-delivery", "water-supplier")
+                    if slug.startswith(f + "-")), "packaged-drinking-water")
         push(f"/packaged-drinking-water-{city_slug}", f"Packaged Drinking Water {city}")
         push(f"/water-delivery-{city_slug}", f"Water Delivery {city}")
         push(f"/water-supplier-{city_slug}", f"Water Supplier {city}")
         push(f"/{city_slug}-water-supply", f"{city} Water Supply Hub")
         for ns, nname, ncity, _ in page.get("nearby_localities", [])[:4]:
-            push(f"/packaged-drinking-water-{ns}", f"Packaged Drinking Water {nname}")
+            push(f"/{fam}-{ns}", f"{fam.replace('-', ' ').title()} {nname}")
+        # Cross-family nearby links: interconnect the three locality rings
+        # (packaged-drinking-water / water-delivery / water-supplier) so a
+        # hub link to any one family reaches all families for the city
+        others = [f for f in ("packaged-drinking-water", "water-delivery", "water-supplier") if f != fam]
+        for ofam, (ns, nname, _, _) in zip(others, page.get("nearby_localities", [])[:2]):
+            push(f"/{ofam}-{ns}", f"{ofam.replace('-', ' ').title()} {nname}")
         push("/areas-we-serve", "Areas We Serve")
-        return related[:8]
+        return related[:10]
 
     if cluster in ("product", "corporate", "industry"):
         # Same family in other cities (up to 3)
@@ -1475,21 +1508,61 @@ def related_links_for(page):
         push(f"/water-delivery-{city_slug}", f"Water Delivery {city}")
         push(f"/water-supplier-{city_slug}", f"Water Supplier {city}")
         push(f"/{city_slug}-water-supply", f"{city} Water Supply Hub")
-        return related[:7]
+        # Rotating city segment links: every corporate/industry family
+        # receives internal-link equity from the core city pages
+        segments = [
+            "water-supply-for-hotels-restaurants", "water-supply-for-hospitals",
+            "water-supply-for-schools", "water-supply-for-colleges",
+            "water-supply-for-gyms", "water-supply-for-banks",
+            "water-supply-for-construction-sites", "water-supply-for-event-management",
+            "water-supply-for-banquet-halls", "water-supply-for-call-centers",
+            "water-supply-for-co-working-spaces", "water-supply-for-government-offices",
+            "water-supply-for-it-parks", "water-supply-for-factories-industries",
+            "water-supply-for-factories", "water-supply-for-hotels",
+            "water-supply-for-restaurants",
+            "office-water-delivery", "office-water-supply",
+            "corporate-water-supply", "commercial-water-supplier",
+            "event-water-supply", "drinking-water-supplier", "packaged-water-supplier",
+        ]
+        off = (sum(ord(c) for c in slug) + sum(ord(c) for c in city_slug)) % len(segments)
+        added_seg = 0
+        for i in range(len(segments)):
+            seg = segments[(off + i) % len(segments)]
+            if push(f"/{seg}-{city_slug}", f"{seg.replace('water-supply-for-', '').replace('-', ' ').title()} {city}"):
+                added_seg += 1
+            if added_seg >= 7:
+                break
+        return related[:14]
 
     if cluster == "hub":
         for fam in ("packaged-drinking-water", "water-delivery", "water-supplier",
                     "bottled-water", "mineral-water", "drinking-water"):
             push(f"/{fam}-{city_slug}", f"{fam.replace('-', ' ').title()} {city}")
+        # Product / corporate / industry representatives so every family
+        # receives internal-link equity from the hub (no orphan islands)
+        push(f"/20-litre-water-jar-{city_slug}", f"20 Litre Water Jar {city}")
+        push(f"/bisleri-alternative-{city_slug}", f"Bisleri Alternative {city}")
+        push(f"/office-water-delivery-{city_slug}", f"Office Water Delivery {city}")
+        push(f"/office-water-supply-{city_slug}", f"Office Water Supply {city}")
+        push(f"/commercial-water-supplier-{city_slug}", f"Commercial Water Supplier {city}")
+        push(f"/event-water-supply-{city_slug}", f"Event Water Supply {city}")
+        push(f"/water-supply-for-hotels-restaurants-{city_slug}", f"Hotels & Restaurants {city}")
+        push(f"/water-supply-for-hospitals-{city_slug}", f"Hospitals {city}")
+        push(f"/water-supply-for-schools-{city_slug}", f"Schools {city}")
+        push(f"/water-jar-supplier-{city_slug}", f"Water Jar Supplier {city}")
+        push(f"/water-bottle-supplier-{city_slug}", f"Water Bottle Supplier {city}")
+        push(f"/mineral-water-supplier-{city_slug}", f"Mineral Water Supplier {city}")
+        push(f"/drinking-water-supplier-{city_slug}", f"Drinking Water Supplier {city}")
+        push(f"/packaged-water-supplier-{city_slug}", f"Packaged Water Supplier {city}")
         added = 0
         for ls, lname, lcity, _ in ALL_LOCALITIES:
             if lcity == city:
                 push(f"/packaged-drinking-water-{ls}", f"Packaged Drinking Water {lname}")
                 added += 1
-                if added >= 6:
+                if added >= 4:
                     break
         push("/areas-we-serve", "Areas We Serve")
-        return related[:10]
+        return related[:20]
 
     for href, label in CORE_LINKS[:6]:
         push(href, label)
@@ -1642,8 +1715,23 @@ TEMPLATE = '''<!DOCTYPE html>
         <a href="/areas-we-serve" style="color:rgba(255,255,255,0.7);font-weight:600;font-size:.7rem;text-transform:uppercase;letter-spacing:2px;">Areas</a>
         <a href="/pages/contact" class="btn-ultimate" style="background:var(--color-accent);color:var(--color-primary);padding:.6rem 1rem;">Enquiry</a>
       </div>
+      <div class="mobile-nav-group" style="display:none;align-items:center;">
+        <button id="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu" style="display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;">
+          <span class="ham-line" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+          <span class="ham-line" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+          <span class="ham-line" style="display:block;width:16px;height:2px;background:white;transition:all 0.3s;"></span>
+        </button>
+      </div>
     </nav>
   </header>
+  <div id="mobile-menu" style="position:fixed;top:64px;left:0;right:0;display:none;flex-direction:column;background:rgba(10,16,35,0.98);backdrop-filter:blur(30px);border-top:1px solid rgba(255,255,255,0.06);overflow:hidden;max-height:0;transition:max-height 0.4s cubic-bezier(0.16,1,0.3,1);box-shadow:0 20px 40px rgba(0,0,0,0.5);z-index:9998;">
+    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/pages/products" class="mobile-nav-link">Products</a>
+    <a href="/{city_hub}" class="mobile-nav-link">{primary_city} Hub</a>
+    <a href="/areas-we-serve" class="mobile-nav-link">Areas We Serve</a>
+    <a href="/pages/bulk" class="mobile-nav-link">Bulk Supply</a>
+    <a href="/pages/contact" class="mobile-nav-link">Contact</a>
+  </div>
 
   <main>
     <!-- HERO -->
@@ -1771,7 +1859,7 @@ TEMPLATE = '''<!DOCTYPE html>
             <img src="zenith_logo_compact.webp" alt="{brand_short} Official Logo" loading="lazy" width="120" height="99">
           </a>
           <p style="color:var(--color-accent);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin:1rem 0;">Premium Packaged Drinking Water</p>
-          <p style="color:rgba(255,255,255,0.6);font-size:.9rem;line-height:1.7;margin-bottom:1.5rem;">FSSAI-certified bottled and jar water for homes, offices, hotels, and industries across Kolkata & Howrah.</p>
+          <p style="color:rgba(255,255,255,0.6);font-size:.9rem;line-height:1.7;margin-bottom:1.5rem;">FSSAI-certified bottled and jar water for homes, offices, hotels, and industries across Kolkata &amp; Howrah.</p>
           <div style="display:inline-flex;align-items:center;gap:.5rem;background:rgba(181,158,109,0.08);border:1px solid rgba(181,158,109,0.25);padding:.5rem 1rem;border-radius:4px;">
             <span style="color:var(--color-accent);font-weight:800;">✓</span>
             <span style="color:rgba(255,255,255,0.85);font-size:.7rem;font-weight:700;letter-spacing:.5px;">FSSAI: {fssai}</span>
@@ -1808,8 +1896,8 @@ TEMPLATE = '''<!DOCTYPE html>
           <h4 style="font-family:var(--font-heading);font-size:.9rem;color:#fff;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:2px;">Solutions</h4>
           <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.9rem;">
             <li><a href="/office-water-delivery-kolkata" class="footer-link">Office Water Delivery</a></li>
-            <li><a href="/water-supply-for-hotels-restaurants-kolkata" class="footer-link">Hotels & Restaurants</a></li>
-            <li><a href="/water-supply-for-factories-industries-kolkata-howrah" class="footer-link">Factories & Industries</a></li>
+            <li><a href="/water-supply-for-hotels-restaurants-kolkata" class="footer-link">Hotels &amp; Restaurants</a></li>
+            <li><a href="/water-supply-for-factories-industries-kolkata-howrah" class="footer-link">Factories &amp; Industries</a></li>
             <li><a href="/event-water-supply-kolkata" class="footer-link">Event Water Supply</a></li>
             <li><a href="/20-liter-water-jar-delivery-kolkata" class="footer-link">20L Jar Delivery</a></li>
           </ul>
@@ -1821,7 +1909,7 @@ TEMPLATE = '''<!DOCTYPE html>
           <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.9rem;">
             <li><a href="/pages/shipping" class="footer-link">Shipping Policy</a></li>
             <li><a href="/pages/returns" class="footer-link">Returns Policy</a></li>
-            <li><a href="/pages/terms" class="footer-link">Terms & Conditions</a></li>
+            <li><a href="/pages/terms" class="footer-link">Terms &amp; Conditions</a></li>
             <li><a href="/pages/privacy" class="footer-link">Privacy Policy</a></li>
             <li><a href="/pages/compliance" class="footer-link">Compliance</a></li>
           </ul>
@@ -1841,6 +1929,16 @@ TEMPLATE = '''<!DOCTYPE html>
   <style>
     .footer-link{{color:rgba(255,255,255,0.6);text-decoration:none;font-size:.9rem;transition:color .2s,padding-left .2s;display:inline-block;}}
     .footer-link:hover{{color:var(--color-accent);padding-left:4px;}}
+    @media (max-width: 768px) {{
+      .nav-links{{display:none !important;}}
+      .mobile-nav-group{{display:flex !important;}}
+    }}
+    #mobile-menu.open{{max-height:80vh !important;overflow-y:auto !important;}}
+    #hamburger.open .ham-line:nth-child(1){{transform:translateY(7px) rotate(45deg);}}
+    #hamburger.open .ham-line:nth-child(2){{opacity:0;}}
+    #hamburger.open .ham-line:nth-child(3){{width:24px;transform:translateY(-7px) rotate(-45deg);}}
+    .mobile-nav-link{{color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.75rem;text-transform:uppercase;letter-spacing:3px;font-weight:700;padding:1.25rem 2rem;border-bottom:1px solid rgba(255,255,255,0.05);display:block;}}
+    .mobile-nav-link:hover{{background:rgba(255,255,255,0.03);color:white;}}
   </style>
 
   <!-- Minimal interaction layer -->
@@ -1852,6 +1950,16 @@ TEMPLATE = '''<!DOCTYPE html>
         }});
       }});
     }})();
+    function toggleMobileMenu() {{
+      var m = document.getElementById('mobile-menu'), b = document.getElementById('hamburger');
+      if (m.classList.contains('open')) {{ closeMobileMenu(); }}
+      else {{ m.style.display = 'flex'; setTimeout(function() {{ m.classList.add('open'); b.classList.add('open'); }}, 10); }}
+    }}
+    function closeMobileMenu() {{
+      var m = document.getElementById('mobile-menu'), b = document.getElementById('hamburger');
+      m.classList.remove('open'); b.classList.remove('open');
+      setTimeout(function() {{ if (!m.classList.contains('open')) m.style.display = 'none'; }}, 400);
+    }}
   </script>
 
   <!-- Mobile conversion CTA (floating WhatsApp + sticky mobile bar) -->
@@ -1880,7 +1988,7 @@ TEMPLATE = '''<!DOCTYPE html>
 
 
 # =============================================================================
-# RENDER & OUTPUT
+# RENDER &amp; OUTPUT
 # =============================================================================
 
 def use_case_cards(city):
@@ -1892,12 +2000,12 @@ def use_case_cards(city):
     events_href = "/event-water-supply-kolkata"
     hospitals_href = f"/water-supply-for-hospitals-{cslug}" if city in ("Kolkata", "Howrah") else "/water-supply-for-hospitals-kolkata"
     cases = [
-        ("🏠", "Homes", f"Daily bottles & 20L jars for families in {city}", f"/water-delivery-{cslug}"),
+        ("🏠", "Homes", f"Daily bottles &amp; 20L jars for families in {city}", f"/water-delivery-{cslug}"),
         ("🏢", "Offices", f"Scheduled dispenser jar delivery for {city} offices", office_href(city)),
-        ("🏨", "Hotels", "Premium bottled water for guest rooms & banquets", hotels_href),
+        ("🏨", "Hotels", "Premium bottled water for guest rooms &amp; banquets", hotels_href),
         ("🏭", "Factories", "Bulk 20L jar programs for industrial units", factories_href),
-        ("🏥", "Hospitals", "Safe hydration for patients, staff & visitors", hospitals_href),
-        ("🎉", "Events", "On-time bulk supply for conferences & weddings", events_href),
+        ("🏥", "Hospitals", "Safe hydration for patients, staff &amp; visitors", hospitals_href),
+        ("🎉", "Events", "On-time bulk supply for conferences &amp; weddings", events_href),
     ]
     cards = []
     for icon, label, desc, href in cases:

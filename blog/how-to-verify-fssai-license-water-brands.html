@@ -48,7 +48,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&amp;family=DM+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../assets/css/variables.min.css">
   <link rel="stylesheet" href="../assets/css/main.min.css">
@@ -193,6 +193,18 @@
   }
   </script>
   <style>.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}</style>
+<style>
+@media (max-width: 768px) {
+  .desktop-nav{display:none !important;} .nav-links{display:none !important;}
+  .mobile-nav-group{display:flex !important;}
+}
+#mobile-menu.open{max-height:80vh !important;overflow-y:auto !important;}
+#hamburger.open .ham-line:nth-child(1){transform:translateY(7px) rotate(45deg);}
+#hamburger.open .ham-line:nth-child(2){opacity:0;}
+#hamburger.open .ham-line:nth-child(3){width:24px;transform:translateY(-7px) rotate(-45deg);}
+.mobile-nav-link{color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.75rem;text-transform:uppercase;letter-spacing:3px;font-weight:700;padding:1.25rem 2rem;border-bottom:1px solid rgba(255,255,255,0.05);display:block;}
+.mobile-nav-link:hover{background:rgba(255,255,255,0.03);color:white;}
+</style>
 </head>
 
 <body>
@@ -207,7 +219,22 @@
       <a href="/pages/contact" class="nav-link">Contact</a>
     </div>
   </nav>
-</header>
+<div class="mobile-nav-group" style="display:none;align-items:center;">
+        <button id="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu" style="display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;">
+          <span class="ham-line" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+          <span class="ham-line" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+          <span class="ham-line" style="display:block;width:16px;height:2px;background:white;transition:all 0.3s;"></span>
+        </button>
+      </div>
+    </header>
+  <div id="mobile-menu" style="position:fixed;top:64px;left:0;right:0;display:none;flex-direction:column;background:rgba(10,16,35,0.98);backdrop-filter:blur(30px);border-top:1px solid rgba(255,255,255,0.06);overflow:hidden;max-height:0;transition:max-height 0.4s cubic-bezier(0.16,1,0.3,1);box-shadow:0 20px 40px rgba(0,0,0,0.5);z-index:9998;">
+    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/pages/products" class="mobile-nav-link">Products</a>
+    <a href="/areas-we-serve" class="mobile-nav-link">Areas We Serve</a>
+    <a href="/pages/bulk" class="mobile-nav-link">Bulk Supply</a>
+    <a href="/blog" class="mobile-nav-link">Blog</a>
+    <a href="/pages/contact" class="mobile-nav-link">Contact</a>
+  </div>
 
 <main style="padding-top: 120px; padding-bottom: 8rem;">
   <div class="container">
@@ -392,7 +419,7 @@
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
       <div>
         <a href="/" aria-label="Zenith Water Home"><img src="../zenith_logo_compact.png" alt="Zenith Water" style="width: 120px; margin-bottom: 1rem;" decoding="async" loading="lazy" width="160" height="132"></a>
-        <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">Premium packaged drinking water supplier in Kolkata & Howrah. FSSAI certified.</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">Premium packaged drinking water supplier in Kolkata &amp; Howrah. FSSAI certified.</p>
       </div>
       <div>
         <h3 style="font-family: var(--font-heading); font-size: 0.9rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 2px;">Latest Articles</h3>
@@ -418,5 +445,9 @@
   </div>
 </footer>
 
+<script>
+function toggleMobileMenu(){var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');if(m.classList.contains('open')){closeMobileMenu();}else{m.style.display='flex';setTimeout(function(){m.classList.add('open');b.classList.add('open');},10);}}
+function closeMobileMenu(){var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');m.classList.remove('open');b.classList.remove('open');setTimeout(function(){if(!m.classList.contains('open'))m.style.display='none';},400);}
+</script>
 </body>
 </html>

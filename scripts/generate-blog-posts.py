@@ -101,7 +101,7 @@ TEMPLATE = '''<!DOCTYPE html>
   <header class="header">
     <nav class="container">
       <div style="display: flex; align-items: center; gap: 1rem;">
-        <a href="/"><img decoding="async" src="../zenith_logo_compact.png" alt="Zenith Logo" class="logo" style="width: 80px; height: auto;" decoding="async" width="80" height="66" loading="lazy"></a>
+        <a href="/"><img decoding="async" src="../zenith_logo_compact.png" alt="Zenith Logo" class="logo" style="width: 80px; height: auto;" width="80" height="66" loading="lazy"></a>
       </div>
       <div style="display: flex; gap: 3rem; align-items: center;">
         <a href="/" class="nav-link">Home</a>
