@@ -1,0 +1,6 @@
+cluster,pillar_page,supporting_pages,audience,commercial_role,status
+A — Regulatory authority,/blog/is-14543-vs-is-10500-drinking-water-standards,"verify-fssai checklist; label guide (NEW); TDS explainer (gated)",researcher+all buyers,trust transfer to brand,active (2 shipped)
+B — 20L commercial education,/20-liter-water-jar-delivery-kolkata,"can-vs-jar (NEW); office calculator (planned); jar hygiene (gated)",household+office,revenue-adjacent,active (1 shipped)
+C — Local service guides,/areas-we-serve,"scheduling article (planned); city hubs",local-mixed,coverage proof,planned
+D — B2B procurement,/pages/bulk,"hotel vetting (planned); distributor economics (gated)",P2/P5/P7/P8,direct B2B leads,planned+gated
+Internal-link rule: pillar ↔ supporting two-way; supporting never interlink more than one pillar per page.

@@ -1,0 +1,1 @@
+# Page Revision Specifications\n\nPer-page specs are generated when a page enters the implementation queue (decision-register approved). Current queue: none pending approval. The page-inventory.csv action column is the master list (protect / improve / ctr-recovery / monitor).

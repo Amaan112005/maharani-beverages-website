@@ -1,0 +1,9 @@
+experiment_id,title,hypothesis,status,link
+E1,Pincode on 20L,"On-page availability lifts WhatsApp engagement",SHIPPED (branch),15-experiments/experiment-register.csv
+E2,IS-14543 title,"Question form captures definitional intent",SHIPPED — measuring,15-experiments/experiment-register.csv
+E3,Comparison title,"'Compared' framing beats brand list",SHIPPED — measuring,15-experiments/experiment-register.csv
+E4,Money-page same-day title,"Speed modifier captures instant demand",GATED (2026-12-01),15-experiments/experiment-register.csv
+E7,Segment WhatsApp flows,"Prefilled intent shortens reply-to-quote",SHIPPED — collecting,15-experiments/experiment-register.csv
+E8,Add-to-enquiry,"Cart checkout > single taps",SHIPPED — collecting,15-experiments/experiment-register.csv
+E12,Honest review markup,"Real corpus lifts merchant CTR",SPEC — gated on reviews,15-experiments/experiment-register.csv
+NOTE,"Single register of record","15-experiments/experiment-register.csv holds the full 16-field Part VII records; this file is the CRO-facing view",-,-
