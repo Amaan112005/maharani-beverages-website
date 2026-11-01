@@ -1,0 +1,16 @@
+month,week,item,type,cluster,status,gate
+2026-11,W1,How to read a water bottle label (SHIPPED on branch),article,A,shipped,-
+2026-11,W1,20L can vs jar vs bottle (SHIPPED on branch),article,B,shipped,-
+2026-11,W2,Jar hygiene protocol,article,A/B,draft-blocked,owner process facts (BF-16) + photos
+2026-11,W3,TDS explainer,article,A,draft-blocked,owner tested values (BF-14 adjacent)
+2026-11,W4,IS 14543 hub answer-first refresh (ME-1 shipped; add 'what is 14543' block),content,A,partial,-
+2026-12,W1,Monsoon/winter water-safety checklist (seasonal),article+GBP post,A,planned,GBP live
+2026-12,W2,Office jar calculator,interactive,B,planned,capability confirm (BF-7/9)
+2026-12,W3,How hotels should vet a water supplier,article,D,planned,-
+2026-12,W4,Lab-report library page,asset,A,blocked,owner lab docs (BF-2/14)
+2027-01,W1,Distributor economics article,article,D,blocked,distributor terms (BF-13)
+2027-01,W2,Jar deposit & exchange guide,article,B,blocked,BF-6 owner confirmation
+2027-01,W3,Water delivery in Kolkata: how scheduling works,article,C,planned,-
+2027-01,W4,Quarterly content refresh sweep (dates, stats, internal links),ops,all,planned,-
+2027-02,W1-4,Subscription landing content (if D-15 approved),page,B,gated,BF-20 capability
+ongoing,monthly,Review date stamps + top-10 page refresh,ops,all,live,-

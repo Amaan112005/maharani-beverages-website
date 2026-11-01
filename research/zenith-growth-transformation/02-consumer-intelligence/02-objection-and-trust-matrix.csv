@@ -1,0 +1,12 @@
+objection,segment,severity,current_answer,asset_that_answers_it,gap_owner
+Contaminated/unsafe water,all,high,FSSAI licence + 7-stage + testing-scheme language,"compliance page, label guide, lab library (gated)",lab docs (BF-2/14)
+Counterfeit/fake product,all,high,verification checklist + how-to-verify article,label guide + verify checklist,-
+Jar hygiene unknown,household/office,high,nothing published yet,jar hygiene protocol article,owner process facts (BF-16) + photos
+Hidden charges / unclear price,all,high,visible 20L tiers; bottle prices in schema,pricing copy extension,owner price confirmation (BF-4/5)
+Jar deposit terms unknown,household,medium,unstated,deposit guide + FAQ,jar deposit policy (BF-6)
+Delivery reliability doubt,all,medium,pincode checker + coverage lists + SLA wording inconsistency,SLA table per city,owner SLAs (BF-8)
+Unknown brand trust gap,all,high,Udyam + FSSAI + Ranihati identity + reviews absent,GBP reviews + press,GBP (OC-15) + review engine
+No billing/GST for office,office,medium,unstated,office pages copy,owner (BF-10)
+Distributor fraud fear,distributor,high,no-fee stance + documents on page,distributor page + verification pack,terms detail (BF-13)
+Capacity doubt (events/bulk),event/bulk,medium,unstated,capacity statement,plant capacity (BF-15)
+Slow/unresponsive supplier,all,medium,WhatsApp-first + (SLA unstated),response-time promise,SLA commitment (OC-12/BF-17)
