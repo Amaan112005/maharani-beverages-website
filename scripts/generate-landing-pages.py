@@ -1137,7 +1137,13 @@ def make_hub_pages():
     for city in ["Kolkata", "Howrah", "Hooghly", "Midnapore", "24 Parganas", "Durgapur", "Asansol", "Burdwan"]:
         city_slug = slugify(city)
         slug = f"{city_slug}-water-supply"
-        title = truncate(f"Water Supply {city} | Packaged Drinking Water | Zenith", 60)
+        # ME-3 (owner-approved CTR experiment): Kolkata hub carries the segment-
+        # inclusive supplier title; other hubs keep the control title until the
+        # experiment verdict (pre-registered: query-level CTR, day-30 window).
+        if city_slug == "kolkata":
+            title = "Drinking Water Supply Kolkata | Home, Office & 20L Jars | Zenith"
+        else:
+            title = truncate(f"Water Supply {city} | Packaged Drinking Water | Zenith", 60)
         meta = fit_meta(
             f"Zenith Water is the trusted water supply partner in {city}. "
             f"FSSAI certified packaged drinking water for homes, offices, hotels &amp; industries. Call +91 82748 37341."
