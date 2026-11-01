@@ -851,6 +851,10 @@ def make_product_faqs(slug, city, ctx):
 # PAGE DEFINITION BUILDERS
 # =============================================================================
 
+# Locality differentiation facts (owner-confirmed only). Empty slots render
+# nothing; facts enter via the owner register (confirmed status) — Rule 3.
+LOCALITY_FACTS = {}
+
 # ---------------------------------------------------------------------------
 # H1-overlap consolidation (D-3): unique content ported from retiring legacy
 # pages (drinking-water-{city}, mineral-water-{city}) onto the primary
@@ -951,6 +955,16 @@ def make_product_pages():
     for page in pages:
         if page["slug"] in LEGACY_CONTENT_PORT:
             page["section2_body"] = page["section2_body"] + LEGACY_CONTENT_PORT[page["slug"]]
+    return pages
+
+
+def apply_locality_facts(pages):
+    """Inject owner-confirmed locality facts (LOCALITY_FACTS) into locality
+    cluster pages. No-op while the dict is empty — safe to call always."""
+    for page in pages:
+        fact = LOCALITY_FACTS.get(page.get("slug"))
+        if fact:
+            page["section2_body"] = page["section2_body"] + fact
     return pages
 
 
@@ -2358,6 +2372,7 @@ def generate_all_pages():
     pages.extend(make_hub_pages())
     pages.extend(make_city_intent_pages())
     pages.extend(make_locality_pages())
+    pages = apply_locality_facts(pages)
     return pages
 
 
