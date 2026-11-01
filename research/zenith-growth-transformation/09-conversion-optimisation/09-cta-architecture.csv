@@ -1,0 +1,13 @@
+page_type,pages,primary_cta,secondary_cta,whatsapp_flow,pincode_checker,conversion_focus,notes
+home,1,WhatsApp FAB + pincode form,nav enquiry links,household,YES (inline checker),segment routing,"Event layer live; slideshow LCP debt (D-16)"
+20L money page,1,WhatsApp (contextual),CALL sticky + pincode block,household,YES (embedded block),order intent,"E1 experiment live; E4 title gated"
+city hubs,8,WhatsApp FAB + sticky bar,pincode block + related grid,household,YES (template slot),coverage discovery,"Pincode slot ships on hubs only"
+locality pages,234,WhatsApp FAB + sticky bar,related siblings + hub link,household,no (coverage lists serve),local capture,"Wave-1 facts gated (owner)"
+city/segment pages,76,WhatsApp FAB + sticky bar,same-family siblings,corporate/bulk,no,commercial capture,"0 FAB gaps found (post-fix)"
+corporate/office pages,26,WhatsApp FAB + sticky bar,city family links,office,no,B2B quotes,"Flows shipped D-10"
+industry pages,103,WhatsApp FAB + sticky bar,segment rotation links,horeca/bulk,no,B2B verticals,"HORECA vs bulk flow split"
+products + product pages,5,Add-to-enquiry + WhatsApp,retail flow (products page),retail/household,no,cart checkout,"D-11 buttons live"
+blog,17,soft WhatsApp CTA in articles,internal links to money pages,mixed,no,trust transfer,"2 new Cluster A/B articles live"
+utility forms,4,Formspree forms + WhatsApp handoff,-,segment-matched,no,lead capture,"Dual-submit pattern; autocomplete shipped"
+areas-we-serve,1,region links + WhatsApp FAB (added),hub grid,household,no,discovery hub,"FAB gap fixed this sprint"
+404,1,popular links + WhatsApp CTA,-,household,no,recovery,"noindex; intentional minimal chrome"
